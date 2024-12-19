@@ -1,7 +1,6 @@
 package com.safetynet.safetynetalerts.controller;
 
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -9,9 +8,10 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
-public class Controller {
+public class DataController {
 
-    @GetMapping
+    // handles POST PUT DELETE requests from client and calls Services' methods
+
 
     @PostMapping("path")
     public String postMethodName(@RequestBody String entity) {

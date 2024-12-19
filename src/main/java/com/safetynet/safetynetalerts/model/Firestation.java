@@ -1,18 +1,20 @@
 package com.safetynet.safetynetalerts.model;
 
 import java.util.List;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Firestation {
 
-    private int id;
+    private int firestationId;
     private List<String> addresses;
 
-    public int getId() {
-        return id;
+    public int getFirestationId() {
+        return firestationId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setFirestationId(int firestationId) {
+        this.firestationId = firestationId;
     }
 
     public List<String> getAddresses() {
