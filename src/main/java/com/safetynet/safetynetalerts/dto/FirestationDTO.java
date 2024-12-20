@@ -1,10 +1,10 @@
-package com.safetynet.safetynetalerts.model;
+package com.safetynet.safetynetalerts.dto;
 
 import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Component
-public class FirestationFromJson {
+public class FirestationDTO {
     private String address;
     private String firestationId;
 

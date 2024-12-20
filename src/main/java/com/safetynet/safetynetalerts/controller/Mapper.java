@@ -1,4 +1,4 @@
-package com.safetynet.safetynetalerts.dto;
+package com.safetynet.safetynetalerts.controller;
 
 public class Mapper {
 

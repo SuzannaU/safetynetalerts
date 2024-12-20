@@ -7,14 +7,13 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
+import com.safetynet.safetynetalerts.dto.MedicalRecordDTO;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
-import com.safetynet.safetynetalerts.model.MedicalRecordFromJson;
 import com.safetynet.safetynetalerts.repository.JsonRepository;
 
 @Service
 public class MedicalRecordService {
     JsonRepository jsonRepository;
-
 
     public MedicalRecordService(JsonRepository jsonRepository) {
         this.jsonRepository = jsonRepository;
@@ -22,18 +21,18 @@ public class MedicalRecordService {
 
     public List<MedicalRecord> getMedicalRecords() throws IOException {
         List<MedicalRecord> medicalRecords = new ArrayList<MedicalRecord>();
-        List<MedicalRecordFromJson> medicalRecordsFromJson =
-                jsonRepository.getMedicalRecordsFromJson();
+        List<MedicalRecordDTO> medicalRecordsDTO =
+                jsonRepository.getMedicalRecordsDTO();
 
-        for (MedicalRecordFromJson medicalRecordFromJson : medicalRecordsFromJson) {
+        for (MedicalRecordDTO medicalRecordDTO : medicalRecordsDTO) {
 
             MedicalRecord medicalRecord = new MedicalRecord();
-            medicalRecord.setPersonId(medicalRecordFromJson.getFirstName()
-                    .concat(medicalRecordFromJson.getLastName()));
-            medicalRecord.setMedications(medicalRecordFromJson.getMedications());
-            medicalRecord.setAllergies(medicalRecordFromJson.getAllergies());
-            medicalRecord.setBirthdate(getFormattedBirthdate(medicalRecordFromJson.getBirthdate()));
-            medicalRecord.setAge(getAge(medicalRecordFromJson.getBirthdate()));
+            medicalRecord.setPersonId(medicalRecordDTO.getFirstName()
+                    .concat(medicalRecordDTO.getLastName()));
+            medicalRecord.setMedications(medicalRecordDTO.getMedications());
+            medicalRecord.setAllergies(medicalRecordDTO.getAllergies());
+            medicalRecord.setBirthdate(getFormattedBirthdate(medicalRecordDTO.getBirthdate()));
+            medicalRecord.setAge(getAge(medicalRecordDTO.getBirthdate()));
 
             medicalRecords.add(medicalRecord);
         }
@@ -51,6 +50,4 @@ public class MedicalRecordService {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         return LocalDate.parse(birthdate, formatter);
     }
-
-
 }

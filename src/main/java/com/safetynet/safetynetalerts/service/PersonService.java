@@ -3,40 +3,53 @@ package com.safetynet.safetynetalerts.service;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
+import com.safetynet.safetynetalerts.dto.PersonDTO;
+import com.safetynet.safetynetalerts.model.Firestation;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
 import com.safetynet.safetynetalerts.model.Person;
-import com.safetynet.safetynetalerts.model.PersonFromJson;
 import com.safetynet.safetynetalerts.repository.JsonRepository;
 
 @Service
 public class PersonService {
     JsonRepository jsonRepository;
     MedicalRecordService medicalRecordService;
+    FirestationService firestationService;
 
-    public PersonService(JsonRepository jsonRepository, MedicalRecordService medicalRecordService) {
+
+
+    public PersonService(JsonRepository jsonRepository, MedicalRecordService medicalRecordService,
+            FirestationService firestationService) {
         this.jsonRepository = jsonRepository;
         this.medicalRecordService = medicalRecordService;
+        this.firestationService = firestationService;
     }
 
     public List<Person> getPersons() throws IOException {
-        List<PersonFromJson> personsFromJson = jsonRepository.getPersonsFromJson();
+        List<PersonDTO> personsDTO = jsonRepository.getPersonsDTO();
         List<Person> persons = new ArrayList<Person>();
 
-        for (PersonFromJson personFromJson : personsFromJson) {
+        for (PersonDTO personDTO : personsDTO) {
             Person person = new Person();
-            person.setFirstName(personFromJson.getFirstName());
-            person.setLastName(personFromJson.getLastName());
-            person.setAddress(personFromJson.getAddress());
-            person.setCity(personFromJson.getCity());
-            person.setZip(personFromJson.getZip());
-            person.setPhone(personFromJson.getPhone());
-            person.setEmail(personFromJson.getEmail());
-            person.setPersonId(personFromJson.getFirstName().concat(personFromJson.getLastName()));
-            person.setBirthdate(setBirthdate(person.getPersonId()));
-            person.setAge(setAge(person.getPersonId()));
+            person.setFirstName(personDTO.getFirstName());
+            person.setLastName(personDTO.getLastName());
+            person.setAddress(personDTO.getAddress());
+            person.setCity(personDTO.getCity());
+            person.setZip(personDTO.getZip());
+            person.setPhone(personDTO.getPhone());
+            person.setEmail(personDTO.getEmail());
+            person.setPersonId(personDTO.getFirstName().concat(personDTO.getLastName()));
+            person.setBirthdate(getBirthdate(person.getPersonId())); // add if to verify if
+                                                                     // birthdate exists
+            person.setAge(getAge(person.getPersonId()));
+            person.setMedications(getMedications(person.getPersonId()));
+            person.setAllergies(getAllergies(person.getPersonId()));
+            person.setFirestationId(getFirestationId(person.getAddress()));
 
             persons.add(person);
         }
@@ -44,7 +57,7 @@ public class PersonService {
         return persons;
     }
 
-    private LocalDate setBirthdate(String personId) throws IOException {
+    private LocalDate getBirthdate(String personId) throws IOException {
         List<MedicalRecord> medicalRecords = medicalRecordService.getMedicalRecords();
         Optional<LocalDate> birthdate = medicalRecords
                 .stream()
@@ -55,7 +68,7 @@ public class PersonService {
         return birthdate.get();
     }
 
-    private int setAge(String personId) throws IOException {
+    private int getAge(String personId) throws IOException {
         List<MedicalRecord> medicalRecords = medicalRecordService.getMedicalRecords();
         Optional<Integer> age = medicalRecords
                 .stream()
@@ -68,9 +81,41 @@ public class PersonService {
          * System.out.println ("no one matches")); => for loggers?
          */
 
-        return age.orElse(-1);
+        return age.get();
     }
 
+    private List<String> getMedications(String personId) throws IOException {
+
+        List<MedicalRecord> medicalRecords = medicalRecordService.getMedicalRecords();
+        List<String> medications = medicalRecords.stream()
+                .filter(medicalRecord -> medicalRecord.getPersonId().equals(personId))
+                .map(medicalRecord -> medicalRecord.getMedications())
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
+
+        return medications;
+    }
+
+    private List<String> getAllergies(String personId) throws IOException {
+        List<MedicalRecord> medicalRecords = medicalRecordService.getMedicalRecords();
+        List<String> allergies = medicalRecords.stream()
+                .filter(medicalRecord -> medicalRecord.getPersonId().equals(personId))
+                .map(medicalRecord -> medicalRecord.getAllergies())
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
+
+        return allergies;
+    }
+
+    private int getFirestationId(String address) throws IOException {
+        Set<Firestation> firestations = firestationService.getFirestations();
+        Optional<Integer> firestationId = firestations.stream()
+                .filter(firestation -> firestation.getAddresses().contains(address))
+                .map(firestation -> firestation.getFirestationId())
+                .findFirst();
+
+        return firestationId.get();
+    }
 
 }
 

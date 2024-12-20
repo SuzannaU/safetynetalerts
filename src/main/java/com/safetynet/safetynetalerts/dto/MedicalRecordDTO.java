@@ -1,10 +1,10 @@
-package com.safetynet.safetynetalerts.model;
+package com.safetynet.safetynetalerts.dto;
 
 import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MedicalRecordFromJson {
+public class MedicalRecordDTO {
     private String firstName;
     private String lastName;
     private String birthdate;

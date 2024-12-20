@@ -1,16 +1,13 @@
 package com.safetynet.safetynetalerts.service;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
+import com.safetynet.safetynetalerts.dto.FirestationDTO;
 import com.safetynet.safetynetalerts.model.Firestation;
-import com.safetynet.safetynetalerts.model.FirestationFromJson;
 import com.safetynet.safetynetalerts.repository.JsonRepository;
 
 @Service
@@ -25,17 +22,17 @@ public class FirestationService {
     public Set<Firestation> getFirestations() throws IOException {
 
         Set<Firestation> firestations = new LinkedHashSet<Firestation>();
-        List<FirestationFromJson> firestationsFromJson = jsonRepository.getFirestationsFromJson();
+        List<FirestationDTO> firestationsDTO = jsonRepository.getFirestationsDTO();
 
-        Set<Integer> firestationIds = firestationsFromJson
+        Set<Integer> firestationIds = firestationsDTO
                 .stream()
-                .map(firestationFromJson -> Integer.parseInt(firestationFromJson.getFirestationId()))
+                .map(firestationDTO -> Integer.parseInt(firestationDTO.getFirestationId()))
                 .collect(Collectors.toSet());
 
         for (int firestationId : firestationIds) {
             Firestation firestation = new Firestation();
             firestation.setFirestationId(firestationId);
-            firestation.setAddresses(setAdresses(firestationId));
+            firestation.setAddresses(getAddresses(firestationId));
 
             firestations.add(firestation);
         }
@@ -44,14 +41,14 @@ public class FirestationService {
     }
 
 
-    private List<String> setAdresses(int firestationId) throws IOException {
+    private List<String> getAddresses(int firestationId) throws IOException {
 
-        List<FirestationFromJson> firestationsFromJson = jsonRepository.getFirestationsFromJson();
-        List<String> addresses = firestationsFromJson
+        List<FirestationDTO> firestationsDTO = jsonRepository.getFirestationsDTO();
+        List<String> addresses = firestationsDTO
                 .stream()
-                .filter(firestationFromJson -> Integer
-                        .parseInt(firestationFromJson.getFirestationId()) == firestationId)
-                .map(firestationFromJson -> firestationFromJson.getAddress())
+                .filter(firestationDTO -> Integer
+                        .parseInt(firestationDTO.getFirestationId()) == firestationId)
+                .map(firestationDTO -> firestationDTO.getAddress())
                 .collect(Collectors.toList());
 
         return addresses;

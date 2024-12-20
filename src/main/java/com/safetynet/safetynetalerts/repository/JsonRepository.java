@@ -7,49 +7,49 @@ import org.springframework.stereotype.Repository;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.safetynet.safetynetalerts.model.FirestationFromJson;
-import com.safetynet.safetynetalerts.model.MedicalRecordFromJson;
-import com.safetynet.safetynetalerts.model.PersonFromJson;
+import com.safetynet.safetynetalerts.dto.FirestationDTO;
+import com.safetynet.safetynetalerts.dto.MedicalRecordDTO;
+import com.safetynet.safetynetalerts.dto.PersonDTO;
 
 @Repository
 public class JsonRepository {
 
     // Contains methods that interact JSON source file
 
-    List<PersonFromJson> personsFromJson;
-    List<FirestationFromJson> firestationsFromJson;
-    List<MedicalRecordFromJson> medicalRecordsFromJson;
+    List<PersonDTO> personsDTO;
+    List<FirestationDTO> firestationsDTO;
+    List<MedicalRecordDTO> medicalRecordsDTO;
 
-    public List<PersonFromJson> getPersonsFromJson() throws IOException {
+    public List<PersonDTO> getPersonsDTO() throws IOException {
 
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode rootNode = objectMapper.readTree(new File("src/main/resources/data.json"));
         JsonNode personsNode = rootNode.get("persons");
-        personsFromJson = objectMapper
-                .convertValue(personsNode, new TypeReference<List<PersonFromJson>>() {});
+        personsDTO = objectMapper
+                .convertValue(personsNode, new TypeReference<List<PersonDTO>>() {});
 
-        return personsFromJson;
+        return personsDTO;
     }
 
-    public List<FirestationFromJson> getFirestationsFromJson() throws IOException {
+    public List<FirestationDTO> getFirestationsDTO() throws IOException {
 
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode rootNode = objectMapper.readTree(new File("src/main/resources/data.json"));
         JsonNode firestationsNode = rootNode.get("firestations");
-        firestationsFromJson = objectMapper
-                .convertValue(firestationsNode, new TypeReference<List<FirestationFromJson>>() {});
+        firestationsDTO = objectMapper
+                .convertValue(firestationsNode, new TypeReference<List<FirestationDTO>>() {});
 
-        return firestationsFromJson;
+        return firestationsDTO;
     }
 
-    public List<MedicalRecordFromJson> getMedicalRecordsFromJson() throws IOException {
+    public List<MedicalRecordDTO> getMedicalRecordsDTO() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode rootNode = objectMapper.readTree(new File("src/main/resources/data.json"));
         JsonNode medicalRecordsNode = rootNode.get("medicalrecords");
-        medicalRecordsFromJson = objectMapper
+        medicalRecordsDTO = objectMapper
                 .convertValue(
-                        medicalRecordsNode, new TypeReference<List<MedicalRecordFromJson>>() {});
+                        medicalRecordsNode, new TypeReference<List<MedicalRecordDTO>>() {});
 
-        return medicalRecordsFromJson;
+        return medicalRecordsDTO;
     }
 }

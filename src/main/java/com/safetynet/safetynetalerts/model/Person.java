@@ -1,6 +1,7 @@
 package com.safetynet.safetynetalerts.model;
 
 import java.time.LocalDate;
+import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,6 +17,9 @@ public class Person {
     private String zip;
     private String phone;
     private String email;
+    private List<String> medications;
+    private List<String> allergies;
+    private int firestationId;
 
     public String getFirstName() {
         return firstName;
@@ -99,4 +103,29 @@ public class Person {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public List<String> getMedications() {
+        return medications;
+    }
+
+    public void setMedications(List<String> medications) {
+        this.medications = medications;
+    }
+
+    public List<String> getAllergies() {
+        return allergies;
+    }
+
+    public void setAllergies(List<String> allergies) {
+        this.allergies = allergies;
+    }
+
+    public int getFirestationId() {
+        return firestationId;
+    }
+
+    public void setFirestationId(int firestationId) {
+        this.firestationId = firestationId;
+    }
+    
 }
