@@ -3,12 +3,17 @@ package com.safetynet.safetynetalerts;
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.fasterxml.jackson.core.exc.StreamWriteException;
 import com.fasterxml.jackson.databind.DatabindException;
+import com.safetynet.safetynetalerts.controller.WebAppController;
 import com.safetynet.safetynetalerts.dto.MedicalRecordDTO;
 import com.safetynet.safetynetalerts.dto.PersonDTO;
+import com.safetynet.safetynetalerts.dto.PersonForStation;
 import com.safetynet.safetynetalerts.model.Firestation;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
 import com.safetynet.safetynetalerts.model.Person;
@@ -19,29 +24,34 @@ import com.safetynet.safetynetalerts.service.PersonService;
 
 @SpringBootApplication
 public class SafetynetalertsApplication {
+        private static final Logger logger = LoggerFactory.getLogger(SafetynetalertsApplication.class);
 
 	public static void main(String[] args) throws StreamWriteException, DatabindException, IOException {
 		SpringApplication.run(SafetynetalertsApplication.class, args);
 
 		JsonRepository jsonRepository = new JsonRepository();
 
-		MedicalRecordService medicalRecordService = new MedicalRecordService(jsonRepository);
+		/*MedicalRecordService medicalRecordService = new MedicalRecordService(jsonRepository);
 		FirestationService firestationService = new FirestationService(jsonRepository);
 		PersonService personService = new PersonService(jsonRepository, medicalRecordService,firestationService);
 		List<Person> persons = personService.getPersons();
 		for (Person person : persons) {
 			System.out.println(person.getPersonId() + ", " + person.getAge()
 					+ ", " + person.getMedications() + ", " + person.getFirestationId());
-		}
+		}*/
 
 
 		/*MedicalRecordService medicalRecordService = new MedicalRecordService(jsonRepository);
-		PersonService personService = new PersonService(jsonRepository, medicalRecordService);
+		FirestationService firestationService = new FirestationService(jsonRepository);
+		PersonService personService = new PersonService(jsonRepository, medicalRecordService, firestationService);
 		List<Person> persons = personService.getPersons();
+		List<Person> personsForStation = persons.stream()
+                .filter(person -> person.getFirestationId() == 4)
+                .collect(Collectors.toList());
 		for (Person person : persons) {
 			System.out.print(person.getAddress() + ", ");
 			System.out.print(person.getPersonId() + ", ");
-			System.out.print(person.getBirthdate() + ", ");
+			System.out.print(person.getFirestationId() + ", ");
 			System.out.println(person.getAge());
 		}*/
 

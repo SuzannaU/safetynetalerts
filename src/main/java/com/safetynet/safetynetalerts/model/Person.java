@@ -12,6 +12,7 @@ public class Person {
     private String personId;
     private LocalDate birthdate;
     private int age;
+    private String category;
     private String address;
     private String city;
     private String zip;
@@ -57,6 +58,13 @@ public class Person {
         return age;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     public String getAddress() {
         return address;
@@ -127,5 +135,5 @@ public class Person {
     public void setFirestationId(int firestationId) {
         this.firestationId = firestationId;
     }
-    
+
 }
