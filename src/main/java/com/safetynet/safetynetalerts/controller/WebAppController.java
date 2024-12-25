@@ -31,6 +31,8 @@ public class WebAppController {
         @Autowired
         FirestationDataService firestationDataService;
         @Autowired
+        ChildAlertDataService childAlertDataService;
+        @Autowired
         Mapper mapper;
 
         @GetMapping("/firestation")
@@ -47,13 +49,42 @@ public class WebAppController {
                 ObjectMapper objMapper = new ObjectMapper();
 
                 if (firestationData.getPersons().isEmpty()) {
+                        logger.error("firestationData is empty");
                         objMapper.writeValue(new File("target/output.json"), null);
                         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
                 } else {
+                        logger.info("firestationData sent");
                         objMapper.writerWithDefaultPrettyPrinter()
                                         .writeValue(new File("target/output.json"),
                                                         firestationData);
                         return new ResponseEntity<>(firestationData, HttpStatus.OK);
+                }
+        }
+
+        @GetMapping("/childAlert")
+        public ResponseEntity<ChildAlertData> getChildAlertData(
+                        @RequestParam("address") final String address) throws IOException {
+
+                ChildAlertData childAlertData = new ChildAlertData();
+                try {
+                        childAlertData = childAlertDataService.getChildAlertData(address);
+                } catch (IOException e) {
+                        logger.error("Error retrieving data");
+                        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+                }
+
+                ObjectMapper objMapper = new ObjectMapper();
+
+                if (childAlertData.getChildren().isEmpty()) {
+                        logger.error("childAlertData is empty");
+                        objMapper.writeValue(new File("target/output.json"), null);
+                        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+                } else {
+                        logger.info("childAlertData sent");
+                        objMapper.writerWithDefaultPrettyPrinter()
+                                        .writeValue(new File("target/output.json"),
+                                                        childAlertData);
+                        return new ResponseEntity<>(childAlertData, HttpStatus.OK);
                 }
         }
 

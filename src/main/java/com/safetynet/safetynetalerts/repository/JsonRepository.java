@@ -25,7 +25,7 @@ public class JsonRepository {
         JsonNode node = null;
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode rootNode = objectMapper.readTree(new File("src/main/resources/data2.json"));
+            JsonNode rootNode = objectMapper.readTree(new File("src/main/resources/data.json"));
             node = rootNode.get(nodeName);
         } catch (IOException e) {
             logger.error("File not found");

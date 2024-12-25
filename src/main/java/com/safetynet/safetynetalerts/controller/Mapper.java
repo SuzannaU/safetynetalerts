@@ -1,8 +1,8 @@
 package com.safetynet.safetynetalerts.controller;
 
 import org.springframework.stereotype.Component;
-import com.safetynet.safetynetalerts.dto.PersonForStation;
-import com.safetynet.safetynetalerts.model.Person;
+import com.safetynet.safetynetalerts.dto.*;
+import com.safetynet.safetynetalerts.model.*;
 
 @Component
 public class Mapper {
@@ -24,4 +24,20 @@ public class Mapper {
         return personForStation;
     }
 
+    public AdultForChildAlert toAdultForChildAlert(Person person) {
+        AdultForChildAlert adultForChildAlert = new AdultForChildAlert();
+        adultForChildAlert.setFirstName(person.getFirstName());
+        adultForChildAlert.setLastName(person.getLastName());
+
+        return adultForChildAlert;
+    }
+
+    public ChildForChildAlert toChildForChildAlert(Person person) {
+        ChildForChildAlert childForChildAlert = new ChildForChildAlert();
+        childForChildAlert.setFirstName(person.getFirstName());
+        childForChildAlert.setLastName(person.getLastName());
+        childForChildAlert.setAge(person.getAge());
+
+        return childForChildAlert;
+    }
 }
