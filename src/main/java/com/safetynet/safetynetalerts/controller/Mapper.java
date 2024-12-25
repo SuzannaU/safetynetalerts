@@ -40,4 +40,21 @@ public class Mapper {
 
         return childForChildAlert;
     }
+
+    public PersonForFire toPersonForFire(Person person){
+        PersonForFire personForFire = new PersonForFire();
+        personForFire.setLastName(person.getLastName());
+        personForFire.setPhone(person.getPhone());
+        personForFire.setMedicalRecords(getMedicalRecordForFire(person));
+
+        return personForFire;
+    }
+
+    public MedicalRecordForFire getMedicalRecordForFire(Person person){
+        MedicalRecordForFire medicalRecordForFire = new MedicalRecordForFire();
+        medicalRecordForFire.setMedications(person.getMedications());
+        medicalRecordForFire.setAllergies(person.getAllergies());
+
+        return medicalRecordForFire;
+    }
 }

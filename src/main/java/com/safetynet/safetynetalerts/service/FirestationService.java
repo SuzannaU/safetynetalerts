@@ -40,20 +40,6 @@ public class FirestationService {
         return firestations;
     }
 
-    public Firestation getFirestationById(int id) throws IOException{
-
-        Set<Firestation> firestations = getFirestations();
-        Firestation firestation = null;
-        for (Firestation f : firestations){
-            if(f.getFirestationId() == id){
-                firestation = f;
-            }
-        }
-
-        return firestation;
-    }
-
-
     private List<String> getAddresses(int firestationId) throws IOException {
 
         List<FirestationDTO> firestationsDTO = jsonRepository.getFirestationsDTO();

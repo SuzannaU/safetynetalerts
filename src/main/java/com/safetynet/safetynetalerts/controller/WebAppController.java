@@ -35,6 +35,8 @@ public class WebAppController {
         @Autowired
         PhoneAlertDataService phoneAlertDataService;
         @Autowired
+        FireDataService fireDataService;
+        @Autowired
         Mapper mapper;
 
         @GetMapping("/firestation")
@@ -116,4 +118,32 @@ public class WebAppController {
                         return new ResponseEntity<>(phoneAlertData, HttpStatus.OK);
                 }
         }
+
+        @GetMapping("/fire")
+        public ResponseEntity<FireData> getFireData(
+                        @RequestParam("address") final String address) throws IOException {
+
+                FireData fireData = new FireData();
+                try {
+                        fireData = fireDataService.getFireData(address);
+                } catch (IOException e) {
+                        logger.error("Error retrieving data");
+                        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+                }
+
+                ObjectMapper objMapper = new ObjectMapper();
+
+                if (fireData.getResidents().isEmpty()) {
+                        logger.error("fireData is empty");
+                        objMapper.writeValue(new File("target/output.json"), null);
+                        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+                } else {
+                        logger.info("fireData sent");
+                        objMapper.writerWithDefaultPrettyPrinter()
+                                        .writeValue(new File("target/output.json"),
+                                                        fireData);
+                        return new ResponseEntity<>(fireData, HttpStatus.OK);
+                }
+        }
+
 }

@@ -67,23 +67,6 @@ public class PersonService {
         return persons;
     }
 
-    public Person getPersonById(String personId) throws IOException {
-        List<Person> persons = getPersons();
-        Person personById2 = new Person();
-        for (Person person : persons) {
-            if (person.getPersonId().equals(personId)) {
-                personById2 = person;
-            }
-        }
-        /*
-         * Optional<Person> personById = persons.stream() .filter(person ->
-         * person.getPersonId().equals(personId)) .findFirst();
-         */
-
-        return personById2;
-
-    }
-
     private LocalDate getBirthdate(String personId) throws IOException {
         List<MedicalRecord> medicalRecords = medicalRecordService.getMedicalRecords();
         Optional<LocalDate> birthdate = medicalRecords
