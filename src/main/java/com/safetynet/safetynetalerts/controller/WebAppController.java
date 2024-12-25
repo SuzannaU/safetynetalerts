@@ -33,6 +33,8 @@ public class WebAppController {
         @Autowired
         ChildAlertDataService childAlertDataService;
         @Autowired
+        PhoneAlertDataService phoneAlertDataService;
+        @Autowired
         Mapper mapper;
 
         @GetMapping("/firestation")
@@ -88,4 +90,30 @@ public class WebAppController {
                 }
         }
 
+        @GetMapping("/phoneAlert")
+        public ResponseEntity<PhoneAlertData> getPhoneAlertData(
+                        @RequestParam("firestation") final int stationNumber) throws IOException {
+
+                PhoneAlertData phoneAlertData = new PhoneAlertData();
+                try {
+                        phoneAlertData = phoneAlertDataService.getPhoneAlertData(stationNumber);
+                } catch (IOException e) {
+                        logger.error("Error retrieving data");
+                        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+                }
+
+                ObjectMapper objMapper = new ObjectMapper();
+
+                if (phoneAlertData.getPhones().isEmpty()) {
+                        logger.error("phoneAlertData is empty");
+                        objMapper.writeValue(new File("target/output.json"), null);
+                        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+                } else {
+                        logger.info("phoneAlertData sent");
+                        objMapper.writerWithDefaultPrettyPrinter()
+                                        .writeValue(new File("target/output.json"),
+                                                        phoneAlertData);
+                        return new ResponseEntity<>(phoneAlertData, HttpStatus.OK);
+                }
+        }
 }
