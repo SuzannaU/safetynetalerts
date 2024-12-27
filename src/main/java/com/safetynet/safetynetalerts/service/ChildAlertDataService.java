@@ -14,7 +14,7 @@ import com.safetynet.safetynetalerts.model.Person;
 
 @Service
 public class ChildAlertDataService {
-    private static final Logger logger = LoggerFactory.getLogger(FirestationDataService.class);
+    private static final Logger logger = LoggerFactory.getLogger(ChildAlertDataService.class);
     @Autowired
     PersonService personService;
     @Autowired

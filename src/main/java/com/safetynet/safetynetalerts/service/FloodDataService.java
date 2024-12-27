@@ -6,7 +6,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,18 +45,25 @@ public class FloodDataService {
                     .findFirst();
 
             Set<AddressForFlood> addressesForFlood = new HashSet<>();
-            for (String a : addresses.get()) {                              // handle if absent
-                AddressForFlood addressForFlood = new AddressForFlood();
-                List<PersonForFire> residentsByAddress = persons.stream()
-                        .filter(p -> p.getAddress().equals(a))
-                        .map(p -> mapper.toPersonForFire(p))
-                        .collect(Collectors.toList());
-                addressForFlood.setAddress(a);
-                addressForFlood.setResidents(residentsByAddress);
+            if (addresses.isPresent()) {
+                for (String a : addresses.get()) {
+                    AddressForFlood addressForFlood = new AddressForFlood();
+                    List<PersonForFlood> residentsByAddress = persons.stream()
+                            .filter(p -> p.getAddress().equals(a))
+                            .map(p -> mapper.toPersonForFlood(p))
+                            .collect(Collectors.toList());
+                    addressForFlood.setAddress(a);
+                    addressForFlood.setResidents(residentsByAddress);
 
-                addressesForFlood.add(addressForFlood);
+                    addressesForFlood.add(addressForFlood);
+                }
+            } else {
+                logger.info("Unable to retrieve addresses from firestationId: " + id);
+                AddressForFlood noAddress = new AddressForFlood();
+                noAddress.setAddress("No addresses related to firestation " + id);
+                addressesForFlood.add(noAddress);
             }
-            
+
             FirestationForFlood firestationForFlood = new FirestationForFlood();
             firestationForFlood.setFirestationId(id);
             firestationForFlood.setAddressesForFlood(addressesForFlood);

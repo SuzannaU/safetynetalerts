@@ -15,7 +15,7 @@ import com.safetynet.safetynetalerts.controller.Mapper;
 
 @Service
 public class InfoDataService {
-    private static final Logger logger = LoggerFactory.getLogger(FirestationDataService.class);
+    private static final Logger logger = LoggerFactory.getLogger(InfoDataService.class);
     @Autowired
     PersonService personService;
     @Autowired

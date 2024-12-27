@@ -45,6 +45,8 @@ public class WebAppController {
         @Autowired
         InfoDataService infoDataService;
         @Autowired
+        CommunityEmailDataService communityEmailDataService;
+        @Autowired
         Mapper mapper;
 
         @GetMapping("/firestation")
@@ -209,5 +211,31 @@ public class WebAppController {
                 }
         }
 
+        @GetMapping("/communityEmail")
+        public ResponseEntity<CommunityEmailData> getCommunityEmailData(
+                        @RequestParam("city") final String city) throws IOException {
+
+                CommunityEmailData communityEmailData = new CommunityEmailData();
+                try {
+                        communityEmailData = communityEmailDataService.getCommunityEmailData(city);
+                } catch (IOException e) {
+                        logger.error("Error retrieving data");
+                        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+                }
+
+                ObjectMapper objMapper = new ObjectMapper();
+
+                if (communityEmailData.getEmails().isEmpty()) {
+                        logger.error("communityEmailData is empty");
+                        objMapper.writeValue(new File("target/output.json"), null);
+                        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+                } else {
+                        logger.info("communityEmailData sent");
+                        objMapper.writerWithDefaultPrettyPrinter()
+                                        .writeValue(new File("target/output.json"),
+                                                        communityEmailData);
+                        return new ResponseEntity<>(communityEmailData, HttpStatus.OK);
+                }
+        }
 
 }

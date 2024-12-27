@@ -50,6 +50,17 @@ public class Mapper {
         return personForFire;
     }
 
+    public PersonForFlood toPersonForFlood(Person person) {
+        PersonForFlood personForFlood = new PersonForFlood();
+        personForFlood.setLastName(person.getLastName());
+        personForFlood.setPhone(person.getPhone());
+        personForFlood.setAge(person.getAge());
+        personForFlood.setMedications(person.getMedications());
+        personForFlood.setAllergies(person.getAllergies());
+
+        return personForFlood;
+    }
+
     public PersonForInfo toPersonForInfo(Person p) {
         PersonForInfo personForInfo = new PersonForInfo();
         personForInfo.setLastName(p.getLastName());

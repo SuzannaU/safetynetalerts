@@ -46,10 +46,9 @@ public class PersonService {
                 person.setPhone(personDTO.getPhone());
                 person.setEmail(personDTO.getEmail());
                 person.setPersonId(personDTO.getFirstName().concat(personDTO.getLastName()));
-                person.setBirthdate(getBirthdate(person.getPersonId())); // add if to verify if
-                                                                         // birthdate exists
+                person.setBirthdate(getBirthdate(person.getPersonId()));
                 person.setAge(getAge(person.getPersonId()));
-                if (person.getAge() < 18) {
+                if (person.getAge() <= 18) {
                     person.setCategory("Child");
                 } else {
                     person.setCategory("Adult");
@@ -75,7 +74,12 @@ public class PersonService {
                 .map(medicalRecord -> medicalRecord.getBirthdate())
                 .findFirst();
 
-        return birthdate.get();
+        if (birthdate.isPresent()) {
+            return birthdate.get();
+        } else {
+            logger.error("No birthdate");
+            return null;
+        }
     }
 
     private int getAge(String personId) throws IOException {
@@ -86,12 +90,12 @@ public class PersonService {
                 .map(medicalRecord -> medicalRecord.getAge())
                 .findFirst();
 
-        /*
-         * age.ifPresentOrElse(n -> System.out.println ("appel de setAge" + n), () ->
-         * System.out.println ("no one matches")); => for loggers?
-         */
-
-        return age.get();
+        if (age.isPresent()) {
+            return age.get();
+        } else {
+            logger.error("No age");
+            return 999;
+        }
     }
 
     private List<String> getMedications(String personId) throws IOException {
@@ -124,9 +128,13 @@ public class PersonService {
                 .map(firestation -> firestation.getFirestationId())
                 .findFirst();
 
-        return firestationId.get();
+        if (firestationId.isPresent()) {
+            return firestationId.get();
+        } else {
+            logger.error("No firestationId");
+            return 0;
+        }
     }
-
 }
 
 

@@ -9,16 +9,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.safetynet.safetynetalerts.dto.PhoneAlertData;
+import com.safetynet.safetynetalerts.controller.Mapper;
+import com.safetynet.safetynetalerts.dto.CommunityEmailData;
 import com.safetynet.safetynetalerts.model.Person;
 
 @Service
-public class PhoneAlertDataService {
-    private static final Logger logger = LoggerFactory.getLogger(PhoneAlertDataService.class);
+public class CommunityEmailDataService {
+    private static final Logger logger = LoggerFactory.getLogger(CommunityEmailDataService.class);
     @Autowired
     PersonService personService;
+    @Autowired
+    Mapper mapper;
 
-    public PhoneAlertData getPhoneAlertData(int firestationId) throws IOException {
+    public CommunityEmailData getCommunityEmailData(String city) throws IOException {
         List<Person> persons = new ArrayList<>();
         try {
             persons = personService.getPersons();
@@ -26,14 +29,15 @@ public class PhoneAlertDataService {
             logger.error("Unable to retrieve data");
             throw e;
         }
-        Set<String> phones = persons.stream()
-                .filter(p -> p.getFirestationId() == firestationId)
-                .map(p -> p.getPhone())
+
+        Set<String> emails = persons.stream()
+                .filter(p -> p.getCity().equals(city))
+                .map(p -> p.getEmail())
                 .collect(Collectors.toSet());
 
-        PhoneAlertData phoneAlertData = new PhoneAlertData();
-        phoneAlertData.setPhones(phones);
+        CommunityEmailData communityEmailData = new CommunityEmailData();
+        communityEmailData.setEmails(emails);
 
-        return phoneAlertData;
+        return communityEmailData;
     }
 }
