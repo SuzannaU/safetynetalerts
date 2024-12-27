@@ -1,16 +1,15 @@
 package com.safetynet.safetynetalerts.controller;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import org.springframework.stereotype.Component;
 import com.safetynet.safetynetalerts.dto.*;
 import com.safetynet.safetynetalerts.model.*;
 
 @Component
 public class Mapper {
-
-    /*
-     * methods to convert: - model objects to DTO (GetMapping) - DTO to model objects (PostMapping,
-     * PutMapping, DeleteMapping)
-     */
 
     public PersonForStation toPersonForStation(Person person) {
         PersonForStation personForStation = new PersonForStation();
@@ -41,20 +40,26 @@ public class Mapper {
         return childForChildAlert;
     }
 
-    public PersonForFire toPersonForFire(Person person){
+    public PersonForFire toPersonForFire(Person person) {
         PersonForFire personForFire = new PersonForFire();
         personForFire.setLastName(person.getLastName());
         personForFire.setPhone(person.getPhone());
-        personForFire.setMedicalRecords(getMedicalRecordForFire(person));
+        personForFire.setMedications(person.getMedications());
+        personForFire.setAllergies(person.getAllergies());
 
         return personForFire;
     }
 
-    public MedicalRecordForFire getMedicalRecordForFire(Person person){
-        MedicalRecordForFire medicalRecordForFire = new MedicalRecordForFire();
-        medicalRecordForFire.setMedications(person.getMedications());
-        medicalRecordForFire.setAllergies(person.getAllergies());
+    public PersonForInfo toPersonForInfo(Person p) {
+        PersonForInfo personForInfo = new PersonForInfo();
+        personForInfo.setLastName(p.getLastName());
+        personForInfo.setAddress(p.getAddress());
+        personForInfo.setAge(p.getAge());
+        personForInfo.setEmail(p.getEmail());
+        personForInfo.setMedications(p.getMedications());
+        personForInfo.setAllergies(p.getAllergies());
 
-        return medicalRecordForFire;
+        return personForInfo;
     }
+
 }

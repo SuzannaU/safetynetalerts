@@ -2,12 +2,16 @@ package com.safetynet.safetynetalerts.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
+import com.fasterxml.jackson.core.exc.StreamWriteException;
+import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.safetynet.safetynetalerts.dto.*;
 import com.safetynet.safetynetalerts.repository.JsonRepository;
@@ -36,6 +40,10 @@ public class WebAppController {
         PhoneAlertDataService phoneAlertDataService;
         @Autowired
         FireDataService fireDataService;
+        @Autowired
+        FloodDataService floodDataService;
+        @Autowired
+        InfoDataService infoDataService;
         @Autowired
         Mapper mapper;
 
@@ -145,5 +153,61 @@ public class WebAppController {
                         return new ResponseEntity<>(fireData, HttpStatus.OK);
                 }
         }
+
+        @GetMapping("/flood/stations")
+        public ResponseEntity<FloodData> getFloodData(
+                        @RequestParam("stations") final List<Integer> listOfStationIds)
+                        throws IOException {
+
+                FloodData floodData = new FloodData();
+                try {
+                        floodData = floodDataService.getFloodData(listOfStationIds);
+                } catch (IOException e) {
+                        logger.error("Error retrieving data");
+                        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+                }
+
+                ObjectMapper objMapper = new ObjectMapper();
+
+                if (floodData.getStationsForFlood().isEmpty()) {
+                        logger.error("floodData is empty");
+                        objMapper.writeValue(new File("target/output.json"), null);
+                        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+                } else {
+                        logger.info("floodData sent");
+                        objMapper.writerWithDefaultPrettyPrinter()
+                                        .writeValue(new File("target/output.json"),
+                                                        floodData);
+                        return new ResponseEntity<>(floodData, HttpStatus.OK);
+                }
+        }
+
+        @GetMapping("/personInfolastName={lastName}")
+        public ResponseEntity<InfoData> getInfoData(@PathVariable("lastName") final String lastName)
+                        throws IOException {
+
+                InfoData infoData = new InfoData();
+                try {
+                        infoData = infoDataService.getInfoData(lastName);
+                } catch (IOException e) {
+                        logger.error("Error retrieving data");
+                        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+                }
+
+                ObjectMapper objMapper = new ObjectMapper();
+
+                if (infoData.getPersons().isEmpty()) {
+                        logger.error("infoData is empty");
+                        objMapper.writeValue(new File("target/output.json"), null);
+                        return new ResponseEntity<InfoData>(HttpStatus.NOT_FOUND);
+                } else {
+                        logger.info("infoData sent");
+                        objMapper.writerWithDefaultPrettyPrinter()
+                                        .writeValue(new File("target/output.json"),
+                                                        infoData);
+                        return new ResponseEntity<InfoData>(infoData, HttpStatus.OK);
+                }
+        }
+
 
 }

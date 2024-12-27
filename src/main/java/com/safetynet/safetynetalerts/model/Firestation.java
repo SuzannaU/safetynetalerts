@@ -1,13 +1,13 @@
 package com.safetynet.safetynetalerts.model;
 
-import java.util.List;
+import java.util.Set;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Firestation {
 
     private int firestationId;
-    private List<String> addresses;
+    private Set<String> addresses;
 
     public int getFirestationId() {
         return firestationId;
@@ -17,11 +17,11 @@ public class Firestation {
         this.firestationId = firestationId;
     }
 
-    public List<String> getAddresses() {
+    public Set<String> getAddresses() {
         return addresses;
     }
 
-    public void setAddresses(List<String> addresses) {
+    public void setAddresses(Set<String> addresses) {
         this.addresses = addresses;
     }
 }

@@ -71,7 +71,7 @@ public class SafetynetalertsApplication {
 		Set<Firestation> firestations = firestationService.getFirestations(); 
 		for (Firestation firestation : firestations){ 
 			System.out.println(firestation.getFirestationId() + ", " + firestation.getAddresses()); 
-		}	 */
+		}*/
 
 	}
 

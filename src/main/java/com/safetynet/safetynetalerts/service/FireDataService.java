@@ -1,6 +1,7 @@
 package com.safetynet.safetynetalerts.service;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -21,7 +22,7 @@ public class FireDataService {
     Mapper mapper;
 
     public FireData getFireData(String address) throws IOException {
-        List<Person> persons = personService.getPersons();
+        List<Person> persons = new ArrayList<>();
         try {
             persons = personService.getPersons();
         } catch (IOException e) {

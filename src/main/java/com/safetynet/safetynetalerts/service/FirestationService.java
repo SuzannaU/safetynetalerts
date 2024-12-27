@@ -40,15 +40,15 @@ public class FirestationService {
         return firestations;
     }
 
-    private List<String> getAddresses(int firestationId) throws IOException {
+    private Set<String> getAddresses(int firestationId) throws IOException {
 
         List<FirestationDTO> firestationsDTO = jsonRepository.getFirestationsDTO();
-        List<String> addresses = firestationsDTO
+        Set<String> addresses = firestationsDTO
                 .stream()
                 .filter(firestationDTO -> Integer
                         .parseInt(firestationDTO.getFirestationId()) == firestationId)
                 .map(firestationDTO -> firestationDTO.getAddress())
-                .collect(Collectors.toList());
+                .collect(Collectors.toSet());
 
         return addresses;
     }
