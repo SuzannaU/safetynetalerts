@@ -135,6 +135,63 @@ public class PersonService {
             return 0;
         }
     }
+
+    public PersonDTO createPersonDTO(PersonDTO personDTO) throws IOException {
+        List<PersonDTO> persons = jsonRepository.getPersonsDTO();
+
+        Optional<PersonDTO> existingPerson = persons.stream()
+                .filter(p -> p.getFirstName().equals(personDTO.getFirstName()))
+                .filter(p -> p.getLastName().equals(personDTO.getLastName()))
+                .findFirst();
+
+        PersonDTO savedPerson = new PersonDTO();
+        if (existingPerson.isPresent()) {
+            savedPerson = null;
+            logger.error("This person already exists");
+        } else {
+            savedPerson = jsonRepository.createPerson(personDTO);
+        }
+
+        return savedPerson;
+    }
+
+    public PersonDTO updatePersonDTO(PersonDTO personDTO) throws IOException {
+        List<PersonDTO> persons = jsonRepository.getPersonsDTO();
+
+        Optional<PersonDTO> existingPerson = persons.stream()
+                .filter(p -> p.getFirstName().equals(personDTO.getFirstName()))
+                .filter(p -> p.getLastName().equals(personDTO.getLastName()))
+                .findFirst();
+
+        PersonDTO updatedPerson = new PersonDTO();
+        if (existingPerson.isPresent()) {
+            updatedPerson = jsonRepository.updatePerson(personDTO);
+        } else {
+            updatedPerson = null;
+            logger.error("This person doesn't exist");
+        }
+
+        return updatedPerson;
+    }
+
+    public PersonDTO deletePersonDTO(PersonDTO personDTO) throws IOException {
+        List<PersonDTO> persons = jsonRepository.getPersonsDTO();
+
+        Optional<PersonDTO> existingPerson = persons.stream()
+                .filter(p -> p.getFirstName().equals(personDTO.getFirstName()))
+                .filter(p -> p.getLastName().equals(personDTO.getLastName()))
+                .findFirst();
+
+        PersonDTO deletedPerson = new PersonDTO();
+        if (existingPerson.isPresent()) {
+            deletedPerson = jsonRepository.deletePerson(personDTO);
+        } else {
+            deletedPerson = null;
+            logger.error("This person doesn't exist");
+        }
+
+        return deletedPerson;
+    }
 }
 
 
