@@ -130,4 +130,66 @@ public class JsonRepository {
 
         return deletingPerson.get();
     }
+
+    public MedicalRecordDTO createMedicalRecord(MedicalRecordDTO medicalRecordDTO)
+            throws IOException {
+        Map<String, Object> jsonData = getJsonData();
+        List<MedicalRecordDTO> medicalRecordsDTO = getMedicalRecordsDTO();
+
+        MedicalRecordDTO newMedicalRecordDTO = medicalRecordDTO;
+        medicalRecordsDTO.add(newMedicalRecordDTO);
+        jsonData.put("medicalrecords", medicalRecordsDTO);
+
+        ObjectMapper objMapper = new ObjectMapper();
+        objMapper.writeValue(new File(sourceFilePath), jsonData);
+        logger.info("Json file updated with new medical record");
+
+        return newMedicalRecordDTO;
+    }
+
+    public MedicalRecordDTO updateMedicalRecord(MedicalRecordDTO medicalRecordDTO)
+            throws IOException {
+        Map<String, Object> jsonData = getJsonData();
+        List<MedicalRecordDTO> medicalRecordsDTO = getMedicalRecordsDTO();
+
+        Optional<MedicalRecordDTO> updatingMedicalRecord = medicalRecordsDTO.stream()
+                .filter(p -> p.getFirstName().equals(medicalRecordDTO.getFirstName()))
+                .filter(p -> p.getLastName().equals(medicalRecordDTO.getLastName()))
+                .findFirst();
+
+        updatingMedicalRecord.ifPresentOrElse(
+                p -> medicalRecordsDTO.add(p),
+                () -> logger.error("This medical record doesn't exist"));
+
+        jsonData.put("medicalrecords", medicalRecordsDTO);
+
+        ObjectMapper objMapper = new ObjectMapper();
+        objMapper.writeValue(new File(sourceFilePath), jsonData);
+        logger.info("Json file updated with updated medical record");
+
+        return updatingMedicalRecord.get();
+    }
+
+    public MedicalRecordDTO deleteMedicalRecord(MedicalRecordDTO medicalRecordDTO)
+            throws IOException {
+        Map<String, Object> jsonData = getJsonData();
+        List<MedicalRecordDTO> medicalRecordsDTO = getMedicalRecordsDTO();
+
+        Optional<MedicalRecordDTO> deletingMedicalRecord = medicalRecordsDTO.stream()
+                .filter(p -> p.getFirstName().equals(medicalRecordDTO.getFirstName()))
+                .filter(p -> p.getLastName().equals(medicalRecordDTO.getLastName()))
+                .findFirst();
+
+        deletingMedicalRecord.ifPresentOrElse(
+                p -> medicalRecordsDTO.remove(p),
+                () -> logger.error("This medical record doesn't exist"));
+
+        jsonData.put("medicalrecords", medicalRecordsDTO);
+
+        ObjectMapper objMapper = new ObjectMapper();
+        objMapper.writeValue(new File(sourceFilePath), jsonData);
+        logger.info("Deleted medical record removed from Json file");
+
+        return deletingMedicalRecord.get();
+    }
 }

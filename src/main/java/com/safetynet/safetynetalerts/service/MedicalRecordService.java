@@ -6,6 +6,9 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import com.safetynet.safetynetalerts.dto.MedicalRecordDTO;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
@@ -13,6 +16,7 @@ import com.safetynet.safetynetalerts.repository.JsonRepository;
 
 @Service
 public class MedicalRecordService {
+    private static final Logger logger = LoggerFactory.getLogger(MedicalRecordService.class);
     JsonRepository jsonRepository;
 
     public MedicalRecordService(JsonRepository jsonRepository) {
@@ -49,5 +53,63 @@ public class MedicalRecordService {
     public LocalDate getFormattedBirthdate(String birthdate) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         return LocalDate.parse(birthdate, formatter);
+    }
+
+    public MedicalRecordDTO createMedicalRecordDTO(MedicalRecordDTO medicalRecordDTO)
+            throws IOException {
+        List<MedicalRecordDTO> medicalRecords = jsonRepository.getMedicalRecordsDTO();
+
+        Optional<MedicalRecordDTO> existingMedicalRecord = medicalRecords.stream()
+                .filter(m -> m.getFirstName().equals(medicalRecordDTO.getFirstName()))
+                .filter(m -> m.getLastName().equals(medicalRecordDTO.getLastName()))
+                .findFirst();
+
+        MedicalRecordDTO savedMedicalRecord = new MedicalRecordDTO();
+        if (existingMedicalRecord.isPresent()) {
+            savedMedicalRecord = null;
+            logger.error("This medical record already exists");
+        } else {
+            savedMedicalRecord = jsonRepository.createMedicalRecord(medicalRecordDTO);
+        }
+
+        return savedMedicalRecord;
+    }
+
+    public MedicalRecordDTO updateMedicalRecordDTO(MedicalRecordDTO medicalRecordDTO) throws IOException {
+        List<MedicalRecordDTO> medicalRecords = jsonRepository.getMedicalRecordsDTO();
+
+        Optional<MedicalRecordDTO> existingMedicalRecord = medicalRecords.stream()
+                .filter(m -> m.getFirstName().equals(medicalRecordDTO.getFirstName()))
+                .filter(m -> m.getLastName().equals(medicalRecordDTO.getLastName()))
+                .findFirst();
+
+                MedicalRecordDTO updatedPerson = new MedicalRecordDTO();
+        if (existingMedicalRecord.isPresent()) {
+            updatedPerson = jsonRepository.updateMedicalRecord(medicalRecordDTO);
+        } else {
+            updatedPerson = null;
+            logger.error("This medical record doesn't exist");
+        }
+
+        return updatedPerson;
+    }
+
+    public MedicalRecordDTO deleteMedicalRecordDTO(MedicalRecordDTO medicalRecordDTO) throws IOException {
+        List<MedicalRecordDTO> medicalRecords = jsonRepository.getMedicalRecordsDTO();
+
+        Optional<MedicalRecordDTO> existingMedicalRecord = medicalRecords.stream()
+                .filter(m -> m.getFirstName().equals(medicalRecordDTO.getFirstName()))
+                .filter(m -> m.getLastName().equals(medicalRecordDTO.getLastName()))
+                .findFirst();
+
+                MedicalRecordDTO deletedPerson = new MedicalRecordDTO();
+        if (existingMedicalRecord.isPresent()) {
+            deletedPerson = jsonRepository.deleteMedicalRecord(medicalRecordDTO);
+        } else {
+            deletedPerson = null;
+            logger.error("This medical record doesn't exist");
+        }
+
+        return deletedPerson;
     }
 }

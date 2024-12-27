@@ -52,6 +52,21 @@ public class FirestationService {
 
         return addresses;
     }
+
+    public FirestationDTO createFirestationDTO(FirestationDTO firestationDTO) throws IOException {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'createFirestationDTO'");
+    }
+
+    public FirestationDTO updateFirestationDTO(FirestationDTO firestationDTO) throws IOException {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'updateFirestationDTO'");
+    }
+
+    public FirestationDTO deletePersonDTO(FirestationDTO firestationDTO) throws IOException {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'deletePersonDTO'");
+    }
 }
 
 
