@@ -3,8 +3,11 @@ package com.safetynet.safetynetalerts.service;
 import java.io.IOException;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import com.safetynet.safetynetalerts.dto.FirestationDTO;
 import com.safetynet.safetynetalerts.model.Firestation;
@@ -12,7 +15,7 @@ import com.safetynet.safetynetalerts.repository.JsonRepository;
 
 @Service
 public class FirestationService {
-
+    private static final Logger logger = LoggerFactory.getLogger(FirestationService.class);
     JsonRepository jsonRepository;
 
     public FirestationService(JsonRepository jsonRepository) {
@@ -54,18 +57,75 @@ public class FirestationService {
     }
 
     public FirestationDTO createFirestationDTO(FirestationDTO firestationDTO) throws IOException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createFirestationDTO'");
+        List<FirestationDTO> firestations = jsonRepository.getFirestationsDTO();
+
+        Optional<FirestationDTO> existingFirestation = firestations.stream()
+                .filter(f -> f.getAddress().equals(firestationDTO.getAddress()))
+                .findFirst();
+
+        if (existingFirestation.isPresent()) {
+            if (existingFirestation.get().getFirestationId()
+                    .equals(firestationDTO.getFirestationId())) {
+                logger.error("This address is already mapped to this firestation");
+                return null;
+            } else {
+                logger.error("This address is already mapped to a firestation");
+                return updateFirestationDTO(firestationDTO);
+            }
+        }
+
+        firestations.add(firestationDTO);
+        jsonRepository.updateFirestations(firestations);
+
+        return firestationDTO;
     }
 
     public FirestationDTO updateFirestationDTO(FirestationDTO firestationDTO) throws IOException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateFirestationDTO'");
+        List<FirestationDTO> firestations = jsonRepository.getFirestationsDTO();
+
+        Optional<FirestationDTO> existingFirestation = firestations.stream()
+                .filter(f -> f.getAddress().equals(firestationDTO.getAddress()))
+                .findFirst();
+
+        if (existingFirestation.isEmpty()) {
+            logger.error("This address doesn't exist and cannot be updated");
+            return null;
+        }
+
+        if (existingFirestation.isPresent() && existingFirestation.get().getFirestationId()
+                .equals(firestationDTO.getFirestationId())) {
+            logger.error("This address is already mapped to this firestation");
+            return null;
+        }
+
+        FirestationDTO updatedFirestation = new FirestationDTO();
+        updatedFirestation.setFirestationId(firestationDTO.getFirestationId());
+        updatedFirestation.setAddress(firestationDTO.getAddress());
+
+        firestations.remove(existingFirestation.get());
+        firestations.add(updatedFirestation);
+        jsonRepository.updateFirestations(firestations);
+
+        return firestationDTO;
     }
 
     public FirestationDTO deletePersonDTO(FirestationDTO firestationDTO) throws IOException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deletePersonDTO'");
+        List<FirestationDTO> firestations = jsonRepository.getFirestationsDTO();
+
+        Optional<FirestationDTO> existingFirestation = firestations.stream()
+                .filter(f -> f.getFirestationId().equals(firestationDTO.getFirestationId()))
+                .filter(f -> f.getAddress().equals(firestationDTO.getAddress()))
+                .findFirst();
+
+        if (existingFirestation.isEmpty()) {
+            logger.error("This firestation/address combination doesn't exist");
+            return null;
+        }
+
+        firestations.remove(existingFirestation.get());
+        jsonRepository.updateFirestations(firestations);
+
+        return existingFirestation.get();
     }
 }
 

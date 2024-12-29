@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -18,12 +20,12 @@ import com.safetynet.safetynetalerts.dto.PersonDTO;
 @Repository
 public class JsonRepository {
     private static final Logger logger = LoggerFactory.getLogger(JsonRepository.class);
-    private String sourceFilePath = "src/main/resources/data.json";
+    private String sourceFilePath = "src/main/resources/datatest.json";
 
     private JsonNode getNode(String nodeName) throws IOException {
         JsonNode node = null;
+        ObjectMapper objectMapper = new ObjectMapper();
         try {
-            ObjectMapper objectMapper = new ObjectMapper();
             JsonNode rootNode = objectMapper.readTree(new File(sourceFilePath));
             node = rootNode.get(nodeName);
         } catch (IOException e) {
@@ -66,130 +68,41 @@ public class JsonRepository {
 
     public Map<String, Object> getJsonData() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        Map<String, Object> jsonData = objectMapper.readValue(
-                new File(sourceFilePath), new TypeReference<>() {});
+        Map<String, Object> jsonData = null;
+        try {
+            jsonData = objectMapper.readValue(new File(sourceFilePath), new TypeReference<>() {});
+        } catch (IOException e) {
+            logger.error("File not found at path: " + sourceFilePath);
+            throw e;
+        }
 
         return jsonData;
     }
 
-    public PersonDTO createPerson(PersonDTO personDTO) throws IOException {
+    public void updatePersons(List<PersonDTO> personsDTO) throws IOException {
         Map<String, Object> jsonData = getJsonData();
-        List<PersonDTO> personsDTO = getPersonsDTO();
-
-        PersonDTO newPersonDTO = personDTO;
-        personsDTO.add(newPersonDTO);
         jsonData.put("persons", personsDTO);
 
         ObjectMapper objMapper = new ObjectMapper();
         objMapper.writeValue(new File(sourceFilePath), jsonData);
-        logger.info("Json file updated with new person");
-
-        return newPersonDTO;
+        logger.info("Json file updated with modified persons");
     }
 
-    public PersonDTO updatePerson(PersonDTO personDTO) throws IOException {
+    public void updateMedicalRecords(List<MedicalRecordDTO> medicalRecordsDTO) throws IOException {
         Map<String, Object> jsonData = getJsonData();
-        List<PersonDTO> personsDTO = getPersonsDTO();
-
-        Optional<PersonDTO> updatingPerson = personsDTO.stream()
-                .filter(p -> p.getFirstName().equals(personDTO.getFirstName()))
-                .filter(p -> p.getLastName().equals(personDTO.getLastName()))
-                .findFirst();
-
-        updatingPerson.ifPresentOrElse(
-                p -> personsDTO.add(p),
-                () -> logger.error("This person doesn't exist"));
-
-        jsonData.put("persons", personsDTO);
-
-        ObjectMapper objMapper = new ObjectMapper();
-        objMapper.writeValue(new File(sourceFilePath), jsonData);
-        logger.info("Json file updated with updated person");
-
-        return updatingPerson.get();
-    }
-
-    public PersonDTO deletePerson(PersonDTO personDTO) throws IOException {
-        Map<String, Object> jsonData = getJsonData();
-        List<PersonDTO> personsDTO = getPersonsDTO();
-
-        Optional<PersonDTO> deletingPerson = personsDTO.stream()
-                .filter(p -> p.getFirstName().equals(personDTO.getFirstName()))
-                .filter(p -> p.getLastName().equals(personDTO.getLastName()))
-                .findFirst();
-
-        deletingPerson.ifPresentOrElse(
-                p -> personsDTO.remove(p),
-                () -> logger.error("This person doesn't exist"));
-
-        jsonData.put("persons", personsDTO);
-
-        ObjectMapper objMapper = new ObjectMapper();
-        objMapper.writeValue(new File(sourceFilePath), jsonData);
-        logger.info("Deleted person removed from Json file");
-
-        return deletingPerson.get();
-    }
-
-    public MedicalRecordDTO createMedicalRecord(MedicalRecordDTO medicalRecordDTO)
-            throws IOException {
-        Map<String, Object> jsonData = getJsonData();
-        List<MedicalRecordDTO> medicalRecordsDTO = getMedicalRecordsDTO();
-
-        MedicalRecordDTO newMedicalRecordDTO = medicalRecordDTO;
-        medicalRecordsDTO.add(newMedicalRecordDTO);
         jsonData.put("medicalrecords", medicalRecordsDTO);
 
         ObjectMapper objMapper = new ObjectMapper();
         objMapper.writeValue(new File(sourceFilePath), jsonData);
-        logger.info("Json file updated with new medical record");
-
-        return newMedicalRecordDTO;
-    }
-
-    public MedicalRecordDTO updateMedicalRecord(MedicalRecordDTO medicalRecordDTO)
-            throws IOException {
+        logger.info("Json file updated with modified medical records");
+    }    
+    
+    public void updateFirestations(List<FirestationDTO> firestationsDTO) throws IOException {
         Map<String, Object> jsonData = getJsonData();
-        List<MedicalRecordDTO> medicalRecordsDTO = getMedicalRecordsDTO();
-
-        Optional<MedicalRecordDTO> updatingMedicalRecord = medicalRecordsDTO.stream()
-                .filter(p -> p.getFirstName().equals(medicalRecordDTO.getFirstName()))
-                .filter(p -> p.getLastName().equals(medicalRecordDTO.getLastName()))
-                .findFirst();
-
-        updatingMedicalRecord.ifPresentOrElse(
-                p -> medicalRecordsDTO.add(p),
-                () -> logger.error("This medical record doesn't exist"));
-
-        jsonData.put("medicalrecords", medicalRecordsDTO);
+        jsonData.put("firestations", firestationsDTO);
 
         ObjectMapper objMapper = new ObjectMapper();
         objMapper.writeValue(new File(sourceFilePath), jsonData);
-        logger.info("Json file updated with updated medical record");
-
-        return updatingMedicalRecord.get();
-    }
-
-    public MedicalRecordDTO deleteMedicalRecord(MedicalRecordDTO medicalRecordDTO)
-            throws IOException {
-        Map<String, Object> jsonData = getJsonData();
-        List<MedicalRecordDTO> medicalRecordsDTO = getMedicalRecordsDTO();
-
-        Optional<MedicalRecordDTO> deletingMedicalRecord = medicalRecordsDTO.stream()
-                .filter(p -> p.getFirstName().equals(medicalRecordDTO.getFirstName()))
-                .filter(p -> p.getLastName().equals(medicalRecordDTO.getLastName()))
-                .findFirst();
-
-        deletingMedicalRecord.ifPresentOrElse(
-                p -> medicalRecordsDTO.remove(p),
-                () -> logger.error("This medical record doesn't exist"));
-
-        jsonData.put("medicalrecords", medicalRecordsDTO);
-
-        ObjectMapper objMapper = new ObjectMapper();
-        objMapper.writeValue(new File(sourceFilePath), jsonData);
-        logger.info("Deleted medical record removed from Json file");
-
-        return deletingMedicalRecord.get();
+        logger.info("Json file updated with modified firestations");
     }
 }

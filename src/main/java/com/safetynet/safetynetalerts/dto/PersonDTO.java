@@ -53,5 +53,9 @@ public class PersonDTO {
     }
     public void setEmail(String email) {
         this.email = email;
+    }
+    public static Object builder() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'builder'");
     }  
 }

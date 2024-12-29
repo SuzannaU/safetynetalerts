@@ -44,18 +44,72 @@ public class MedicalRecordService {
         return medicalRecords;
     }
 
-    public int getAge(String birthdate) {
+    private int getAge(String birthdate) {
         LocalDate formattedBirthdate = getFormattedBirthdate(birthdate);
         Period period = Period.between(formattedBirthdate, LocalDate.now());
         return period.getYears();
     }
 
-    public LocalDate getFormattedBirthdate(String birthdate) {
+    private LocalDate getFormattedBirthdate(String birthdate) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         return LocalDate.parse(birthdate, formatter);
     }
 
     public MedicalRecordDTO createMedicalRecordDTO(MedicalRecordDTO medicalRecordDTO)
+            throws IOException {
+        List<MedicalRecordDTO> medicalRecordsDTO = jsonRepository.getMedicalRecordsDTO();
+
+        Optional<MedicalRecordDTO> existingMedicalRecord = medicalRecordsDTO.stream()
+                .filter(m -> m.getFirstName().equals(medicalRecordDTO.getFirstName()))
+                .filter(m -> m.getLastName().equals(medicalRecordDTO.getLastName()))
+                .findFirst();
+
+        if (existingMedicalRecord.isPresent()) {
+            logger.error("This medical record already exists");
+            return null;
+        }
+
+        medicalRecordsDTO.add(medicalRecordDTO);
+        jsonRepository.updateMedicalRecords(medicalRecordsDTO);
+
+        return medicalRecordDTO;
+    }
+
+    public MedicalRecordDTO updateMedicalRecordDTO(MedicalRecordDTO medicalRecordDTO)
+            throws IOException {
+        List<MedicalRecordDTO> medicalRecordsDTO = jsonRepository.getMedicalRecordsDTO();
+
+        Optional<MedicalRecordDTO> existingMedicalRecord = medicalRecordsDTO.stream()
+                .filter(m -> m.getFirstName().equals(medicalRecordDTO.getFirstName()))
+                .filter(m -> m.getLastName().equals(medicalRecordDTO.getLastName()))
+                .findFirst();
+
+        if (existingMedicalRecord.isEmpty()) {
+            logger.error("This medical record doesn't exist");
+            return null;
+        }
+
+        MedicalRecordDTO updatedMedicalRecord = new MedicalRecordDTO();
+        updatedMedicalRecord.setFirstName(medicalRecordDTO.getFirstName());
+        updatedMedicalRecord.setLastName(medicalRecordDTO.getLastName());
+        updatedMedicalRecord.setBirthdate(
+                Optional.ofNullable(medicalRecordDTO.getBirthdate())
+                        .orElse(existingMedicalRecord.get().getBirthdate()));
+        updatedMedicalRecord.setAllergies(
+                Optional.ofNullable(medicalRecordDTO.getAllergies())
+                        .orElse(existingMedicalRecord.get().getAllergies()));
+        updatedMedicalRecord.setMedications(
+                Optional.ofNullable(medicalRecordDTO.getMedications())
+                        .orElse(existingMedicalRecord.get().getMedications()));
+
+        medicalRecordsDTO.remove(existingMedicalRecord.get());
+        medicalRecordsDTO.add(updatedMedicalRecord);
+        jsonRepository.updateMedicalRecords(medicalRecordsDTO);
+
+        return updatedMedicalRecord;
+    }
+
+    public MedicalRecordDTO deleteMedicalRecordDTO(MedicalRecordDTO medicalRecordDTO)
             throws IOException {
         List<MedicalRecordDTO> medicalRecords = jsonRepository.getMedicalRecordsDTO();
 
@@ -64,52 +118,14 @@ public class MedicalRecordService {
                 .filter(m -> m.getLastName().equals(medicalRecordDTO.getLastName()))
                 .findFirst();
 
-        MedicalRecordDTO savedMedicalRecord = new MedicalRecordDTO();
-        if (existingMedicalRecord.isPresent()) {
-            savedMedicalRecord = null;
-            logger.error("This medical record already exists");
-        } else {
-            savedMedicalRecord = jsonRepository.createMedicalRecord(medicalRecordDTO);
-        }
-
-        return savedMedicalRecord;
-    }
-
-    public MedicalRecordDTO updateMedicalRecordDTO(MedicalRecordDTO medicalRecordDTO) throws IOException {
-        List<MedicalRecordDTO> medicalRecords = jsonRepository.getMedicalRecordsDTO();
-
-        Optional<MedicalRecordDTO> existingMedicalRecord = medicalRecords.stream()
-                .filter(m -> m.getFirstName().equals(medicalRecordDTO.getFirstName()))
-                .filter(m -> m.getLastName().equals(medicalRecordDTO.getLastName()))
-                .findFirst();
-
-                MedicalRecordDTO updatedPerson = new MedicalRecordDTO();
-        if (existingMedicalRecord.isPresent()) {
-            updatedPerson = jsonRepository.updateMedicalRecord(medicalRecordDTO);
-        } else {
-            updatedPerson = null;
+        if (existingMedicalRecord.isEmpty()) {
             logger.error("This medical record doesn't exist");
+            return null;
         }
 
-        return updatedPerson;
-    }
+        medicalRecords.remove(existingMedicalRecord.get());
+        jsonRepository.updateMedicalRecords(medicalRecords);
 
-    public MedicalRecordDTO deleteMedicalRecordDTO(MedicalRecordDTO medicalRecordDTO) throws IOException {
-        List<MedicalRecordDTO> medicalRecords = jsonRepository.getMedicalRecordsDTO();
-
-        Optional<MedicalRecordDTO> existingMedicalRecord = medicalRecords.stream()
-                .filter(m -> m.getFirstName().equals(medicalRecordDTO.getFirstName()))
-                .filter(m -> m.getLastName().equals(medicalRecordDTO.getLastName()))
-                .findFirst();
-
-                MedicalRecordDTO deletedPerson = new MedicalRecordDTO();
-        if (existingMedicalRecord.isPresent()) {
-            deletedPerson = jsonRepository.deleteMedicalRecord(medicalRecordDTO);
-        } else {
-            deletedPerson = null;
-            logger.error("This medical record doesn't exist");
-        }
-
-        return deletedPerson;
+        return existingMedicalRecord.get();
     }
 }
