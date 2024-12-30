@@ -15,24 +15,28 @@ import com.safetynet.safetynetalerts.dto.PersonDTO;
 import com.safetynet.safetynetalerts.model.Firestation;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
 import com.safetynet.safetynetalerts.model.Person;
-import com.safetynet.safetynetalerts.repository.JsonRepository;
+import com.safetynet.safetynetalerts.repository.JsonReadingRepository;
+import com.safetynet.safetynetalerts.repository.JsonWritingRepository;
 
 @Service
 public class PersonService {
     private static final Logger logger = LoggerFactory.getLogger(PersonService.class);
-    JsonRepository jsonRepository;
+    JsonReadingRepository jsonReadingRepository;
+    JsonWritingRepository jsonWritingRepository;
     MedicalRecordService medicalRecordService;
     FirestationService firestationService;
 
-    public PersonService(JsonRepository jsonRepository, MedicalRecordService medicalRecordService,
+    public PersonService(JsonReadingRepository jsonReadingRepository,
+            JsonWritingRepository jsonWritingRepository, MedicalRecordService medicalRecordService,
             FirestationService firestationService) {
-        this.jsonRepository = jsonRepository;
+        this.jsonReadingRepository = jsonReadingRepository;
+        this.jsonWritingRepository = jsonWritingRepository;
         this.medicalRecordService = medicalRecordService;
         this.firestationService = firestationService;
     }
 
     public List<Person> getPersons() throws IOException {
-        List<PersonDTO> personsDTO = jsonRepository.getPersonsDTO();
+        List<PersonDTO> personsDTO = jsonReadingRepository.getPersonsDTO();
         List<Person> persons = new ArrayList<Person>();
 
         try {
@@ -137,7 +141,7 @@ public class PersonService {
     }
 
     public PersonDTO createPersonDTO(PersonDTO personDTO) throws IOException {
-        List<PersonDTO> personsDTO = jsonRepository.getPersonsDTO();
+        List<PersonDTO> personsDTO = jsonReadingRepository.getPersonsDTO();
 
         Optional<PersonDTO> existingPerson = personsDTO.stream()
                 .filter(p -> p.getFirstName().equals(personDTO.getFirstName()))
@@ -150,13 +154,13 @@ public class PersonService {
         }
 
         personsDTO.add(personDTO);
-        jsonRepository.updatePersons(personsDTO);
+        jsonWritingRepository.updatePersons(personsDTO);
 
         return personDTO;
     }
 
     public PersonDTO updatePersonDTO(PersonDTO personDTO) throws IOException {
-        List<PersonDTO> personsDTO = jsonRepository.getPersonsDTO();
+        List<PersonDTO> personsDTO = jsonReadingRepository.getPersonsDTO();
 
         Optional<PersonDTO> existingPerson = personsDTO.stream()
                 .filter(p -> p.getFirstName().equals(personDTO.getFirstName()))
@@ -189,13 +193,13 @@ public class PersonService {
 
         personsDTO.remove(existingPerson.get());
         personsDTO.add(updatedPerson);
-        jsonRepository.updatePersons(personsDTO);
+        jsonWritingRepository.updatePersons(personsDTO);
 
         return updatedPerson;
     }
 
     public PersonDTO deletePersonDTO(PersonDTO personDTO) throws IOException {
-        List<PersonDTO> personsDTO = jsonRepository.getPersonsDTO();
+        List<PersonDTO> personsDTO = jsonReadingRepository.getPersonsDTO();
 
         Optional<PersonDTO> existingPerson = personsDTO.stream()
                 .filter(p -> p.getFirstName().equals(personDTO.getFirstName()))
@@ -208,7 +212,7 @@ public class PersonService {
         }
 
         personsDTO.remove(existingPerson.get());
-        jsonRepository.updatePersons(personsDTO);
+        jsonWritingRepository.updatePersons(personsDTO);
 
         return existingPerson.get();
     }

@@ -39,6 +39,7 @@ public class Mapper {
     public PersonForFire toPersonForFire(Person person) {
         PersonForFire personForFire = new PersonForFire();
         personForFire.setLastName(person.getLastName());
+        personForFire.setAge(person.getAge());
         personForFire.setPhone(person.getPhone());
         personForFire.setMedications(person.getMedications());
         personForFire.setAllergies(person.getAllergies());

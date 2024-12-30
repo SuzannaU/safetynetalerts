@@ -12,15 +12,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.safetynet.safetynetalerts.dto.FirestationDTO;
-import com.safetynet.safetynetalerts.repository.JsonRepository;
 import com.safetynet.safetynetalerts.service.FirestationService;
 
 @RestController
 public class FirestationDataController {
     private static final Logger logger = LoggerFactory.getLogger(FirestationDataController.class);
-
-    @Autowired
-    JsonRepository jsonRepository;
 
     @Autowired
     FirestationService firestationService;
@@ -34,7 +30,7 @@ public class FirestationDataController {
         try {
             newFirestationDTO = firestationService.createFirestationDTO(firestationDTO);
         } catch (IOException e) {
-            logger.error("Error retrieving data");
+            logger.error("Error retrieving/writing data");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
@@ -54,7 +50,7 @@ public class FirestationDataController {
         try {
             updatedFirestationDTO = firestationService.updateFirestationDTO(firestationDTO);
         } catch (IOException e) {
-            logger.error("Error retrieving data");
+            logger.error("Error retrieving/writing data");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
@@ -74,7 +70,7 @@ public class FirestationDataController {
         try {
             deletedFirestationDTO = firestationService.deletePersonDTO(firestationDTO);
         } catch (IOException e) {
-            logger.error("Error retrieving data");
+            logger.error("Error retrieving/writing data");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 

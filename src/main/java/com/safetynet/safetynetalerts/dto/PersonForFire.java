@@ -5,6 +5,7 @@ import java.util.List;
 public class PersonForFire {
     private String lastName;
     private String phone;
+    private int age;
     private List<String> medications;
     private List<String> allergies;
 
@@ -31,6 +32,12 @@ public class PersonForFire {
     }
     public void setAllergies(List<String> allergies) {
         this.allergies = allergies;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
     }
 
     

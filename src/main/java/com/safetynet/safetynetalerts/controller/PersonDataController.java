@@ -2,7 +2,6 @@ package com.safetynet.safetynetalerts.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 import com.safetynet.safetynetalerts.dto.PersonDTO;
-import com.safetynet.safetynetalerts.repository.JsonRepository;
 import com.safetynet.safetynetalerts.service.PersonService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,9 +19,6 @@ public class PersonDataController {
     private static final Logger logger = LoggerFactory.getLogger(PersonDataController.class);
 
     @Autowired
-    JsonRepository jsonRepository;
-
-    @Autowired
     PersonService personService;
 
     @PostMapping("/person")
@@ -33,7 +29,7 @@ public class PersonDataController {
         try {
             newPersonDTO = personService.createPersonDTO(personDTO);
         } catch (IOException e) {
-            logger.error("Error retrieving data");
+            logger.error("Error retrieving/writing data");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
@@ -52,7 +48,7 @@ public class PersonDataController {
         try {
             updatedPersonDTO = personService.updatePersonDTO(personDTO);
         } catch (IOException e) {
-            logger.error("Error retrieving data");
+            logger.error("Error retrieving/writing data");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
@@ -71,7 +67,7 @@ public class PersonDataController {
         try {
             deletedPersonDTO = personService.deletePersonDTO(personDTO);
         } catch (IOException e) {
-            logger.error("Error retrieving data");
+            logger.error("Error retrieving/writing data");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.safetynet.safetynetalerts.dto.*;
-import com.safetynet.safetynetalerts.repository.JsonRepository;
 import com.safetynet.safetynetalerts.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,8 +21,6 @@ import org.slf4j.LoggerFactory;
 public class WebAppController {
         private static final Logger logger = LoggerFactory.getLogger(WebAppController.class);
 
-        @Autowired
-        JsonRepository jsonRepository;
         @Autowired
         PersonService personService;
         @Autowired

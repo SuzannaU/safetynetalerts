@@ -17,7 +17,7 @@ import com.safetynet.safetynetalerts.dto.PersonForStation;
 import com.safetynet.safetynetalerts.model.Firestation;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
 import com.safetynet.safetynetalerts.model.Person;
-import com.safetynet.safetynetalerts.repository.JsonRepository;
+import com.safetynet.safetynetalerts.repository.*;
 import com.safetynet.safetynetalerts.service.FirestationService;
 import com.safetynet.safetynetalerts.service.MedicalRecordService;
 import com.safetynet.safetynetalerts.service.PersonService;
@@ -29,26 +29,23 @@ public class SafetynetalertsApplication {
 	public static void main(String[] args) throws StreamWriteException, DatabindException, IOException {
 		SpringApplication.run(SafetynetalertsApplication.class, args);
 
-		JsonRepository jsonRepository = new JsonRepository();
+		JsonWritingRepository jsonWritingRepository = new JsonWritingRepository();
+		JsonReadingRepository jsonReadingRepository = new JsonReadingRepository();
+		MedicalRecordService medicalRecordService = new MedicalRecordService(jsonReadingRepository, jsonWritingRepository);
+		FirestationService firestationService = new FirestationService(jsonReadingRepository, jsonWritingRepository);
+		PersonService personService = new PersonService(jsonReadingRepository, jsonWritingRepository, medicalRecordService,firestationService);
 
-		/*MedicalRecordService medicalRecordService = new MedicalRecordService(jsonRepository);
-		FirestationService firestationService = new FirestationService(jsonRepository);
-		PersonService personService = new PersonService(jsonRepository, medicalRecordService,firestationService);
-		List<Person> persons = personService.getPersons();
+		/*List<Person> persons = personService.getPersons();
 		for (Person person : persons) {
 			System.out.println(person.getPersonId() + ", " + person.getAge()
 					+ ", " + person.getMedications() + ", " + person.getFirestationId());
 		}*/
 
-
-		/*MedicalRecordService medicalRecordService = new MedicalRecordService(jsonRepository);
-		FirestationService firestationService = new FirestationService(jsonRepository);
-		PersonService personService = new PersonService(jsonRepository, medicalRecordService, firestationService);
-		List<Person> persons = personService.getPersons();
+		/*List<Person> persons = personService.getPersons();
 		List<Person> personsForStation = persons.stream()
-                .filter(person -> person.getFirestationId() == 4)
+                .filter(person -> person.getFirestationId() == 1)
                 .collect(Collectors.toList());
-		for (Person person : persons) {
+		for (Person person : personsForStation) {
 			System.out.print(person.getAddress() + ", ");
 			System.out.print(person.getPersonId() + ", ");
 			System.out.print(person.getFirestationId() + ", ");
@@ -56,19 +53,17 @@ public class SafetynetalertsApplication {
 		}*/
 
 		
-		/*List<MedicalRecordDTO> recordsDTO = jsonRepository.getMedicalRecordsDTO();
+		/*List<MedicalRecordDTO> recordsDTO = jsonReadingRepository.getMedicalRecordsDTO();
 		for (MedicalRecordDTO recordDTO : recordsDTO) {
 			System.out.println(recordDTO.getBirthdate() + ", " + recordDTO.getAllergies() + ", " + recordDTO.getMedications());
-		} */
+		}*/
 
-		/*MedicalRecordService medicalRecordService = new MedicalRecordService(jsonRepository); 
-		List<MedicalRecord>	medicalRecords = medicalRecordService.getMedicalRecords(); 
+		/*List<MedicalRecord>	medicalRecords = medicalRecordService.getMedicalRecords(); 
 		for (MedicalRecord medicalRecord : medicalRecords) { 
 			System.out.println(medicalRecord.getAge() + ", " + medicalRecord.getPersonId() + ", " + medicalRecord.getMedications() + ", " + medicalRecord.getAllergies());
 		}*/
 		
-		/*FirestationService firestationService = new FirestationService(jsonRepository);
-		Set<Firestation> firestations = firestationService.getFirestations(); 
+		/*Set<Firestation> firestations = firestationService.getFirestations(); 
 		for (Firestation firestation : firestations){ 
 			System.out.println(firestation.getFirestationId() + ", " + firestation.getAddresses()); 
 		}*/

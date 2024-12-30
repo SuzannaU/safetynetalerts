@@ -11,21 +11,23 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import com.safetynet.safetynetalerts.dto.FirestationDTO;
 import com.safetynet.safetynetalerts.model.Firestation;
-import com.safetynet.safetynetalerts.repository.JsonRepository;
+import com.safetynet.safetynetalerts.repository.*;
 
 @Service
 public class FirestationService {
     private static final Logger logger = LoggerFactory.getLogger(FirestationService.class);
-    JsonRepository jsonRepository;
+    JsonReadingRepository jsonReadingRepository;
+    JsonWritingRepository jsonWritingRepository;
 
-    public FirestationService(JsonRepository jsonRepository) {
-        this.jsonRepository = jsonRepository;
+    public FirestationService(JsonReadingRepository jsonReadingRepository, JsonWritingRepository jsonWritingRepository) {
+        this.jsonReadingRepository = jsonReadingRepository;
+        this.jsonWritingRepository = jsonWritingRepository;
     }
 
     public Set<Firestation> getFirestations() throws IOException {
 
         Set<Firestation> firestations = new LinkedHashSet<Firestation>();
-        List<FirestationDTO> firestationsDTO = jsonRepository.getFirestationsDTO();
+        List<FirestationDTO> firestationsDTO = jsonReadingRepository.getFirestationsDTO();
 
         Set<Integer> firestationIds = firestationsDTO
                 .stream()
@@ -45,7 +47,7 @@ public class FirestationService {
 
     private Set<String> getAddresses(int firestationId) throws IOException {
 
-        List<FirestationDTO> firestationsDTO = jsonRepository.getFirestationsDTO();
+        List<FirestationDTO> firestationsDTO = jsonReadingRepository.getFirestationsDTO();
         Set<String> addresses = firestationsDTO
                 .stream()
                 .filter(firestationDTO -> Integer
@@ -57,7 +59,7 @@ public class FirestationService {
     }
 
     public FirestationDTO createFirestationDTO(FirestationDTO firestationDTO) throws IOException {
-        List<FirestationDTO> firestations = jsonRepository.getFirestationsDTO();
+        List<FirestationDTO> firestations = jsonReadingRepository.getFirestationsDTO();
 
         Optional<FirestationDTO> existingFirestation = firestations.stream()
                 .filter(f -> f.getAddress().equals(firestationDTO.getAddress()))
@@ -75,13 +77,13 @@ public class FirestationService {
         }
 
         firestations.add(firestationDTO);
-        jsonRepository.updateFirestations(firestations);
+        jsonWritingRepository.updateFirestations(firestations);
 
         return firestationDTO;
     }
 
     public FirestationDTO updateFirestationDTO(FirestationDTO firestationDTO) throws IOException {
-        List<FirestationDTO> firestations = jsonRepository.getFirestationsDTO();
+        List<FirestationDTO> firestations = jsonReadingRepository.getFirestationsDTO();
 
         Optional<FirestationDTO> existingFirestation = firestations.stream()
                 .filter(f -> f.getAddress().equals(firestationDTO.getAddress()))
@@ -104,13 +106,13 @@ public class FirestationService {
 
         firestations.remove(existingFirestation.get());
         firestations.add(updatedFirestation);
-        jsonRepository.updateFirestations(firestations);
+        jsonWritingRepository.updateFirestations(firestations);
 
         return firestationDTO;
     }
 
     public FirestationDTO deletePersonDTO(FirestationDTO firestationDTO) throws IOException {
-        List<FirestationDTO> firestations = jsonRepository.getFirestationsDTO();
+        List<FirestationDTO> firestations = jsonReadingRepository.getFirestationsDTO();
 
         Optional<FirestationDTO> existingFirestation = firestations.stream()
                 .filter(f -> f.getFirestationId().equals(firestationDTO.getFirestationId()))
@@ -123,7 +125,7 @@ public class FirestationService {
         }
 
         firestations.remove(existingFirestation.get());
-        jsonRepository.updateFirestations(firestations);
+        jsonWritingRepository.updateFirestations(firestations);
 
         return existingFirestation.get();
     }

@@ -12,15 +12,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.safetynet.safetynetalerts.dto.MedicalRecordDTO;
-import com.safetynet.safetynetalerts.repository.JsonRepository;
 import com.safetynet.safetynetalerts.service.MedicalRecordService;
 
 @RestController
 public class MedicalRecordDataController {
     private static final Logger logger = LoggerFactory.getLogger(MedicalRecordDataController.class);
-
-    @Autowired
-    JsonRepository jsonRepository;
 
     @Autowired
     MedicalRecordService medicalRecordService;
@@ -33,7 +29,7 @@ public class MedicalRecordDataController {
         try {
             newMedicalRecordDTO = medicalRecordService.createMedicalRecordDTO(medicalRecordDTO);
         } catch (IOException e) {
-            logger.error("Error retrieving data");
+            logger.error("Error retrieving/writing data");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
@@ -52,7 +48,7 @@ public class MedicalRecordDataController {
         try {
             updatedMedicalRecordDTO = medicalRecordService.updateMedicalRecordDTO(medicalRecordDTO);
         } catch (IOException e) {
-            logger.error("Error retrieving data");
+            logger.error("Error retrieving/writing data");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
@@ -71,7 +67,7 @@ public class MedicalRecordDataController {
         try {
             deletedMedicalRecordDTO = medicalRecordService.deleteMedicalRecordDTO(medicalRecordDTO);
         } catch (IOException e) {
-            logger.error("Error retrieving data");
+            logger.error("Error retrieving/writing data");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 

@@ -12,21 +12,24 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import com.safetynet.safetynetalerts.dto.MedicalRecordDTO;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
-import com.safetynet.safetynetalerts.repository.JsonRepository;
+import com.safetynet.safetynetalerts.repository.JsonReadingRepository;
+import com.safetynet.safetynetalerts.repository.JsonWritingRepository;
 
 @Service
 public class MedicalRecordService {
     private static final Logger logger = LoggerFactory.getLogger(MedicalRecordService.class);
-    JsonRepository jsonRepository;
+    JsonReadingRepository jsonReadingRepository;
+    JsonWritingRepository jsonWritingRepository;
 
-    public MedicalRecordService(JsonRepository jsonRepository) {
-        this.jsonRepository = jsonRepository;
+    public MedicalRecordService(JsonReadingRepository jsonReadingRepository, JsonWritingRepository jsonWritingRepository) {
+        this.jsonReadingRepository = jsonReadingRepository;
+        this.jsonWritingRepository = jsonWritingRepository;
     }
 
     public List<MedicalRecord> getMedicalRecords() throws IOException {
         List<MedicalRecord> medicalRecords = new ArrayList<MedicalRecord>();
         List<MedicalRecordDTO> medicalRecordsDTO =
-                jsonRepository.getMedicalRecordsDTO();
+        jsonReadingRepository.getMedicalRecordsDTO();
 
         for (MedicalRecordDTO medicalRecordDTO : medicalRecordsDTO) {
 
@@ -57,7 +60,7 @@ public class MedicalRecordService {
 
     public MedicalRecordDTO createMedicalRecordDTO(MedicalRecordDTO medicalRecordDTO)
             throws IOException {
-        List<MedicalRecordDTO> medicalRecordsDTO = jsonRepository.getMedicalRecordsDTO();
+        List<MedicalRecordDTO> medicalRecordsDTO = jsonReadingRepository.getMedicalRecordsDTO();
 
         Optional<MedicalRecordDTO> existingMedicalRecord = medicalRecordsDTO.stream()
                 .filter(m -> m.getFirstName().equals(medicalRecordDTO.getFirstName()))
@@ -70,14 +73,14 @@ public class MedicalRecordService {
         }
 
         medicalRecordsDTO.add(medicalRecordDTO);
-        jsonRepository.updateMedicalRecords(medicalRecordsDTO);
+        jsonWritingRepository.updateMedicalRecords(medicalRecordsDTO);
 
         return medicalRecordDTO;
     }
 
     public MedicalRecordDTO updateMedicalRecordDTO(MedicalRecordDTO medicalRecordDTO)
             throws IOException {
-        List<MedicalRecordDTO> medicalRecordsDTO = jsonRepository.getMedicalRecordsDTO();
+        List<MedicalRecordDTO> medicalRecordsDTO = jsonReadingRepository.getMedicalRecordsDTO();
 
         Optional<MedicalRecordDTO> existingMedicalRecord = medicalRecordsDTO.stream()
                 .filter(m -> m.getFirstName().equals(medicalRecordDTO.getFirstName()))
@@ -104,14 +107,14 @@ public class MedicalRecordService {
 
         medicalRecordsDTO.remove(existingMedicalRecord.get());
         medicalRecordsDTO.add(updatedMedicalRecord);
-        jsonRepository.updateMedicalRecords(medicalRecordsDTO);
+        jsonWritingRepository.updateMedicalRecords(medicalRecordsDTO);
 
         return updatedMedicalRecord;
     }
 
     public MedicalRecordDTO deleteMedicalRecordDTO(MedicalRecordDTO medicalRecordDTO)
             throws IOException {
-        List<MedicalRecordDTO> medicalRecords = jsonRepository.getMedicalRecordsDTO();
+        List<MedicalRecordDTO> medicalRecords = jsonReadingRepository.getMedicalRecordsDTO();
 
         Optional<MedicalRecordDTO> existingMedicalRecord = medicalRecords.stream()
                 .filter(m -> m.getFirstName().equals(medicalRecordDTO.getFirstName()))
@@ -124,7 +127,7 @@ public class MedicalRecordService {
         }
 
         medicalRecords.remove(existingMedicalRecord.get());
-        jsonRepository.updateMedicalRecords(medicalRecords);
+        jsonWritingRepository.updateMedicalRecords(medicalRecords);
 
         return existingMedicalRecord.get();
     }
