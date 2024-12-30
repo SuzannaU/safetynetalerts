@@ -16,7 +16,7 @@ import com.safetynet.safetynetalerts.dto.PersonDTO;
 @Repository
 public class JsonWritingRepository {
     private static final Logger logger = LoggerFactory.getLogger(JsonWritingRepository.class);
-    private String sourceFilePath = "src/main/resources/datatest.json";
+    private String sourceFilePath = "src/main/resources/data.json";
 
     public void updatePersons(List<PersonDTO> personsDTO) throws IOException {
         Map<String, Object> jsonData = getJsonData();

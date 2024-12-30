@@ -31,13 +31,13 @@ public class ChildAlertDataService {
 
         List<ChildForChildAlert> childrenForChildAlert = persons.stream()
                 .filter(p -> p.getAddress().equals(address))
-                .filter(p -> p.getAge() <= 18)
+                .filter(p -> p.getCategory().equals("Child"))
                 .map(p -> mapper.toChildForChildAlert(p))
                 .collect(Collectors.toList());
 
         List<AdultForChildAlert> adultsForChildAlert = persons.stream()
                 .filter(p -> p.getAddress().equals(address))
-                .filter(p -> p.getAge() > 18)
+                .filter(p -> p.getCategory().equals("Adult"))
                 .map(p -> mapper.toAdultForChildAlert(p))
                 .collect(Collectors.toList());
 

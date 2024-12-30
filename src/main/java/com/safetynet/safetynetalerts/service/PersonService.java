@@ -38,6 +38,8 @@ public class PersonService {
     public List<Person> getPersons() throws IOException {
         List<PersonDTO> personsDTO = jsonReadingRepository.getPersonsDTO();
         List<Person> persons = new ArrayList<Person>();
+        List<MedicalRecord> medicalRecords = medicalRecordService.getMedicalRecords();
+        Set<Firestation> firestations = firestationService.getFirestations();
 
         try {
             for (PersonDTO personDTO : personsDTO) {
@@ -50,16 +52,15 @@ public class PersonService {
                 person.setPhone(personDTO.getPhone());
                 person.setEmail(personDTO.getEmail());
                 person.setPersonId(personDTO.getFirstName().concat(personDTO.getLastName()));
-                person.setBirthdate(getBirthdate(person.getPersonId()));
-                person.setAge(getAge(person.getPersonId()));
-                if (person.getAge() <= 18) {
+                person.setBirthdate(getBirthdate(person.getPersonId(), medicalRecords));
+                person.setAge(getAge(person.getPersonId(), medicalRecords));
+                if (person.getAge() <= 18)
                     person.setCategory("Child");
-                } else {
+                else
                     person.setCategory("Adult");
-                } ;
-                person.setMedications(getMedications(person.getPersonId()));
-                person.setAllergies(getAllergies(person.getPersonId()));
-                person.setFirestationId(getFirestationId(person.getAddress()));
+                person.setMedications(getMedications(person.getPersonId(), medicalRecords));
+                person.setAllergies(getAllergies(person.getPersonId(), medicalRecords));
+                person.setFirestationId(getFirestationId(person.getAddress(), firestations));
 
                 persons.add(person);
             }
@@ -70,10 +71,8 @@ public class PersonService {
         return persons;
     }
 
-    private LocalDate getBirthdate(String personId) throws IOException {
-        List<MedicalRecord> medicalRecords = medicalRecordService.getMedicalRecords();
-        Optional<LocalDate> birthdate = medicalRecords
-                .stream()
+    private LocalDate getBirthdate(String personId, List<MedicalRecord> medicalRecords) {
+        Optional<LocalDate> birthdate = medicalRecords.stream()
                 .filter(medicalRecord -> medicalRecord.getPersonId().equals(personId))
                 .map(medicalRecord -> medicalRecord.getBirthdate())
                 .findFirst();
@@ -86,10 +85,8 @@ public class PersonService {
         }
     }
 
-    private int getAge(String personId) throws IOException {
-        List<MedicalRecord> medicalRecords = medicalRecordService.getMedicalRecords();
-        Optional<Integer> age = medicalRecords
-                .stream()
+    private int getAge(String personId, List<MedicalRecord> medicalRecords) {
+        Optional<Integer> age = medicalRecords.stream()
                 .filter(medicalRecord -> medicalRecord.getPersonId().equals(personId))
                 .map(medicalRecord -> medicalRecord.getAge())
                 .findFirst();
@@ -102,9 +99,7 @@ public class PersonService {
         }
     }
 
-    private List<String> getMedications(String personId) throws IOException {
-
-        List<MedicalRecord> medicalRecords = medicalRecordService.getMedicalRecords();
+    private List<String> getMedications(String personId, List<MedicalRecord> medicalRecords) {
         List<String> medications = medicalRecords.stream()
                 .filter(medicalRecord -> medicalRecord.getPersonId().equals(personId))
                 .map(medicalRecord -> medicalRecord.getMedications())
@@ -114,8 +109,7 @@ public class PersonService {
         return medications;
     }
 
-    private List<String> getAllergies(String personId) throws IOException {
-        List<MedicalRecord> medicalRecords = medicalRecordService.getMedicalRecords();
+    private List<String> getAllergies(String personId, List<MedicalRecord> medicalRecords) {
         List<String> allergies = medicalRecords.stream()
                 .filter(medicalRecord -> medicalRecord.getPersonId().equals(personId))
                 .map(medicalRecord -> medicalRecord.getAllergies())
@@ -125,8 +119,7 @@ public class PersonService {
         return allergies;
     }
 
-    private int getFirestationId(String address) throws IOException {
-        Set<Firestation> firestations = firestationService.getFirestations();
+    private int getFirestationId(String address, Set<Firestation> firestations) {
         Optional<Integer> firestationId = firestations.stream()
                 .filter(firestation -> firestation.getAddresses().contains(address))
                 .map(firestation -> firestation.getFirestationId())

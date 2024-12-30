@@ -16,7 +16,7 @@ import com.safetynet.safetynetalerts.dto.PersonDTO;
 @Repository
 public class JsonReadingRepository {
     private static final Logger logger = LoggerFactory.getLogger(JsonReadingRepository.class);
-    private String sourceFilePath = "src/main/resources/datatest.json";
+    private String sourceFilePath = "src/main/resources/data.json";
 
     private JsonNode getNode(String nodeName) throws IOException {
         JsonNode node = null;

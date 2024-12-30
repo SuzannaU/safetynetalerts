@@ -19,7 +19,8 @@ public class FirestationService {
     JsonReadingRepository jsonReadingRepository;
     JsonWritingRepository jsonWritingRepository;
 
-    public FirestationService(JsonReadingRepository jsonReadingRepository, JsonWritingRepository jsonWritingRepository) {
+    public FirestationService(JsonReadingRepository jsonReadingRepository,
+            JsonWritingRepository jsonWritingRepository) {
         this.jsonReadingRepository = jsonReadingRepository;
         this.jsonWritingRepository = jsonWritingRepository;
     }
@@ -37,7 +38,7 @@ public class FirestationService {
         for (int firestationId : firestationIds) {
             Firestation firestation = new Firestation();
             firestation.setFirestationId(firestationId);
-            firestation.setAddresses(getAddresses(firestationId));
+            firestation.setAddresses(getAddresses(firestationId, firestationsDTO));
 
             firestations.add(firestation);
         }
@@ -45,9 +46,7 @@ public class FirestationService {
         return firestations;
     }
 
-    private Set<String> getAddresses(int firestationId) throws IOException {
-
-        List<FirestationDTO> firestationsDTO = jsonReadingRepository.getFirestationsDTO();
+    private Set<String> getAddresses(int firestationId, List<FirestationDTO> firestationsDTO) {
         Set<String> addresses = firestationsDTO
                 .stream()
                 .filter(firestationDTO -> Integer

@@ -39,10 +39,10 @@ public class FirestationDataService {
 
         Long numbOfChildren = persons.stream()
                 .filter(p -> p.getFirestationId() == stationNumber)
-                .filter(p -> p.getAge() <= 18).count();
+                .filter(p -> p.getCategory().equals("Child")).count();
         Long numbOfAdults = persons.stream()
                 .filter(p -> p.getFirestationId() == stationNumber)
-                .filter(p -> p.getAge() > 18).count();
+                .filter(p -> p.getCategory().equals("Adult")).count();
 
         Map<String, Long> residents = new HashMap<>();
         residents.put("children", numbOfChildren);

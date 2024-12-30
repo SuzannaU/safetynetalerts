@@ -35,11 +35,11 @@ public class SafetynetalertsApplication {
 		FirestationService firestationService = new FirestationService(jsonReadingRepository, jsonWritingRepository);
 		PersonService personService = new PersonService(jsonReadingRepository, jsonWritingRepository, medicalRecordService,firestationService);
 
-		/*List<Person> persons = personService.getPersons();
+		List<Person> persons = personService.getPersons();
 		for (Person person : persons) {
-			System.out.println(person.getPersonId() + ", " + person.getAge()
+			System.out.println(person.getPersonId() + ", " + person.getAge() + ", "+person.getCategory()
 					+ ", " + person.getMedications() + ", " + person.getFirestationId());
-		}*/
+		}
 
 		/*List<Person> persons = personService.getPersons();
 		List<Person> personsForStation = persons.stream()

@@ -5839,3 +5839,864 @@ java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because th
 2024-12-30T12:23:20.245+01:00 DEBUG 23480 --- [safetynetalerts] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-12-30T12:23:20.246+01:00 DEBUG 23480 --- [safetynetalerts] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.dto.PersonDTO@4d81f7de]
 2024-12-30T12:23:20.248+01:00 DEBUG 23480 --- [safetynetalerts] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED
+2024-12-30T14:59:20.674+01:00  INFO 19380 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Starting SafetynetalertsApplication using Java 17.0.8 with PID 19380 (C:\Users\eliza\Programmation\Projet5\safetynetalerts\target\classes started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2024-12-30T14:59:20.678+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Running with Spring Boot v3.4.0, Spring v6.2.0
+2024-12-30T14:59:20.679+01:00  INFO 19380 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-12-30T14:59:21.757+01:00  INFO 19380 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-30T14:59:21.773+01:00  INFO 19380 --- [safetynetalerts] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-30T14:59:21.774+01:00  INFO 19380 --- [safetynetalerts] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-30T14:59:21.842+01:00  INFO 19380 --- [safetynetalerts] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-30T14:59:21.843+01:00  INFO 19380 --- [safetynetalerts] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1112 ms
+2024-12-30T14:59:22.115+01:00 DEBUG 19380 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 18 mappings in 'requestMappingHandlerMapping'
+2024-12-30T14:59:22.178+01:00 DEBUG 19380 --- [safetynetalerts] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-30T14:59:22.210+01:00 DEBUG 19380 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-30T14:59:22.267+01:00 DEBUG 19380 --- [safetynetalerts] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-30T14:59:22.344+01:00  INFO 19380 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-30T14:59:22.353+01:00  INFO 19380 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Started SafetynetalertsApplication in 2.156 seconds (process running for 2.444)
+2024-12-30T14:59:22.412+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : personsDTO retrieved
+2024-12-30T14:59:22.416+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.423+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.427+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.431+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.435+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.438+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.441+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.443+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.446+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.449+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.452+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.455+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.458+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.460+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.461+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.464+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.466+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.467+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.470+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.471+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.473+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.475+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.477+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.478+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.480+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.482+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.485+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.486+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.488+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.489+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.491+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.493+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.496+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.498+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.500+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.502+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.505+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.506+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.508+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.509+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.511+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.513+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.516+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.519+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.523+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.525+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.527+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.528+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.531+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.532+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.534+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.537+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.539+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.541+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.543+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.544+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.546+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.547+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.549+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.549+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.552+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.562+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.569+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.571+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.578+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.580+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.581+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T14:59:22.583+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.584+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.587+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.588+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.590+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.593+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.600+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.601+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.603+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.605+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.606+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T14:59:22.608+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.609+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.610+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.611+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.614+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.616+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.618+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.620+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.622+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.624+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.624+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T14:59:22.626+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.626+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.628+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.628+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.630+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.632+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.635+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.636+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.638+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.640+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.640+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T14:59:22.642+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.642+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.643+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.644+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.645+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.646+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.648+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.650+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.652+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.653+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.654+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T14:59:22.655+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.656+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.657+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.657+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.658+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.659+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.661+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.662+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.663+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.664+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.665+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T14:59:22.666+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.666+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.668+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.669+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.670+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.671+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.673+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.674+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.675+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.676+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.676+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T14:59:22.677+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.677+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.678+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.679+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.680+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.682+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.683+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.685+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.686+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.687+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.687+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T14:59:22.688+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.688+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.690+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.690+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.691+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.692+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.693+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.694+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.695+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.696+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.697+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T14:59:22.698+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.698+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.699+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.700+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.701+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.703+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.704+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.706+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.707+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.708+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.708+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T14:59:22.709+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.710+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.711+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.711+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.712+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.714+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.715+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.716+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.718+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.719+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.720+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T14:59:22.721+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.721+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.723+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.723+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.724+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.726+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.728+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.730+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.732+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.733+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.733+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T14:59:22.735+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.735+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.737+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.737+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.738+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.740+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.741+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.743+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.744+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.744+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.745+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T14:59:22.746+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.747+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.748+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.748+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.750+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.752+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.754+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.755+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.756+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.758+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.758+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T14:59:22.760+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.760+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.761+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.762+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.763+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.764+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.766+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.770+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.772+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.773+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.774+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T14:59:22.775+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.776+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T14:59:22.777+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.777+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T14:59:22.779+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.780+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.782+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.783+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.784+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.786+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.786+01:00 ERROR 19380 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T14:59:22.787+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.788+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.790+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.792+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T14:59:22.794+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.795+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.796+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T14:59:22.797+01:00 DEBUG 19380 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:06.689+01:00  INFO 5012 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Starting SafetynetalertsApplication using Java 17.0.8 with PID 5012 (C:\Users\eliza\Programmation\Projet5\safetynetalerts\target\classes started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2024-12-30T15:00:06.692+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Running with Spring Boot v3.4.0, Spring v6.2.0
+2024-12-30T15:00:06.694+01:00  INFO 5012 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-12-30T15:00:07.665+01:00  INFO 5012 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-30T15:00:07.681+01:00  INFO 5012 --- [safetynetalerts] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-30T15:00:07.681+01:00  INFO 5012 --- [safetynetalerts] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-30T15:00:07.740+01:00  INFO 5012 --- [safetynetalerts] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-30T15:00:07.741+01:00  INFO 5012 --- [safetynetalerts] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 998 ms
+2024-12-30T15:00:07.971+01:00 DEBUG 5012 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 18 mappings in 'requestMappingHandlerMapping'
+2024-12-30T15:00:08.045+01:00 DEBUG 5012 --- [safetynetalerts] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-30T15:00:08.077+01:00 DEBUG 5012 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-30T15:00:08.129+01:00 DEBUG 5012 --- [safetynetalerts] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-30T15:00:08.212+01:00  INFO 5012 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-30T15:00:08.223+01:00  INFO 5012 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Started SafetynetalertsApplication in 1.997 seconds (process running for 2.257)
+2024-12-30T15:00:08.307+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : personsDTO retrieved
+2024-12-30T15:00:08.314+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.319+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.324+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.328+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.333+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.338+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.342+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.345+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.349+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.353+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.355+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.358+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.360+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.362+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.364+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.367+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.369+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.370+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.372+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.372+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.374+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.376+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.380+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.382+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.386+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.388+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.391+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.392+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.395+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.396+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.398+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.402+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.404+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.406+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.408+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.411+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.414+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.415+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.417+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.418+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.421+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.423+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.426+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.429+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.431+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.433+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.436+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.437+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.439+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.439+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.441+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.444+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.447+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.449+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.451+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.453+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.454+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.455+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.456+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.456+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.458+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.460+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.461+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.463+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.465+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.467+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.467+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T15:00:08.469+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.470+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.472+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.472+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.474+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.475+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.477+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.478+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.480+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.482+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.482+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T15:00:08.484+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.485+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.486+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.487+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.488+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.490+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.492+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.493+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.494+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.496+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.496+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T15:00:08.497+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.498+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.500+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.501+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.502+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.504+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.505+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.507+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.509+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.510+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.510+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T15:00:08.512+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.512+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.514+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.515+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.517+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.519+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.521+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.523+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.524+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.526+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.526+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T15:00:08.527+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.528+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.529+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.530+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.532+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.534+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.537+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.539+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.541+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.543+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.544+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T15:00:08.545+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.546+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.548+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.549+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.550+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.553+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.555+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.556+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.558+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.559+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.559+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T15:00:08.561+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.561+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.562+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.563+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.564+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.567+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.569+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.570+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.571+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.572+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.573+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T15:00:08.574+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.574+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.576+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.576+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.577+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.579+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.581+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.582+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.584+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.586+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.587+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T15:00:08.589+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.590+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.591+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.592+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.593+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.595+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.597+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.599+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.601+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.603+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.604+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T15:00:08.605+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.605+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.607+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.607+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.609+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.610+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.612+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.613+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.614+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.616+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.617+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T15:00:08.619+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.620+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.622+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.622+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.624+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.625+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.627+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.628+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.629+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.631+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.631+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T15:00:08.634+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.635+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.637+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.638+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.640+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.642+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.644+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.645+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.646+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.647+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.648+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T15:00:08.650+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.650+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.652+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.653+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.654+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.656+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.658+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.659+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.661+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.662+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.663+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T15:00:08.665+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.665+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.667+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.668+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.670+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.671+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.673+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.674+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.676+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.678+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.678+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T15:00:08.679+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.680+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No birthdate
+2024-12-30T15:00:08.682+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.682+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No age
+2024-12-30T15:00:08.684+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.686+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.688+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.689+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.690+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.691+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.691+01:00 ERROR 5012 --- [safetynetalerts] [main] c.s.s.service.PersonService              : No firestationId
+2024-12-30T15:00:08.692+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.694+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.696+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.697+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:08.700+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.702+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.713+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:08.714+01:00 DEBUG 5012 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:51.250+01:00  INFO 12760 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Starting SafetynetalertsApplication using Java 17.0.8 with PID 12760 (C:\Users\eliza\Programmation\Projet5\safetynetalerts\target\classes started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2024-12-30T15:00:51.253+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Running with Spring Boot v3.4.0, Spring v6.2.0
+2024-12-30T15:00:51.254+01:00  INFO 12760 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-12-30T15:00:52.228+01:00  INFO 12760 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-30T15:00:52.246+01:00  INFO 12760 --- [safetynetalerts] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-30T15:00:52.248+01:00  INFO 12760 --- [safetynetalerts] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-30T15:00:52.307+01:00  INFO 12760 --- [safetynetalerts] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-30T15:00:52.308+01:00  INFO 12760 --- [safetynetalerts] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1001 ms
+2024-12-30T15:00:52.521+01:00 DEBUG 12760 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 18 mappings in 'requestMappingHandlerMapping'
+2024-12-30T15:00:52.590+01:00 DEBUG 12760 --- [safetynetalerts] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-30T15:00:52.617+01:00 DEBUG 12760 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-30T15:00:52.678+01:00 DEBUG 12760 --- [safetynetalerts] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-30T15:00:52.768+01:00  INFO 12760 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-30T15:00:52.777+01:00  INFO 12760 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Started SafetynetalertsApplication in 1.958 seconds (process running for 2.232)
+2024-12-30T15:00:52.833+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : personsDTO retrieved
+2024-12-30T15:00:52.839+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.845+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.850+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.856+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.860+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.863+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.866+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.869+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.871+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.874+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.877+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.882+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.886+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.889+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.891+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.892+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.894+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.897+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.900+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.904+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.907+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.910+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.914+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.917+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.919+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.921+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.923+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.925+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.929+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.931+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.934+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.936+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.938+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.939+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.941+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.943+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.945+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.947+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.950+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.952+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.954+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.956+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.958+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.959+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.960+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.962+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.965+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.968+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.970+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.972+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.974+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.976+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.978+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.980+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.982+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.984+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.987+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.989+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:52.991+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.993+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.994+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.996+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:52.997+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.000+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.002+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.003+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.005+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.007+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.008+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.009+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.011+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.012+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.014+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.016+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.018+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.020+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.022+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.023+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.024+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.025+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.026+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.027+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.029+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.030+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.032+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.034+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.036+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.038+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.039+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.040+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.041+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.043+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.044+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.046+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.048+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.050+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.052+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.053+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.055+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.057+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.058+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.060+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.061+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.062+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.063+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.065+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.066+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.069+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.070+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.072+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.073+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.074+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.075+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.077+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.078+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.079+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.079+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.080+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.082+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.083+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.085+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.087+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.088+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.089+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.090+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.091+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.092+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.093+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.095+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.096+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.097+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.099+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.100+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.102+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.103+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.104+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.105+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.106+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.107+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.109+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.110+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.111+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.111+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.112+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.114+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.116+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.117+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.119+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.122+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.123+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.124+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.125+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.126+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.127+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.129+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.130+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.132+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.133+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.134+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.135+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.136+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.137+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.138+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.139+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.141+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.142+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.144+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.146+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.147+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.149+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.150+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.152+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.153+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.155+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.156+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.158+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.160+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.161+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.163+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.164+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.166+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.168+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.170+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.171+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.173+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.174+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.175+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.176+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.177+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.178+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.180+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.182+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.184+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.186+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.187+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.189+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.191+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.193+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.195+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.198+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.201+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.204+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:00:53.206+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.208+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.210+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.212+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:00:53.213+01:00 DEBUG 12760 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:09:22.156+01:00  INFO 20984 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Starting SafetynetalertsApplication using Java 17.0.8 with PID 20984 (C:\Users\eliza\Programmation\Projet5\safetynetalerts\target\classes started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2024-12-30T15:09:22.159+01:00 DEBUG 20984 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Running with Spring Boot v3.4.0, Spring v6.2.0
+2024-12-30T15:09:22.160+01:00  INFO 20984 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-12-30T15:09:23.272+01:00  INFO 20984 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-30T15:09:23.288+01:00  INFO 20984 --- [safetynetalerts] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-30T15:09:23.288+01:00  INFO 20984 --- [safetynetalerts] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-30T15:09:23.355+01:00  INFO 20984 --- [safetynetalerts] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-30T15:09:23.356+01:00  INFO 20984 --- [safetynetalerts] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1142 ms
+2024-12-30T15:09:23.592+01:00 DEBUG 20984 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 18 mappings in 'requestMappingHandlerMapping'
+2024-12-30T15:09:23.670+01:00 DEBUG 20984 --- [safetynetalerts] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-30T15:09:23.701+01:00 DEBUG 20984 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-30T15:09:23.739+01:00 DEBUG 20984 --- [safetynetalerts] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-30T15:09:23.815+01:00  INFO 20984 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-30T15:09:23.824+01:00  INFO 20984 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Started SafetynetalertsApplication in 2.129 seconds (process running for 2.384)
+2024-12-30T15:09:23.890+01:00 DEBUG 20984 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : personsDTO retrieved
+2024-12-30T15:09:23.897+01:00 DEBUG 20984 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:09:23.904+01:00 DEBUG 20984 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:09:23.908+01:00 DEBUG 20984 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:09:23.911+01:00 DEBUG 20984 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:09:23.914+01:00 DEBUG 20984 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:09:23.916+01:00 DEBUG 20984 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:11:39.524+01:00  INFO 23728 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Starting SafetynetalertsApplication using Java 17.0.8 with PID 23728 (C:\Users\eliza\Programmation\Projet5\safetynetalerts\target\classes started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2024-12-30T15:11:39.527+01:00 DEBUG 23728 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Running with Spring Boot v3.4.0, Spring v6.2.0
+2024-12-30T15:11:39.528+01:00  INFO 23728 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-12-30T15:11:40.491+01:00  INFO 23728 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-30T15:11:40.506+01:00  INFO 23728 --- [safetynetalerts] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-30T15:11:40.506+01:00  INFO 23728 --- [safetynetalerts] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-30T15:11:40.569+01:00  INFO 23728 --- [safetynetalerts] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-30T15:11:40.570+01:00  INFO 23728 --- [safetynetalerts] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 992 ms
+2024-12-30T15:11:40.775+01:00 DEBUG 23728 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 18 mappings in 'requestMappingHandlerMapping'
+2024-12-30T15:11:40.848+01:00 DEBUG 23728 --- [safetynetalerts] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-30T15:11:40.880+01:00 DEBUG 23728 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-30T15:11:40.938+01:00 DEBUG 23728 --- [safetynetalerts] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-30T15:11:41.030+01:00  INFO 23728 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-30T15:11:41.041+01:00  INFO 23728 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Started SafetynetalertsApplication in 1.981 seconds (process running for 2.263)
+2024-12-30T15:11:41.121+01:00 DEBUG 23728 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : personsDTO retrieved
+2024-12-30T15:11:41.127+01:00 DEBUG 23728 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:11:41.135+01:00 DEBUG 23728 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:11:41.139+01:00 DEBUG 23728 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:11:41.142+01:00 DEBUG 23728 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:11:41.144+01:00 DEBUG 23728 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:11:41.147+01:00 DEBUG 23728 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:11:59.389+01:00  INFO 23728 --- [safetynetalerts] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-30T15:11:59.390+01:00  INFO 23728 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-30T15:11:59.391+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-12-30T15:11:59.391+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-12-30T15:11:59.391+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-12-30T15:11:59.392+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@29fb10fe
+2024-12-30T15:11:59.393+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@11ea7a06
+2024-12-30T15:11:59.393+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-12-30T15:11:59.394+01:00  INFO 23728 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-12-30T15:11:59.405+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/firestation?stationNumber=1", parameters={masked}
+2024-12-30T15:11:59.424+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.WebAppController#getFirestationData(int)
+2024-12-30T15:11:59.455+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonReadingRepository   : personsDTO retrieved
+2024-12-30T15:11:59.459+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:11:59.464+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:11:59.466+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:11:59.469+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:11:59.472+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:11:59.475+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:11:59.480+01:00  INFO 23728 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.controller.WebAppController        : firestationData sent
+2024-12-30T15:11:59.513+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-30T15:11:59.516+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.dto.FirestationData@2fbd69ed]
+2024-12-30T15:11:59.524+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-12-30T15:12:21.406+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/childAlert?address=1509%20Culver%20St", parameters={masked}
+2024-12-30T15:12:21.407+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.WebAppController#getChildAlertData(String)
+2024-12-30T15:12:21.411+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.repository.JsonReadingRepository   : personsDTO retrieved
+2024-12-30T15:12:21.414+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:12:21.417+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:12:21.419+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:12:21.422+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:12:21.425+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:12:21.428+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:12:21.430+01:00  INFO 23728 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.controller.WebAppController        : childAlertData sent
+2024-12-30T15:12:21.435+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-30T15:12:21.436+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.dto.ChildAlertData@29cadda4]
+2024-12-30T15:12:21.439+01:00 DEBUG 23728 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-12-30T15:15:19.176+01:00  INFO 29616 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Starting SafetynetalertsApplication using Java 17.0.8 with PID 29616 (C:\Users\eliza\Programmation\Projet5\safetynetalerts\target\classes started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2024-12-30T15:15:19.179+01:00 DEBUG 29616 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Running with Spring Boot v3.4.0, Spring v6.2.0
+2024-12-30T15:15:19.181+01:00  INFO 29616 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-12-30T15:15:20.211+01:00  INFO 29616 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-30T15:15:20.230+01:00  INFO 29616 --- [safetynetalerts] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-30T15:15:20.231+01:00  INFO 29616 --- [safetynetalerts] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-30T15:15:20.300+01:00  INFO 29616 --- [safetynetalerts] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-30T15:15:20.301+01:00  INFO 29616 --- [safetynetalerts] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1071 ms
+2024-12-30T15:15:20.527+01:00 DEBUG 29616 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 18 mappings in 'requestMappingHandlerMapping'
+2024-12-30T15:15:20.595+01:00 DEBUG 29616 --- [safetynetalerts] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-30T15:15:20.627+01:00 DEBUG 29616 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-30T15:15:20.668+01:00 DEBUG 29616 --- [safetynetalerts] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-30T15:15:20.747+01:00  INFO 29616 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-30T15:15:20.755+01:00  INFO 29616 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Started SafetynetalertsApplication in 2.03 seconds (process running for 2.317)
+2024-12-30T15:15:20.820+01:00 DEBUG 29616 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : personsDTO retrieved
+2024-12-30T15:15:20.826+01:00 DEBUG 29616 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:15:20.835+01:00 DEBUG 29616 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:16:59.083+01:00  INFO 25532 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Starting SafetynetalertsApplication using Java 17.0.8 with PID 25532 (C:\Users\eliza\Programmation\Projet5\safetynetalerts\target\classes started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2024-12-30T15:16:59.085+01:00 DEBUG 25532 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Running with Spring Boot v3.4.0, Spring v6.2.0
+2024-12-30T15:16:59.086+01:00  INFO 25532 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-12-30T15:17:00.077+01:00  INFO 25532 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-30T15:17:00.092+01:00  INFO 25532 --- [safetynetalerts] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-30T15:17:00.092+01:00  INFO 25532 --- [safetynetalerts] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-30T15:17:00.140+01:00  INFO 25532 --- [safetynetalerts] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-30T15:17:00.141+01:00  INFO 25532 --- [safetynetalerts] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1010 ms
+2024-12-30T15:17:00.334+01:00 DEBUG 25532 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 18 mappings in 'requestMappingHandlerMapping'
+2024-12-30T15:17:00.391+01:00 DEBUG 25532 --- [safetynetalerts] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-30T15:17:00.423+01:00 DEBUG 25532 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-30T15:17:00.475+01:00 DEBUG 25532 --- [safetynetalerts] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-30T15:17:00.556+01:00  INFO 25532 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-30T15:17:00.564+01:00  INFO 25532 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Started SafetynetalertsApplication in 1.885 seconds (process running for 2.148)
+2024-12-30T15:17:00.627+01:00 DEBUG 25532 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : personsDTO retrieved
+2024-12-30T15:17:00.634+01:00 DEBUG 25532 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:17:00.640+01:00 DEBUG 25532 --- [safetynetalerts] [main] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:17:07.955+01:00  INFO 25532 --- [safetynetalerts] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-30T15:17:07.956+01:00  INFO 25532 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-30T15:17:07.956+01:00 DEBUG 25532 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-12-30T15:17:07.956+01:00 DEBUG 25532 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-12-30T15:17:07.956+01:00 DEBUG 25532 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-12-30T15:17:07.957+01:00 DEBUG 25532 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2a7e13a4
+2024-12-30T15:17:07.958+01:00 DEBUG 25532 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@45c75087
+2024-12-30T15:17:07.958+01:00 DEBUG 25532 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-12-30T15:17:07.959+01:00  INFO 25532 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-12-30T15:17:07.966+01:00 DEBUG 25532 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/childAlert?address=1509%20Culver%20St", parameters={masked}
+2024-12-30T15:17:07.980+01:00 DEBUG 25532 --- [safetynetalerts] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.WebAppController#getChildAlertData(String)
+2024-12-30T15:17:08.004+01:00 DEBUG 25532 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.repository.JsonReadingRepository   : personsDTO retrieved
+2024-12-30T15:17:08.009+01:00 DEBUG 25532 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.repository.JsonReadingRepository   : medicalRecordsDTO retrieved
+2024-12-30T15:17:08.015+01:00 DEBUG 25532 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.repository.JsonReadingRepository   : firestationsDTO retrieved
+2024-12-30T15:17:08.019+01:00  INFO 25532 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.controller.WebAppController        : childAlertData sent
+2024-12-30T15:17:08.050+01:00 DEBUG 25532 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-30T15:17:08.053+01:00 DEBUG 25532 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.dto.ChildAlertData@1d736427]
+2024-12-30T15:17:08.063+01:00 DEBUG 25532 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
