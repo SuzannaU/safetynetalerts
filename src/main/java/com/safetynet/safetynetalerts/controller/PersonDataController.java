@@ -27,17 +27,17 @@ public class PersonDataController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Missing data: firstName and lastName are mandatory");
     }
 
+    @ExceptionHandler(IOException.class)
+    public ResponseEntity<String> handleIOException(IOException e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error retrieving/writing data");
+    }
+
     @PostMapping("/person")
     public ResponseEntity<PersonRawData> createPersonRawData(@RequestBody PersonRawData personRawData)
             throws IOException, IllegalArgumentException {
 
         PersonRawData newPersonRawData = null;
-        try {
-            newPersonRawData = personService.createPersonRawData(personRawData);
-        } catch (IOException e) {
-            logger.error("Error retrieving/writing data");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        newPersonRawData = personService.createPersonRawData(personRawData);
 
         if (newPersonRawData == null) {
             return new ResponseEntity<>(personRawData, HttpStatus.BAD_REQUEST);
@@ -51,12 +51,7 @@ public class PersonDataController {
             throws IOException {
 
         PersonRawData updatedPersonRawData = null;
-        try {
-            updatedPersonRawData = personService.updatePersonRawData(personRawData);
-        } catch (IOException e) {
-            logger.error("Error retrieving/writing data");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        updatedPersonRawData = personService.updatePersonRawData(personRawData);
 
         if (updatedPersonRawData == null) {
             return new ResponseEntity<>(personRawData, HttpStatus.BAD_REQUEST);
@@ -70,12 +65,7 @@ public class PersonDataController {
             throws IOException {
 
         PersonRawData deletedPersonRawData = null;
-        try {
-            deletedPersonRawData = personService.deletePersonRawData(personRawData);
-        } catch (IOException e) {
-            logger.error("Error retrieving/writing data");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        deletedPersonRawData = personService.deletePersonRawData(personRawData);
 
         if (deletedPersonRawData == null) {
             return new ResponseEntity<>(personRawData, HttpStatus.BAD_REQUEST);
@@ -83,5 +73,4 @@ public class PersonDataController {
             return new ResponseEntity<>(deletedPersonRawData, HttpStatus.ACCEPTED);
         }
     }
-
 }

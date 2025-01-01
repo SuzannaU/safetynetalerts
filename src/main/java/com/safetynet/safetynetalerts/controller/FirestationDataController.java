@@ -21,10 +21,16 @@ public class FirestationDataController {
 
     @Autowired
     FirestationService firestationService;
-        
+
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException e) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Missing data: station and address are mandatory");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body("Missing data: station and address are mandatory");
+    }
+
+    @ExceptionHandler(IOException.class)
+    public ResponseEntity<String> handleIOException(IOException e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error retrieving/writing data");
     }
 
     @PostMapping("/firestation")
@@ -33,12 +39,7 @@ public class FirestationDataController {
             throws IOException {
 
         FirestationRawData newFirestationRawData = null;
-        try {
-            newFirestationRawData = firestationService.createFirestationRawData(firestationRawData);
-        } catch (IOException e) {
-            logger.error("Error retrieving/writing data");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        newFirestationRawData = firestationService.createFirestationRawData(firestationRawData);
 
         if (newFirestationRawData == null) {
             return new ResponseEntity<>(firestationRawData, HttpStatus.BAD_REQUEST);
@@ -53,12 +54,7 @@ public class FirestationDataController {
             throws IOException {
 
         FirestationRawData updatedFirestationRawData = null;
-        try {
-            updatedFirestationRawData = firestationService.updateFirestationRawData(firestationRawData);
-        } catch (IOException e) {
-            logger.error("Error retrieving/writing data");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        updatedFirestationRawData = firestationService.updateFirestationRawData(firestationRawData);
 
         if (updatedFirestationRawData == null) {
             return new ResponseEntity<>(firestationRawData, HttpStatus.BAD_REQUEST);
@@ -73,12 +69,7 @@ public class FirestationDataController {
             throws IOException {
 
         FirestationRawData deletedFirestationRawData = null;
-        try {
-            deletedFirestationRawData = firestationService.deletePersonRawData(firestationRawData);
-        } catch (IOException e) {
-            logger.error("Error retrieving/writing data");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        deletedFirestationRawData = firestationService.deletePersonRawData(firestationRawData);
 
         if (deletedFirestationRawData == null) {
             return new ResponseEntity<>(firestationRawData, HttpStatus.BAD_REQUEST);
@@ -86,5 +77,4 @@ public class FirestationDataController {
             return new ResponseEntity<>(deletedFirestationRawData, HttpStatus.ACCEPTED);
         }
     }
-
 }

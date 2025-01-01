@@ -27,17 +27,17 @@ public class MedicalRecordDataController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Missing data: firstName and lastName are mandatory");
     }
 
+    @ExceptionHandler(IOException.class)
+    public ResponseEntity<String> handleIOException(IOException e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error retrieving/writing data");
+    }
+
     @PostMapping("/medicalRecord")
     public ResponseEntity<MedicalRecordRawData> createMedicalRecordRawData(
             @RequestBody MedicalRecordRawData medicalRecordRawData) throws IOException {
 
         MedicalRecordRawData newMedicalRecordRawData = null;
-        try {
-            newMedicalRecordRawData = medicalRecordService.createMedicalRecordRawData(medicalRecordRawData);
-        } catch (IOException e) {
-            logger.error("Error retrieving/writing data");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        newMedicalRecordRawData = medicalRecordService.createMedicalRecordRawData(medicalRecordRawData);
 
         if (newMedicalRecordRawData == null) {
             return new ResponseEntity<>(medicalRecordRawData, HttpStatus.BAD_REQUEST);
@@ -51,12 +51,7 @@ public class MedicalRecordDataController {
             @RequestBody MedicalRecordRawData medicalRecordRawData) throws IOException {
 
         MedicalRecordRawData updatedMedicalRecordRawData = null;
-        try {
-            updatedMedicalRecordRawData = medicalRecordService.updateMedicalRecordRawData(medicalRecordRawData);
-        } catch (IOException e) {
-            logger.error("Error retrieving/writing data");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        updatedMedicalRecordRawData = medicalRecordService.updateMedicalRecordRawData(medicalRecordRawData);
 
         if (updatedMedicalRecordRawData == null) {
             return new ResponseEntity<>(medicalRecordRawData, HttpStatus.BAD_REQUEST);
@@ -70,12 +65,7 @@ public class MedicalRecordDataController {
             @RequestBody MedicalRecordRawData medicalRecordRawData) throws IOException {
 
         MedicalRecordRawData deletedMedicalRecordRawData = null;
-        try {
-            deletedMedicalRecordRawData = medicalRecordService.deleteMedicalRecordRawData(medicalRecordRawData);
-        } catch (IOException e) {
-            logger.error("Error retrieving/writing data");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        deletedMedicalRecordRawData = medicalRecordService.deleteMedicalRecordRawData(medicalRecordRawData);
 
         if (deletedMedicalRecordRawData == null) {
             return new ResponseEntity<>(medicalRecordRawData, HttpStatus.BAD_REQUEST);
