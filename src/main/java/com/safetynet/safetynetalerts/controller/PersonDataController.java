@@ -1,18 +1,19 @@
 package com.safetynet.safetynetalerts.controller;
 
 import org.springframework.web.bind.annotation.RestController;
-import com.safetynet.safetynetalerts.dto.PersonDTO;
-import com.safetynet.safetynetalerts.service.PersonService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.safetynet.safetynetalerts.model.PersonRawData;
+import com.safetynet.safetynetalerts.service.PersonService;
 import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 
 @RestController
 public class PersonDataController {
@@ -20,61 +21,66 @@ public class PersonDataController {
 
     @Autowired
     PersonService personService;
+        
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Missing data: firstName and lastName are mandatory");
+    }
 
     @PostMapping("/person")
-    public ResponseEntity<PersonDTO> createPersonDTO(@RequestBody PersonDTO personDTO)
-            throws IOException {
+    public ResponseEntity<PersonRawData> createPersonRawData(@RequestBody PersonRawData personRawData)
+            throws IOException, IllegalArgumentException {
 
-        PersonDTO newPersonDTO = new PersonDTO();
+        PersonRawData newPersonRawData = null;
         try {
-            newPersonDTO = personService.createPersonDTO(personDTO);
+            newPersonRawData = personService.createPersonRawData(personRawData);
         } catch (IOException e) {
             logger.error("Error retrieving/writing data");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        if (newPersonDTO == null) {
-            return new ResponseEntity<>(personDTO, HttpStatus.BAD_REQUEST);
+        if (newPersonRawData == null) {
+            return new ResponseEntity<>(personRawData, HttpStatus.BAD_REQUEST);
         } else {
-            return new ResponseEntity<>(newPersonDTO, HttpStatus.CREATED);
+            return new ResponseEntity<>(newPersonRawData, HttpStatus.CREATED);
         }
     }
 
     @PutMapping("/person")
-    public ResponseEntity<PersonDTO> updatePersonDTO(@RequestBody PersonDTO personDTO)
+    public ResponseEntity<PersonRawData> updatePersonRawData(@RequestBody PersonRawData personRawData)
             throws IOException {
 
-        PersonDTO updatedPersonDTO = new PersonDTO();
+        PersonRawData updatedPersonRawData = null;
         try {
-            updatedPersonDTO = personService.updatePersonDTO(personDTO);
+            updatedPersonRawData = personService.updatePersonRawData(personRawData);
         } catch (IOException e) {
             logger.error("Error retrieving/writing data");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        if (updatedPersonDTO == null) {
-            return new ResponseEntity<>(personDTO, HttpStatus.BAD_REQUEST);
+        if (updatedPersonRawData == null) {
+            return new ResponseEntity<>(personRawData, HttpStatus.BAD_REQUEST);
         } else {
-            return new ResponseEntity<>(updatedPersonDTO, HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(updatedPersonRawData, HttpStatus.ACCEPTED);
         }
     }
 
     @DeleteMapping("/person")
-    public ResponseEntity<PersonDTO> deletePersonDTO(@RequestBody PersonDTO personDTO)
+    public ResponseEntity<PersonRawData> deletePersonRawData(@RequestBody PersonRawData personRawData)
             throws IOException {
 
-        PersonDTO deletedPersonDTO = new PersonDTO();
+        PersonRawData deletedPersonRawData = null;
         try {
-            deletedPersonDTO = personService.deletePersonDTO(personDTO);
+            deletedPersonRawData = personService.deletePersonRawData(personRawData);
         } catch (IOException e) {
             logger.error("Error retrieving/writing data");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        if (deletedPersonDTO == null) {
-            return new ResponseEntity<>(personDTO, HttpStatus.BAD_REQUEST);
+        if (deletedPersonRawData == null) {
+            return new ResponseEntity<>(personRawData, HttpStatus.BAD_REQUEST);
         } else {
-            return new ResponseEntity<>(deletedPersonDTO, HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(deletedPersonRawData, HttpStatus.ACCEPTED);
         }
     }
 

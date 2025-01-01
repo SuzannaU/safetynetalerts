@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.safetynet.safetynetalerts.dto.FirestationDTO;
-import com.safetynet.safetynetalerts.dto.MedicalRecordDTO;
-import com.safetynet.safetynetalerts.dto.PersonDTO;
+import com.safetynet.safetynetalerts.model.FirestationRawData;
+import com.safetynet.safetynetalerts.model.MedicalRecordRawData;
+import com.safetynet.safetynetalerts.model.PersonRawData;
 
 @Repository
 public class JsonReadingRepository {
@@ -31,52 +31,52 @@ public class JsonReadingRepository {
         return node;
     }
 
-    public List<PersonDTO> getPersonsDTO() throws IOException {
+    public List<PersonRawData> getPersonsRawData() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode personsNode = getNode("persons");
 
-        List<PersonDTO> personsDTO = null;
-        personsDTO = objectMapper.convertValue(
-                personsNode, new TypeReference<List<PersonDTO>>() {});
+        List<PersonRawData> personsRawData = null;
+        personsRawData = objectMapper.convertValue(
+                personsNode, new TypeReference<List<PersonRawData>>() {});
 
-        if (personsDTO != null)
-            logger.debug("personsDTO retrieved");
+        if (personsRawData != null)
+            logger.debug("personsRawData retrieved");
         else
-            logger.error("Issue retrieving personsDTO");
+            logger.error("Issue retrieving personsRawData");
 
-        return personsDTO;
+        return personsRawData;
     }
 
-    public List<FirestationDTO> getFirestationsDTO() throws IOException {
+    public List<FirestationRawData> getFirestationsRawData() throws IOException {
 
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode firestationsNode = getNode("firestations");
 
-        List<FirestationDTO> firestationsDTO = null;
-        firestationsDTO = objectMapper.convertValue(
-                firestationsNode, new TypeReference<List<FirestationDTO>>() {});
+        List<FirestationRawData> firestationsRawData = null;
+        firestationsRawData = objectMapper.convertValue(
+                firestationsNode, new TypeReference<List<FirestationRawData>>() {});
 
-        if (firestationsDTO != null)
-            logger.debug("firestationsDTO retrieved");
+        if (firestationsRawData != null)
+            logger.debug("firestationsRawData retrieved");
         else
-            logger.error("Issue retrieving firestationsDTO");
+            logger.error("Issue retrieving firestationsRawData");
 
-        return firestationsDTO;
+        return firestationsRawData;
     }
 
-    public List<MedicalRecordDTO> getMedicalRecordsDTO() throws IOException {
+    public List<MedicalRecordRawData> getMedicalRecordsRawData() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode medicalRecordsNode = getNode("medicalrecords");
 
-        List<MedicalRecordDTO> medicalRecordsDTO = null;
-        medicalRecordsDTO = objectMapper.convertValue(
-                medicalRecordsNode, new TypeReference<List<MedicalRecordDTO>>() {});
+        List<MedicalRecordRawData> medicalRecordsRawData = null;
+        medicalRecordsRawData = objectMapper.convertValue(
+                medicalRecordsNode, new TypeReference<List<MedicalRecordRawData>>() {});
 
-        if (medicalRecordsDTO != null)
-            logger.debug("medicalRecordsDTO retrieved");
+        if (medicalRecordsRawData != null)
+            logger.debug("medicalRecordsRawData retrieved");
         else
-            logger.error("Issue retrieving medicalRecordsDTO");
+            logger.error("Issue retrieving medicalRecordsRawData");
 
-        return medicalRecordsDTO;
+        return medicalRecordsRawData;
     }
 }

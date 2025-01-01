@@ -11,12 +11,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.fasterxml.jackson.core.exc.StreamWriteException;
 import com.fasterxml.jackson.databind.DatabindException;
 import com.safetynet.safetynetalerts.controller.WebAppController;
-import com.safetynet.safetynetalerts.dto.MedicalRecordDTO;
-import com.safetynet.safetynetalerts.dto.PersonDTO;
 import com.safetynet.safetynetalerts.dto.PersonForStation;
 import com.safetynet.safetynetalerts.model.Firestation;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
+import com.safetynet.safetynetalerts.model.MedicalRecordRawData;
 import com.safetynet.safetynetalerts.model.Person;
+import com.safetynet.safetynetalerts.model.PersonRawData;
 import com.safetynet.safetynetalerts.repository.*;
 import com.safetynet.safetynetalerts.service.FirestationService;
 import com.safetynet.safetynetalerts.service.MedicalRecordService;
@@ -35,26 +35,26 @@ public class SafetynetalertsApplication {
 		FirestationService firestationService = new FirestationService(jsonReadingRepository, jsonWritingRepository);
 		PersonService personService = new PersonService(jsonReadingRepository, jsonWritingRepository, medicalRecordService,firestationService);
 
-		List<Person> persons = personService.getPersons();
+		/*List<Person> persons = personService.getPersons();
 		for (Person person : persons) {
 			System.out.println(person.getPersonId() + ", " + person.getAge() + ", "+person.getCategory()
 					+ ", " + person.getMedications() + ", " + person.getFirestationId());
-		}
+		}*/
 
-		/*List<Person> persons = personService.getPersons();
+		List<Person> persons = personService.getPersons();
 		List<Person> personsForStation = persons.stream()
-                .filter(person -> person.getFirestationId() == 1)
+                .filter(person -> person.getFirestationId() == 2)
                 .collect(Collectors.toList());
 		for (Person person : personsForStation) {
 			System.out.print(person.getAddress() + ", ");
 			System.out.print(person.getPersonId() + ", ");
 			System.out.print(person.getFirestationId() + ", ");
 			System.out.println(person.getAge());
-		}*/
+		}
 
 		
-		/*List<MedicalRecordDTO> recordsDTO = jsonReadingRepository.getMedicalRecordsDTO();
-		for (MedicalRecordDTO recordDTO : recordsDTO) {
+		/*List<MedicalRecordRawData> recordsDTO = jsonReadingRepository.getMedicalRecordsDTO();
+		for (MedicalRecordRawData recordDTO : recordsDTO) {
 			System.out.println(recordDTO.getBirthdate() + ", " + recordDTO.getAllergies() + ", " + recordDTO.getMedications());
 		}*/
 

@@ -2,9 +2,7 @@ package com.safetynet.safetynetalerts.model;
 
 import java.time.LocalDate;
 import java.util.List;
-import org.springframework.stereotype.Component;
 
-@Component
 public class MedicalRecord {
     private String personId;
     private LocalDate birthdate;

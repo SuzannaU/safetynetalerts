@@ -9,34 +9,34 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.safetynet.safetynetalerts.dto.FirestationDTO;
-import com.safetynet.safetynetalerts.dto.MedicalRecordDTO;
-import com.safetynet.safetynetalerts.dto.PersonDTO;
+import com.safetynet.safetynetalerts.model.FirestationRawData;
+import com.safetynet.safetynetalerts.model.MedicalRecordRawData;
+import com.safetynet.safetynetalerts.model.PersonRawData;
 
 @Repository
 public class JsonWritingRepository {
     private static final Logger logger = LoggerFactory.getLogger(JsonWritingRepository.class);
     private String sourceFilePath = "src/main/resources/data.json";
 
-    public void updatePersons(List<PersonDTO> personsDTO) throws IOException {
+    public void updatePersons(List<PersonRawData> personsRawData) throws IOException {
         Map<String, Object> jsonData = getJsonData();
-        jsonData.put("persons", personsDTO);
+        jsonData.put("persons", personsRawData);
 
         writeDataInFile(jsonData);
         logger.debug("Json file updated with modified persons");
     }
 
-    public void updateMedicalRecords(List<MedicalRecordDTO> medicalRecordsDTO) throws IOException {
+    public void updateMedicalRecords(List<MedicalRecordRawData> medicalRecordsRawData) throws IOException {
         Map<String, Object> jsonData = getJsonData();
-        jsonData.put("medicalrecords", medicalRecordsDTO);
+        jsonData.put("medicalrecords", medicalRecordsRawData);
 
         writeDataInFile(jsonData);
         logger.info("Json file updated with modified medical records");
     }
 
-    public void updateFirestations(List<FirestationDTO> firestationsDTO) throws IOException {
+    public void updateFirestations(List<FirestationRawData> firestationsRawData) throws IOException {
         Map<String, Object> jsonData = getJsonData();
-        jsonData.put("firestations", firestationsDTO);
+        jsonData.put("firestations", firestationsRawData);
 
         writeDataInFile(jsonData);
         logger.info("Json file updated with modified firestations");

@@ -7,11 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.safetynet.safetynetalerts.dto.FirestationDTO;
+import com.safetynet.safetynetalerts.model.FirestationRawData;
 import com.safetynet.safetynetalerts.service.FirestationService;
 
 @RestController
@@ -20,64 +21,69 @@ public class FirestationDataController {
 
     @Autowired
     FirestationService firestationService;
+        
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Missing data: station and address are mandatory");
+    }
 
     @PostMapping("/firestation")
-    public ResponseEntity<FirestationDTO> createFirestationDTO(
-            @RequestBody FirestationDTO firestationDTO)
+    public ResponseEntity<FirestationRawData> createFirestationRawData(
+            @RequestBody FirestationRawData firestationRawData)
             throws IOException {
 
-        FirestationDTO newFirestationDTO = new FirestationDTO();
+        FirestationRawData newFirestationRawData = null;
         try {
-            newFirestationDTO = firestationService.createFirestationDTO(firestationDTO);
+            newFirestationRawData = firestationService.createFirestationRawData(firestationRawData);
         } catch (IOException e) {
             logger.error("Error retrieving/writing data");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        if (newFirestationDTO == null) {
-            return new ResponseEntity<>(firestationDTO, HttpStatus.BAD_REQUEST);
+        if (newFirestationRawData == null) {
+            return new ResponseEntity<>(firestationRawData, HttpStatus.BAD_REQUEST);
         } else {
-            return new ResponseEntity<>(newFirestationDTO, HttpStatus.CREATED);
+            return new ResponseEntity<>(newFirestationRawData, HttpStatus.CREATED);
         }
     }
 
     @PutMapping("/firestation")
-    public ResponseEntity<FirestationDTO> updateFirestationDTO(
-            @RequestBody FirestationDTO firestationDTO)
+    public ResponseEntity<FirestationRawData> updateFirestationRawData(
+            @RequestBody FirestationRawData firestationRawData)
             throws IOException {
 
-        FirestationDTO updatedFirestationDTO = new FirestationDTO();
+        FirestationRawData updatedFirestationRawData = null;
         try {
-            updatedFirestationDTO = firestationService.updateFirestationDTO(firestationDTO);
+            updatedFirestationRawData = firestationService.updateFirestationRawData(firestationRawData);
         } catch (IOException e) {
             logger.error("Error retrieving/writing data");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        if (updatedFirestationDTO == null) {
-            return new ResponseEntity<>(firestationDTO, HttpStatus.BAD_REQUEST);
+        if (updatedFirestationRawData == null) {
+            return new ResponseEntity<>(firestationRawData, HttpStatus.BAD_REQUEST);
         } else {
-            return new ResponseEntity<>(updatedFirestationDTO, HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(updatedFirestationRawData, HttpStatus.ACCEPTED);
         }
     }
 
     @DeleteMapping("/firestation")
-    public ResponseEntity<FirestationDTO> deleteFirestationDTO(
-            @RequestBody FirestationDTO firestationDTO)
+    public ResponseEntity<FirestationRawData> deleteFirestationRawData(
+            @RequestBody FirestationRawData firestationRawData)
             throws IOException {
 
-        FirestationDTO deletedFirestationDTO = new FirestationDTO();
+        FirestationRawData deletedFirestationRawData = null;
         try {
-            deletedFirestationDTO = firestationService.deletePersonDTO(firestationDTO);
+            deletedFirestationRawData = firestationService.deletePersonRawData(firestationRawData);
         } catch (IOException e) {
             logger.error("Error retrieving/writing data");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        if (deletedFirestationDTO == null) {
-            return new ResponseEntity<>(firestationDTO, HttpStatus.BAD_REQUEST);
+        if (deletedFirestationRawData == null) {
+            return new ResponseEntity<>(firestationRawData, HttpStatus.BAD_REQUEST);
         } else {
-            return new ResponseEntity<>(deletedFirestationDTO, HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(deletedFirestationRawData, HttpStatus.ACCEPTED);
         }
     }
 

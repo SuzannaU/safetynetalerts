@@ -1,9 +1,7 @@
 package com.safetynet.safetynetalerts.model;
 
 import java.util.Set;
-import org.springframework.stereotype.Component;
 
-@Component
 public class Firestation {
 
     private int firestationId;

@@ -10,8 +10,8 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import com.safetynet.safetynetalerts.dto.MedicalRecordDTO;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
+import com.safetynet.safetynetalerts.model.MedicalRecordRawData;
 import com.safetynet.safetynetalerts.repository.JsonReadingRepository;
 import com.safetynet.safetynetalerts.repository.JsonWritingRepository;
 
@@ -21,25 +21,26 @@ public class MedicalRecordService {
     JsonReadingRepository jsonReadingRepository;
     JsonWritingRepository jsonWritingRepository;
 
-    public MedicalRecordService(JsonReadingRepository jsonReadingRepository, JsonWritingRepository jsonWritingRepository) {
+    public MedicalRecordService(JsonReadingRepository jsonReadingRepository,
+            JsonWritingRepository jsonWritingRepository) {
         this.jsonReadingRepository = jsonReadingRepository;
         this.jsonWritingRepository = jsonWritingRepository;
     }
 
     public List<MedicalRecord> getMedicalRecords() throws IOException {
         List<MedicalRecord> medicalRecords = new ArrayList<MedicalRecord>();
-        List<MedicalRecordDTO> medicalRecordsDTO =
-        jsonReadingRepository.getMedicalRecordsDTO();
+        List<MedicalRecordRawData> medicalRecordsRawData =
+                jsonReadingRepository.getMedicalRecordsRawData();
 
-        for (MedicalRecordDTO medicalRecordDTO : medicalRecordsDTO) {
+        for (MedicalRecordRawData medicalRecordRawData : medicalRecordsRawData) {
 
             MedicalRecord medicalRecord = new MedicalRecord();
-            medicalRecord.setPersonId(medicalRecordDTO.getFirstName()
-                    .concat(medicalRecordDTO.getLastName()));
-            medicalRecord.setMedications(medicalRecordDTO.getMedications());
-            medicalRecord.setAllergies(medicalRecordDTO.getAllergies());
-            medicalRecord.setBirthdate(getFormattedBirthdate(medicalRecordDTO.getBirthdate()));
-            medicalRecord.setAge(getAge(medicalRecordDTO.getBirthdate()));
+            medicalRecord.setPersonId(medicalRecordRawData.getFirstName()
+                    .concat(medicalRecordRawData.getLastName()));
+            medicalRecord.setMedications(medicalRecordRawData.getMedications());
+            medicalRecord.setAllergies(medicalRecordRawData.getAllergies());
+            medicalRecord.setBirthdate(getFormattedBirthdate(medicalRecordRawData.getBirthdate()));
+            medicalRecord.setAge(getAge(medicalRecordRawData.getBirthdate()));
 
             medicalRecords.add(medicalRecord);
         }
@@ -58,13 +59,15 @@ public class MedicalRecordService {
         return LocalDate.parse(birthdate, formatter);
     }
 
-    public MedicalRecordDTO createMedicalRecordDTO(MedicalRecordDTO medicalRecordDTO)
+    public MedicalRecordRawData createMedicalRecordRawData(
+            MedicalRecordRawData medicalRecordRawData)
             throws IOException {
-        List<MedicalRecordDTO> medicalRecordsDTO = jsonReadingRepository.getMedicalRecordsDTO();
+        List<MedicalRecordRawData> medicalRecordsRawData =
+                jsonReadingRepository.getMedicalRecordsRawData();
 
-        Optional<MedicalRecordDTO> existingMedicalRecord = medicalRecordsDTO.stream()
-                .filter(m -> m.getFirstName().equals(medicalRecordDTO.getFirstName()))
-                .filter(m -> m.getLastName().equals(medicalRecordDTO.getLastName()))
+        Optional<MedicalRecordRawData> existingMedicalRecord = medicalRecordsRawData.stream()
+                .filter(m -> m.getFirstName().equals(medicalRecordRawData.getFirstName()))
+                .filter(m -> m.getLastName().equals(medicalRecordRawData.getLastName()))
                 .findFirst();
 
         if (existingMedicalRecord.isPresent()) {
@@ -72,19 +75,21 @@ public class MedicalRecordService {
             return null;
         }
 
-        medicalRecordsDTO.add(medicalRecordDTO);
-        jsonWritingRepository.updateMedicalRecords(medicalRecordsDTO);
+        medicalRecordsRawData.add(medicalRecordRawData);
+        jsonWritingRepository.updateMedicalRecords(medicalRecordsRawData);
 
-        return medicalRecordDTO;
+        return medicalRecordRawData;
     }
 
-    public MedicalRecordDTO updateMedicalRecordDTO(MedicalRecordDTO medicalRecordDTO)
+    public MedicalRecordRawData updateMedicalRecordRawData(
+            MedicalRecordRawData medicalRecordRawData)
             throws IOException {
-        List<MedicalRecordDTO> medicalRecordsDTO = jsonReadingRepository.getMedicalRecordsDTO();
+        List<MedicalRecordRawData> medicalRecordsRawData =
+                jsonReadingRepository.getMedicalRecordsRawData();
 
-        Optional<MedicalRecordDTO> existingMedicalRecord = medicalRecordsDTO.stream()
-                .filter(m -> m.getFirstName().equals(medicalRecordDTO.getFirstName()))
-                .filter(m -> m.getLastName().equals(medicalRecordDTO.getLastName()))
+        Optional<MedicalRecordRawData> existingMedicalRecord = medicalRecordsRawData.stream()
+                .filter(m -> m.getFirstName().equals(medicalRecordRawData.getFirstName()))
+                .filter(m -> m.getLastName().equals(medicalRecordRawData.getLastName()))
                 .findFirst();
 
         if (existingMedicalRecord.isEmpty()) {
@@ -92,33 +97,35 @@ public class MedicalRecordService {
             return null;
         }
 
-        MedicalRecordDTO updatedMedicalRecord = new MedicalRecordDTO();
-        updatedMedicalRecord.setFirstName(medicalRecordDTO.getFirstName());
-        updatedMedicalRecord.setLastName(medicalRecordDTO.getLastName());
+        MedicalRecordRawData updatedMedicalRecord = new MedicalRecordRawData(
+                medicalRecordRawData.getFirstName(),
+                medicalRecordRawData.getLastName());
         updatedMedicalRecord.setBirthdate(
-                Optional.ofNullable(medicalRecordDTO.getBirthdate())
+                Optional.ofNullable(medicalRecordRawData.getBirthdate())
                         .orElse(existingMedicalRecord.get().getBirthdate()));
         updatedMedicalRecord.setAllergies(
-                Optional.ofNullable(medicalRecordDTO.getAllergies())
+                Optional.ofNullable(medicalRecordRawData.getAllergies())
                         .orElse(existingMedicalRecord.get().getAllergies()));
         updatedMedicalRecord.setMedications(
-                Optional.ofNullable(medicalRecordDTO.getMedications())
+                Optional.ofNullable(medicalRecordRawData.getMedications())
                         .orElse(existingMedicalRecord.get().getMedications()));
 
-        medicalRecordsDTO.remove(existingMedicalRecord.get());
-        medicalRecordsDTO.add(updatedMedicalRecord);
-        jsonWritingRepository.updateMedicalRecords(medicalRecordsDTO);
+        medicalRecordsRawData.remove(existingMedicalRecord.get());
+        medicalRecordsRawData.add(updatedMedicalRecord);
+        jsonWritingRepository.updateMedicalRecords(medicalRecordsRawData);
 
         return updatedMedicalRecord;
     }
 
-    public MedicalRecordDTO deleteMedicalRecordDTO(MedicalRecordDTO medicalRecordDTO)
+    public MedicalRecordRawData deleteMedicalRecordRawData(
+            MedicalRecordRawData medicalRecordRawData)
             throws IOException {
-        List<MedicalRecordDTO> medicalRecords = jsonReadingRepository.getMedicalRecordsDTO();
+        List<MedicalRecordRawData> medicalRecords =
+                jsonReadingRepository.getMedicalRecordsRawData();
 
-        Optional<MedicalRecordDTO> existingMedicalRecord = medicalRecords.stream()
-                .filter(m -> m.getFirstName().equals(medicalRecordDTO.getFirstName()))
-                .filter(m -> m.getLastName().equals(medicalRecordDTO.getLastName()))
+        Optional<MedicalRecordRawData> existingMedicalRecord = medicalRecords.stream()
+                .filter(m -> m.getFirstName().equals(medicalRecordRawData.getFirstName()))
+                .filter(m -> m.getLastName().equals(medicalRecordRawData.getLastName()))
                 .findFirst();
 
         if (existingMedicalRecord.isEmpty()) {

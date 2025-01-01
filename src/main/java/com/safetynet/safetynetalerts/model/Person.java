@@ -2,9 +2,7 @@ package com.safetynet.safetynetalerts.model;
 
 import java.time.LocalDate;
 import java.util.List;
-import org.springframework.stereotype.Component;
 
-@Component
 public class Person {
 
     private String firstName;
@@ -106,7 +104,4 @@ public class Person {
     public void setFirestationId(int firestationId) {
         this.firestationId = firestationId;
     }
-
-
-
 }

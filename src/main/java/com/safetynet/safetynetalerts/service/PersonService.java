@@ -11,10 +11,10 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import com.safetynet.safetynetalerts.dto.PersonDTO;
 import com.safetynet.safetynetalerts.model.Firestation;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
 import com.safetynet.safetynetalerts.model.Person;
+import com.safetynet.safetynetalerts.model.PersonRawData;
 import com.safetynet.safetynetalerts.repository.JsonReadingRepository;
 import com.safetynet.safetynetalerts.repository.JsonWritingRepository;
 
@@ -36,22 +36,22 @@ public class PersonService {
     }
 
     public List<Person> getPersons() throws IOException {
-        List<PersonDTO> personsDTO = jsonReadingRepository.getPersonsDTO();
+        List<PersonRawData> personsRawData = jsonReadingRepository.getPersonsRawData();
         List<Person> persons = new ArrayList<Person>();
         List<MedicalRecord> medicalRecords = medicalRecordService.getMedicalRecords();
         Set<Firestation> firestations = firestationService.getFirestations();
 
         try {
-            for (PersonDTO personDTO : personsDTO) {
+            for (PersonRawData personRawData : personsRawData) {
                 Person person = new Person();
-                person.setFirstName(personDTO.getFirstName());
-                person.setLastName(personDTO.getLastName());
-                person.setAddress(personDTO.getAddress());
-                person.setCity(personDTO.getCity());
-                person.setZip(personDTO.getZip());
-                person.setPhone(personDTO.getPhone());
-                person.setEmail(personDTO.getEmail());
-                person.setPersonId(personDTO.getFirstName().concat(personDTO.getLastName()));
+                person.setFirstName(personRawData.getFirstName());
+                person.setLastName(personRawData.getLastName());
+                person.setAddress(personRawData.getAddress());
+                person.setCity(personRawData.getCity());
+                person.setZip(personRawData.getZip());
+                person.setPhone(personRawData.getPhone());
+                person.setEmail(personRawData.getEmail());
+                person.setPersonId(personRawData.getFirstName().concat(personRawData.getLastName()));
                 person.setBirthdate(getBirthdate(person.getPersonId(), medicalRecords));
                 person.setAge(getAge(person.getPersonId(), medicalRecords));
                 if (person.getAge() <= 18)
@@ -65,7 +65,7 @@ public class PersonService {
                 persons.add(person);
             }
         } catch (NullPointerException e) {
-            logger.error("personsDTO list is empty");
+            logger.error("personsRawData list is empty");
         }
 
         return persons;
@@ -133,12 +133,12 @@ public class PersonService {
         }
     }
 
-    public PersonDTO createPersonDTO(PersonDTO personDTO) throws IOException {
-        List<PersonDTO> personsDTO = jsonReadingRepository.getPersonsDTO();
+    public PersonRawData createPersonRawData(PersonRawData personRawData) throws IOException{
+        List<PersonRawData> personsRawData = jsonReadingRepository.getPersonsRawData();
 
-        Optional<PersonDTO> existingPerson = personsDTO.stream()
-                .filter(p -> p.getFirstName().equals(personDTO.getFirstName()))
-                .filter(p -> p.getLastName().equals(personDTO.getLastName()))
+        Optional<PersonRawData> existingPerson = personsRawData.stream()
+                .filter(p -> p.getFirstName().equals(personRawData.getFirstName()))
+                .filter(p -> p.getLastName().equals(personRawData.getLastName()))
                 .findFirst();
 
         if (existingPerson.isPresent()) {
@@ -146,18 +146,18 @@ public class PersonService {
             return null;
         }
 
-        personsDTO.add(personDTO);
-        jsonWritingRepository.updatePersons(personsDTO);
+        personsRawData.add(personRawData);
+        jsonWritingRepository.updatePersons(personsRawData);
 
-        return personDTO;
+        return personRawData;
     }
 
-    public PersonDTO updatePersonDTO(PersonDTO personDTO) throws IOException {
-        List<PersonDTO> personsDTO = jsonReadingRepository.getPersonsDTO();
+    public PersonRawData updatePersonRawData(PersonRawData personRawData) throws IOException {
+        List<PersonRawData> personsRawData = jsonReadingRepository.getPersonsRawData();
 
-        Optional<PersonDTO> existingPerson = personsDTO.stream()
-                .filter(p -> p.getFirstName().equals(personDTO.getFirstName()))
-                .filter(p -> p.getLastName().equals(personDTO.getLastName()))
+        Optional<PersonRawData> existingPerson = personsRawData.stream()
+                .filter(p -> p.getFirstName().equals(personRawData.getFirstName()))
+                .filter(p -> p.getLastName().equals(personRawData.getLastName()))
                 .findFirst();
 
         if (existingPerson.isEmpty()) {
@@ -165,38 +165,37 @@ public class PersonService {
             return null;
         }
 
-        PersonDTO updatedPerson = new PersonDTO();
-        updatedPerson.setFirstName(personDTO.getFirstName());
-        updatedPerson.setLastName(personDTO.getLastName());
+        
+        PersonRawData updatedPerson = new PersonRawData(personRawData.getFirstName(),personRawData.getLastName());
         updatedPerson.setAddress(
-                Optional.ofNullable(personDTO.getAddress())
+                Optional.ofNullable(personRawData.getAddress())
                         .orElse(existingPerson.get().getAddress()));
         updatedPerson.setCity(
-                Optional.ofNullable(personDTO.getCity())
+                Optional.ofNullable(personRawData.getCity())
                         .orElse(existingPerson.get().getCity()));
         updatedPerson.setZip(
-                Optional.ofNullable(personDTO.getZip())
+                Optional.ofNullable(personRawData.getZip())
                         .orElse(existingPerson.get().getZip()));
         updatedPerson.setPhone(
-                Optional.ofNullable(personDTO.getPhone())
+                Optional.ofNullable(personRawData.getPhone())
                         .orElse(existingPerson.get().getPhone()));
         updatedPerson.setEmail(
-                Optional.ofNullable(personDTO.getEmail())
+                Optional.ofNullable(personRawData.getEmail())
                         .orElse(existingPerson.get().getEmail()));
 
-        personsDTO.remove(existingPerson.get());
-        personsDTO.add(updatedPerson);
-        jsonWritingRepository.updatePersons(personsDTO);
+        personsRawData.remove(existingPerson.get());
+        personsRawData.add(updatedPerson);
+        jsonWritingRepository.updatePersons(personsRawData);
 
         return updatedPerson;
     }
 
-    public PersonDTO deletePersonDTO(PersonDTO personDTO) throws IOException {
-        List<PersonDTO> personsDTO = jsonReadingRepository.getPersonsDTO();
+    public PersonRawData deletePersonRawData(PersonRawData personRawData) throws IOException {
+        List<PersonRawData> personsRawData = jsonReadingRepository.getPersonsRawData();
 
-        Optional<PersonDTO> existingPerson = personsDTO.stream()
-                .filter(p -> p.getFirstName().equals(personDTO.getFirstName()))
-                .filter(p -> p.getLastName().equals(personDTO.getLastName()))
+        Optional<PersonRawData> existingPerson = personsRawData.stream()
+                .filter(p -> p.getFirstName().equals(personRawData.getFirstName()))
+                .filter(p -> p.getLastName().equals(personRawData.getLastName()))
                 .findFirst();
 
         if (existingPerson.isEmpty()) {
@@ -204,8 +203,8 @@ public class PersonService {
             return null;
         }
 
-        personsDTO.remove(existingPerson.get());
-        jsonWritingRepository.updatePersons(personsDTO);
+        personsRawData.remove(existingPerson.get());
+        jsonWritingRepository.updatePersons(personsRawData);
 
         return existingPerson.get();
     }
