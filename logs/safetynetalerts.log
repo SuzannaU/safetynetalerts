@@ -345,3 +345,327 @@
 2025-01-01T11:23:41.188+01:00 DEBUG 24560 --- [safetynetalerts] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2025-01-01T11:23:41.189+01:00 DEBUG 24560 --- [safetynetalerts] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.PersonRawData@5053f44d]
 2025-01-01T11:23:41.190+01:00 DEBUG 24560 --- [safetynetalerts] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED
+2025-01-01T11:40:18.677+01:00  INFO 23180 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Starting SafetynetalertsApplication using Java 17.0.8 with PID 23180 (C:\Users\eliza\Programmation\Projet5\safetynetalerts\target\classes started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2025-01-01T11:40:18.681+01:00 DEBUG 23180 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-01T11:40:18.683+01:00  INFO 23180 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-01-01T11:40:20.480+01:00  INFO 23180 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-01T11:40:20.498+01:00  INFO 23180 --- [safetynetalerts] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-01T11:40:20.499+01:00  INFO 23180 --- [safetynetalerts] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-01T11:40:20.594+01:00  INFO 23180 --- [safetynetalerts] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-01T11:40:20.595+01:00  INFO 23180 --- [safetynetalerts] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1809 ms
+2025-01-01T11:40:20.942+01:00 DEBUG 23180 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 18 mappings in 'requestMappingHandlerMapping'
+2025-01-01T11:40:21.027+01:00 DEBUG 23180 --- [safetynetalerts] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-01-01T11:40:21.067+01:00 DEBUG 23180 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-01-01T11:40:21.153+01:00 DEBUG 23180 --- [safetynetalerts] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-01-01T11:40:21.273+01:00  INFO 23180 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-01T11:40:21.286+01:00  INFO 23180 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Started SafetynetalertsApplication in 3.406 seconds (process running for 3.832)
+2025-01-01T11:41:08.921+01:00  INFO 23180 --- [safetynetalerts] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-01T11:41:08.922+01:00  INFO 23180 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-01-01T11:41:08.923+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-01-01T11:41:08.924+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-01-01T11:41:08.924+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-01-01T11:41:08.926+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@69944b64
+2025-01-01T11:41:08.927+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@4ec6711
+2025-01-01T11:41:08.929+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-01-01T11:41:08.930+01:00  INFO 23180 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2025-01-01T11:41:08.944+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/medicalRecord", parameters={}
+2025-01-01T11:41:08.970+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.MedicalRecordDataController#createMedicalRecordRawData(MedicalRecordRawData)
+2025-01-01T11:41:09.129+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.MedicalRecordRawData@1aedf8d2]
+2025-01-01T11:41:09.179+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.repository.JsonReadingRepository   : medicalRecordsRawData retrieved
+2025-01-01T11:41:09.236+01:00  INFO 23180 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.repository.JsonWritingRepository   : Json file updated
+2025-01-01T11:41:09.237+01:00  INFO 23180 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.repository.JsonWritingRepository   : Json file updated with modified medical records
+2025-01-01T11:41:09.251+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T11:41:09.254+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.MedicalRecordRawData@1aedf8d2]
+2025-01-01T11:41:09.269+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2025-01-01T11:41:16.459+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/medicalRecord", parameters={}
+2025-01-01T11:41:16.460+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.MedicalRecordDataController#createMedicalRecordRawData(MedicalRecordRawData)
+2025-01-01T11:41:16.462+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.MedicalRecordRawData@39aca70e]
+2025-01-01T11:41:16.470+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonReadingRepository   : medicalRecordsRawData retrieved
+2025-01-01T11:41:16.471+01:00 ERROR 23180 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.service.MedicalRecordService       : This medical record already exists
+2025-01-01T11:41:16.472+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T11:41:16.473+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.MedicalRecordRawData@39aca70e]
+2025-01-01T11:41:16.475+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-01-01T11:41:23.376+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/medicalRecord", parameters={}
+2025-01-01T11:41:23.377+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.MedicalRecordDataController#createMedicalRecordRawData(MedicalRecordRawData)
+2025-01-01T11:41:23.379+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.MedicalRecordRawData@124ac633]
+2025-01-01T11:41:23.386+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-5] c.s.s.repository.JsonReadingRepository   : medicalRecordsRawData retrieved
+2025-01-01T11:41:23.387+01:00 ERROR 23180 --- [safetynetalerts] [http-nio-8080-exec-5] c.s.s.service.MedicalRecordService       : This medical record already exists
+2025-01-01T11:41:23.389+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T11:41:23.390+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.MedicalRecordRawData@124ac633]
+2025-01-01T11:41:23.392+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-01-01T11:41:31.599+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : PUT "/medicalRecord", parameters={}
+2025-01-01T11:41:31.601+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.MedicalRecordDataController#updateMedicalRecordRawData(MedicalRecordRawData)
+2025-01-01T11:41:31.603+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.MedicalRecordRawData@18847cf4]
+2025-01-01T11:41:31.609+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-7] c.s.s.repository.JsonReadingRepository   : medicalRecordsRawData retrieved
+2025-01-01T11:41:31.616+01:00  INFO 23180 --- [safetynetalerts] [http-nio-8080-exec-7] c.s.s.repository.JsonWritingRepository   : Json file updated
+2025-01-01T11:41:31.617+01:00  INFO 23180 --- [safetynetalerts] [http-nio-8080-exec-7] c.s.s.repository.JsonWritingRepository   : Json file updated with modified medical records
+2025-01-01T11:41:31.619+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T11:41:31.620+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.MedicalRecordRawData@331f2f10]
+2025-01-01T11:41:31.622+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED
+2025-01-01T11:41:36.209+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : PUT "/medicalRecord", parameters={}
+2025-01-01T11:41:36.210+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.MedicalRecordDataController#updateMedicalRecordRawData(MedicalRecordRawData)
+2025-01-01T11:41:36.212+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.MedicalRecordRawData@4e491866]
+2025-01-01T11:41:36.218+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-8] c.s.s.repository.JsonReadingRepository   : medicalRecordsRawData retrieved
+2025-01-01T11:41:36.224+01:00  INFO 23180 --- [safetynetalerts] [http-nio-8080-exec-8] c.s.s.repository.JsonWritingRepository   : Json file updated
+2025-01-01T11:41:36.224+01:00  INFO 23180 --- [safetynetalerts] [http-nio-8080-exec-8] c.s.s.repository.JsonWritingRepository   : Json file updated with modified medical records
+2025-01-01T11:41:36.226+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T11:41:36.228+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.MedicalRecordRawData@619c1aab]
+2025-01-01T11:41:36.229+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED
+2025-01-01T11:42:21.129+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : PUT "/medicalRecord", parameters={}
+2025-01-01T11:42:21.130+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.MedicalRecordDataController#updateMedicalRecordRawData(MedicalRecordRawData)
+2025-01-01T11:42:21.132+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.MedicalRecordRawData@5954162a]
+2025-01-01T11:42:21.137+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-9] c.s.s.repository.JsonReadingRepository   : medicalRecordsRawData retrieved
+2025-01-01T11:42:21.143+01:00  INFO 23180 --- [safetynetalerts] [http-nio-8080-exec-9] c.s.s.repository.JsonWritingRepository   : Json file updated
+2025-01-01T11:42:21.143+01:00  INFO 23180 --- [safetynetalerts] [http-nio-8080-exec-9] c.s.s.repository.JsonWritingRepository   : Json file updated with modified medical records
+2025-01-01T11:42:21.144+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T11:42:21.146+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.MedicalRecordRawData@76811604]
+2025-01-01T11:42:21.148+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED
+2025-01-01T11:42:27.420+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : PUT "/medicalRecord", parameters={}
+2025-01-01T11:42:27.421+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.MedicalRecordDataController#updateMedicalRecordRawData(MedicalRecordRawData)
+2025-01-01T11:42:27.422+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.MedicalRecordRawData@b98e54b]
+2025-01-01T11:42:27.426+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-6] c.s.s.repository.JsonReadingRepository   : medicalRecordsRawData retrieved
+2025-01-01T11:42:27.433+01:00  INFO 23180 --- [safetynetalerts] [http-nio-8080-exec-6] c.s.s.repository.JsonWritingRepository   : Json file updated
+2025-01-01T11:42:27.433+01:00  INFO 23180 --- [safetynetalerts] [http-nio-8080-exec-6] c.s.s.repository.JsonWritingRepository   : Json file updated with modified medical records
+2025-01-01T11:42:27.434+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T11:42:27.435+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.MedicalRecordRawData@244dff3c]
+2025-01-01T11:42:27.438+01:00 DEBUG 23180 --- [safetynetalerts] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED
+2025-01-01T11:45:45.962+01:00  INFO 32504 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Starting SafetynetalertsApplication using Java 17.0.8 with PID 32504 (C:\Users\eliza\Programmation\Projet5\safetynetalerts\target\classes started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2025-01-01T11:45:45.968+01:00 DEBUG 32504 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-01T11:45:45.971+01:00  INFO 32504 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-01-01T11:45:47.674+01:00  INFO 32504 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-01T11:45:47.696+01:00  INFO 32504 --- [safetynetalerts] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-01T11:45:47.697+01:00  INFO 32504 --- [safetynetalerts] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-01T11:45:47.803+01:00  INFO 32504 --- [safetynetalerts] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-01T11:45:47.804+01:00  INFO 32504 --- [safetynetalerts] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1737 ms
+2025-01-01T11:45:48.156+01:00 DEBUG 32504 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 18 mappings in 'requestMappingHandlerMapping'
+2025-01-01T11:45:48.251+01:00 DEBUG 32504 --- [safetynetalerts] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-01-01T11:45:48.281+01:00 DEBUG 32504 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-01-01T11:45:48.331+01:00 DEBUG 32504 --- [safetynetalerts] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-01-01T11:45:48.458+01:00  INFO 32504 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-01T11:45:48.474+01:00  INFO 32504 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Started SafetynetalertsApplication in 3.284 seconds (process running for 3.727)
+2025-01-01T11:45:59.529+01:00  INFO 32504 --- [safetynetalerts] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-01T11:45:59.530+01:00  INFO 32504 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-01-01T11:45:59.531+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-01-01T11:45:59.531+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-01-01T11:45:59.532+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-01-01T11:45:59.534+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2fee566a
+2025-01-01T11:45:59.536+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@56032a22
+2025-01-01T11:45:59.538+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-01-01T11:45:59.539+01:00  INFO 32504 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2025-01-01T11:45:59.553+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : PUT "/medicalRecord", parameters={}
+2025-01-01T11:45:59.575+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.MedicalRecordDataController#updateMedicalRecordRawData(MedicalRecordRawData)
+2025-01-01T11:45:59.736+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.MedicalRecordRawData@5e50263e]
+2025-01-01T11:45:59.777+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-1] c.s.s.repository.JsonReadingRepository   : medicalRecordsRawData retrieved
+2025-01-01T11:45:59.824+01:00  INFO 32504 --- [safetynetalerts] [http-nio-8080-exec-1] c.s.s.repository.JsonWritingRepository   : Json file updated
+2025-01-01T11:45:59.825+01:00  INFO 32504 --- [safetynetalerts] [http-nio-8080-exec-1] c.s.s.repository.JsonWritingRepository   : Json file updated with modified medical records
+2025-01-01T11:45:59.839+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T11:45:59.842+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.MedicalRecordRawData@d09958c]
+2025-01-01T11:45:59.855+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED
+2025-01-01T11:46:06.595+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : PUT "/medicalRecord", parameters={}
+2025-01-01T11:46:06.596+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.MedicalRecordDataController#updateMedicalRecordRawData(MedicalRecordRawData)
+2025-01-01T11:46:06.598+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.MedicalRecordRawData@32e7b38b]
+2025-01-01T11:46:06.604+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonReadingRepository   : medicalRecordsRawData retrieved
+2025-01-01T11:46:06.612+01:00  INFO 32504 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonWritingRepository   : Json file updated
+2025-01-01T11:46:06.612+01:00  INFO 32504 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonWritingRepository   : Json file updated with modified medical records
+2025-01-01T11:46:06.613+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T11:46:06.614+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.MedicalRecordRawData@1d32aed3]
+2025-01-01T11:46:06.615+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED
+2025-01-01T11:46:15.691+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : DELETE "/medicalRecord", parameters={}
+2025-01-01T11:46:15.692+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.MedicalRecordDataController#deleteMedicalRecordRawData(MedicalRecordRawData)
+2025-01-01T11:46:15.693+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.MedicalRecordRawData@61d6e21f]
+2025-01-01T11:46:15.699+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-4] c.s.s.repository.JsonReadingRepository   : medicalRecordsRawData retrieved
+2025-01-01T11:46:15.708+01:00  INFO 32504 --- [safetynetalerts] [http-nio-8080-exec-4] c.s.s.repository.JsonWritingRepository   : Json file updated
+2025-01-01T11:46:15.709+01:00  INFO 32504 --- [safetynetalerts] [http-nio-8080-exec-4] c.s.s.repository.JsonWritingRepository   : Json file updated with modified medical records
+2025-01-01T11:46:15.710+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T11:46:15.711+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.MedicalRecordRawData@4a4ddf8b]
+2025-01-01T11:46:15.712+01:00 DEBUG 32504 --- [safetynetalerts] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED
+2025-01-01T12:18:26.116+01:00  INFO 22360 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Starting SafetynetalertsApplication using Java 17.0.8 with PID 22360 (C:\Users\eliza\Programmation\Projet5\safetynetalerts\target\classes started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2025-01-01T12:18:26.123+01:00 DEBUG 22360 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-01T12:18:26.125+01:00  INFO 22360 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-01-01T12:18:27.423+01:00  INFO 22360 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-01T12:18:27.441+01:00  INFO 22360 --- [safetynetalerts] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-01T12:18:27.442+01:00  INFO 22360 --- [safetynetalerts] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-01T12:18:27.510+01:00  INFO 22360 --- [safetynetalerts] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-01T12:18:27.511+01:00  INFO 22360 --- [safetynetalerts] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1328 ms
+2025-01-01T12:18:27.766+01:00 DEBUG 22360 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 18 mappings in 'requestMappingHandlerMapping'
+2025-01-01T12:18:27.837+01:00 DEBUG 22360 --- [safetynetalerts] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-01-01T12:18:27.871+01:00 DEBUG 22360 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-01-01T12:18:27.924+01:00 DEBUG 22360 --- [safetynetalerts] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-01-01T12:18:28.029+01:00  INFO 22360 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-01T12:18:28.037+01:00  INFO 22360 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Started SafetynetalertsApplication in 2.588 seconds (process running for 2.911)
+2025-01-01T12:19:02.366+01:00  INFO 22360 --- [safetynetalerts] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-01T12:19:02.367+01:00  INFO 22360 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-01-01T12:19:02.368+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-01-01T12:19:02.368+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-01-01T12:19:02.369+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-01-01T12:19:02.371+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6f83292f
+2025-01-01T12:19:02.373+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@584078f2
+2025-01-01T12:19:02.374+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-01-01T12:19:02.375+01:00  INFO 22360 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2025-01-01T12:19:02.387+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : PUT "/firestation", parameters={}
+2025-01-01T12:19:02.410+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.FirestationDataController#updateFirestationRawData(FirestationRawData)
+2025-01-01T12:19:02.516+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.FirestationRawData@222ba3af]
+2025-01-01T12:19:02.541+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] c.s.s.repository.JsonReadingRepository   : firestationsRawData retrieved
+2025-01-01T12:19:02.542+01:00 ERROR 22360 --- [safetynetalerts] [http-nio-8080-exec-1] c.s.s.service.FirestationService         : This address doesn't exist and cannot be updated
+2025-01-01T12:19:02.560+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T12:19:02.562+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.FirestationRawData@222ba3af]
+2025-01-01T12:19:02.573+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-01-01T12:19:14.788+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/firestation", parameters={}
+2025-01-01T12:19:14.789+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.FirestationDataController#createFirestationRawData(FirestationRawData)
+2025-01-01T12:19:14.790+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.FirestationRawData@71c442d4]
+2025-01-01T12:19:14.795+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonReadingRepository   : firestationsRawData retrieved
+2025-01-01T12:19:14.819+01:00  INFO 22360 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonWritingRepository   : Json file updated
+2025-01-01T12:19:14.821+01:00  INFO 22360 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonWritingRepository   : Json file updated with modified firestations
+2025-01-01T12:19:14.822+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T12:19:14.823+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.FirestationRawData@71c442d4]
+2025-01-01T12:19:14.825+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2025-01-01T12:19:36.568+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/firestation", parameters={}
+2025-01-01T12:19:36.570+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.FirestationDataController#createFirestationRawData(FirestationRawData)
+2025-01-01T12:19:36.574+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-5] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.safetynet.safetynetalerts.model.FirestationRawData> com.safetynet.safetynetalerts.controller.FirestationDataController.createFirestationRawData(com.safetynet.safetynetalerts.model.FirestationRawData) throws java.io.IOException: JSON parse error: Cannot construct instance of `com.safetynet.safetynetalerts.model.FirestationRawData`, problem: 'firestationId' is missing
+2025-01-01T12:19:36.582+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.safetynet.safetynetalerts.controller.FirestationDataController#handleIllegalArgumentException(IllegalArgumentException)
+2025-01-01T12:19:36.584+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2025-01-01T12:19:36.585+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["Missing data: station and address are mandatory"]
+2025-01-01T12:19:36.590+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `com.safetynet.safetynetalerts.model.FirestationRawData`, problem: 'firestationId' is missing]
+2025-01-01T12:19:36.591+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-01-01T12:20:00.929+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/firestation", parameters={}
+2025-01-01T12:20:00.931+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.FirestationDataController#createFirestationRawData(FirestationRawData)
+2025-01-01T12:20:00.932+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.FirestationRawData@18847cf4]
+2025-01-01T12:20:00.937+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-6] c.s.s.repository.JsonReadingRepository   : firestationsRawData retrieved
+2025-01-01T12:20:00.937+01:00 ERROR 22360 --- [safetynetalerts] [http-nio-8080-exec-6] c.s.s.service.FirestationService         : This address is already mapped to this firestation
+2025-01-01T12:20:00.938+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T12:20:00.939+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.FirestationRawData@18847cf4]
+2025-01-01T12:20:00.941+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-01-01T12:20:11.986+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/firestation", parameters={}
+2025-01-01T12:20:11.986+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.FirestationDataController#createFirestationRawData(FirestationRawData)
+2025-01-01T12:20:11.987+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-9] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.safetynet.safetynetalerts.model.FirestationRawData> com.safetynet.safetynetalerts.controller.FirestationDataController.createFirestationRawData(com.safetynet.safetynetalerts.model.FirestationRawData) throws java.io.IOException: JSON parse error: Cannot construct instance of `com.safetynet.safetynetalerts.model.FirestationRawData`, problem: 'firestationId' is missing
+2025-01-01T12:20:11.989+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.safetynet.safetynetalerts.controller.FirestationDataController#handleIllegalArgumentException(IllegalArgumentException)
+2025-01-01T12:20:11.990+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2025-01-01T12:20:11.992+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["Missing data: station and address are mandatory"]
+2025-01-01T12:20:11.993+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `com.safetynet.safetynetalerts.model.FirestationRawData`, problem: 'firestationId' is missing]
+2025-01-01T12:20:11.994+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-01-01T12:20:49.263+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : DELETE "/firestation", parameters={}
+2025-01-01T12:20:49.264+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.FirestationDataController#deleteFirestationRawData(FirestationRawData)
+2025-01-01T12:20:49.266+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.FirestationRawData@376b4e4b]
+2025-01-01T12:20:49.270+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.repository.JsonReadingRepository   : firestationsRawData retrieved
+2025-01-01T12:20:49.275+01:00  INFO 22360 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.repository.JsonWritingRepository   : Json file updated
+2025-01-01T12:20:49.276+01:00  INFO 22360 --- [safetynetalerts] [http-nio-8080-exec-2] c.s.s.repository.JsonWritingRepository   : Json file updated with modified firestations
+2025-01-01T12:20:49.276+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T12:20:49.277+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.FirestationRawData@49ccabaa]
+2025-01-01T12:20:49.279+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED
+2025-01-01T12:21:03.399+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : PUT "/person", parameters={}
+2025-01-01T12:21:03.400+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.PersonDataController#updatePersonRawData(PersonRawData)
+2025-01-01T12:21:03.403+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.PersonRawData@57da7d24]
+2025-01-01T12:21:03.408+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] c.s.s.repository.JsonReadingRepository   : personsRawData retrieved
+2025-01-01T12:21:03.414+01:00  INFO 22360 --- [safetynetalerts] [http-nio-8080-exec-1] c.s.s.repository.JsonWritingRepository   : Json file updated
+2025-01-01T12:21:03.415+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] c.s.s.repository.JsonWritingRepository   : Json file updated with modified persons
+2025-01-01T12:21:03.420+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T12:21:03.421+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.PersonRawData@34354c06]
+2025-01-01T12:21:03.423+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED
+2025-01-01T12:21:28.484+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/person", parameters={}
+2025-01-01T12:21:28.485+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.PersonDataController#createPersonRawData(PersonRawData)
+2025-01-01T12:21:28.487+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.PersonRawData@124ac633]
+2025-01-01T12:21:28.491+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-4] c.s.s.repository.JsonReadingRepository   : personsRawData retrieved
+2025-01-01T12:21:28.493+01:00 ERROR 22360 --- [safetynetalerts] [http-nio-8080-exec-4] c.s.s.service.PersonService              : This person already exists
+2025-01-01T12:21:28.495+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T12:21:28.495+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.PersonRawData@124ac633]
+2025-01-01T12:21:28.497+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-01-01T12:21:40.705+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/person", parameters={}
+2025-01-01T12:21:40.706+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.PersonDataController#createPersonRawData(PersonRawData)
+2025-01-01T12:21:40.708+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.PersonRawData@70352539]
+2025-01-01T12:21:40.711+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonReadingRepository   : personsRawData retrieved
+2025-01-01T12:21:40.715+01:00  INFO 22360 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonWritingRepository   : Json file updated
+2025-01-01T12:21:40.716+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonWritingRepository   : Json file updated with modified persons
+2025-01-01T12:21:40.717+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T12:21:40.718+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.PersonRawData@70352539]
+2025-01-01T12:21:40.719+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2025-01-01T12:21:48.602+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : PUT "/person", parameters={}
+2025-01-01T12:21:48.602+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.PersonDataController#updatePersonRawData(PersonRawData)
+2025-01-01T12:21:48.603+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.PersonRawData@4e491866]
+2025-01-01T12:21:48.607+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-7] c.s.s.repository.JsonReadingRepository   : personsRawData retrieved
+2025-01-01T12:21:48.611+01:00  INFO 22360 --- [safetynetalerts] [http-nio-8080-exec-7] c.s.s.repository.JsonWritingRepository   : Json file updated
+2025-01-01T12:21:48.612+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-7] c.s.s.repository.JsonWritingRepository   : Json file updated with modified persons
+2025-01-01T12:21:48.613+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T12:21:48.614+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.PersonRawData@3078a0b3]
+2025-01-01T12:21:48.616+01:00 DEBUG 22360 --- [safetynetalerts] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED
+2025-01-01T12:26:24.595+01:00  INFO 27924 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Starting SafetynetalertsApplication using Java 17.0.8 with PID 27924 (C:\Users\eliza\Programmation\Projet5\safetynetalerts\target\classes started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2025-01-01T12:26:24.599+01:00 DEBUG 27924 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-01T12:26:24.601+01:00  INFO 27924 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-01-01T12:26:25.710+01:00  INFO 27924 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-01T12:26:25.732+01:00  INFO 27924 --- [safetynetalerts] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-01T12:26:25.733+01:00  INFO 27924 --- [safetynetalerts] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-01T12:26:25.809+01:00  INFO 27924 --- [safetynetalerts] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-01T12:26:25.810+01:00  INFO 27924 --- [safetynetalerts] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1148 ms
+2025-01-01T12:26:26.055+01:00 DEBUG 27924 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 18 mappings in 'requestMappingHandlerMapping'
+2025-01-01T12:26:26.138+01:00 DEBUG 27924 --- [safetynetalerts] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-01-01T12:26:26.167+01:00 DEBUG 27924 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-01-01T12:26:26.210+01:00 DEBUG 27924 --- [safetynetalerts] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-01-01T12:26:26.296+01:00  INFO 27924 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-01T12:26:26.306+01:00  INFO 27924 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Started SafetynetalertsApplication in 2.274 seconds (process running for 2.616)
+2025-01-01T12:26:47.821+01:00  INFO 27924 --- [safetynetalerts] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-01T12:26:47.822+01:00  INFO 27924 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-01-01T12:26:47.823+01:00 DEBUG 27924 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-01-01T12:26:47.823+01:00 DEBUG 27924 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-01-01T12:26:47.824+01:00 DEBUG 27924 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-01-01T12:26:47.825+01:00 DEBUG 27924 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@74a07200
+2025-01-01T12:26:47.828+01:00 DEBUG 27924 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@788e7482
+2025-01-01T12:26:47.830+01:00 DEBUG 27924 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-01-01T12:26:47.832+01:00  INFO 27924 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2025-01-01T12:26:47.847+01:00 DEBUG 27924 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : PUT "/person", parameters={}
+2025-01-01T12:26:47.864+01:00 DEBUG 27924 --- [safetynetalerts] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.PersonDataController#updatePersonRawData(PersonRawData)
+2025-01-01T12:26:47.966+01:00 DEBUG 27924 --- [safetynetalerts] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.PersonRawData@6b9e7f44]
+2025-01-01T12:26:47.994+01:00 DEBUG 27924 --- [safetynetalerts] [http-nio-8080-exec-1] c.s.s.repository.JsonReadingRepository   : personsRawData retrieved
+2025-01-01T12:26:48.024+01:00  INFO 27924 --- [safetynetalerts] [http-nio-8080-exec-1] c.s.s.repository.JsonWritingRepository   : Json file updated
+2025-01-01T12:26:48.025+01:00 DEBUG 27924 --- [safetynetalerts] [http-nio-8080-exec-1] c.s.s.repository.JsonWritingRepository   : Json file updated with modified persons
+2025-01-01T12:26:48.033+01:00 DEBUG 27924 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T12:26:48.036+01:00 DEBUG 27924 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.PersonRawData@4adece57]
+2025-01-01T12:26:48.046+01:00 DEBUG 27924 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED
+2025-01-01T12:27:38.082+01:00  INFO 9692 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Starting SafetynetalertsApplication using Java 17.0.8 with PID 9692 (C:\Users\eliza\Programmation\Projet5\safetynetalerts\target\classes started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2025-01-01T12:27:38.084+01:00 DEBUG 9692 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-01T12:27:38.085+01:00  INFO 9692 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-01-01T12:27:39.112+01:00  INFO 9692 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-01T12:27:39.129+01:00  INFO 9692 --- [safetynetalerts] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-01T12:27:39.130+01:00  INFO 9692 --- [safetynetalerts] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-01T12:27:39.200+01:00  INFO 9692 --- [safetynetalerts] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-01T12:27:39.202+01:00  INFO 9692 --- [safetynetalerts] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1068 ms
+2025-01-01T12:27:39.461+01:00 DEBUG 9692 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 18 mappings in 'requestMappingHandlerMapping'
+2025-01-01T12:27:39.530+01:00 DEBUG 9692 --- [safetynetalerts] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-01-01T12:27:39.557+01:00 DEBUG 9692 --- [safetynetalerts] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-01-01T12:27:39.603+01:00 DEBUG 9692 --- [safetynetalerts] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-01-01T12:27:39.673+01:00  INFO 9692 --- [safetynetalerts] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-01T12:27:39.686+01:00  INFO 9692 --- [safetynetalerts] [main] c.s.s.SafetynetalertsApplication         : Started SafetynetalertsApplication in 2.13 seconds (process running for 2.493)
+2025-01-01T12:27:44.166+01:00  INFO 9692 --- [safetynetalerts] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-01T12:27:44.168+01:00  INFO 9692 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-01-01T12:27:44.169+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-01-01T12:27:44.169+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-01-01T12:27:44.170+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-01-01T12:27:44.171+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@58537af1
+2025-01-01T12:27:44.172+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@2a590ead
+2025-01-01T12:27:44.173+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-01-01T12:27:44.174+01:00  INFO 9692 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2025-01-01T12:27:44.188+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : PUT "/person", parameters={}
+2025-01-01T12:27:44.220+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.PersonDataController#updatePersonRawData(PersonRawData)
+2025-01-01T12:27:44.330+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.PersonRawData@7f12f19f]
+2025-01-01T12:27:44.356+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-1] c.s.s.repository.JsonReadingRepository   : personsRawData retrieved
+2025-01-01T12:27:44.380+01:00  INFO 9692 --- [safetynetalerts] [http-nio-8080-exec-1] c.s.s.repository.JsonWritingRepository   : Json file updated
+2025-01-01T12:27:44.381+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-1] c.s.s.repository.JsonWritingRepository   : Json file updated with modified persons
+2025-01-01T12:27:44.390+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T12:27:44.391+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.PersonRawData@2d4cab02]
+2025-01-01T12:27:44.399+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED
+2025-01-01T12:28:04.606+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : PUT "/person", parameters={}
+2025-01-01T12:28:04.608+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.PersonDataController#updatePersonRawData(PersonRawData)
+2025-01-01T12:28:04.610+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.PersonRawData@32e7b38b]
+2025-01-01T12:28:04.614+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonReadingRepository   : personsRawData retrieved
+2025-01-01T12:28:04.620+01:00  INFO 9692 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonWritingRepository   : Json file updated
+2025-01-01T12:28:04.621+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-3] c.s.s.repository.JsonWritingRepository   : Json file updated with modified persons
+2025-01-01T12:28:04.622+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T12:28:04.624+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.PersonRawData@4c2a4ec6]
+2025-01-01T12:28:04.625+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED
+2025-01-01T12:28:09.133+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : DELETE "/person", parameters={}
+2025-01-01T12:28:09.134+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.safetynet.safetynetalerts.controller.PersonDataController#deletePersonRawData(PersonRawData)
+2025-01-01T12:28:09.136+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.safetynet.safetynetalerts.model.PersonRawData@61d6e21f]
+2025-01-01T12:28:09.142+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-4] c.s.s.repository.JsonReadingRepository   : personsRawData retrieved
+2025-01-01T12:28:09.148+01:00  INFO 9692 --- [safetynetalerts] [http-nio-8080-exec-4] c.s.s.repository.JsonWritingRepository   : Json file updated
+2025-01-01T12:28:09.149+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-4] c.s.s.repository.JsonWritingRepository   : Json file updated with modified persons
+2025-01-01T12:28:09.150+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-01T12:28:09.151+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.safetynet.safetynetalerts.model.PersonRawData@8165178]
+2025-01-01T12:28:09.152+01:00 DEBUG 9692 --- [safetynetalerts] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED

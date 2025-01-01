@@ -39,7 +39,8 @@ public class MedicalRecordService {
                     .concat(medicalRecordRawData.getLastName()));
             medicalRecord.setMedications(medicalRecordRawData.getMedications());
             medicalRecord.setAllergies(medicalRecordRawData.getAllergies());
-            medicalRecord.setBirthdate(getFormattedBirthdate(medicalRecordRawData.getBirthdate()));
+            medicalRecord.setBirthdate(
+                    getFormattedBirthdate(medicalRecordRawData.getBirthdate()));
             medicalRecord.setAge(getAge(medicalRecordRawData.getBirthdate()));
 
             medicalRecords.add(medicalRecord);
@@ -60,8 +61,7 @@ public class MedicalRecordService {
     }
 
     public MedicalRecordRawData createMedicalRecordRawData(
-            MedicalRecordRawData medicalRecordRawData)
-            throws IOException {
+            MedicalRecordRawData medicalRecordRawData) throws IOException {
         List<MedicalRecordRawData> medicalRecordsRawData =
                 jsonReadingRepository.getMedicalRecordsRawData();
 
@@ -82,8 +82,7 @@ public class MedicalRecordService {
     }
 
     public MedicalRecordRawData updateMedicalRecordRawData(
-            MedicalRecordRawData medicalRecordRawData)
-            throws IOException {
+            MedicalRecordRawData medicalRecordRawData) throws IOException {
         List<MedicalRecordRawData> medicalRecordsRawData =
                 jsonReadingRepository.getMedicalRecordsRawData();
 
@@ -100,9 +99,15 @@ public class MedicalRecordService {
         MedicalRecordRawData updatedMedicalRecord = new MedicalRecordRawData(
                 medicalRecordRawData.getFirstName(),
                 medicalRecordRawData.getLastName());
-        updatedMedicalRecord.setBirthdate(
-                Optional.ofNullable(medicalRecordRawData.getBirthdate())
-                        .orElse(existingMedicalRecord.get().getBirthdate()));
+
+
+        if (medicalRecordRawData.getBirthdate() == null
+                || medicalRecordRawData.getBirthdate().trim().isEmpty())
+            updatedMedicalRecord.setBirthdate(existingMedicalRecord.get().getBirthdate());
+        else
+            updatedMedicalRecord.setBirthdate(medicalRecordRawData.getBirthdate());
+
+        // TODO : modify to ignore "" in JSON input
         updatedMedicalRecord.setAllergies(
                 Optional.ofNullable(medicalRecordRawData.getAllergies())
                         .orElse(existingMedicalRecord.get().getAllergies()));
@@ -118,8 +123,8 @@ public class MedicalRecordService {
     }
 
     public MedicalRecordRawData deleteMedicalRecordRawData(
-            MedicalRecordRawData medicalRecordRawData)
-            throws IOException {
+            MedicalRecordRawData medicalRecordRawData) throws IOException {
+
         List<MedicalRecordRawData> medicalRecords =
                 jsonReadingRepository.getMedicalRecordsRawData();
 

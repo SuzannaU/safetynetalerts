@@ -51,7 +51,8 @@ public class PersonService {
                 person.setZip(personRawData.getZip());
                 person.setPhone(personRawData.getPhone());
                 person.setEmail(personRawData.getEmail());
-                person.setPersonId(personRawData.getFirstName().concat(personRawData.getLastName()));
+                person.setPersonId(
+                        personRawData.getFirstName().concat(personRawData.getLastName()));
                 person.setBirthdate(getBirthdate(person.getPersonId(), medicalRecords));
                 person.setAge(getAge(person.getPersonId(), medicalRecords));
                 if (person.getAge() <= 18)
@@ -133,7 +134,7 @@ public class PersonService {
         }
     }
 
-    public PersonRawData createPersonRawData(PersonRawData personRawData) throws IOException{
+    public PersonRawData createPersonRawData(PersonRawData personRawData) throws IOException {
         List<PersonRawData> personsRawData = jsonReadingRepository.getPersonsRawData();
 
         Optional<PersonRawData> existingPerson = personsRawData.stream()
@@ -165,23 +166,38 @@ public class PersonService {
             return null;
         }
 
-        
-        PersonRawData updatedPerson = new PersonRawData(personRawData.getFirstName(),personRawData.getLastName());
-        updatedPerson.setAddress(
-                Optional.ofNullable(personRawData.getAddress())
-                        .orElse(existingPerson.get().getAddress()));
-        updatedPerson.setCity(
-                Optional.ofNullable(personRawData.getCity())
-                        .orElse(existingPerson.get().getCity()));
-        updatedPerson.setZip(
-                Optional.ofNullable(personRawData.getZip())
-                        .orElse(existingPerson.get().getZip()));
-        updatedPerson.setPhone(
-                Optional.ofNullable(personRawData.getPhone())
-                        .orElse(existingPerson.get().getPhone()));
-        updatedPerson.setEmail(
-                Optional.ofNullable(personRawData.getEmail())
-                        .orElse(existingPerson.get().getEmail()));
+        PersonRawData updatedPerson =
+                new PersonRawData(personRawData.getFirstName(), personRawData.getLastName());
+
+        if (personRawData.getAddress() == null
+                || personRawData.getAddress().trim().isEmpty())
+            updatedPerson.setAddress(existingPerson.get().getAddress());
+        else
+            updatedPerson.setAddress(personRawData.getAddress());
+
+        if (personRawData.getCity() == null
+                || personRawData.getCity().trim().isEmpty())
+            updatedPerson.setCity(existingPerson.get().getCity());
+        else
+            updatedPerson.setCity(personRawData.getCity());
+
+        if (personRawData.getZip() == null
+                || personRawData.getZip().trim().isEmpty())
+            updatedPerson.setZip(existingPerson.get().getZip());
+        else
+            updatedPerson.setZip(personRawData.getZip());
+
+        if (personRawData.getPhone() == null
+                || personRawData.getPhone().trim().isEmpty())
+            updatedPerson.setPhone(existingPerson.get().getPhone());
+        else
+            updatedPerson.setPhone(personRawData.getZip());
+
+        if (personRawData.getEmail() == null
+                || personRawData.getEmail().trim().isEmpty())
+            updatedPerson.setEmail(existingPerson.get().getEmail());
+        else
+            updatedPerson.setEmail(personRawData.getEmail());
 
         personsRawData.remove(existingPerson.get());
         personsRawData.add(updatedPerson);

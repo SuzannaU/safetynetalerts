@@ -41,7 +41,7 @@ public class SafetynetalertsApplication {
 					+ ", " + person.getMedications() + ", " + person.getFirestationId());
 		}*/
 
-		List<Person> persons = personService.getPersons();
+		/*List<Person> persons = personService.getPersons();
 		List<Person> personsForStation = persons.stream()
                 .filter(person -> person.getFirestationId() == 2)
                 .collect(Collectors.toList());
@@ -50,7 +50,7 @@ public class SafetynetalertsApplication {
 			System.out.print(person.getPersonId() + ", ");
 			System.out.print(person.getFirestationId() + ", ");
 			System.out.println(person.getAge());
-		}
+		}*/
 
 		
 		/*List<MedicalRecordRawData> recordsDTO = jsonReadingRepository.getMedicalRecordsDTO();
