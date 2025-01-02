@@ -78,10 +78,14 @@ public class WebAppController {
 
         ObjectMapper objMapper = new ObjectMapper();
 
-        if (childAlertData.getChildren().isEmpty()) {
+        if (childAlertData == null) {
             logger.error("childAlertData is empty");
             objMapper.writeValue(new File(outputFilepath), null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else if (childAlertData.getChildren().isEmpty()) {
+            logger.error("No children live at this address");
+            objMapper.writeValue(new File(outputFilepath), null);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         } else {
             logger.info("childAlertData sent");
             objMapper.writerWithDefaultPrettyPrinter()

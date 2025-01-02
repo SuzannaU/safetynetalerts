@@ -14,9 +14,7 @@ import com.safetynet.safetynetalerts.controller.WebAppController;
 import com.safetynet.safetynetalerts.dto.PersonForStation;
 import com.safetynet.safetynetalerts.model.Firestation;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
-import com.safetynet.safetynetalerts.model.MedicalRecordRawData;
 import com.safetynet.safetynetalerts.model.Person;
-import com.safetynet.safetynetalerts.model.PersonRawData;
 import com.safetynet.safetynetalerts.repository.*;
 import com.safetynet.safetynetalerts.service.FirestationService;
 import com.safetynet.safetynetalerts.service.MedicalRecordService;
@@ -41,16 +39,17 @@ public class SafetynetalertsApplication {
 					+ ", " + person.getMedications() + ", " + person.getFirestationId());
 		}*/
 
-		List<Person> persons = personService.getPersons();
+		/*List<Person> persons = personService.getPersons();
 		List<Person> personsForStation = persons.stream()
                 .filter(person -> person.getFirestationId() == 2)
                 .collect(Collectors.toList());
 		for (Person person : personsForStation) {
+			System.out.print(person.getFirstName() + ", ");
 			System.out.print(person.getAddress() + ", ");
 			System.out.print(person.getPersonId() + ", ");
 			System.out.print(person.getFirestationId() + ", ");
 			System.out.println(person.getAge());
-		}
+		}*/
 
 		
 		/*List<MedicalRecordRawData> recordsDTO = jsonReadingRepository.getMedicalRecordsDTO();

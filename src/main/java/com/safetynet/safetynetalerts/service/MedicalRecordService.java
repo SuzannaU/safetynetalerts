@@ -11,7 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
-import com.safetynet.safetynetalerts.model.MedicalRecordRawData;
+import com.safetynet.safetynetalerts.model.MedicalRecord;
 import com.safetynet.safetynetalerts.repository.JsonReadingRepository;
 import com.safetynet.safetynetalerts.repository.JsonWritingRepository;
 
@@ -28,22 +28,15 @@ public class MedicalRecordService {
     }
 
     public List<MedicalRecord> getMedicalRecords() throws IOException {
-        List<MedicalRecord> medicalRecords = new ArrayList<MedicalRecord>();
-        List<MedicalRecordRawData> medicalRecordsRawData =
-                jsonReadingRepository.getMedicalRecordsRawData();
+        List<MedicalRecord> medicalRecords =
+                jsonReadingRepository.getMedicalRecords();
 
-        for (MedicalRecordRawData medicalRecordRawData : medicalRecordsRawData) {
+        for (MedicalRecord medicalRecord : medicalRecords) {
 
-            MedicalRecord medicalRecord = new MedicalRecord();
-            medicalRecord.setPersonId(medicalRecordRawData.getFirstName()
-                    .concat(medicalRecordRawData.getLastName()));
-            medicalRecord.setMedications(medicalRecordRawData.getMedications());
-            medicalRecord.setAllergies(medicalRecordRawData.getAllergies());
-            medicalRecord.setBirthdate(
-                    getFormattedBirthdate(medicalRecordRawData.getBirthdate()));
-            medicalRecord.setAge(getAge(medicalRecordRawData.getBirthdate()));
-
-            medicalRecords.add(medicalRecord);
+            medicalRecord.setMedications(medicalRecord.getMedications());
+            medicalRecord.setAllergies(medicalRecord.getAllergies());
+            medicalRecord.setLocalBirthdate(getFormattedBirthdate(medicalRecord.getRawBirthdate()));
+            medicalRecord.setAge(getAge(medicalRecord.getRawBirthdate()));
         }
 
         return medicalRecords;
@@ -60,14 +53,13 @@ public class MedicalRecordService {
         return LocalDate.parse(birthdate, formatter);
     }
 
-    public MedicalRecordRawData createMedicalRecordRawData(
-            MedicalRecordRawData medicalRecordRawData) throws IOException {
-        List<MedicalRecordRawData> medicalRecordsRawData =
-                jsonReadingRepository.getMedicalRecordsRawData();
+    public MedicalRecord createMedicalRecord(
+            MedicalRecord medicalRecord) throws IOException {
+        List<MedicalRecord> medicalRecords =jsonReadingRepository.getMedicalRecords();
 
-        Optional<MedicalRecordRawData> existingMedicalRecord = medicalRecordsRawData.stream()
-                .filter(m -> m.getFirstName().equals(medicalRecordRawData.getFirstName()))
-                .filter(m -> m.getLastName().equals(medicalRecordRawData.getLastName()))
+        Optional<MedicalRecord> existingMedicalRecord = medicalRecords.stream()
+                .filter(m -> m.getFirstName().equals(medicalRecord.getFirstName()))
+                .filter(m -> m.getLastName().equals(medicalRecord.getLastName()))
                 .findFirst();
 
         if (existingMedicalRecord.isPresent()) {
@@ -75,20 +67,20 @@ public class MedicalRecordService {
             return null;
         }
 
-        medicalRecordsRawData.add(medicalRecordRawData);
-        jsonWritingRepository.updateMedicalRecords(medicalRecordsRawData);
+        medicalRecords.add(medicalRecord);
+        jsonWritingRepository.updateMedicalRecords(medicalRecords);
 
-        return medicalRecordRawData;
+        return medicalRecord;
     }
 
-    public MedicalRecordRawData updateMedicalRecordRawData(
-            MedicalRecordRawData medicalRecordRawData) throws IOException {
-        List<MedicalRecordRawData> medicalRecordsRawData =
-                jsonReadingRepository.getMedicalRecordsRawData();
+    public MedicalRecord updateMedicalRecord(
+            MedicalRecord medicalRecord) throws IOException {
+        List<MedicalRecord> medicalRecords =
+                jsonReadingRepository.getMedicalRecords();
 
-        Optional<MedicalRecordRawData> existingMedicalRecord = medicalRecordsRawData.stream()
-                .filter(m -> m.getFirstName().equals(medicalRecordRawData.getFirstName()))
-                .filter(m -> m.getLastName().equals(medicalRecordRawData.getLastName()))
+        Optional<MedicalRecord> existingMedicalRecord = medicalRecords.stream()
+                .filter(m -> m.getFirstName().equals(medicalRecord.getFirstName()))
+                .filter(m -> m.getLastName().equals(medicalRecord.getLastName()))
                 .findFirst();
 
         if (existingMedicalRecord.isEmpty()) {
@@ -96,41 +88,42 @@ public class MedicalRecordService {
             return null;
         }
 
-        MedicalRecordRawData updatedMedicalRecord = new MedicalRecordRawData(
-                medicalRecordRawData.getFirstName(),
-                medicalRecordRawData.getLastName());
+        MedicalRecord updatedMedicalRecord = new MedicalRecord(
+                medicalRecord.getFirstName(),
+                medicalRecord.getLastName(),
+                null, null, null);
 
 
-        if (medicalRecordRawData.getBirthdate() == null
-                || medicalRecordRawData.getBirthdate().trim().isEmpty())
-            updatedMedicalRecord.setBirthdate(existingMedicalRecord.get().getBirthdate());
+        if (medicalRecord.getRawBirthdate() == null
+                || medicalRecord.getRawBirthdate().trim().isEmpty())
+            updatedMedicalRecord.setRawBirthdate(existingMedicalRecord.get().getRawBirthdate());
         else
-            updatedMedicalRecord.setBirthdate(medicalRecordRawData.getBirthdate());
+            updatedMedicalRecord.setRawBirthdate(medicalRecord.getRawBirthdate());
 
         // TODO : modify to ignore "" in JSON input
         updatedMedicalRecord.setAllergies(
-                Optional.ofNullable(medicalRecordRawData.getAllergies())
+                Optional.ofNullable(medicalRecord.getAllergies())
                         .orElse(existingMedicalRecord.get().getAllergies()));
         updatedMedicalRecord.setMedications(
-                Optional.ofNullable(medicalRecordRawData.getMedications())
+                Optional.ofNullable(medicalRecord.getMedications())
                         .orElse(existingMedicalRecord.get().getMedications()));
 
-        medicalRecordsRawData.remove(existingMedicalRecord.get());
-        medicalRecordsRawData.add(updatedMedicalRecord);
-        jsonWritingRepository.updateMedicalRecords(medicalRecordsRawData);
+        medicalRecords.remove(existingMedicalRecord.get());
+        medicalRecords.add(updatedMedicalRecord);
+        jsonWritingRepository.updateMedicalRecords(medicalRecords);
 
         return updatedMedicalRecord;
     }
 
-    public MedicalRecordRawData deleteMedicalRecordRawData(
-            MedicalRecordRawData medicalRecordRawData) throws IOException {
+    public MedicalRecord deleteMedicalRecord(
+            MedicalRecord medicalRecord) throws IOException {
 
-        List<MedicalRecordRawData> medicalRecords =
-                jsonReadingRepository.getMedicalRecordsRawData();
+        List<MedicalRecord> medicalRecords =
+                jsonReadingRepository.getMedicalRecords();
 
-        Optional<MedicalRecordRawData> existingMedicalRecord = medicalRecords.stream()
-                .filter(m -> m.getFirstName().equals(medicalRecordRawData.getFirstName()))
-                .filter(m -> m.getLastName().equals(medicalRecordRawData.getLastName()))
+        Optional<MedicalRecord> existingMedicalRecord = medicalRecords.stream()
+                .filter(m -> m.getFirstName().equals(medicalRecord.getFirstName()))
+                .filter(m -> m.getLastName().equals(medicalRecord.getLastName()))
                 .findFirst();
 
         if (existingMedicalRecord.isEmpty()) {

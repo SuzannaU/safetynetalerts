@@ -9,34 +9,34 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.safetynet.safetynetalerts.model.FirestationRawData;
-import com.safetynet.safetynetalerts.model.MedicalRecordRawData;
-import com.safetynet.safetynetalerts.model.PersonRawData;
+import com.safetynet.safetynetalerts.model.Firestation;
+import com.safetynet.safetynetalerts.model.MedicalRecord;
+import com.safetynet.safetynetalerts.model.Person;
 
 @Repository
 public class JsonWritingRepository {
     private static final Logger logger = LoggerFactory.getLogger(JsonWritingRepository.class);
     private final String sourceFilePath = "src/main/resources/data.json";
 
-    public void updatePersons(List<PersonRawData> personsRawData) throws IOException {
+    public void updatePersons(List<Person> persons) throws IOException {
         Map<String, Object> jsonData = getJsonData();
-        jsonData.put("persons", personsRawData);
+        jsonData.put("persons", persons);
 
         writeDataInFile(jsonData);
         logger.debug("Json file updated with modified persons");
     }
 
-    public void updateMedicalRecords(List<MedicalRecordRawData> medicalRecordsRawData) throws IOException {
+    public void updateMedicalRecords(List<MedicalRecord> medicalRecords) throws IOException {
         Map<String, Object> jsonData = getJsonData();
-        jsonData.put("medicalrecords", medicalRecordsRawData);
+        jsonData.put("medicalrecords", medicalRecords);
 
         writeDataInFile(jsonData);
         logger.debug("Json file updated with modified medical records");
     }
 
-    public void updateFirestations(List<FirestationRawData> firestationsRawData) throws IOException {
+    public void updateFirestations(List<Firestation> firestations) throws IOException {
         Map<String, Object> jsonData = getJsonData();
-        jsonData.put("firestations", firestationsRawData);
+        jsonData.put("firestations", firestations);
 
         writeDataInFile(jsonData);
         logger.debug("Json file updated with modified firestations");

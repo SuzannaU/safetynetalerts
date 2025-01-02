@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.safetynet.safetynetalerts.model.PersonRawData;
+import com.safetynet.safetynetalerts.model.Person;
 import com.safetynet.safetynetalerts.service.PersonService;
 import java.io.IOException;
 import org.slf4j.Logger;
@@ -34,50 +34,50 @@ public class PersonDataController {
     }
 
     @PostMapping("/person")
-    public ResponseEntity<PersonRawData> createPersonRawData(
-            @RequestBody PersonRawData personRawData)
+    public ResponseEntity<Person> createPerson(
+            @RequestBody Person person)
             throws IOException, IllegalArgumentException {
 
-        PersonRawData newPersonRawData = personService.createPersonRawData(personRawData);
+        Person newPerson = personService.createPerson(person);
 
-        if (newPersonRawData == null) {
-            logger.error("newPersonRawData is null");
-            return new ResponseEntity<>(personRawData, HttpStatus.BAD_REQUEST);
+        if (newPerson == null) {
+            logger.error("newPerson is null");
+            return new ResponseEntity<>(person, HttpStatus.BAD_REQUEST);
         } else {
-            logger.info("newPersonRawData sent");
-            return new ResponseEntity<>(newPersonRawData, HttpStatus.CREATED);
+            logger.info("newPerson sent");
+            return new ResponseEntity<>(newPerson, HttpStatus.CREATED);
         }
     }
 
     @PutMapping("/person")
-    public ResponseEntity<PersonRawData> updatePersonRawData(
-            @RequestBody PersonRawData personRawData)
+    public ResponseEntity<Person> updatePerson(
+            @RequestBody Person person)
             throws IOException {
 
-        PersonRawData updatedPersonRawData = personService.updatePersonRawData(personRawData);
+        Person updatedPerson = personService.updatePerson(person);
 
-        if (updatedPersonRawData == null) {
-            logger.error("updatedPersonRawData is null");
-            return new ResponseEntity<>(personRawData, HttpStatus.BAD_REQUEST);
+        if (updatedPerson == null) {
+            logger.error("updatedPerson is null");
+            return new ResponseEntity<>(person, HttpStatus.BAD_REQUEST);
         } else {
-            logger.info("updatedPersonRawData sent");
-            return new ResponseEntity<>(updatedPersonRawData, HttpStatus.ACCEPTED);
+            logger.info("updatedPerson sent");
+            return new ResponseEntity<>(updatedPerson, HttpStatus.ACCEPTED);
         }
     }
 
     @DeleteMapping("/person")
-    public ResponseEntity<PersonRawData> deletePersonRawData(
-            @RequestBody PersonRawData personRawData)
+    public ResponseEntity<Person> deletePerson(
+            @RequestBody Person person)
             throws IOException {
 
-        PersonRawData deletedPersonRawData = personService.deletePersonRawData(personRawData);
+        Person deletedPerson = personService.deletePerson(person);
 
-        if (deletedPersonRawData == null) {
-            logger.error("deletedPersonRawData is null");
-            return new ResponseEntity<>(personRawData, HttpStatus.BAD_REQUEST);
+        if (deletedPerson == null) {
+            logger.error("deletedPerson is null");
+            return new ResponseEntity<>(person, HttpStatus.BAD_REQUEST);
         } else {
-            logger.info("deletedPersonRawData sent");
-            return new ResponseEntity<>(deletedPersonRawData, HttpStatus.ACCEPTED);
+            logger.info("deletedPerson sent");
+            return new ResponseEntity<>(deletedPerson, HttpStatus.ACCEPTED);
         }
     }
 }

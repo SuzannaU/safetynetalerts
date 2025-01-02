@@ -2,7 +2,6 @@ package com.safetynet.safetynetalerts.service;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -14,7 +13,6 @@ import org.springframework.stereotype.Service;
 import com.safetynet.safetynetalerts.model.Firestation;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
 import com.safetynet.safetynetalerts.model.Person;
-import com.safetynet.safetynetalerts.model.PersonRawData;
 import com.safetynet.safetynetalerts.repository.JsonReadingRepository;
 import com.safetynet.safetynetalerts.repository.JsonWritingRepository;
 
@@ -36,23 +34,12 @@ public class PersonService {
     }
 
     public List<Person> getPersons() throws IOException {
-        List<PersonRawData> personsRawData = jsonReadingRepository.getPersonsRawData();
-        List<Person> persons = new ArrayList<Person>();
+        List<Person> persons = jsonReadingRepository.getPersons();
         List<MedicalRecord> medicalRecords = medicalRecordService.getMedicalRecords();
         Set<Firestation> firestations = firestationService.getFirestations();
 
         try {
-            for (PersonRawData personRawData : personsRawData) {
-                Person person = new Person();
-                person.setFirstName(personRawData.getFirstName());
-                person.setLastName(personRawData.getLastName());
-                person.setAddress(personRawData.getAddress());
-                person.setCity(personRawData.getCity());
-                person.setZip(personRawData.getZip());
-                person.setPhone(personRawData.getPhone());
-                person.setEmail(personRawData.getEmail());
-                person.setPersonId(
-                        personRawData.getFirstName().concat(personRawData.getLastName()));
+            for (Person person : persons) {
                 person.setBirthdate(getBirthdate(person.getPersonId(), medicalRecords));
                 person.setAge(getAge(person.getPersonId(), medicalRecords));
                 if (person.getAge() <= 18)
@@ -62,11 +49,9 @@ public class PersonService {
                 person.setMedications(getMedications(person.getPersonId(), medicalRecords));
                 person.setAllergies(getAllergies(person.getPersonId(), medicalRecords));
                 person.setFirestationId(getFirestationId(person.getAddress(), firestations));
-
-                persons.add(person);
             }
         } catch (NullPointerException e) {
-            logger.error("personsRawData list is empty");
+            logger.error("persons list is empty");
         }
 
         return persons;
@@ -75,7 +60,7 @@ public class PersonService {
     private LocalDate getBirthdate(String personId, List<MedicalRecord> medicalRecords) {
         Optional<LocalDate> birthdate = medicalRecords.stream()
                 .filter(medicalRecord -> medicalRecord.getPersonId().equals(personId))
-                .map(medicalRecord -> medicalRecord.getBirthdate())
+                .map(medicalRecord -> medicalRecord.getLocalBirthdate())
                 .findFirst();
 
         if (birthdate.isPresent()) {
@@ -134,12 +119,12 @@ public class PersonService {
         }
     }
 
-    public PersonRawData createPersonRawData(PersonRawData personRawData) throws IOException {
-        List<PersonRawData> personsRawData = jsonReadingRepository.getPersonsRawData();
+    public Person createPerson(Person person) throws IOException {
+        List<Person> persons = jsonReadingRepository.getPersons();
 
-        Optional<PersonRawData> existingPerson = personsRawData.stream()
-                .filter(p -> p.getFirstName().equals(personRawData.getFirstName()))
-                .filter(p -> p.getLastName().equals(personRawData.getLastName()))
+        Optional<Person> existingPerson = persons.stream()
+                .filter(p -> p.getFirstName().equals(person.getFirstName()))
+                .filter(p -> p.getLastName().equals(person.getLastName()))
                 .findFirst();
 
         if (existingPerson.isPresent()) {
@@ -147,18 +132,18 @@ public class PersonService {
             return null;
         }
 
-        personsRawData.add(personRawData);
-        jsonWritingRepository.updatePersons(personsRawData);
+        persons.add(person);
+        jsonWritingRepository.updatePersons(persons);
 
-        return personRawData;
+        return person;
     }
 
-    public PersonRawData updatePersonRawData(PersonRawData personRawData) throws IOException {
-        List<PersonRawData> personsRawData = jsonReadingRepository.getPersonsRawData();
+    public Person updatePerson(Person person) throws IOException {
+        List<Person> persons = jsonReadingRepository.getPersons();
 
-        Optional<PersonRawData> existingPerson = personsRawData.stream()
-                .filter(p -> p.getFirstName().equals(personRawData.getFirstName()))
-                .filter(p -> p.getLastName().equals(personRawData.getLastName()))
+        Optional<Person> existingPerson = persons.stream()
+                .filter(p -> p.getFirstName().equals(person.getFirstName()))
+                .filter(p -> p.getLastName().equals(person.getLastName()))
                 .findFirst();
 
         if (existingPerson.isEmpty()) {
@@ -166,52 +151,52 @@ public class PersonService {
             return null;
         }
 
-        PersonRawData updatedPerson =
-                new PersonRawData(personRawData.getFirstName(), personRawData.getLastName());
+        Person updatedPerson = new Person(
+            person.getFirstName(), person.getLastName(), null, null, null, null, null);
 
-        if (personRawData.getAddress() == null
-                || personRawData.getAddress().trim().isEmpty())
+        if (person.getAddress() == null
+                || person.getAddress().trim().isEmpty())
             updatedPerson.setAddress(existingPerson.get().getAddress());
         else
-            updatedPerson.setAddress(personRawData.getAddress());
+            updatedPerson.setAddress(person.getAddress());
 
-        if (personRawData.getCity() == null
-                || personRawData.getCity().trim().isEmpty())
+        if (person.getCity() == null
+                || person.getCity().trim().isEmpty())
             updatedPerson.setCity(existingPerson.get().getCity());
         else
-            updatedPerson.setCity(personRawData.getCity());
+            updatedPerson.setCity(person.getCity());
 
-        if (personRawData.getZip() == null
-                || personRawData.getZip().trim().isEmpty())
+        if (person.getZip() == null
+                || person.getZip().trim().isEmpty())
             updatedPerson.setZip(existingPerson.get().getZip());
         else
-            updatedPerson.setZip(personRawData.getZip());
+            updatedPerson.setZip(person.getZip());
 
-        if (personRawData.getPhone() == null
-                || personRawData.getPhone().trim().isEmpty())
+        if (person.getPhone() == null
+                || person.getPhone().trim().isEmpty())
             updatedPerson.setPhone(existingPerson.get().getPhone());
         else
-            updatedPerson.setPhone(personRawData.getZip());
+            updatedPerson.setPhone(person.getPhone());
 
-        if (personRawData.getEmail() == null
-                || personRawData.getEmail().trim().isEmpty())
+        if (person.getEmail() == null
+                || person.getEmail().trim().isEmpty())
             updatedPerson.setEmail(existingPerson.get().getEmail());
         else
-            updatedPerson.setEmail(personRawData.getEmail());
+            updatedPerson.setEmail(person.getEmail());
 
-        personsRawData.remove(existingPerson.get());
-        personsRawData.add(updatedPerson);
-        jsonWritingRepository.updatePersons(personsRawData);
+        persons.remove(existingPerson.get());
+        persons.add(updatedPerson);
+        jsonWritingRepository.updatePersons(persons);
 
         return updatedPerson;
     }
 
-    public PersonRawData deletePersonRawData(PersonRawData personRawData) throws IOException {
-        List<PersonRawData> personsRawData = jsonReadingRepository.getPersonsRawData();
+    public Person deletePerson(Person person) throws IOException {
+        List<Person> persons = jsonReadingRepository.getPersons();
 
-        Optional<PersonRawData> existingPerson = personsRawData.stream()
-                .filter(p -> p.getFirstName().equals(personRawData.getFirstName()))
-                .filter(p -> p.getLastName().equals(personRawData.getLastName()))
+        Optional<Person> existingPerson = persons.stream()
+                .filter(p -> p.getFirstName().equals(person.getFirstName()))
+                .filter(p -> p.getLastName().equals(person.getLastName()))
                 .findFirst();
 
         if (existingPerson.isEmpty()) {
@@ -219,8 +204,8 @@ public class PersonService {
             return null;
         }
 
-        personsRawData.remove(existingPerson.get());
-        jsonWritingRepository.updatePersons(personsRawData);
+        persons.remove(existingPerson.get());
+        jsonWritingRepository.updatePersons(persons);
 
         return existingPerson.get();
     }

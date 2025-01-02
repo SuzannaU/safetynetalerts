@@ -1,7 +1,7 @@
 package com.safetynet.safetynetalerts.service;
 
 import java.io.IOException;
-import java.util.LinkedHashSet;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -10,7 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import com.safetynet.safetynetalerts.model.Firestation;
-import com.safetynet.safetynetalerts.model.FirestationRawData;
 import com.safetynet.safetynetalerts.repository.*;
 
 @Service
@@ -27,69 +26,63 @@ public class FirestationService {
 
     public Set<Firestation> getFirestations() throws IOException {
 
-        Set<Firestation> firestations = new LinkedHashSet<Firestation>();
-        List<FirestationRawData> firestationsRawData =
-                jsonReadingRepository.getFirestationsRawData();
+        List<Firestation> firestationsList = jsonReadingRepository.getFirestations();
 
-        Set<Integer> firestationIds = firestationsRawData
-                .stream()
-                .map(firestationRawData -> Integer.parseInt(firestationRawData.getFirestationId()))
-                .collect(Collectors.toSet());
+        for (Firestation firestation : firestationsList) {
+            firestation.setFirestationId(Integer.parseInt(firestation.getStation()));
+            firestation
+                    .setAddresses(getAddresses(firestation.getFirestationId(), firestationsList));
+        }
 
-        for (int firestationId : firestationIds) {
-            Firestation firestation = new Firestation();
-            firestation.setFirestationId(firestationId);
-            firestation.setAddresses(getAddresses(firestationId, firestationsRawData));
-
+        Set<Firestation> firestations = new HashSet<>();
+        for (Firestation firestation : firestationsList) {
             firestations.add(firestation);
         }
 
         return firestations;
     }
 
-    private Set<String> getAddresses(int firestationId,
-            List<FirestationRawData> firestationsRawData) {
-        Set<String> addresses = firestationsRawData
+    private Set<String> getAddresses(int firestationId, List<Firestation> firestations) {
+        Set<String> addresses = firestations
                 .stream()
-                .filter(firestationRawData -> Integer
-                        .parseInt(firestationRawData.getFirestationId()) == firestationId)
-                .map(firestationRawData -> firestationRawData.getAddress())
+                .filter(f -> Integer.parseInt(f.getStation()) == firestationId)
+                .map(f -> f.getAddress())
                 .collect(Collectors.toSet());
 
         return addresses;
     }
 
-    public FirestationRawData createFirestationRawData(FirestationRawData firestationRawData)
+    public Firestation createFirestation(Firestation firestation)
             throws IOException {
-        List<FirestationRawData> firestations = jsonReadingRepository.getFirestationsRawData();
+        List<Firestation> firestations = jsonReadingRepository.getFirestations();
 
-        Optional<FirestationRawData> existingFirestation = firestations.stream()
-                .filter(f -> f.getAddress().equals(firestationRawData.getAddress()))
+        Optional<Firestation> existingFirestation = firestations.stream()
+                .filter(f -> f.getAddress().equals(firestation.getAddress()))
                 .findFirst();
 
         if (existingFirestation.isPresent()) {
-            if (existingFirestation.get().getFirestationId()
-                    .equals(firestationRawData.getFirestationId())) {
+            if (existingFirestation.get().getStation().equals(firestation.getStation())) {
                 logger.error("This address is already mapped to this firestation");
                 return null;
             } else {
                 logger.error("This address is already mapped to a firestation");
-                return updateFirestationRawData(firestationRawData);
+                return null;
             }
         }
 
-        firestations.add(firestationRawData);
+        firestations.add(firestation);
         jsonWritingRepository.updateFirestations(firestations);
 
-        return firestationRawData;
+        return firestation;
     }
 
-    public FirestationRawData updateFirestationRawData(FirestationRawData firestationRawData)
+    public Firestation updateFirestation(Firestation firestation)
             throws IOException {
-        List<FirestationRawData> firestations = jsonReadingRepository.getFirestationsRawData();
 
-        Optional<FirestationRawData> existingFirestation = firestations.stream()
-                .filter(f -> f.getAddress().equals(firestationRawData.getAddress()))
+        List<Firestation> firestations = jsonReadingRepository.getFirestations();
+
+        Optional<Firestation> existingFirestation = firestations.stream()
+                .filter(f -> f.getAddress().equals(firestation.getAddress()))
                 .findFirst();
 
         if (existingFirestation.isEmpty()) {
@@ -97,30 +90,30 @@ public class FirestationService {
             return null;
         }
 
-        if (existingFirestation.isPresent() && existingFirestation.get().getFirestationId()
-                .equals(firestationRawData.getFirestationId())) {
+        if (existingFirestation.isPresent()
+                && existingFirestation.get().getStation().equals(firestation.getStation())) {
             logger.error("This address is already mapped to this firestation");
             return null;
         }
 
-        FirestationRawData updatedFirestation = new FirestationRawData(
-                firestationRawData.getAddress(),
-                firestationRawData.getFirestationId());
+        Firestation updatedFirestation = new Firestation(
+                firestation.getAddress(),
+                firestation.getStation());
 
         firestations.remove(existingFirestation.get());
         firestations.add(updatedFirestation);
         jsonWritingRepository.updateFirestations(firestations);
 
-        return firestationRawData;
+        return firestation;
     }
 
-    public FirestationRawData deletePersonRawData(FirestationRawData firestationRawData)
+    public Firestation deletePerson(Firestation firestation)
             throws IOException {
-        List<FirestationRawData> firestations = jsonReadingRepository.getFirestationsRawData();
+        List<Firestation> firestations = jsonReadingRepository.getFirestations();
 
-        Optional<FirestationRawData> existingFirestation = firestations.stream()
-                .filter(f -> f.getFirestationId().equals(firestationRawData.getFirestationId()))
-                .filter(f -> f.getAddress().equals(firestationRawData.getAddress()))
+        Optional<Firestation> existingFirestation = firestations.stream()
+                .filter(f -> f.getStation().equals(firestation.getStation()))
+                .filter(f -> f.getAddress().equals(firestation.getAddress()))
                 .findFirst();
 
         if (existingFirestation.isEmpty()) {

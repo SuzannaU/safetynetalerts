@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.safetynet.safetynetalerts.model.FirestationRawData;
+import com.safetynet.safetynetalerts.model.Firestation;
 import com.safetynet.safetynetalerts.service.FirestationService;
 
 @RestController
@@ -34,53 +34,53 @@ public class FirestationDataController {
     }
 
     @PostMapping("/firestation")
-    public ResponseEntity<FirestationRawData> createFirestationRawData(
-            @RequestBody FirestationRawData firestationRawData)
+    public ResponseEntity<Firestation> createFirestation(
+            @RequestBody Firestation firestation)
             throws IOException {
 
-        FirestationRawData newFirestationRawData =
-                firestationService.createFirestationRawData(firestationRawData);
+        Firestation newFirestation =
+                firestationService.createFirestation(firestation);
 
-        if (newFirestationRawData == null) {
-            logger.error("newFirestationRawData is null");
-            return new ResponseEntity<>(firestationRawData, HttpStatus.BAD_REQUEST);
+        if (newFirestation == null) {
+            logger.error("newFirestation is null");
+            return new ResponseEntity<>(firestation, HttpStatus.BAD_REQUEST);
         } else {
-            logger.info("newFirestationRawData sent");
-            return new ResponseEntity<>(newFirestationRawData, HttpStatus.CREATED);
+            logger.info("newFirestation sent");
+            return new ResponseEntity<>(newFirestation, HttpStatus.CREATED);
         }
     }
 
     @PutMapping("/firestation")
-    public ResponseEntity<FirestationRawData> updateFirestationRawData(
-            @RequestBody FirestationRawData firestationRawData)
+    public ResponseEntity<Firestation> updateFirestation(
+            @RequestBody Firestation firestation)
             throws IOException {
 
-        FirestationRawData updatedFirestationRawData =
-                firestationService.updateFirestationRawData(firestationRawData);
+        Firestation updatedFirestation =
+                firestationService.updateFirestation(firestation);
 
-        if (updatedFirestationRawData == null) {
-            logger.error("updatedFirestationRawData is null");
-            return new ResponseEntity<>(firestationRawData, HttpStatus.BAD_REQUEST);
+        if (updatedFirestation == null) {
+            logger.error("updatedFirestation is null");
+            return new ResponseEntity<>(firestation, HttpStatus.BAD_REQUEST);
         } else {
-            logger.info("updatedFirestationRawData sent");
-            return new ResponseEntity<>(updatedFirestationRawData, HttpStatus.ACCEPTED);
+            logger.info("updatedFirestation sent");
+            return new ResponseEntity<>(updatedFirestation, HttpStatus.ACCEPTED);
         }
     }
 
     @DeleteMapping("/firestation")
-    public ResponseEntity<FirestationRawData> deleteFirestationRawData(
-            @RequestBody FirestationRawData firestationRawData)
+    public ResponseEntity<Firestation> deleteFirestation(
+            @RequestBody Firestation firestation)
             throws IOException {
 
-        FirestationRawData deletedFirestationRawData =
-                firestationService.deletePersonRawData(firestationRawData);
+        Firestation deletedFirestation =
+                firestationService.deletePerson(firestation);
 
-        if (deletedFirestationRawData == null) {
-            logger.error("deletedFirestationRawData is null");
-            return new ResponseEntity<>(firestationRawData, HttpStatus.BAD_REQUEST);
+        if (deletedFirestation == null) {
+            logger.error("deletedFirestation is null");
+            return new ResponseEntity<>(firestation, HttpStatus.BAD_REQUEST);
         } else {
-            logger.info("deletedFirestationRawData sent");
-            return new ResponseEntity<>(deletedFirestationRawData, HttpStatus.ACCEPTED);
+            logger.info("deletedFirestation sent");
+            return new ResponseEntity<>(deletedFirestation, HttpStatus.ACCEPTED);
         }
     }
 }

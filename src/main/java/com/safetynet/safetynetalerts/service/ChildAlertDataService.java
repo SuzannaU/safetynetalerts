@@ -42,10 +42,13 @@ public class ChildAlertDataService {
                 .collect(Collectors.toList());
 
         ChildAlertData childAlertData = new ChildAlertData();
-        childAlertData.setChildren(childrenForChildAlert);
-        childAlertData.setAdults(adultsForChildAlert);
-
-        return childAlertData;
+        if (childrenForChildAlert.isEmpty() && adultsForChildAlert.isEmpty()) {
+            return null;
+        } else {
+            childAlertData.setChildren(childrenForChildAlert);
+            childAlertData.setAdults(adultsForChildAlert);
+            return childAlertData;
+        }
     }
 
 }

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.safetynet.safetynetalerts.model.MedicalRecordRawData;
+import com.safetynet.safetynetalerts.model.MedicalRecord;
 import com.safetynet.safetynetalerts.service.MedicalRecordService;
 
 @RestController
@@ -34,50 +34,50 @@ public class MedicalRecordDataController {
     }
 
     @PostMapping("/medicalRecord")
-    public ResponseEntity<MedicalRecordRawData> createMedicalRecordRawData(
-            @RequestBody MedicalRecordRawData medicalRecordRawData) throws IOException {
+    public ResponseEntity<MedicalRecord> createMedicalRecord(
+            @RequestBody MedicalRecord medicalRecord) throws IOException {
 
-        MedicalRecordRawData newMedicalRecordRawData =
-                medicalRecordService.createMedicalRecordRawData(medicalRecordRawData);
+        MedicalRecord newMedicalRecord =
+                medicalRecordService.createMedicalRecord(medicalRecord);
 
-        if (newMedicalRecordRawData == null) {
-            logger.error("newMedicalRecordRawData is null");
-            return new ResponseEntity<>(medicalRecordRawData, HttpStatus.BAD_REQUEST);
+        if (newMedicalRecord == null) {
+            logger.error("newMedicalRecord is null");
+            return new ResponseEntity<>(medicalRecord, HttpStatus.BAD_REQUEST);
         } else {
-            logger.info("newMedicalRecordRawData sent");
-            return new ResponseEntity<>(newMedicalRecordRawData, HttpStatus.CREATED);
+            logger.info("newMedicalRecord sent");
+            return new ResponseEntity<>(newMedicalRecord, HttpStatus.CREATED);
         }
     }
 
     @PutMapping("/medicalRecord")
-    public ResponseEntity<MedicalRecordRawData> updateMedicalRecordRawData(
-            @RequestBody MedicalRecordRawData medicalRecordRawData) throws IOException {
+    public ResponseEntity<MedicalRecord> updateMedicalRecord(
+            @RequestBody MedicalRecord medicalRecord) throws IOException {
 
-        MedicalRecordRawData updatedMedicalRecordRawData =
-                medicalRecordService.updateMedicalRecordRawData(medicalRecordRawData);
+        MedicalRecord updatedMedicalRecord =
+                medicalRecordService.updateMedicalRecord(medicalRecord);
 
-        if (updatedMedicalRecordRawData == null) {
-            logger.error("updatedMedicalRecordRawData is null");
-            return new ResponseEntity<>(medicalRecordRawData, HttpStatus.BAD_REQUEST);
+        if (updatedMedicalRecord == null) {
+            logger.error("updatedMedicalRecord is null");
+            return new ResponseEntity<>(medicalRecord, HttpStatus.BAD_REQUEST);
         } else {
-            logger.info("updatedMedicalRecordRawData sent");
-            return new ResponseEntity<>(updatedMedicalRecordRawData, HttpStatus.ACCEPTED);
+            logger.info("updatedMedicalRecord sent");
+            return new ResponseEntity<>(updatedMedicalRecord, HttpStatus.ACCEPTED);
         }
     }
 
     @DeleteMapping("/medicalRecord")
-    public ResponseEntity<MedicalRecordRawData> deleteMedicalRecordRawData(
-            @RequestBody MedicalRecordRawData medicalRecordRawData) throws IOException {
+    public ResponseEntity<MedicalRecord> deleteMedicalRecord(
+            @RequestBody MedicalRecord medicalRecord) throws IOException {
 
-        MedicalRecordRawData deletedMedicalRecordRawData =
-                medicalRecordService.deleteMedicalRecordRawData(medicalRecordRawData);
+        MedicalRecord deletedMedicalRecord =
+                medicalRecordService.deleteMedicalRecord(medicalRecord);
 
-        if (deletedMedicalRecordRawData == null) {
-            logger.error("deletedMedicalRecordRawData is null");
-            return new ResponseEntity<>(medicalRecordRawData, HttpStatus.BAD_REQUEST);
+        if (deletedMedicalRecord == null) {
+            logger.error("deletedMedicalRecord is null");
+            return new ResponseEntity<>(medicalRecord, HttpStatus.BAD_REQUEST);
         } else {
-            logger.info("deletedMedicalRecordRawData sent");
-            return new ResponseEntity<>(deletedMedicalRecordRawData, HttpStatus.ACCEPTED);
+            logger.info("deletedMedicalRecord sent");
+            return new ResponseEntity<>(deletedMedicalRecord, HttpStatus.ACCEPTED);
         }
     }
 
