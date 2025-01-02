@@ -21,10 +21,11 @@ public class MedicalRecordDataController {
 
     @Autowired
     MedicalRecordService medicalRecordService;
-        
+
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException e) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Missing data: firstName and lastName are mandatory");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body("Missing data: firstName and lastName are mandatory");
     }
 
     @ExceptionHandler(IOException.class)
@@ -36,12 +37,14 @@ public class MedicalRecordDataController {
     public ResponseEntity<MedicalRecordRawData> createMedicalRecordRawData(
             @RequestBody MedicalRecordRawData medicalRecordRawData) throws IOException {
 
-        MedicalRecordRawData newMedicalRecordRawData = null;
-        newMedicalRecordRawData = medicalRecordService.createMedicalRecordRawData(medicalRecordRawData);
+        MedicalRecordRawData newMedicalRecordRawData =
+                medicalRecordService.createMedicalRecordRawData(medicalRecordRawData);
 
         if (newMedicalRecordRawData == null) {
+            logger.error("newMedicalRecordRawData is null");
             return new ResponseEntity<>(medicalRecordRawData, HttpStatus.BAD_REQUEST);
         } else {
+            logger.info("newMedicalRecordRawData sent");
             return new ResponseEntity<>(newMedicalRecordRawData, HttpStatus.CREATED);
         }
     }
@@ -50,12 +53,14 @@ public class MedicalRecordDataController {
     public ResponseEntity<MedicalRecordRawData> updateMedicalRecordRawData(
             @RequestBody MedicalRecordRawData medicalRecordRawData) throws IOException {
 
-        MedicalRecordRawData updatedMedicalRecordRawData = null;
-        updatedMedicalRecordRawData = medicalRecordService.updateMedicalRecordRawData(medicalRecordRawData);
+        MedicalRecordRawData updatedMedicalRecordRawData =
+                medicalRecordService.updateMedicalRecordRawData(medicalRecordRawData);
 
         if (updatedMedicalRecordRawData == null) {
+            logger.error("updatedMedicalRecordRawData is null");
             return new ResponseEntity<>(medicalRecordRawData, HttpStatus.BAD_REQUEST);
         } else {
+            logger.info("updatedMedicalRecordRawData sent");
             return new ResponseEntity<>(updatedMedicalRecordRawData, HttpStatus.ACCEPTED);
         }
     }
@@ -64,12 +69,14 @@ public class MedicalRecordDataController {
     public ResponseEntity<MedicalRecordRawData> deleteMedicalRecordRawData(
             @RequestBody MedicalRecordRawData medicalRecordRawData) throws IOException {
 
-        MedicalRecordRawData deletedMedicalRecordRawData = null;
-        deletedMedicalRecordRawData = medicalRecordService.deleteMedicalRecordRawData(medicalRecordRawData);
+        MedicalRecordRawData deletedMedicalRecordRawData =
+                medicalRecordService.deleteMedicalRecordRawData(medicalRecordRawData);
 
         if (deletedMedicalRecordRawData == null) {
+            logger.error("deletedMedicalRecordRawData is null");
             return new ResponseEntity<>(medicalRecordRawData, HttpStatus.BAD_REQUEST);
         } else {
+            logger.info("deletedMedicalRecordRawData sent");
             return new ResponseEntity<>(deletedMedicalRecordRawData, HttpStatus.ACCEPTED);
         }
     }

@@ -16,7 +16,7 @@ import com.safetynet.safetynetalerts.model.PersonRawData;
 @Repository
 public class JsonReadingRepository {
     private static final Logger logger = LoggerFactory.getLogger(JsonReadingRepository.class);
-    private String sourceFilePath = "src/main/resources/data.json";
+    private final String sourceFilePath = "src/main/resources/data.json";
 
     private JsonNode getNode(String nodeName) throws IOException {
         JsonNode node = null;
@@ -24,6 +24,7 @@ public class JsonReadingRepository {
         try {
             JsonNode rootNode = objectMapper.readTree(new File(sourceFilePath));
             node = rootNode.get(nodeName);
+            logger.debug("Data recoverd at path: " + sourceFilePath);
         } catch (IOException e) {
             logger.error("File not found at path: " + sourceFilePath);
             throw e;

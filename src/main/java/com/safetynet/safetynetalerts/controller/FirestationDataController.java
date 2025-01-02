@@ -38,12 +38,14 @@ public class FirestationDataController {
             @RequestBody FirestationRawData firestationRawData)
             throws IOException {
 
-        FirestationRawData newFirestationRawData = null;
-        newFirestationRawData = firestationService.createFirestationRawData(firestationRawData);
+        FirestationRawData newFirestationRawData =
+                firestationService.createFirestationRawData(firestationRawData);
 
         if (newFirestationRawData == null) {
+            logger.error("newFirestationRawData is null");
             return new ResponseEntity<>(firestationRawData, HttpStatus.BAD_REQUEST);
         } else {
+            logger.info("newFirestationRawData sent");
             return new ResponseEntity<>(newFirestationRawData, HttpStatus.CREATED);
         }
     }
@@ -53,12 +55,14 @@ public class FirestationDataController {
             @RequestBody FirestationRawData firestationRawData)
             throws IOException {
 
-        FirestationRawData updatedFirestationRawData = null;
-        updatedFirestationRawData = firestationService.updateFirestationRawData(firestationRawData);
+        FirestationRawData updatedFirestationRawData =
+                firestationService.updateFirestationRawData(firestationRawData);
 
         if (updatedFirestationRawData == null) {
+            logger.error("updatedFirestationRawData is null");
             return new ResponseEntity<>(firestationRawData, HttpStatus.BAD_REQUEST);
         } else {
+            logger.info("updatedFirestationRawData sent");
             return new ResponseEntity<>(updatedFirestationRawData, HttpStatus.ACCEPTED);
         }
     }
@@ -68,12 +72,14 @@ public class FirestationDataController {
             @RequestBody FirestationRawData firestationRawData)
             throws IOException {
 
-        FirestationRawData deletedFirestationRawData = null;
-        deletedFirestationRawData = firestationService.deletePersonRawData(firestationRawData);
+        FirestationRawData deletedFirestationRawData =
+                firestationService.deletePersonRawData(firestationRawData);
 
         if (deletedFirestationRawData == null) {
+            logger.error("deletedFirestationRawData is null");
             return new ResponseEntity<>(firestationRawData, HttpStatus.BAD_REQUEST);
         } else {
+            logger.info("deletedFirestationRawData sent");
             return new ResponseEntity<>(deletedFirestationRawData, HttpStatus.ACCEPTED);
         }
     }

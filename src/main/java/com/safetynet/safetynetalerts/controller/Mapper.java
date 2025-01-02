@@ -1,11 +1,14 @@
 package com.safetynet.safetynetalerts.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import com.safetynet.safetynetalerts.dto.*;
 import com.safetynet.safetynetalerts.model.*;
 
 @Component
 public class Mapper {
+    private static final Logger logger = LoggerFactory.getLogger(Mapper.class);
 
     public PersonForStation toPersonForStation(Person person) {
         PersonForStation personForStation = new PersonForStation();
@@ -16,6 +19,7 @@ public class Mapper {
         personForStation.setZip(person.getZip());
         personForStation.setPhone(person.getPhone());
 
+        logger.debug("Mapped to PersonForStation");
         return personForStation;
     }
 
@@ -24,6 +28,7 @@ public class Mapper {
         adultForChildAlert.setFirstName(person.getFirstName());
         adultForChildAlert.setLastName(person.getLastName());
 
+        logger.debug("Mapped to AdultForChildAlert");
         return adultForChildAlert;
     }
 
@@ -33,6 +38,7 @@ public class Mapper {
         childForChildAlert.setLastName(person.getLastName());
         childForChildAlert.setAge(person.getAge());
 
+        logger.debug("Mapped to ChildForChildAlert");
         return childForChildAlert;
     }
 
@@ -44,6 +50,7 @@ public class Mapper {
         personForFire.setMedications(person.getMedications());
         personForFire.setAllergies(person.getAllergies());
 
+        logger.debug("Mapped to PersonForFire");
         return personForFire;
     }
 
@@ -55,6 +62,7 @@ public class Mapper {
         personForFlood.setMedications(person.getMedications());
         personForFlood.setAllergies(person.getAllergies());
 
+        logger.debug("Mapped to PersonForFlodd");
         return personForFlood;
     }
 
@@ -67,6 +75,7 @@ public class Mapper {
         personForInfo.setMedications(p.getMedications());
         personForInfo.setAllergies(p.getAllergies());
 
+        logger.debug("Mapped to PersonForInfo");
         return personForInfo;
     }
 

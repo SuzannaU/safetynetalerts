@@ -21,6 +21,7 @@ import org.slf4j.LoggerFactory;
 @RestController
 public class WebAppController {
     private static final Logger logger = LoggerFactory.getLogger(WebAppController.class);
+    private final String outputFilepath = "target/output.json";
 
     @Autowired
     PersonService personService;
@@ -53,20 +54,18 @@ public class WebAppController {
     @GetMapping("/firestation")
     public ResponseEntity<FirestationData> getFirestationData(
             @RequestParam("stationNumber") final int stationNumber) throws IOException {
-        FirestationData firestationData = new FirestationData();
-        firestationData = firestationDataService.getFirestationData(stationNumber);
+        FirestationData firestationData = firestationDataService.getFirestationData(stationNumber);
 
         ObjectMapper objMapper = new ObjectMapper();
 
         if (firestationData.getPersons().isEmpty()) {
             logger.error("firestationData is empty");
-            objMapper.writeValue(new File("target/output.json"), null);
+            objMapper.writeValue(new File(outputFilepath), null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             logger.info("firestationData sent");
             objMapper.writerWithDefaultPrettyPrinter()
-                    .writeValue(new File("target/output.json"),
-                            firestationData);
+                    .writeValue(new File(outputFilepath), firestationData);
             return new ResponseEntity<>(firestationData, HttpStatus.OK);
         }
     }
@@ -75,20 +74,18 @@ public class WebAppController {
     public ResponseEntity<ChildAlertData> getChildAlertData(
             @RequestParam("address") final String address) throws IOException {
 
-        ChildAlertData childAlertData = new ChildAlertData();
-        childAlertData = childAlertDataService.getChildAlertData(address);
+        ChildAlertData childAlertData = childAlertDataService.getChildAlertData(address);
 
         ObjectMapper objMapper = new ObjectMapper();
 
         if (childAlertData.getChildren().isEmpty()) {
             logger.error("childAlertData is empty");
-            objMapper.writeValue(new File("target/output.json"), null);
+            objMapper.writeValue(new File(outputFilepath), null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             logger.info("childAlertData sent");
             objMapper.writerWithDefaultPrettyPrinter()
-                    .writeValue(new File("target/output.json"),
-                            childAlertData);
+                    .writeValue(new File(outputFilepath), childAlertData);
             return new ResponseEntity<>(childAlertData, HttpStatus.OK);
         }
     }
@@ -97,20 +94,18 @@ public class WebAppController {
     public ResponseEntity<PhoneAlertData> getPhoneAlertData(
             @RequestParam("firestation") final int stationNumber) throws IOException {
 
-        PhoneAlertData phoneAlertData = new PhoneAlertData();
-        phoneAlertData = phoneAlertDataService.getPhoneAlertData(stationNumber);
+        PhoneAlertData phoneAlertData = phoneAlertDataService.getPhoneAlertData(stationNumber);
 
         ObjectMapper objMapper = new ObjectMapper();
 
         if (phoneAlertData.getPhones().isEmpty()) {
             logger.error("phoneAlertData is empty");
-            objMapper.writeValue(new File("target/output.json"), null);
+            objMapper.writeValue(new File(outputFilepath), null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             logger.info("phoneAlertData sent");
             objMapper.writerWithDefaultPrettyPrinter()
-                    .writeValue(new File("target/output.json"),
-                            phoneAlertData);
+                    .writeValue(new File(outputFilepath), phoneAlertData);
             return new ResponseEntity<>(phoneAlertData, HttpStatus.OK);
         }
     }
@@ -119,20 +114,18 @@ public class WebAppController {
     public ResponseEntity<FireData> getFireData(
             @RequestParam("address") final String address) throws IOException {
 
-        FireData fireData = new FireData();
-        fireData = fireDataService.getFireData(address);
+        FireData fireData = fireDataService.getFireData(address);
 
         ObjectMapper objMapper = new ObjectMapper();
 
         if (fireData.getResidents().isEmpty()) {
             logger.error("fireData is empty");
-            objMapper.writeValue(new File("target/output.json"), null);
+            objMapper.writeValue(new File(outputFilepath), null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             logger.info("fireData sent");
             objMapper.writerWithDefaultPrettyPrinter()
-                    .writeValue(new File("target/output.json"),
-                            fireData);
+                    .writeValue(new File(outputFilepath), fireData);
             return new ResponseEntity<>(fireData, HttpStatus.OK);
         }
     }
@@ -142,20 +135,18 @@ public class WebAppController {
             @RequestParam("stations") final List<Integer> listOfStationIds)
             throws IOException {
 
-        FloodData floodData = new FloodData();
-        floodData = floodDataService.getFloodData(listOfStationIds);
+        FloodData floodData = floodDataService.getFloodData(listOfStationIds);
 
         ObjectMapper objMapper = new ObjectMapper();
 
         if (floodData.getStationsForFlood().isEmpty()) {
             logger.error("floodData is empty");
-            objMapper.writeValue(new File("target/output.json"), null);
+            objMapper.writeValue(new File(outputFilepath), null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             logger.info("floodData sent");
             objMapper.writerWithDefaultPrettyPrinter()
-                    .writeValue(new File("target/output.json"),
-                            floodData);
+                    .writeValue(new File(outputFilepath), floodData);
             return new ResponseEntity<>(floodData, HttpStatus.OK);
         }
     }
@@ -164,20 +155,18 @@ public class WebAppController {
     public ResponseEntity<InfoData> getInfoData(@PathVariable("lastName") final String lastName)
             throws IOException {
 
-        InfoData infoData = new InfoData();
-        infoData = infoDataService.getInfoData(lastName);
+        InfoData infoData = infoDataService.getInfoData(lastName);
 
         ObjectMapper objMapper = new ObjectMapper();
 
         if (infoData.getPersons().isEmpty()) {
             logger.error("infoData is empty");
-            objMapper.writeValue(new File("target/output.json"), null);
+            objMapper.writeValue(new File(outputFilepath), null);
             return new ResponseEntity<InfoData>(HttpStatus.NOT_FOUND);
         } else {
             logger.info("infoData sent");
             objMapper.writerWithDefaultPrettyPrinter()
-                    .writeValue(new File("target/output.json"),
-                            infoData);
+                    .writeValue(new File(outputFilepath), infoData);
             return new ResponseEntity<InfoData>(infoData, HttpStatus.OK);
         }
     }
@@ -186,20 +175,19 @@ public class WebAppController {
     public ResponseEntity<CommunityEmailData> getCommunityEmailData(
             @RequestParam("city") final String city) throws IOException {
 
-        CommunityEmailData communityEmailData = new CommunityEmailData();
-        communityEmailData = communityEmailDataService.getCommunityEmailData(city);
+        CommunityEmailData communityEmailData =
+                communityEmailDataService.getCommunityEmailData(city);
 
         ObjectMapper objMapper = new ObjectMapper();
 
         if (communityEmailData.getEmails().isEmpty()) {
             logger.error("communityEmailData is empty");
-            objMapper.writeValue(new File("target/output.json"), null);
+            objMapper.writeValue(new File(outputFilepath), null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             logger.info("communityEmailData sent");
             objMapper.writerWithDefaultPrettyPrinter()
-                    .writeValue(new File("target/output.json"),
-                            communityEmailData);
+                    .writeValue(new File(outputFilepath), communityEmailData);
             return new ResponseEntity<>(communityEmailData, HttpStatus.OK);
         }
     }

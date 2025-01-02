@@ -16,7 +16,7 @@ import com.safetynet.safetynetalerts.model.PersonRawData;
 @Repository
 public class JsonWritingRepository {
     private static final Logger logger = LoggerFactory.getLogger(JsonWritingRepository.class);
-    private String sourceFilePath = "src/main/resources/data.json";
+    private final String sourceFilePath = "src/main/resources/data.json";
 
     public void updatePersons(List<PersonRawData> personsRawData) throws IOException {
         Map<String, Object> jsonData = getJsonData();
@@ -31,7 +31,7 @@ public class JsonWritingRepository {
         jsonData.put("medicalrecords", medicalRecordsRawData);
 
         writeDataInFile(jsonData);
-        logger.info("Json file updated with modified medical records");
+        logger.debug("Json file updated with modified medical records");
     }
 
     public void updateFirestations(List<FirestationRawData> firestationsRawData) throws IOException {
@@ -39,7 +39,7 @@ public class JsonWritingRepository {
         jsonData.put("firestations", firestationsRawData);
 
         writeDataInFile(jsonData);
-        logger.info("Json file updated with modified firestations");
+        logger.debug("Json file updated with modified firestations");
     }
 
     private Map<String, Object> getJsonData() throws IOException {
@@ -48,6 +48,7 @@ public class JsonWritingRepository {
 
         try {
             jsonData = objectMapper.readValue(new File(sourceFilePath), new TypeReference<>() {});
+            logger.debug("Data recoverd at path: " + sourceFilePath);
         } catch (IOException e) {
             logger.error("File not found at path: " + sourceFilePath);
             throw e;
@@ -60,10 +61,10 @@ public class JsonWritingRepository {
         ObjectMapper objMapper = new ObjectMapper();
         try {
             objMapper.writeValue(new File(sourceFilePath), jsonData);
+            logger.debug("Json file updated. Path: " + sourceFilePath);
         } catch (IOException e) {
             logger.error("Unable to write Json file");
             throw e;
         }
-        logger.info("Json file updated");
     }
 }
