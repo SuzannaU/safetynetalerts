@@ -54,8 +54,8 @@ public class WebAppController {
     @GetMapping("/firestation")
     public ResponseEntity<FirestationData> getFirestationData(
             @RequestParam("stationNumber") final int stationNumber) throws IOException {
-        FirestationData firestationData = firestationDataService.getFirestationData(stationNumber);
 
+        FirestationData firestationData = firestationDataService.getFirestationData(stationNumber);
         ObjectMapper objMapper = new ObjectMapper();
 
         if (firestationData.getPersons().isEmpty()) {
@@ -75,7 +75,6 @@ public class WebAppController {
             @RequestParam("address") final String address) throws IOException {
 
         ChildAlertData childAlertData = childAlertDataService.getChildAlertData(address);
-
         ObjectMapper objMapper = new ObjectMapper();
 
         if (childAlertData == null) {
@@ -99,7 +98,6 @@ public class WebAppController {
             @RequestParam("firestation") final int stationNumber) throws IOException {
 
         PhoneAlertData phoneAlertData = phoneAlertDataService.getPhoneAlertData(stationNumber);
-
         ObjectMapper objMapper = new ObjectMapper();
 
         if (phoneAlertData.getPhones().isEmpty()) {
@@ -119,7 +117,6 @@ public class WebAppController {
             @RequestParam("address") final String address) throws IOException {
 
         FireData fireData = fireDataService.getFireData(address);
-
         ObjectMapper objMapper = new ObjectMapper();
 
         if (fireData.getResidents().isEmpty()) {
@@ -140,7 +137,6 @@ public class WebAppController {
             throws IOException {
 
         FloodData floodData = floodDataService.getFloodData(listOfStationIds);
-
         ObjectMapper objMapper = new ObjectMapper();
 
         if (floodData.getStationsForFlood().isEmpty()) {
@@ -160,7 +156,6 @@ public class WebAppController {
             throws IOException {
 
         InfoData infoData = infoDataService.getInfoData(lastName);
-
         ObjectMapper objMapper = new ObjectMapper();
 
         if (infoData.getPersons().isEmpty()) {
@@ -179,9 +174,7 @@ public class WebAppController {
     public ResponseEntity<CommunityEmailData> getCommunityEmailData(
             @RequestParam("city") final String city) throws IOException {
 
-        CommunityEmailData communityEmailData =
-                communityEmailDataService.getCommunityEmailData(city);
-
+        CommunityEmailData communityEmailData = communityEmailDataService.getCommunityEmailData(city);
         ObjectMapper objMapper = new ObjectMapper();
 
         if (communityEmailData.getEmails().isEmpty()) {

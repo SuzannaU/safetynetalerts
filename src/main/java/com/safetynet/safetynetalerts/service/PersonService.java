@@ -34,6 +34,7 @@ public class PersonService {
     }
 
     public List<Person> getPersons() throws IOException {
+        
         List<Person> persons = jsonReadingRepository.getPersons();
         List<MedicalRecord> medicalRecords = medicalRecordService.getMedicalRecords();
         Set<Firestation> firestations = firestationService.getFirestations();
@@ -48,7 +49,7 @@ public class PersonService {
                     person.setCategory("Adult");
                 person.setMedications(getMedications(person.getPersonId(), medicalRecords));
                 person.setAllergies(getAllergies(person.getPersonId(), medicalRecords));
-                person.setFirestationId(getFirestationId(person.getAddress(), firestations));
+                person.setFirestationIds(getFirestationIds(person.getAddress(), firestations));
             }
         } catch (NullPointerException e) {
             logger.error("persons list is empty");
@@ -105,17 +106,17 @@ public class PersonService {
         return allergies;
     }
 
-    private int getFirestationId(String address, Set<Firestation> firestations) {
-        Optional<Integer> firestationId = firestations.stream()
+    private Set<Integer> getFirestationIds(String address, Set<Firestation> firestations) {
+        Set<Integer> firestationIds = firestations.stream()
                 .filter(firestation -> firestation.getAddresses().contains(address))
                 .map(firestation -> firestation.getFirestationId())
-                .findFirst();
+                .collect(Collectors.toSet());
 
-        if (firestationId.isPresent()) {
-            return firestationId.get();
-        } else {
+        if (firestationIds.isEmpty()) {
             logger.error("No firestationId");
-            return 0;
+            return null;
+        } else {
+            return firestationIds;
         }
     }
 

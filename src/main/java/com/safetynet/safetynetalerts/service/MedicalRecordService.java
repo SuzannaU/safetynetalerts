@@ -4,13 +4,11 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import com.safetynet.safetynetalerts.model.MedicalRecord;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
 import com.safetynet.safetynetalerts.repository.JsonReadingRepository;
 import com.safetynet.safetynetalerts.repository.JsonWritingRepository;
@@ -28,11 +26,9 @@ public class MedicalRecordService {
     }
 
     public List<MedicalRecord> getMedicalRecords() throws IOException {
-        List<MedicalRecord> medicalRecords =
-                jsonReadingRepository.getMedicalRecords();
+        List<MedicalRecord> medicalRecords = jsonReadingRepository.getMedicalRecords();
 
         for (MedicalRecord medicalRecord : medicalRecords) {
-
             medicalRecord.setMedications(medicalRecord.getMedications());
             medicalRecord.setAllergies(medicalRecord.getAllergies());
             medicalRecord.setLocalBirthdate(getFormattedBirthdate(medicalRecord.getRawBirthdate()));
@@ -55,6 +51,7 @@ public class MedicalRecordService {
 
     public MedicalRecord createMedicalRecord(
             MedicalRecord medicalRecord) throws IOException {
+
         List<MedicalRecord> medicalRecords =jsonReadingRepository.getMedicalRecords();
 
         Optional<MedicalRecord> existingMedicalRecord = medicalRecords.stream()
@@ -75,8 +72,8 @@ public class MedicalRecordService {
 
     public MedicalRecord updateMedicalRecord(
             MedicalRecord medicalRecord) throws IOException {
-        List<MedicalRecord> medicalRecords =
-                jsonReadingRepository.getMedicalRecords();
+
+        List<MedicalRecord> medicalRecords = jsonReadingRepository.getMedicalRecords();
 
         Optional<MedicalRecord> existingMedicalRecord = medicalRecords.stream()
                 .filter(m -> m.getFirstName().equals(medicalRecord.getFirstName()))
@@ -118,8 +115,7 @@ public class MedicalRecordService {
     public MedicalRecord deleteMedicalRecord(
             MedicalRecord medicalRecord) throws IOException {
 
-        List<MedicalRecord> medicalRecords =
-                jsonReadingRepository.getMedicalRecords();
+        List<MedicalRecord> medicalRecords = jsonReadingRepository.getMedicalRecords();
 
         Optional<MedicalRecord> existingMedicalRecord = medicalRecords.stream()
                 .filter(m -> m.getFirstName().equals(medicalRecord.getFirstName()))

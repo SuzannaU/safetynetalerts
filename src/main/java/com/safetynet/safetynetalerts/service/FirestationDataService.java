@@ -32,25 +32,27 @@ public class FirestationDataService {
             logger.error("Unable to retrieve data");
             throw e;
         }
-        List<PersonForStation> personsForStation = persons.stream().filter(
-                person -> person.getFirestationId() == stationNumber)
+        List<PersonForStation> personsForStation = persons.stream()
+                .filter(p -> p.getFirestationIds().contains(stationNumber))
                 .map(p -> mapper.toPersonForStation(p))
                 .collect(Collectors.toList());
 
         Long numbOfChildren = persons.stream()
-                .filter(p -> p.getFirestationId() == stationNumber)
-                .filter(p -> p.getCategory().equals("Child")).count();
+                .filter(p -> p.getFirestationIds().contains(stationNumber))
+                .filter(p -> p.getCategory().equals("Child"))
+                .count();
         Long numbOfAdults = persons.stream()
-                .filter(p -> p.getFirestationId() == stationNumber)
-                .filter(p -> p.getCategory().equals("Adult")).count();
+                .filter(p -> p.getFirestationIds().contains(stationNumber))
+                .filter(p -> p.getCategory().equals("Adult"))
+                .count();
 
-        Map<String, Long> residents = new HashMap<>();
-        residents.put("children", numbOfChildren);
-        residents.put("adults", numbOfAdults);
+        Map<String, Long> count = new HashMap<>();
+        count.put("children", numbOfChildren);
+        count.put("adults", numbOfAdults);
 
         FirestationData firestationData = new FirestationData();
         firestationData.setPersons(personsForStation);
-        firestationData.setCount(residents);
+        firestationData.setCount(count);
 
         return firestationData;
 

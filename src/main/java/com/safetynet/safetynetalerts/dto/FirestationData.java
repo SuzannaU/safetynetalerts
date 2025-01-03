@@ -2,7 +2,9 @@ package com.safetynet.safetynetalerts.dto;
 
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+@JsonPropertyOrder({ "count", "persons" })
 public class FirestationData {
 
     List<PersonForStation> persons;

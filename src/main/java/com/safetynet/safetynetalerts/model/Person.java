@@ -2,6 +2,7 @@ package com.safetynet.safetynetalerts.model;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -9,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties({"personId", "birthdate", "age", "category", "medications", "allergies",
-        "firestationId"})
+        "firestationIds", "firestationId"})
 public class Person {
     private static final Logger logger = LoggerFactory.getLogger(Person.class);
 
@@ -26,7 +27,7 @@ public class Person {
     private String email;
     private List<String> medications;
     private List<String> allergies;
-    private int firestationId;
+    private Set<Integer> firestationIds;
 
     @JsonCreator
     public Person(
@@ -147,11 +148,12 @@ public class Person {
         this.allergies = allergies;
     }
 
-    public int getFirestationId() {
-        return firestationId;
+    public Set<Integer> getFirestationIds() {
+        return firestationIds;
     }
 
-    public void setFirestationId(int firestationId) {
-        this.firestationId = firestationId;
+    public void setFirestationIds(Set<Integer> firestationIds) {
+        this.firestationIds = firestationIds;
     }
+
 }

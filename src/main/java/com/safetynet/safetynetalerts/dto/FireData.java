@@ -1,14 +1,15 @@
 package com.safetynet.safetynetalerts.dto;
 
 import java.util.List;
+import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "station", "residents" })
+@JsonPropertyOrder({ "stations", "residents" })
 public class FireData {
 
-    @JsonProperty(value="station")
-    private int firestationId;
+    @JsonProperty(value="stations")
+    private Set<Integer> firestationIds;
 
     private List<PersonForFire> residents;
 
@@ -20,12 +21,12 @@ public class FireData {
         this.residents = residents;
     }
 
-    public int getFirestationId() {
-        return firestationId;
+    public Set<Integer> getFirestationIds() {
+        return firestationIds;
     }
 
-    public void setFirestationId(int firestationId) {
-        this.firestationId = firestationId;
+    public void setFirestationIds(Set<Integer> firestationIds) {
+        this.firestationIds = firestationIds;
     }
 
 }

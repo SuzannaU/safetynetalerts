@@ -37,8 +37,7 @@ public class MedicalRecordDataController {
     public ResponseEntity<MedicalRecord> createMedicalRecord(
             @RequestBody MedicalRecord medicalRecord) throws IOException {
 
-        MedicalRecord newMedicalRecord =
-                medicalRecordService.createMedicalRecord(medicalRecord);
+        MedicalRecord newMedicalRecord = medicalRecordService.createMedicalRecord(medicalRecord);
 
         if (newMedicalRecord == null) {
             logger.error("newMedicalRecord is null");
@@ -53,8 +52,7 @@ public class MedicalRecordDataController {
     public ResponseEntity<MedicalRecord> updateMedicalRecord(
             @RequestBody MedicalRecord medicalRecord) throws IOException {
 
-        MedicalRecord updatedMedicalRecord =
-                medicalRecordService.updateMedicalRecord(medicalRecord);
+        MedicalRecord updatedMedicalRecord = medicalRecordService.updateMedicalRecord(medicalRecord);
 
         if (updatedMedicalRecord == null) {
             logger.error("updatedMedicalRecord is null");
@@ -69,8 +67,7 @@ public class MedicalRecordDataController {
     public ResponseEntity<MedicalRecord> deleteMedicalRecord(
             @RequestBody MedicalRecord medicalRecord) throws IOException {
 
-        MedicalRecord deletedMedicalRecord =
-                medicalRecordService.deleteMedicalRecord(medicalRecord);
+        MedicalRecord deletedMedicalRecord = medicalRecordService.deleteMedicalRecord(medicalRecord);
 
         if (deletedMedicalRecord == null) {
             logger.error("deletedMedicalRecord is null");

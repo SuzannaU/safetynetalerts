@@ -38,8 +38,7 @@ public class FirestationDataController {
             @RequestBody Firestation firestation)
             throws IOException {
 
-        Firestation newFirestation =
-                firestationService.createFirestation(firestation);
+        Firestation newFirestation = firestationService.createFirestation(firestation);
 
         if (newFirestation == null) {
             logger.error("newFirestation is null");
@@ -55,8 +54,7 @@ public class FirestationDataController {
             @RequestBody Firestation firestation)
             throws IOException {
 
-        Firestation updatedFirestation =
-                firestationService.updateFirestation(firestation);
+        Firestation updatedFirestation = firestationService.updateFirestation(firestation);
 
         if (updatedFirestation == null) {
             logger.error("updatedFirestation is null");
@@ -72,8 +70,7 @@ public class FirestationDataController {
             @RequestBody Firestation firestation)
             throws IOException {
 
-        Firestation deletedFirestation =
-                firestationService.deletePerson(firestation);
+        Firestation deletedFirestation = firestationService.deletePerson(firestation);
 
         if (deletedFirestation == null) {
             logger.error("deletedFirestation is null");

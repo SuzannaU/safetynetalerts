@@ -36,20 +36,20 @@ public class SafetynetalertsApplication {
 		/*List<Person> persons = personService.getPersons();
 		for (Person person : persons) {
 			System.out.println(person.getPersonId() + ", " + person.getAge() + ", "+person.getCategory()
-					+ ", " + person.getMedications() + ", " + person.getFirestationId());
+					+ ", " + person.getMedications() + ", " + person.getFirestationIds());
 		}*/
 
-		/*List<Person> persons = personService.getPersons();
+		List<Person> persons = personService.getPersons();
 		List<Person> personsForStation = persons.stream()
-                .filter(person -> person.getFirestationId() == 2)
+                .filter(person -> person.getFirestationIds().contains(4))
                 .collect(Collectors.toList());
 		for (Person person : personsForStation) {
 			System.out.print(person.getFirstName() + ", ");
 			System.out.print(person.getAddress() + ", ");
 			System.out.print(person.getPersonId() + ", ");
-			System.out.print(person.getFirestationId() + ", ");
+			System.out.print(person.getFirestationIds() + ", ");
 			System.out.println(person.getAge());
-		}*/
+		}
 
 		
 		/*List<MedicalRecordRawData> recordsDTO = jsonReadingRepository.getMedicalRecordsDTO();

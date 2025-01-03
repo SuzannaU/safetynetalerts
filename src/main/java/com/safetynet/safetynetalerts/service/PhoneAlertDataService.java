@@ -27,7 +27,7 @@ public class PhoneAlertDataService {
             throw e;
         }
         Set<String> phones = persons.stream()
-                .filter(p -> p.getFirestationId() == firestationId)
+                .filter(p -> p.getFirestationIds().contains(firestationId))
                 .map(p -> p.getPhone())
                 .collect(Collectors.toSet());
 
