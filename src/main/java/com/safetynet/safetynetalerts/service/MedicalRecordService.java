@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
@@ -46,13 +47,18 @@ public class MedicalRecordService {
 
     private LocalDate getFormattedBirthdate(String birthdate) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-        return LocalDate.parse(birthdate, formatter);
+        try {
+            return LocalDate.parse(birthdate, formatter);
+        } catch (DateTimeParseException e) {
+            logger.error("Invalid format for birthdate");
+            throw e;
+        }
     }
 
     public MedicalRecord createMedicalRecord(
             MedicalRecord medicalRecord) throws IOException {
 
-        List<MedicalRecord> medicalRecords =jsonReadingRepository.getMedicalRecords();
+        List<MedicalRecord> medicalRecords = jsonReadingRepository.getMedicalRecords();
 
         Optional<MedicalRecord> existingMedicalRecord = medicalRecords.stream()
                 .filter(m -> m.getFirstName().equals(medicalRecord.getFirstName()))
@@ -63,6 +69,9 @@ public class MedicalRecordService {
             logger.error("This medical record already exists");
             return null;
         }
+
+        // Checks if rawBirthdate is in format MM/dd/YYYY. If not, throws exception handled in Controller
+        LocalDate birthdate = getFormattedBirthdate(medicalRecord.getRawBirthdate());
 
         medicalRecords.add(medicalRecord);
         jsonWritingRepository.updateMedicalRecords(medicalRecords);
@@ -83,6 +92,13 @@ public class MedicalRecordService {
         if (existingMedicalRecord.isEmpty()) {
             logger.error("This medical record doesn't exist");
             return null;
+        }
+
+        try {
+            LocalDate birthdate = getFormattedBirthdate(medicalRecord.getRawBirthdate());
+        } catch (DateTimeParseException e) {
+            logger.error("Invalid format for birthdate");
+            throw e;
         }
 
         MedicalRecord updatedMedicalRecord = new MedicalRecord(

@@ -1,6 +1,7 @@
 package com.safetynet.safetynetalerts.controller;
 
 import java.io.IOException;
+import java.time.format.DateTimeParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,11 @@ public class MedicalRecordDataController {
     @ExceptionHandler(IOException.class)
     public ResponseEntity<String> handleIOException(IOException e) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error retrieving/writing data");
+    }    
+    
+    @ExceptionHandler(DateTimeParseException.class)
+    public ResponseEntity<String> handleDateTimeParseException(DateTimeParseException e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid format for birthdate. Should be MM/dd/YYYY");
     }
 
     @PostMapping("/medicalRecord")

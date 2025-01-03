@@ -1,6 +1,9 @@
 package com.safetynet.safetynetalerts;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -39,7 +42,7 @@ public class SafetynetalertsApplication {
 					+ ", " + person.getMedications() + ", " + person.getFirestationIds());
 		}*/
 
-		List<Person> persons = personService.getPersons();
+		/*List<Person> persons = personService.getPersons();
 		List<Person> personsForStation = persons.stream()
                 .filter(person -> person.getFirestationIds().contains(4))
                 .collect(Collectors.toList());
@@ -49,7 +52,7 @@ public class SafetynetalertsApplication {
 			System.out.print(person.getPersonId() + ", ");
 			System.out.print(person.getFirestationIds() + ", ");
 			System.out.println(person.getAge());
-		}
+		}*/
 
 		
 		/*List<MedicalRecordRawData> recordsDTO = jsonReadingRepository.getMedicalRecordsDTO();
@@ -67,6 +70,6 @@ public class SafetynetalertsApplication {
 			System.out.println(firestation.getFirestationId() + ", " + firestation.getAddresses()); 
 		}*/
 
-	}
-
+    }
+    
 }

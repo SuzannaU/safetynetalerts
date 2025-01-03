@@ -2,7 +2,6 @@ package com.safetynet.safetynetalerts.service;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -13,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.safetynet.safetynetalerts.controller.Mapper;
 import com.safetynet.safetynetalerts.dto.*;
-import com.safetynet.safetynetalerts.model.Firestation;
 import com.safetynet.safetynetalerts.model.Person;
 
 @Service
@@ -21,8 +19,6 @@ public class FireDataService {
     private static final Logger logger = LoggerFactory.getLogger(FireDataService.class);
     @Autowired
     PersonService personService;
-    @Autowired
-    FirestationService firestationService;
     @Autowired
     Mapper mapper;
 
