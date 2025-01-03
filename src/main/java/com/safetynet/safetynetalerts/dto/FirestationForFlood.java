@@ -1,10 +1,14 @@
 package com.safetynet.safetynetalerts.dto;
 
 import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class FirestationForFlood {
 
+    @JsonProperty(value="station")
     private int firestationId;
+    
+    @JsonProperty(value="addresses")
     Set<AddressForFlood> addressesForFlood;
 
     public int getFirestationId() {

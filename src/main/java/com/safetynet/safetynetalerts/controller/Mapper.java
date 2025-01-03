@@ -10,57 +10,59 @@ import com.safetynet.safetynetalerts.model.*;
 public class Mapper {
     private static final Logger logger = LoggerFactory.getLogger(Mapper.class);
 
-    public PersonForStation toPersonForStation(Person person) {
+    public PersonForStation toPersonForStation(Person p) {
         PersonForStation personForStation = new PersonForStation();
-        personForStation.setFirstName(person.getFirstName());
-        personForStation.setLastName(person.getLastName());
-        personForStation.setAddress(person.getAddress());
-        personForStation.setCity(person.getCity());
-        personForStation.setZip(person.getZip());
-        personForStation.setPhone(person.getPhone());
+        personForStation.setFirstName(p.getFirstName());
+        personForStation.setLastName(p.getLastName());
+        personForStation.setAddress(p.getAddress());
+        personForStation.setCity(p.getCity());
+        personForStation.setZip(p.getZip());
+        personForStation.setPhone(p.getPhone());
 
         logger.debug("Mapped to PersonForStation");
         return personForStation;
     }
 
-    public AdultForChildAlert toAdultForChildAlert(Person person) {
+    public AdultForChildAlert toAdultForChildAlert(Person p) {
         AdultForChildAlert adultForChildAlert = new AdultForChildAlert();
-        adultForChildAlert.setFirstName(person.getFirstName());
-        adultForChildAlert.setLastName(person.getLastName());
+        adultForChildAlert.setFirstName(p.getFirstName());
+        adultForChildAlert.setLastName(p.getLastName());
 
         logger.debug("Mapped to AdultForChildAlert");
         return adultForChildAlert;
     }
 
-    public ChildForChildAlert toChildForChildAlert(Person person) {
+    public ChildForChildAlert toChildForChildAlert(Person p) {
         ChildForChildAlert childForChildAlert = new ChildForChildAlert();
-        childForChildAlert.setFirstName(person.getFirstName());
-        childForChildAlert.setLastName(person.getLastName());
-        childForChildAlert.setAge(person.getAge());
+        childForChildAlert.setFirstName(p.getFirstName());
+        childForChildAlert.setLastName(p.getLastName());
+        childForChildAlert.setAge(p.getAge());
 
         logger.debug("Mapped to ChildForChildAlert");
         return childForChildAlert;
     }
 
-    public PersonForFire toPersonForFire(Person person) {
+    public PersonForFire toPersonForFire(Person p) {
         PersonForFire personForFire = new PersonForFire();
-        personForFire.setLastName(person.getLastName());
-        personForFire.setAge(person.getAge());
-        personForFire.setPhone(person.getPhone());
-        personForFire.setMedications(person.getMedications());
-        personForFire.setAllergies(person.getAllergies());
+        personForFire.setFirstName(p.getFirstName());
+        personForFire.setLastName(p.getLastName());
+        personForFire.setAge(p.getAge());
+        personForFire.setPhone(p.getPhone());
+        personForFire.setMedications(p.getMedications());
+        personForFire.setAllergies(p.getAllergies());
 
         logger.debug("Mapped to PersonForFire");
         return personForFire;
     }
 
-    public PersonForFlood toPersonForFlood(Person person) {
+    public PersonForFlood toPersonForFlood(Person p) {
         PersonForFlood personForFlood = new PersonForFlood();
-        personForFlood.setLastName(person.getLastName());
-        personForFlood.setPhone(person.getPhone());
-        personForFlood.setAge(person.getAge());
-        personForFlood.setMedications(person.getMedications());
-        personForFlood.setAllergies(person.getAllergies());
+        personForFlood.setFirstName(p.getFirstName());
+        personForFlood.setLastName(p.getLastName());
+        personForFlood.setPhone(p.getPhone());
+        personForFlood.setAge(p.getAge());
+        personForFlood.setMedications(p.getMedications());
+        personForFlood.setAllergies(p.getAllergies());
 
         logger.debug("Mapped to PersonForFlodd");
         return personForFlood;
@@ -68,6 +70,7 @@ public class Mapper {
 
     public PersonForInfo toPersonForInfo(Person p) {
         PersonForInfo personForInfo = new PersonForInfo();
+        personForInfo.setFirstName(p.getFirstName());
         personForInfo.setLastName(p.getLastName());
         personForInfo.setAddress(p.getAddress());
         personForInfo.setAge(p.getAge());

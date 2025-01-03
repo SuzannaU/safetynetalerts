@@ -30,6 +30,7 @@ public class Firestation {
         }
         this.address = address;
         this.station = station;
+        logger.debug("Firestation created");
     }
 
     public String getStation() {
