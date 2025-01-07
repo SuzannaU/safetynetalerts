@@ -167,9 +167,7 @@ public class PersonServiceTest {
                 "john", "doe", "test_address",
                 "test_city", "test_zip", "test_phone", "test_email");
 
-        Person resultPerson = personService.createPerson(personToAdd);
-
-        assertTrue(resultPerson == null);
+        assertTrue(personService.createPerson(personToAdd) == null);
         verify(jsonReadingRepository).getPersons();
         verify(jsonWritingRepository, Mockito.times(0)).updatePersons(persons);
     }
@@ -204,9 +202,7 @@ public class PersonServiceTest {
                 "new", "person", "test_address",
                 "test_city", "test_zip", "test_phone", "test_email");
 
-        Person resultPerson = personService.updatePerson(newPerson);
-
-        assertTrue(resultPerson == null);
+        assertTrue(personService.updatePerson(newPerson) == null);
         verify(jsonReadingRepository).getPersons();
         verify(jsonWritingRepository, Mockito.times(0)).updatePersons(persons);
     }
@@ -261,9 +257,7 @@ public class PersonServiceTest {
         Person newPerson = new Person(
                 "new", "person", null, null, null, null, null);
 
-        Person deletedPerson = personService.deletePerson(newPerson);
-
-        assertTrue(deletedPerson == null);
+        assertTrue(personService.deletePerson(newPerson) == null);
         verify(jsonReadingRepository).getPersons();
         verify(jsonWritingRepository, Mockito.times(0)).updatePersons(persons);
     }

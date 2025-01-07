@@ -107,7 +107,7 @@ public class FirestationService {
         return firestation;
     }
 
-    public Firestation deletePerson(Firestation firestation)
+    public Firestation deleteFirestation(Firestation firestation)
             throws IOException {
         List<Firestation> firestations = jsonReadingRepository.getFirestations();
 

@@ -43,20 +43,22 @@ public class JsonWritingRepository {
         return true;
     }
 
-    public void updateMedicalRecords(List<MedicalRecord> medicalRecords) throws IOException {
+    public boolean updateMedicalRecords(List<MedicalRecord> medicalRecords) throws IOException {
         Map<String, Object> jsonData = getJsonData();
         jsonData.put("medicalrecords", medicalRecords);
 
         updateDataInFile(jsonData);
         logger.debug("Json file updated with modified medical records");
+        return true;
     }
 
-    public void updateFirestations(List<Firestation> firestations) throws IOException {
+    public boolean updateFirestations(List<Firestation> firestations) throws IOException {
         Map<String, Object> jsonData = getJsonData();
         jsonData.put("firestations", firestations);
 
         updateDataInFile(jsonData);
         logger.debug("Json file updated with modified firestations");
+        return true;
     }
 
     private void updateDataInFile(Map<String, Object> jsonData) throws IOException {

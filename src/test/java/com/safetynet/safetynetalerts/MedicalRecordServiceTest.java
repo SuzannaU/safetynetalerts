@@ -6,9 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.mockito.Mock;
@@ -17,14 +17,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import com.safetynet.safetynetalerts.model.Firestation;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
-import com.safetynet.safetynetalerts.model.Person;
 import com.safetynet.safetynetalerts.repository.JsonReadingRepository;
 import com.safetynet.safetynetalerts.repository.JsonWritingRepository;
-import com.safetynet.safetynetalerts.service.FirestationService;
 import com.safetynet.safetynetalerts.service.MedicalRecordService;
-import com.safetynet.safetynetalerts.service.PersonService;
 
 @ExtendWith(MockitoExtension.class)
 public class MedicalRecordServiceTest {
@@ -35,11 +31,11 @@ public class MedicalRecordServiceTest {
     private static JsonWritingRepository jsonWritingRepository;
     MedicalRecordService medicalRecordService;
     List<MedicalRecord> medicalRecords;
-    
+
     @BeforeEach
     private void setUp() {
         medicalRecordService = new MedicalRecordService(
-            jsonReadingRepository, jsonWritingRepository);
+                jsonReadingRepository, jsonWritingRepository);
 
         MedicalRecord medicalRecord1 = new MedicalRecord(
                 "john", "doe", "01/01/2000",
@@ -60,8 +56,8 @@ public class MedicalRecordServiceTest {
         List<MedicalRecord> recordsTest = medicalRecordService.getMedicalRecords();
 
         MedicalRecord john = recordsTest.stream()
-        .filter(r -> r.getFirstName().equals("john"))
-        .findFirst().orElseThrow();
+                .filter(r -> r.getFirstName().equals("john"))
+                .findFirst().orElseThrow();
 
         assertEquals("johndoe", john.getPersonId());
         assertEquals(LocalDate.of(2000, 1, 1), john.getLocalBirthdate());
@@ -69,4 +65,140 @@ public class MedicalRecordServiceTest {
         assertTrue(john.getMedications().contains("med1"));
         assertTrue(john.getAllergies().contains("allergy1"));
         verify(jsonReadingRepository).getMedicalRecords();
-}}
+    }
+
+    @Test
+    public void getMedicalRecords_withWrongBirthdate_throwsException() throws IOException {
+
+        when(jsonReadingRepository.getMedicalRecords()).thenReturn(medicalRecords);
+        MedicalRecord medicalRecord3 = new MedicalRecord(
+                "jack", "doe", "15/32/2020",
+                Arrays.asList(), Arrays.asList());
+        medicalRecords.add(medicalRecord3);
+
+        assertThrows(DateTimeParseException.class, () -> medicalRecordService.getMedicalRecords());
+        verify(jsonReadingRepository).getMedicalRecords();
+    }
+
+    @Test
+    public void createMedicalRecord_withCorrectParameters_addsNewMedicalRecord()
+            throws IOException {
+
+        when(jsonReadingRepository.getMedicalRecords()).thenReturn(medicalRecords);
+        when(jsonWritingRepository.updateMedicalRecords(medicalRecords)).thenReturn(true);
+        MedicalRecord recordToAdd = new MedicalRecord(
+                "new", "record", "01/01/2000", null, null);
+        medicalRecordService.createMedicalRecord(recordToAdd);
+
+        String addedFirstName = medicalRecords.stream()
+                .filter(r -> r.getFirstName().equals(recordToAdd.getFirstName()))
+                .map(r -> r.getFirstName())
+                .findFirst().orElseThrow();
+
+        assertEquals(recordToAdd.getFirstName(), addedFirstName);
+        verify(jsonReadingRepository).getMedicalRecords();
+        verify(jsonWritingRepository).updateMedicalRecords(medicalRecords);
+    }
+
+    @Test
+    public void createMedicalRecord_withAlreadyExistingRecord_returnsNull() throws IOException {
+
+        when(jsonReadingRepository.getMedicalRecords()).thenReturn(medicalRecords);
+        lenient().when(jsonWritingRepository.updateMedicalRecords(medicalRecords)).thenReturn(true);
+        MedicalRecord recordToAdd = new MedicalRecord(
+                "john", "doe", "01/01/2000", null, null);
+
+        assertTrue(medicalRecordService.createMedicalRecord(recordToAdd) == null);
+        verify(jsonReadingRepository).getMedicalRecords();
+        verify(jsonWritingRepository, Mockito.times(0)).updateMedicalRecords(medicalRecords);
+    }
+
+    @Test
+    public void updatedMedicalRecord_withCorrectParameters_updatesMedicalRecord()
+            throws IOException {
+
+        when(jsonReadingRepository.getMedicalRecords()).thenReturn(medicalRecords);
+        when(jsonWritingRepository.updateMedicalRecords(medicalRecords)).thenReturn(true);
+        MedicalRecord recordToUpdate = new MedicalRecord(
+                "john", "doe", "01/01/2020", null, null);
+
+        medicalRecordService.updateMedicalRecord(recordToUpdate);
+
+        String updatedRawBirthdate = medicalRecords.stream()
+                .filter(r -> r.getFirstName().equals(recordToUpdate.getFirstName()))
+                .map(r -> r.getRawBirthdate())
+                .findFirst().orElseThrow();
+
+
+        assertEquals(recordToUpdate.getRawBirthdate(), updatedRawBirthdate);
+        verify(jsonReadingRepository).getMedicalRecords();
+        verify(jsonWritingRepository).updateMedicalRecords(medicalRecords);
+    }
+
+    @Test
+    public void updatedMedicalRecord_withNonExistingRecord_returnsNull() throws IOException {
+
+        when(jsonReadingRepository.getMedicalRecords()).thenReturn(medicalRecords);
+        lenient().when(jsonWritingRepository.updateMedicalRecords(medicalRecords)).thenReturn(true);
+        MedicalRecord recordToUpdate = new MedicalRecord(
+                "new", "record", "01/01/2000", null, null);
+
+        assertTrue(medicalRecordService.updateMedicalRecord(recordToUpdate) == null);
+        verify(jsonReadingRepository).getMedicalRecords();
+        verify(jsonWritingRepository, Mockito.times(0)).updateMedicalRecords(medicalRecords);
+    }
+
+    @Test
+    public void updatedMedicalRecord_withNullAttributes_doesNotErase() throws IOException {
+
+        when(jsonReadingRepository.getMedicalRecords()).thenReturn(medicalRecords);
+        when(jsonWritingRepository.updateMedicalRecords(medicalRecords)).thenReturn(true);
+        MedicalRecord recordToUpdate = new MedicalRecord(
+                "john", "doe", null, null, null);
+
+        medicalRecordService.updateMedicalRecord(recordToUpdate);
+
+        MedicalRecord updatedRecord = medicalRecords.stream()
+                .filter(r -> r.getFirstName().equals(recordToUpdate.getFirstName()))
+                .findFirst().orElseThrow();
+
+        assertTrue(updatedRecord.getRawBirthdate().contains("01/01/2000"));
+        assertTrue(updatedRecord.getMedications().contains("med1"));
+        assertTrue(updatedRecord.getAllergies().contains("allergy1"));
+        verify(jsonReadingRepository).getMedicalRecords();
+        verify(jsonWritingRepository).updateMedicalRecords(medicalRecords);
+    }
+
+    @Test
+    public void deleteMedicalRecord_withCorrectParameters_deletesMedicalRecord()
+            throws IOException {
+
+        when(jsonReadingRepository.getMedicalRecords()).thenReturn(medicalRecords);
+        when(jsonWritingRepository.updateMedicalRecords(medicalRecords)).thenReturn(true);
+        MedicalRecord recordToDelete = new MedicalRecord(
+                "john", "doe", "01/01/2020", null, null);
+
+        medicalRecordService.deleteMedicalRecord(recordToDelete);
+
+        Optional<MedicalRecord> deletedRecord = medicalRecords.stream()
+                .filter(r -> r.getFirstName().equals(recordToDelete.getFirstName()))
+                .findFirst();
+
+        assertTrue(deletedRecord.isEmpty());
+        verify(jsonReadingRepository).getMedicalRecords();
+        verify(jsonWritingRepository).updateMedicalRecords(medicalRecords);
+    }
+
+    @Test
+    public void deleteMedicalRecord__withNonExistingRecord_returnsNull() throws IOException {
+
+        when(jsonReadingRepository.getMedicalRecords()).thenReturn(medicalRecords);
+        lenient().when(jsonWritingRepository.updateMedicalRecords(medicalRecords)).thenReturn(true);
+        MedicalRecord recordToDelete = new MedicalRecord(
+                "new", "record", "01/01/2020", null, null);
+
+        assertTrue(medicalRecordService.deleteMedicalRecord(recordToDelete) == null);
+        verify(jsonReadingRepository).getMedicalRecords();
+        verify(jsonWritingRepository, Mockito.times(0)).updateMedicalRecords(medicalRecords);
+    }
+}

@@ -70,7 +70,7 @@ public class FirestationDataController {
             @RequestBody Firestation firestation)
             throws IOException {
 
-        Firestation deletedFirestation = firestationService.deletePerson(firestation);
+        Firestation deletedFirestation = firestationService.deleteFirestation(firestation);
 
         if (deletedFirestation == null) {
             logger.error("deletedFirestation is null");
