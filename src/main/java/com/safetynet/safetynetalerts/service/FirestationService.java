@@ -42,8 +42,8 @@ public class FirestationService {
         return firestations;
     }
 
-    private Set<String> getAddresses(int firestationId, List<Firestation> firestations) {
-        Set<String> addresses = firestations
+    private Set<String> getAddresses(int firestationId, List<Firestation> firestationsList) {
+        Set<String> addresses = firestationsList
                 .stream()
                 .filter(f -> Integer.parseInt(f.getStation()) == firestationId)
                 .map(f -> f.getAddress())

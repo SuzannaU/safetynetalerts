@@ -1,0 +1,24 @@
+{    "persons": [
+        { "firstName":"Tony", "lastName":"Cooper", "address":"112 Steppes Pl", "city":"Culver", "zip":"97451", "phone":"841-874-6874", "email":"tcoop@ymail.com" },
+        { "firstName":"Ron", "lastName":"Peters", "address":"112 Steppes Pl", "city":"Culver", "zip":"97451", "phone":"841-874-8888", "email":"jpeter@email.com" },
+        { "firstName":"Allison", "lastName":"Boyd", "address":"112 Steppes Pl", "city":"Culver", "zip":"97451", "phone":"841-874-9888", "email":"aly@imail.com" },
+        { "firstName":"Brian", "lastName":"Stelzer", "address":"947 E. Rose Dr", "city":"Culver", "zip":"97451", "phone":"841-874-7784", "email":"bstel@email.com" },
+        { "firstName":"Shawna", "lastName":"Stelzer", "address":"947 E. Rose Dr", "city":"Culver", "zip":"97451", "phone":"841-874-7784", "email":"ssanw@email.com" },
+        { "firstName":"Kendrik", "lastName":"Stelzer", "address":"947 E. Rose Dr", "city":"Culver", "zip":"97451", "phone":"841-874-7784", "email":"bstel@email.com" }
+	], 
+    "firestations": [
+        { "address":"112 Steppes Pl", "station":"3" },
+        { "address":"112 Steppes Pl", "station":"4" },
+        { "address":"947 E. Rose Dr", "station":"1" }
+	],
+    "medicalrecords": [
+        { "firstName":"Tony", "lastName":"Cooper", "birthdate":"03/06/1994", "medications":["hydrapermazol:300mg", "dodoxadin:30mg"], "allergies":["shellfish"] },
+        { "firstName":"Ron", "lastName":"Peters", "birthdate":"04/06/1965", "medications":[], "allergies":[] },
+        { "firstName":"Allison", "lastName":"Boyd", "birthdate":"03/15/1965", "medications":["aznol:200mg"], "allergies":["nillacilan"] },
+        { "firstName":"Brian", "lastName":"Stelzer", "birthdate":"12/06/1975", "medications":["ibupurin:200mg", "hydrapermazol:400mg"], "allergies":["nillacilan"] },
+        { "firstName":"Shawna", "lastName":"Stelzer", "birthdate":"07/08/1980", "medications":[], "allergies":[] },
+        { "firstName":"Kendrik", "lastName":"Stelzer", "birthdate":"03/06/2014", "medications":["noxidian:100mg", "pharmacol:2500mg"], "allergies":[] }
+        ] 
+},
+
+{"firstName":"Tony", "lastName":"Cooper", "address":"112 Steppes Pl", "city":"Culver", "zip":"97451", "phone":"841-874-6874", "email":"tcoop@ymail.com"}

@@ -17,30 +17,7 @@ import com.safetynet.safetynetalerts.model.Person;
 public class JsonWritingRepository {
     private static final Logger logger = LoggerFactory.getLogger(JsonWritingRepository.class);
     private final String sourceFilePath = "src/main/resources/data.json";
-
-    public void updatePersons(List<Person> persons) throws IOException {
-        Map<String, Object> jsonData = getJsonData();
-        jsonData.put("persons", persons);
-
-        writeDataInFile(jsonData);
-        logger.debug("Json file updated with modified persons");
-    }
-
-    public void updateMedicalRecords(List<MedicalRecord> medicalRecords) throws IOException {
-        Map<String, Object> jsonData = getJsonData();
-        jsonData.put("medicalrecords", medicalRecords);
-
-        writeDataInFile(jsonData);
-        logger.debug("Json file updated with modified medical records");
-    }
-
-    public void updateFirestations(List<Firestation> firestations) throws IOException {
-        Map<String, Object> jsonData = getJsonData();
-        jsonData.put("firestations", firestations);
-
-        writeDataInFile(jsonData);
-        logger.debug("Json file updated with modified firestations");
-    }
+    private final String outputFilepath = "target/output.json";
 
     private Map<String, Object> getJsonData() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -57,7 +34,32 @@ public class JsonWritingRepository {
         return jsonData;
     }
 
-    private void writeDataInFile(Map<String, Object> jsonData) throws IOException {
+    public boolean updatePersons(List<Person> persons) throws IOException {
+        Map<String, Object> jsonData = getJsonData();
+        jsonData.put("persons", persons);
+
+        updateDataInFile(jsonData);
+        logger.debug("Json file updated with modified persons");
+        return true;
+    }
+
+    public void updateMedicalRecords(List<MedicalRecord> medicalRecords) throws IOException {
+        Map<String, Object> jsonData = getJsonData();
+        jsonData.put("medicalrecords", medicalRecords);
+
+        updateDataInFile(jsonData);
+        logger.debug("Json file updated with modified medical records");
+    }
+
+    public void updateFirestations(List<Firestation> firestations) throws IOException {
+        Map<String, Object> jsonData = getJsonData();
+        jsonData.put("firestations", firestations);
+
+        updateDataInFile(jsonData);
+        logger.debug("Json file updated with modified firestations");
+    }
+
+    private void updateDataInFile(Map<String, Object> jsonData) throws IOException {
         ObjectMapper objMapper = new ObjectMapper();
         try {
             objMapper.writeValue(new File(sourceFilePath), jsonData);
@@ -66,5 +68,18 @@ public class JsonWritingRepository {
             logger.error("Unable to write Json file");
             throw e;
         }
+    }
+
+    public void writeOutputFile(Object o) throws IOException {
+        ObjectMapper objMApper = new ObjectMapper();
+        try {
+            objMApper.writerWithDefaultPrettyPrinter()
+                    .writeValue(new File(outputFilepath), o);
+            logger.debug("Data written at: " + outputFilepath);
+        } catch (IOException e) {
+            logger.error("Unable to write Json file");
+            throw e;
+        }
+
     }
 }

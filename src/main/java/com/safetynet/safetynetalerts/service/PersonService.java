@@ -33,8 +33,8 @@ public class PersonService {
         this.firestationService = firestationService;
     }
 
-    public List<Person> getPersons() throws IOException {
-        
+    public List<Person> getPersons() throws IOException, NullPointerException {
+
         List<Person> persons = jsonReadingRepository.getPersons();
         List<MedicalRecord> medicalRecords = medicalRecordService.getMedicalRecords();
         Set<Firestation> firestations = firestationService.getFirestations();
@@ -52,23 +52,30 @@ public class PersonService {
                 person.setFirestationIds(getFirestationIds(person.getAddress(), firestations));
             }
         } catch (NullPointerException e) {
-            logger.error("persons list is empty");
+            logger.error("Missing attribute age or birthdate");
+            throw e;
         }
 
         return persons;
     }
 
     private LocalDate getBirthdate(String personId, List<MedicalRecord> medicalRecords) {
-        Optional<LocalDate> birthdate = medicalRecords.stream()
-                .filter(medicalRecord -> medicalRecord.getPersonId().equals(personId))
-                .map(medicalRecord -> medicalRecord.getLocalBirthdate())
-                .findFirst();
+        try {
+            Optional<LocalDate> birthdate = medicalRecords.stream()
+                    .filter(medicalRecord -> medicalRecord.getPersonId().equals(personId))
+                    .map(medicalRecord -> medicalRecord.getLocalBirthdate())
+                    .findFirst();
 
-        if (birthdate.isPresent()) {
-            return birthdate.get();
-        } else {
-            logger.error("No birthdate");
-            return null;
+
+            if (birthdate.isPresent() && birthdate.get() != null) {
+                return birthdate.get();
+            } else {
+                logger.error("No birthdate");
+                return null;
+            }
+        } catch (NullPointerException e) {
+            logger.error("birthdate is missing from medical records");
+            throw e;
         }
     }
 
@@ -82,7 +89,7 @@ public class PersonService {
             return age.get();
         } else {
             logger.error("No age");
-            return 999;
+            throw new IllegalArgumentException();
         }
     }
 
@@ -153,7 +160,7 @@ public class PersonService {
         }
 
         Person updatedPerson = new Person(
-            person.getFirstName(), person.getLastName(), null, null, null, null, null);
+                person.getFirstName(), person.getLastName(), null, null, null, null, null);
 
         if (person.getAddress() == null
                 || person.getAddress().trim().isEmpty())

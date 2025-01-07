@@ -70,8 +70,14 @@ public class MedicalRecordService {
             return null;
         }
 
-        // Checks if rawBirthdate is in format MM/dd/YYYY. If not, throws exception handled in Controller
-        LocalDate birthdate = getFormattedBirthdate(medicalRecord.getRawBirthdate());
+        /*
+         * Checks if rawBirthdate is in format MM/dd/YYYY. If not, throws exception handled in
+         * Controller
+         */
+        String rawBirthdate = medicalRecord.getRawBirthdate();
+        if (rawBirthdate != null) {
+            LocalDate localBirthdate = getFormattedBirthdate(medicalRecord.getRawBirthdate());
+        }
 
         medicalRecords.add(medicalRecord);
         jsonWritingRepository.updateMedicalRecords(medicalRecords);
@@ -94,11 +100,13 @@ public class MedicalRecordService {
             return null;
         }
 
-        try {
-            LocalDate birthdate = getFormattedBirthdate(medicalRecord.getRawBirthdate());
-        } catch (DateTimeParseException e) {
-            logger.error("Invalid format for birthdate");
-            throw e;
+        /*
+         * Checks if rawBirthdate is in format MM/dd/YYYY. If not, throws exception handled in
+         * Controller
+         */
+        String rawBirthdate = medicalRecord.getRawBirthdate();
+        if (rawBirthdate != null) {
+            LocalDate localBirthdate = getFormattedBirthdate(medicalRecord.getRawBirthdate());
         }
 
         MedicalRecord updatedMedicalRecord = new MedicalRecord(
@@ -113,10 +121,10 @@ public class MedicalRecordService {
         else
             updatedMedicalRecord.setRawBirthdate(medicalRecord.getRawBirthdate());
 
-        // TODO : modify to ignore "" in JSON input
         updatedMedicalRecord.setAllergies(
                 Optional.ofNullable(medicalRecord.getAllergies())
                         .orElse(existingMedicalRecord.get().getAllergies()));
+
         updatedMedicalRecord.setMedications(
                 Optional.ofNullable(medicalRecord.getMedications())
                         .orElse(existingMedicalRecord.get().getMedications()));
