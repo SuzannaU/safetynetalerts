@@ -1,6 +1,7 @@
 package com.safetynet.safetynetalerts;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
@@ -108,7 +109,7 @@ public class MedicalRecordServiceTest {
         MedicalRecord recordToAdd = new MedicalRecord(
                 "john", "doe", "01/01/2000", null, null);
 
-        assertTrue(medicalRecordService.createMedicalRecord(recordToAdd) == null);
+        assertNull(medicalRecordService.createMedicalRecord(recordToAdd));
         verify(jsonReadingRepository).getMedicalRecords();
         verify(jsonWritingRepository, Mockito.times(0)).updateMedicalRecords(medicalRecords);
     }
@@ -143,7 +144,7 @@ public class MedicalRecordServiceTest {
         MedicalRecord recordToUpdate = new MedicalRecord(
                 "new", "record", "01/01/2000", null, null);
 
-        assertTrue(medicalRecordService.updateMedicalRecord(recordToUpdate) == null);
+        assertNull(medicalRecordService.updateMedicalRecord(recordToUpdate));
         verify(jsonReadingRepository).getMedicalRecords();
         verify(jsonWritingRepository, Mockito.times(0)).updateMedicalRecords(medicalRecords);
     }
@@ -197,7 +198,7 @@ public class MedicalRecordServiceTest {
         MedicalRecord recordToDelete = new MedicalRecord(
                 "new", "record", "01/01/2020", null, null);
 
-        assertTrue(medicalRecordService.deleteMedicalRecord(recordToDelete) == null);
+        assertNull(medicalRecordService.deleteMedicalRecord(recordToDelete));
         verify(jsonReadingRepository).getMedicalRecords();
         verify(jsonWritingRepository, Mockito.times(0)).updateMedicalRecords(medicalRecords);
     }

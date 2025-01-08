@@ -32,11 +32,11 @@ public class SafetynetalertsApplication {
 	public static void main(String[] args) throws StreamWriteException, DatabindException, IOException {
 		SpringApplication.run(SafetynetalertsApplication.class, args);
 
-		JsonWritingRepository jsonWritingRepository = new JsonWritingRepository();
+		/*JsonWritingRepository jsonWritingRepository = new JsonWritingRepository();
 		JsonReadingRepository jsonReadingRepository = new JsonReadingRepository();
 		MedicalRecordService medicalRecordService = new MedicalRecordService(jsonReadingRepository, jsonWritingRepository);
 		FirestationService firestationService = new FirestationService(jsonReadingRepository, jsonWritingRepository);
-		PersonService personService = new PersonService(jsonReadingRepository, jsonWritingRepository, medicalRecordService,firestationService);
+		PersonService personService = new PersonService(jsonReadingRepository, jsonWritingRepository, medicalRecordService,firestationService);*/
 
 		/*List<Person> persons = personService.getPersons();
 		for (Person person : persons) {

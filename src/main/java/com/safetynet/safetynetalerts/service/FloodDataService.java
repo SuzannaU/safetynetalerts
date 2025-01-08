@@ -9,7 +9,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.safetynet.safetynetalerts.controller.Mapper;
 import com.safetynet.safetynetalerts.dto.*;
@@ -18,12 +17,16 @@ import com.safetynet.safetynetalerts.model.*;
 @Service
 public class FloodDataService {
     private static final Logger logger = LoggerFactory.getLogger(FloodDataService.class);
-    @Autowired
     PersonService personService;
-    @Autowired
     FirestationService firestationService;
-    @Autowired
     Mapper mapper;
+
+    public FloodDataService(PersonService personService, FirestationService firestationService,
+            Mapper mapper) {
+        this.personService = personService;
+        this.firestationService = firestationService;
+        this.mapper = mapper;
+    }
 
     public FloodData getFloodData(List<Integer> listOfStationIds) throws IOException {
         Set<Firestation> firestations = new HashSet<>();
@@ -57,26 +60,26 @@ public class FloodDataService {
 
                     addressesForFlood.add(addressForFlood);
                 }
-            } else {
-                logger.info("Unable to retrieve addresses from firestationId: " + id);
-                AddressForFlood noAddress = new AddressForFlood();
-                noAddress.setAddress("No addresses related to firestation " + id);
-                addressesForFlood.add(noAddress);
             }
 
             FirestationForFlood firestationForFlood = new FirestationForFlood();
-            firestationForFlood.setFirestationId(id);
-            firestationForFlood.setAddressesForFlood(addressesForFlood);
+            if (addressesForFlood.isEmpty()) {
+                logger.error("Unable to retrieve addresses from firestationId: " + id);
+            } else {
+                firestationForFlood.setFirestationId(id);
+                firestationForFlood.setAddressesForFlood(addressesForFlood);
 
-            firestationsForFlood.add(firestationForFlood);
+                firestationsForFlood.add(firestationForFlood);
+            }
         }
 
         FloodData floodData = new FloodData();
-        floodData.setStationsForFlood(firestationsForFlood);
-
-        return floodData;
+        if (firestationsForFlood.isEmpty()) {
+            logger.error("No firestations retrieved for ids: " + listOfStationIds.toString());
+            return null;
+        } else {
+            floodData.setStationsForFlood(firestationsForFlood);
+            return floodData;
+        }
     }
-
-
-
 }

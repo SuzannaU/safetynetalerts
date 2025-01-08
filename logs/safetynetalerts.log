@@ -1,796 +1,709 @@
-2025-01-07 10:36:12 [main] INFO  erts.SafetynetalertsApplicationTests: logStarting          --- Starting SafetynetalertsApplicationTests using Java 17.0.8 with PID 17200 (started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
-2025-01-07 10:36:12 [main] DEBUG erts.SafetynetalertsApplicationTests: logStarting          --- Running with Spring Boot v3.4.0, Spring v6.2.0
-2025-01-07 10:36:12 [main] INFO  erts.SafetynetalertsApplicationTests: logStartupProfileInfo --- No active profile set, falling back to 1 default profile: "default"
-2025-01-07 10:36:13 [main] DEBUG support.GenericWebApplicationContext: prepareRefresh       --- Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7f305f34
-2025-01-07 10:36:15 [main] DEBUG otation.RequestMappingHandlerMapping: handlerMethodsInitialized --- 18 mappings in 'requestMappingHandlerMapping'
-2025-01-07 10:36:15 [main] DEBUG      handler.SimpleUrlHandlerMapping: logMappings          --- Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2025-01-07 10:36:15 [main] DEBUG otation.RequestMappingHandlerAdapter: initControllerAdviceCache --- ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-01-07 10:36:16 [main] DEBUG on.ExceptionHandlerExceptionResolver: initExceptionHandlerAdviceCache --- ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-01-07 10:36:16 [main] INFO  erts.SafetynetalertsApplicationTests: logStarted           --- Started SafetynetalertsApplicationTests in 4.42 seconds (process running for 8.299)
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] ERROR                service.PersonService: updatePerson         --- This person doesn't exist
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] ERROR                service.PersonService: getBirthdate         --- birthdate is missing from medical records
-2025-01-07 10:36:18 [main] ERROR                service.PersonService: getPersons           --- Missing attribute age or birthdate
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] ERROR                service.PersonService: deletePerson         --- This person doesn't exist
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] ERROR                service.PersonService: createPerson         --- This person already exists
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:36:18 [SpringApplicationShutdownHook] DEBUG support.GenericWebApplicationContext: doClose              --- Closing org.springframework.web.context.support.GenericWebApplicationContext@7f305f34, started on Tue Jan 07 10:36:13 CET 2025
-2025-01-07 10:38:26 [main] INFO  erts.SafetynetalertsApplicationTests: logStarting          --- Starting SafetynetalertsApplicationTests using Java 17.0.8 with PID 27548 (started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
-2025-01-07 10:38:26 [main] DEBUG erts.SafetynetalertsApplicationTests: logStarting          --- Running with Spring Boot v3.4.0, Spring v6.2.0
-2025-01-07 10:38:26 [main] INFO  erts.SafetynetalertsApplicationTests: logStartupProfileInfo --- No active profile set, falling back to 1 default profile: "default"
-2025-01-07 10:38:27 [main] DEBUG support.GenericWebApplicationContext: prepareRefresh       --- Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7f305f34
-2025-01-07 10:38:29 [main] DEBUG otation.RequestMappingHandlerMapping: handlerMethodsInitialized --- 18 mappings in 'requestMappingHandlerMapping'
-2025-01-07 10:38:29 [main] DEBUG      handler.SimpleUrlHandlerMapping: logMappings          --- Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2025-01-07 10:38:29 [main] DEBUG otation.RequestMappingHandlerAdapter: initControllerAdviceCache --- ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-01-07 10:38:29 [main] DEBUG on.ExceptionHandlerExceptionResolver: initExceptionHandlerAdviceCache --- ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-01-07 10:38:29 [main] INFO  erts.SafetynetalertsApplicationTests: logStarted           --- Started SafetynetalertsApplicationTests in 3.473 seconds (process running for 7.01)
-2025-01-07 10:38:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:31 [main] ERROR                service.PersonService: updatePerson         --- This person doesn't exist
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:32 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:32 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:32 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:32 [main] ERROR                service.PersonService: getBirthdate         --- birthdate is missing from medical records
-2025-01-07 10:38:32 [main] ERROR                service.PersonService: getPersons           --- Missing attribute age or birthdate
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:32 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:32 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:32 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:32 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:32 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:32 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:32 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:32 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:32 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:32 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:32 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:32 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] ERROR                service.PersonService: deletePerson         --- This person doesn't exist
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:32 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:32 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:32 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:32 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:32 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:32 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] ERROR                service.PersonService: createPerson         --- This person already exists
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 10:38:32 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:32 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 10:38:32 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:32 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 10:38:32 [SpringApplicationShutdownHook] DEBUG support.GenericWebApplicationContext: doClose              --- Closing org.springframework.web.context.support.GenericWebApplicationContext@7f305f34, started on Tue Jan 07 10:38:27 CET 2025
-2025-01-07 14:53:19 [main] INFO  erts.SafetynetalertsApplicationTests: logStarting          --- Starting SafetynetalertsApplicationTests using Java 17.0.8 with PID 22152 (started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
-2025-01-07 14:53:19 [main] DEBUG erts.SafetynetalertsApplicationTests: logStarting          --- Running with Spring Boot v3.4.0, Spring v6.2.0
-2025-01-07 14:53:19 [main] INFO  erts.SafetynetalertsApplicationTests: logStartupProfileInfo --- No active profile set, falling back to 1 default profile: "default"
-2025-01-07 14:53:19 [main] DEBUG support.GenericWebApplicationContext: prepareRefresh       --- Refreshing org.springframework.web.context.support.GenericWebApplicationContext@416a4275
-2025-01-07 14:53:21 [main] DEBUG otation.RequestMappingHandlerMapping: handlerMethodsInitialized --- 18 mappings in 'requestMappingHandlerMapping'
-2025-01-07 14:53:21 [main] DEBUG      handler.SimpleUrlHandlerMapping: logMappings          --- Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2025-01-07 14:53:21 [main] DEBUG otation.RequestMappingHandlerAdapter: initControllerAdviceCache --- ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-01-07 14:53:21 [main] DEBUG on.ExceptionHandlerExceptionResolver: initExceptionHandlerAdviceCache --- ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-01-07 14:53:21 [main] INFO  erts.SafetynetalertsApplicationTests: logStarted           --- Started SafetynetalertsApplicationTests in 2.375 seconds (process running for 4.745)
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] ERROR                service.PersonService: updatePerson         --- This person doesn't exist
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] ERROR                service.PersonService: getBirthdate         --- birthdate is missing from medical records
-2025-01-07 14:53:22 [main] ERROR                service.PersonService: getPersons           --- Missing attribute age or birthdate
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] ERROR                service.PersonService: deletePerson         --- This person doesn't exist
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] ERROR                service.PersonService: createPerson         --- This person already exists
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] ERROR         service.MedicalRecordService: getFormattedBirthdate --- Invalid format for birthdate
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] ERROR         service.MedicalRecordService: deleteMedicalRecord  --- This medical record doesn't exist
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] ERROR         service.MedicalRecordService: updateMedicalRecord  --- This medical record doesn't exist
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] ERROR         service.MedicalRecordService: createMedicalRecord  --- This medical record already exists
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:53:22 [SpringApplicationShutdownHook] DEBUG support.GenericWebApplicationContext: doClose              --- Closing org.springframework.web.context.support.GenericWebApplicationContext@416a4275, started on Tue Jan 07 14:53:19 CET 2025
-2025-01-07 14:54:04 [main] INFO  erts.SafetynetalertsApplicationTests: logStarting          --- Starting SafetynetalertsApplicationTests using Java 17.0.8 with PID 16548 (started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
-2025-01-07 14:54:04 [main] DEBUG erts.SafetynetalertsApplicationTests: logStarting          --- Running with Spring Boot v3.4.0, Spring v6.2.0
-2025-01-07 14:54:04 [main] INFO  erts.SafetynetalertsApplicationTests: logStartupProfileInfo --- No active profile set, falling back to 1 default profile: "default"
-2025-01-07 14:54:04 [main] DEBUG support.GenericWebApplicationContext: prepareRefresh       --- Refreshing org.springframework.web.context.support.GenericWebApplicationContext@416a4275
-2025-01-07 14:54:06 [main] DEBUG otation.RequestMappingHandlerMapping: handlerMethodsInitialized --- 18 mappings in 'requestMappingHandlerMapping'
-2025-01-07 14:54:06 [main] DEBUG      handler.SimpleUrlHandlerMapping: logMappings          --- Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2025-01-07 14:54:06 [main] DEBUG otation.RequestMappingHandlerAdapter: initControllerAdviceCache --- ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-01-07 14:54:06 [main] DEBUG on.ExceptionHandlerExceptionResolver: initExceptionHandlerAdviceCache --- ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-01-07 14:54:06 [main] INFO  erts.SafetynetalertsApplicationTests: logStarted           --- Started SafetynetalertsApplicationTests in 2.328 seconds (process running for 4.613)
-2025-01-07 14:54:07 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:07 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:07 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:07 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:07 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:07 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:07 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:07 [main] ERROR                service.PersonService: updatePerson         --- This person doesn't exist
-2025-01-07 14:54:07 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:07 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:07 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:07 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:07 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:07 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:07 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:07 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:07 [main] ERROR                service.PersonService: getBirthdate         --- birthdate is missing from medical records
-2025-01-07 14:54:07 [main] ERROR                service.PersonService: getPersons           --- Missing attribute age or birthdate
-2025-01-07 14:54:07 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:07 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:07 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:07 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:07 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:07 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:07 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:08 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:08 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:08 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] ERROR                service.PersonService: deletePerson         --- This person doesn't exist
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:08 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:08 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] ERROR                service.PersonService: createPerson         --- This person already exists
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:08 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] ERROR         service.MedicalRecordService: getFormattedBirthdate --- Invalid format for birthdate
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] ERROR         service.MedicalRecordService: deleteMedicalRecord  --- This medical record doesn't exist
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] ERROR         service.MedicalRecordService: updateMedicalRecord  --- This medical record doesn't exist
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] ERROR         service.MedicalRecordService: createMedicalRecord  --- This medical record already exists
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:54:08 [SpringApplicationShutdownHook] DEBUG support.GenericWebApplicationContext: doClose              --- Closing org.springframework.web.context.support.GenericWebApplicationContext@416a4275, started on Tue Jan 07 14:54:04 CET 2025
-2025-01-07 14:55:36 [main] INFO  erts.SafetynetalertsApplicationTests: logStarting          --- Starting SafetynetalertsApplicationTests using Java 17.0.8 with PID 5368 (started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
-2025-01-07 14:55:36 [main] DEBUG erts.SafetynetalertsApplicationTests: logStarting          --- Running with Spring Boot v3.4.0, Spring v6.2.0
-2025-01-07 14:55:36 [main] INFO  erts.SafetynetalertsApplicationTests: logStartupProfileInfo --- No active profile set, falling back to 1 default profile: "default"
-2025-01-07 14:55:37 [main] DEBUG support.GenericWebApplicationContext: prepareRefresh       --- Refreshing org.springframework.web.context.support.GenericWebApplicationContext@416a4275
-2025-01-07 14:55:38 [main] DEBUG otation.RequestMappingHandlerMapping: handlerMethodsInitialized --- 18 mappings in 'requestMappingHandlerMapping'
-2025-01-07 14:55:38 [main] DEBUG      handler.SimpleUrlHandlerMapping: logMappings          --- Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2025-01-07 14:55:38 [main] DEBUG otation.RequestMappingHandlerAdapter: initControllerAdviceCache --- ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-01-07 14:55:38 [main] DEBUG on.ExceptionHandlerExceptionResolver: initExceptionHandlerAdviceCache --- ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-01-07 14:55:38 [main] INFO  erts.SafetynetalertsApplicationTests: logStarted           --- Started SafetynetalertsApplicationTests in 2.19 seconds (process running for 4.442)
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] ERROR                service.PersonService: updatePerson         --- This person doesn't exist
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] ERROR                service.PersonService: getBirthdate         --- birthdate is missing from medical records
-2025-01-07 14:55:39 [main] ERROR                service.PersonService: getPersons           --- Missing attribute age or birthdate
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] ERROR                service.PersonService: deletePerson         --- This person doesn't exist
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] ERROR                service.PersonService: createPerson         --- This person already exists
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] ERROR         service.MedicalRecordService: getFormattedBirthdate --- Invalid format for birthdate
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] ERROR         service.MedicalRecordService: deleteMedicalRecord  --- This medical record doesn't exist
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] ERROR         service.MedicalRecordService: updateMedicalRecord  --- This medical record doesn't exist
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] ERROR         service.MedicalRecordService: createMedicalRecord  --- This medical record already exists
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 14:55:39 [SpringApplicationShutdownHook] DEBUG support.GenericWebApplicationContext: doClose              --- Closing org.springframework.web.context.support.GenericWebApplicationContext@416a4275, started on Tue Jan 07 14:55:37 CET 2025
-2025-01-07 16:10:28 [main] INFO  erts.SafetynetalertsApplicationTests: logStarting          --- Starting SafetynetalertsApplicationTests using Java 17.0.8 with PID 1232 (started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
-2025-01-07 16:10:28 [main] DEBUG erts.SafetynetalertsApplicationTests: logStarting          --- Running with Spring Boot v3.4.0, Spring v6.2.0
-2025-01-07 16:10:28 [main] INFO  erts.SafetynetalertsApplicationTests: logStartupProfileInfo --- No active profile set, falling back to 1 default profile: "default"
-2025-01-07 16:10:28 [main] DEBUG support.GenericWebApplicationContext: prepareRefresh       --- Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2bfc8558
-2025-01-07 16:10:29 [main] DEBUG otation.RequestMappingHandlerMapping: handlerMethodsInitialized --- 18 mappings in 'requestMappingHandlerMapping'
-2025-01-07 16:10:30 [main] DEBUG      handler.SimpleUrlHandlerMapping: logMappings          --- Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2025-01-07 16:10:30 [main] DEBUG otation.RequestMappingHandlerAdapter: initControllerAdviceCache --- ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-01-07 16:10:30 [main] DEBUG on.ExceptionHandlerExceptionResolver: initExceptionHandlerAdviceCache --- ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-01-07 16:10:30 [main] INFO  erts.SafetynetalertsApplicationTests: logStarted           --- Started SafetynetalertsApplicationTests in 2.467 seconds (process running for 4.859)
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] ERROR                service.PersonService: updatePerson         --- This person doesn't exist
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] ERROR                service.PersonService: getBirthdate         --- birthdate is missing from medical records
-2025-01-07 16:10:31 [main] ERROR                service.PersonService: getPersons           --- Missing attribute age or birthdate
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] ERROR                service.PersonService: deletePerson         --- This person doesn't exist
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] ERROR                service.PersonService: createPerson         --- This person already exists
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] ERROR         service.MedicalRecordService: getFormattedBirthdate --- Invalid format for birthdate
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] ERROR         service.MedicalRecordService: deleteMedicalRecord  --- This medical record doesn't exist
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] ERROR         service.MedicalRecordService: updateMedicalRecord  --- This medical record doesn't exist
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] ERROR         service.MedicalRecordService: createMedicalRecord  --- This medical record already exists
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] ERROR           service.FirestationService: updateFirestation    --- This address doesn't exist and cannot be updated
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] ERROR           service.FirestationService: deleteFirestation    --- This firestation/address combination doesn't exist
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] ERROR           service.FirestationService: updateFirestation    --- This address is already mapped to this firestation
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] ERROR           service.FirestationService: createFirestation    --- This address is already mapped to a firestation
-2025-01-07 16:10:31 [main] ERROR           service.FirestationService: createFirestation    --- This address is already mapped to a firestation
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:10:31 [SpringApplicationShutdownHook] DEBUG support.GenericWebApplicationContext: doClose              --- Closing org.springframework.web.context.support.GenericWebApplicationContext@2bfc8558, started on Tue Jan 07 16:10:28 CET 2025
-2025-01-07 16:11:38 [main] INFO  erts.SafetynetalertsApplicationTests: logStarting          --- Starting SafetynetalertsApplicationTests using Java 17.0.8 with PID 23560 (started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
-2025-01-07 16:11:38 [main] DEBUG erts.SafetynetalertsApplicationTests: logStarting          --- Running with Spring Boot v3.4.0, Spring v6.2.0
-2025-01-07 16:11:38 [main] INFO  erts.SafetynetalertsApplicationTests: logStartupProfileInfo --- No active profile set, falling back to 1 default profile: "default"
-2025-01-07 16:11:38 [main] DEBUG support.GenericWebApplicationContext: prepareRefresh       --- Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2bfc8558
-2025-01-07 16:11:39 [main] DEBUG otation.RequestMappingHandlerMapping: handlerMethodsInitialized --- 18 mappings in 'requestMappingHandlerMapping'
-2025-01-07 16:11:40 [main] DEBUG      handler.SimpleUrlHandlerMapping: logMappings          --- Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2025-01-07 16:11:40 [main] DEBUG otation.RequestMappingHandlerAdapter: initControllerAdviceCache --- ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-01-07 16:11:40 [main] DEBUG on.ExceptionHandlerExceptionResolver: initExceptionHandlerAdviceCache --- ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-01-07 16:11:40 [main] INFO  erts.SafetynetalertsApplicationTests: logStarted           --- Started SafetynetalertsApplicationTests in 2.15 seconds (process running for 4.441)
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] ERROR                service.PersonService: updatePerson         --- This person doesn't exist
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] ERROR                service.PersonService: getBirthdate         --- birthdate is missing from medical records
-2025-01-07 16:11:41 [main] ERROR                service.PersonService: getPersons           --- Missing attribute age or birthdate
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] ERROR                service.PersonService: deletePerson         --- This person doesn't exist
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] ERROR                service.PersonService: createPerson         --- This person already exists
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                         model.Person: <init>               --- Person created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] ERROR         service.MedicalRecordService: getFormattedBirthdate --- Invalid format for birthdate
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] ERROR         service.MedicalRecordService: deleteMedicalRecord  --- This medical record doesn't exist
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] ERROR         service.MedicalRecordService: updateMedicalRecord  --- This medical record doesn't exist
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] ERROR         service.MedicalRecordService: createMedicalRecord  --- This medical record already exists
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] ERROR           service.FirestationService: updateFirestation    --- This address doesn't exist and cannot be updated
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] ERROR           service.FirestationService: deleteFirestation    --- This firestation/address combination doesn't exist
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] ERROR           service.FirestationService: updateFirestation    --- This address is already mapped to this firestation
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] ERROR           service.FirestationService: createFirestation    --- This address is already mapped to this firestation
-2025-01-07 16:11:41 [main] ERROR           service.FirestationService: createFirestation    --- This address is already mapped to a firestation
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
-2025-01-07 16:11:41 [SpringApplicationShutdownHook] DEBUG support.GenericWebApplicationContext: doClose              --- Closing org.springframework.web.context.support.GenericWebApplicationContext@2bfc8558, started on Tue Jan 07 16:11:38 CET 2025
+2025-01-08 10:15:37 [main] INFO  erts.SafetynetalertsApplicationTests: logStarting          --- Starting SafetynetalertsApplicationTests using Java 17.0.8 with PID 11832 (started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2025-01-08 10:15:37 [main] DEBUG erts.SafetynetalertsApplicationTests: logStarting          --- Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-08 10:15:37 [main] INFO  erts.SafetynetalertsApplicationTests: logStartupProfileInfo --- No active profile set, falling back to 1 default profile: "default"
+2025-01-08 10:15:37 [main] DEBUG support.GenericWebApplicationContext: prepareRefresh       --- Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7d28efd5
+2025-01-08 10:15:39 [main] DEBUG otation.RequestMappingHandlerMapping: handlerMethodsInitialized --- 18 mappings in 'requestMappingHandlerMapping'
+2025-01-08 10:15:39 [main] DEBUG      handler.SimpleUrlHandlerMapping: logMappings          --- Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-01-08 10:15:39 [main] DEBUG otation.RequestMappingHandlerAdapter: initControllerAdviceCache --- ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-01-08 10:15:39 [main] DEBUG on.ExceptionHandlerExceptionResolver: initExceptionHandlerAdviceCache --- ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-01-08 10:15:39 [main] INFO  erts.SafetynetalertsApplicationTests: logStarted           --- Started SafetynetalertsApplicationTests in 2.473 seconds (process running for 6.371)
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] ERROR         service.MedicalRecordService: getFormattedBirthdate --- Invalid format for birthdate
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] ERROR         service.MedicalRecordService: deleteMedicalRecord  --- This medical record doesn't exist
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] ERROR         service.MedicalRecordService: updateMedicalRecord  --- This medical record doesn't exist
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] ERROR         service.MedicalRecordService: createMedicalRecord  --- This medical record already exists
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] ERROR           service.FirestationService: updateFirestation    --- This address doesn't exist and cannot be updated
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] ERROR           service.FirestationService: deleteFirestation    --- This firestation/address combination doesn't exist
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] ERROR           service.FirestationService: updateFirestation    --- This address is already mapped to this firestation
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] ERROR           service.FirestationService: createFirestation    --- This address is already mapped to this firestation
+2025-01-08 10:15:39 [main] ERROR           service.FirestationService: createFirestation    --- This address is already mapped to a firestation
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] ERROR                service.PersonService: updatePerson         --- This person doesn't exist
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] ERROR                service.PersonService: getBirthdate         --- birthdate is missing from medical records
+2025-01-08 10:15:39 [main] ERROR                service.PersonService: getPersons           --- Missing attribute age or birthdate
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] ERROR                service.PersonService: deletePerson         --- This person doesn't exist
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] ERROR                service.PersonService: createPerson         --- This person already exists
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 10:15:39 [SpringApplicationShutdownHook] DEBUG support.GenericWebApplicationContext: doClose              --- Closing org.springframework.web.context.support.GenericWebApplicationContext@7d28efd5, started on Wed Jan 08 10:15:37 CET 2025
+2025-01-08 11:16:17 [main] INFO  erts.SafetynetalertsApplicationTests: logStarting          --- Starting SafetynetalertsApplicationTests using Java 17.0.8 with PID 30792 (started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2025-01-08 11:16:17 [main] DEBUG erts.SafetynetalertsApplicationTests: logStarting          --- Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-08 11:16:17 [main] INFO  erts.SafetynetalertsApplicationTests: logStartupProfileInfo --- No active profile set, falling back to 1 default profile: "default"
+2025-01-08 11:16:17 [main] DEBUG support.GenericWebApplicationContext: prepareRefresh       --- Refreshing org.springframework.web.context.support.GenericWebApplicationContext@570ede3b
+2025-01-08 11:16:18 [main] DEBUG otation.RequestMappingHandlerMapping: handlerMethodsInitialized --- 18 mappings in 'requestMappingHandlerMapping'
+2025-01-08 11:16:18 [main] DEBUG      handler.SimpleUrlHandlerMapping: logMappings          --- Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-01-08 11:16:18 [main] DEBUG otation.RequestMappingHandlerAdapter: initControllerAdviceCache --- ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-01-08 11:16:18 [main] DEBUG on.ExceptionHandlerExceptionResolver: initExceptionHandlerAdviceCache --- ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-01-08 11:16:18 [main] INFO  erts.SafetynetalertsApplicationTests: logStarted           --- Started SafetynetalertsApplicationTests in 2.494 seconds (process running for 6.805)
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] ERROR         service.MedicalRecordService: getFormattedBirthdate --- Invalid format for birthdate
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] ERROR         service.MedicalRecordService: deleteMedicalRecord  --- This medical record doesn't exist
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] ERROR         service.MedicalRecordService: updateMedicalRecord  --- This medical record doesn't exist
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] ERROR         service.MedicalRecordService: createMedicalRecord  --- This medical record already exists
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:16:18 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:16:18 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:16:18 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:16:18 [main] ERROR    service.CommunityEmailDataService: getCommunityEmailData --- No emails related to this city: unknown_city
+2025-01-08 11:16:18 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:16:18 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:16:18 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:16:18 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:16:18 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:16:18 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:16:19 [main] ERROR    service.CommunityEmailDataService: getCommunityEmailData --- Unable to retrieve data
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] ERROR           service.FirestationService: updateFirestation    --- This address doesn't exist and cannot be updated
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] ERROR           service.FirestationService: deleteFirestation    --- This firestation/address combination doesn't exist
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] ERROR           service.FirestationService: updateFirestation    --- This address is already mapped to this firestation
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] ERROR           service.FirestationService: createFirestation    --- This address is already mapped to this firestation
+2025-01-08 11:16:19 [main] ERROR           service.FirestationService: createFirestation    --- This address is already mapped to a firestation
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:16:19 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:16:19 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:16:19 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:16:19 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:16:19 [main] ERROR        service.ChildAlertDataService: getChildAlertData    --- Unable to retrieve data
+2025-01-08 11:16:19 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:16:19 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:16:19 [SpringApplicationShutdownHook] DEBUG support.GenericWebApplicationContext: doClose              --- Closing org.springframework.web.context.support.GenericWebApplicationContext@570ede3b, started on Wed Jan 08 11:16:17 CET 2025
+2025-01-08 11:45:54 [main] INFO  netalerts.SafetynetalertsApplication: logStarting          --- Starting SafetynetalertsApplication using Java 17.0.8 with PID 31344 (C:\Users\eliza\Programmation\Projet5\safetynetalerts\target\classes started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2025-01-08 11:45:54 [main] DEBUG netalerts.SafetynetalertsApplication: logStarting          --- Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-08 11:45:54 [main] INFO  netalerts.SafetynetalertsApplication: logStartupProfileInfo --- No active profile set, falling back to 1 default profile: "default"
+2025-01-08 11:45:55 [main] INFO                tomcat.TomcatWebServer: initialize           --- Tomcat initialized with port 8080 (http)
+2025-01-08 11:45:55 [main] INFO              http11.Http11NioProtocol: log                  --- Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-08 11:45:55 [main] INFO                  core.StandardService: log                  --- Starting service [Tomcat]
+2025-01-08 11:45:55 [main] INFO                   core.StandardEngine: log                  --- Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-08 11:45:55 [main] INFO                       [localhost].[/]: log                  --- Initializing Spring embedded WebApplicationContext
+2025-01-08 11:45:55 [main] INFO  t.ServletWebServerApplicationContext: prepareWebApplicationContext --- Root WebApplicationContext: initialization completed in 941 ms
+2025-01-08 11:45:56 [main] DEBUG otation.RequestMappingHandlerMapping: handlerMethodsInitialized --- 18 mappings in 'requestMappingHandlerMapping'
+2025-01-08 11:45:56 [main] DEBUG      handler.SimpleUrlHandlerMapping: logMappings          --- Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-01-08 11:45:56 [main] DEBUG otation.RequestMappingHandlerAdapter: initControllerAdviceCache --- ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-01-08 11:45:56 [main] DEBUG on.ExceptionHandlerExceptionResolver: initExceptionHandlerAdviceCache --- ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-01-08 11:45:56 [main] INFO              http11.Http11NioProtocol: log                  --- Starting ProtocolHandler ["http-nio-8080"]
+2025-01-08 11:45:56 [main] INFO                tomcat.TomcatWebServer: start                --- Tomcat started on port 8080 (http) with context path '/'
+2025-01-08 11:45:56 [main] INFO  netalerts.SafetynetalertsApplication: logStarted           --- Started SafetynetalertsApplication in 1.903 seconds (process running for 2.463)
+2025-01-08 11:46:07 [http-nio-8080-exec-1] INFO                       [localhost].[/]: log                  --- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-08 11:46:07 [http-nio-8080-exec-1] INFO             servlet.DispatcherServlet: initServletBean      --- Initializing Servlet 'dispatcherServlet'
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG            servlet.DispatcherServlet: initMultipartResolver --- Detected StandardServletMultipartResolver
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG            servlet.DispatcherServlet: initLocaleResolver   --- Detected AcceptHeaderLocaleResolver
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG            servlet.DispatcherServlet: initThemeResolver    --- Detected FixedThemeResolver
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG            servlet.DispatcherServlet: initRequestToViewNameTranslator --- Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6cfb0209
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG            servlet.DispatcherServlet: initFlashMapManager  --- Detected org.springframework.web.servlet.support.SessionFlashMapManager@315157ee
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG            servlet.DispatcherServlet: initServletBean      --- enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-01-08 11:46:07 [http-nio-8080-exec-1] INFO             servlet.DispatcherServlet: initServletBean      --- Completed initialization in 4 ms
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG            servlet.DispatcherServlet: traceDebug           --- GET "/flood/stations?stations=10,40", parameters={masked}
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG otation.RequestMappingHandlerMapping: getHandler           --- Mapped to com.safetynet.safetynetalerts.controller.WebAppController#getFloodData(List)
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG     repository.JsonReadingRepository: getFirestations      --- firestations retrieved
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG     repository.JsonReadingRepository: getPersons           --- persons retrieved
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG     repository.JsonReadingRepository: getMedicalRecords    --- medicalRecords retrieved
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG     repository.JsonReadingRepository: getFirestations      --- firestations retrieved
+2025-01-08 11:46:07 [http-nio-8080-exec-1] INFO              service.FloodDataService: getFloodData         --- Unable to retrieve addresses from firestationId: 10
+2025-01-08 11:46:07 [http-nio-8080-exec-1] INFO              service.FloodDataService: getFloodData         --- Unable to retrieve addresses from firestationId: 40
+2025-01-08 11:46:07 [http-nio-8080-exec-1] INFO           controller.WebAppController: getFloodData         --- floodData sent
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG     repository.JsonWritingRepository: writeOutputFile      --- Data written at: target/output.json
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG annotation.HttpEntityMethodProcessor: writeWithMessageConverters --- Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG annotation.HttpEntityMethodProcessor: traceDebug           --- Writing [com.safetynet.safetynetalerts.dto.FloodData@34667c82]
+2025-01-08 11:46:07 [http-nio-8080-exec-1] DEBUG            servlet.DispatcherServlet: logResult            --- Completed 200 OK
+2025-01-08 11:52:03 [main] INFO  netalerts.SafetynetalertsApplication: logStarting          --- Starting SafetynetalertsApplication using Java 17.0.8 with PID 29136 (C:\Users\eliza\Programmation\Projet5\safetynetalerts\target\classes started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2025-01-08 11:52:03 [main] DEBUG netalerts.SafetynetalertsApplication: logStarting          --- Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-08 11:52:03 [main] INFO  netalerts.SafetynetalertsApplication: logStartupProfileInfo --- No active profile set, falling back to 1 default profile: "default"
+2025-01-08 11:52:04 [main] INFO                tomcat.TomcatWebServer: initialize           --- Tomcat initialized with port 8080 (http)
+2025-01-08 11:52:04 [main] INFO              http11.Http11NioProtocol: log                  --- Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-08 11:52:04 [main] INFO                  core.StandardService: log                  --- Starting service [Tomcat]
+2025-01-08 11:52:04 [main] INFO                   core.StandardEngine: log                  --- Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-08 11:52:04 [main] INFO                       [localhost].[/]: log                  --- Initializing Spring embedded WebApplicationContext
+2025-01-08 11:52:04 [main] INFO  t.ServletWebServerApplicationContext: prepareWebApplicationContext --- Root WebApplicationContext: initialization completed in 1595 ms
+2025-01-08 11:52:05 [main] DEBUG otation.RequestMappingHandlerMapping: handlerMethodsInitialized --- 18 mappings in 'requestMappingHandlerMapping'
+2025-01-08 11:52:05 [main] DEBUG      handler.SimpleUrlHandlerMapping: logMappings          --- Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-01-08 11:52:05 [main] DEBUG otation.RequestMappingHandlerAdapter: initControllerAdviceCache --- ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-01-08 11:52:05 [main] DEBUG on.ExceptionHandlerExceptionResolver: initExceptionHandlerAdviceCache --- ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-01-08 11:52:05 [main] INFO              http11.Http11NioProtocol: log                  --- Starting ProtocolHandler ["http-nio-8080"]
+2025-01-08 11:52:05 [main] INFO                tomcat.TomcatWebServer: start                --- Tomcat started on port 8080 (http) with context path '/'
+2025-01-08 11:52:05 [main] INFO  netalerts.SafetynetalertsApplication: logStarted           --- Started SafetynetalertsApplication in 2.559 seconds (process running for 3.051)
+2025-01-08 11:52:13 [http-nio-8080-exec-1] INFO                       [localhost].[/]: log                  --- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-08 11:52:13 [http-nio-8080-exec-1] INFO             servlet.DispatcherServlet: initServletBean      --- Initializing Servlet 'dispatcherServlet'
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG            servlet.DispatcherServlet: initMultipartResolver --- Detected StandardServletMultipartResolver
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG            servlet.DispatcherServlet: initLocaleResolver   --- Detected AcceptHeaderLocaleResolver
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG            servlet.DispatcherServlet: initThemeResolver    --- Detected FixedThemeResolver
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG            servlet.DispatcherServlet: initRequestToViewNameTranslator --- Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6a9d2bd4
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG            servlet.DispatcherServlet: initFlashMapManager  --- Detected org.springframework.web.servlet.support.SessionFlashMapManager@52b06c0a
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG            servlet.DispatcherServlet: initServletBean      --- enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-01-08 11:52:13 [http-nio-8080-exec-1] INFO             servlet.DispatcherServlet: initServletBean      --- Completed initialization in 2 ms
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG            servlet.DispatcherServlet: traceDebug           --- GET "/flood/stations?stations=10,40", parameters={masked}
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG otation.RequestMappingHandlerMapping: getHandler           --- Mapped to com.safetynet.safetynetalerts.controller.WebAppController#getFloodData(List)
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG     repository.JsonReadingRepository: getFirestations      --- firestations retrieved
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG     repository.JsonReadingRepository: getPersons           --- persons retrieved
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG     repository.JsonReadingRepository: getMedicalRecords    --- medicalRecords retrieved
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG     repository.JsonReadingRepository: getFirestations      --- firestations retrieved
+2025-01-08 11:52:13 [http-nio-8080-exec-1] ERROR             service.FloodDataService: getFloodData         --- Unable to retrieve addresses from firestationId: 10
+2025-01-08 11:52:13 [http-nio-8080-exec-1] ERROR             service.FloodDataService: getFloodData         --- Unable to retrieve addresses from firestationId: 10
+2025-01-08 11:52:13 [http-nio-8080-exec-1] ERROR             service.FloodDataService: getFloodData         --- Unable to retrieve addresses from firestationId: 40
+2025-01-08 11:52:13 [http-nio-8080-exec-1] ERROR             service.FloodDataService: getFloodData         --- Unable to retrieve addresses from firestationId: 40
+2025-01-08 11:52:13 [http-nio-8080-exec-1] ERROR             service.FloodDataService: getFloodData         --- No firestations retrieved for ids: [10, 40]
+2025-01-08 11:52:13 [http-nio-8080-exec-1] ERROR          controller.WebAppController: getFloodData         --- floodData is empty
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG     repository.JsonWritingRepository: writeOutputFile      --- Data written at: target/output.json
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG annotation.HttpEntityMethodProcessor: writeWithMessageConverters --- Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG annotation.HttpEntityMethodProcessor: writeWithMessageConverters --- Nothing to write: null body
+2025-01-08 11:52:13 [http-nio-8080-exec-1] DEBUG            servlet.DispatcherServlet: logResult            --- Completed 404 NOT_FOUND
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG            servlet.DispatcherServlet: traceDebug           --- GET "/flood/stations?stations=1,40", parameters={masked}
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG otation.RequestMappingHandlerMapping: getHandler           --- Mapped to com.safetynet.safetynetalerts.controller.WebAppController#getFloodData(List)
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG     repository.JsonReadingRepository: getFirestations      --- firestations retrieved
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG     repository.JsonReadingRepository: getPersons           --- persons retrieved
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG     repository.JsonReadingRepository: getMedicalRecords    --- medicalRecords retrieved
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG     repository.JsonReadingRepository: getFirestations      --- firestations retrieved
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    controller.Mapper: toPersonForFlood     --- Mapped to PersonForFlodd
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    controller.Mapper: toPersonForFlood     --- Mapped to PersonForFlodd
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    controller.Mapper: toPersonForFlood     --- Mapped to PersonForFlodd
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    controller.Mapper: toPersonForFlood     --- Mapped to PersonForFlodd
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    controller.Mapper: toPersonForFlood     --- Mapped to PersonForFlodd
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG                    controller.Mapper: toPersonForFlood     --- Mapped to PersonForFlodd
+2025-01-08 11:52:47 [http-nio-8080-exec-3] ERROR             service.FloodDataService: getFloodData         --- Unable to retrieve addresses from firestationId: 40
+2025-01-08 11:52:47 [http-nio-8080-exec-3] ERROR             service.FloodDataService: getFloodData         --- Unable to retrieve addresses from firestationId: 40
+2025-01-08 11:52:47 [http-nio-8080-exec-3] INFO           controller.WebAppController: getFloodData         --- floodData sent
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG     repository.JsonWritingRepository: writeOutputFile      --- Data written at: target/output.json
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG annotation.HttpEntityMethodProcessor: writeWithMessageConverters --- Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG annotation.HttpEntityMethodProcessor: traceDebug           --- Writing [com.safetynet.safetynetalerts.dto.FloodData@672cbfdc]
+2025-01-08 11:52:47 [http-nio-8080-exec-3] DEBUG            servlet.DispatcherServlet: logResult            --- Completed 200 OK
+2025-01-08 12:22:27 [main] INFO  erts.SafetynetalertsApplicationTests: logStarting          --- Starting SafetynetalertsApplicationTests using Java 17.0.8 with PID 27372 (started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2025-01-08 12:22:27 [main] DEBUG erts.SafetynetalertsApplicationTests: logStarting          --- Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-08 12:22:27 [main] INFO  erts.SafetynetalertsApplicationTests: logStartupProfileInfo --- No active profile set, falling back to 1 default profile: "default"
+2025-01-08 12:22:27 [main] DEBUG support.GenericWebApplicationContext: prepareRefresh       --- Refreshing org.springframework.web.context.support.GenericWebApplicationContext@554a2f3
+2025-01-08 12:22:28 [main] DEBUG otation.RequestMappingHandlerMapping: handlerMethodsInitialized --- 18 mappings in 'requestMappingHandlerMapping'
+2025-01-08 12:22:28 [main] DEBUG      handler.SimpleUrlHandlerMapping: logMappings          --- Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-01-08 12:22:28 [main] DEBUG otation.RequestMappingHandlerAdapter: initControllerAdviceCache --- ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-01-08 12:22:29 [main] DEBUG on.ExceptionHandlerExceptionResolver: initExceptionHandlerAdviceCache --- ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-01-08 12:22:29 [main] INFO  erts.SafetynetalertsApplicationTests: logStarted           --- Started SafetynetalertsApplicationTests in 2.389 seconds (process running for 6.932)
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] ERROR         service.MedicalRecordService: getFormattedBirthdate --- Invalid format for birthdate
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] ERROR         service.MedicalRecordService: deleteMedicalRecord  --- This medical record doesn't exist
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] ERROR         service.MedicalRecordService: updateMedicalRecord  --- This medical record doesn't exist
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] ERROR         service.MedicalRecordService: createMedicalRecord  --- This medical record already exists
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] ERROR    service.CommunityEmailDataService: getCommunityEmailData --- No emails related to this city: unknown_city
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] ERROR    service.CommunityEmailDataService: getCommunityEmailData --- Unable to retrieve data
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] ERROR           service.FirestationService: updateFirestation    --- This address doesn't exist and cannot be updated
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] ERROR           service.FirestationService: deleteFirestation    --- This firestation/address combination doesn't exist
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] ERROR           service.FirestationService: updateFirestation    --- This address is already mapped to this firestation
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] ERROR           service.FirestationService: createFirestation    --- This address is already mapped to this firestation
+2025-01-08 12:22:29 [main] ERROR           service.FirestationService: createFirestation    --- This address is already mapped to a firestation
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] ERROR        service.ChildAlertDataService: getChildAlertData    --- Unable to retrieve data
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] ERROR             service.FloodDataService: getFloodData         --- Unable to retrieve addresses from firestationId: 20
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] ERROR             service.FloodDataService: getFloodData         --- Unable to retrieve data
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-08 12:22:29 [main] ERROR             service.FloodDataService: getFloodData         --- Unable to retrieve addresses from firestationId: 10
+2025-01-08 12:22:29 [main] ERROR             service.FloodDataService: getFloodData         --- Unable to retrieve addresses from firestationId: 20
+2025-01-08 12:22:29 [main] ERROR             service.FloodDataService: getFloodData         --- No firestations retrieved for ids: [10, 20]
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] ERROR              service.InfoDataService: getInfoData          --- No persons found with lastName: unknown_lastName
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] ERROR              service.InfoDataService: getInfoData          --- Unable to retrieve data
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] ERROR        service.PhoneAlertDataService: getPhoneAlertData    --- Unable to retrieve data
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] ERROR        service.PhoneAlertDataService: getPhoneAlertData    --- No phones related to station: 100
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [main] DEBUG                         model.Person: <init>               --- Person created
+2025-01-08 12:22:29 [SpringApplicationShutdownHook] DEBUG support.GenericWebApplicationContext: doClose              --- Closing org.springframework.web.context.support.GenericWebApplicationContext@554a2f3, started on Wed Jan 08 12:22:27 CET 2025

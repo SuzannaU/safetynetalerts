@@ -8,7 +8,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.safetynet.safetynetalerts.controller.Mapper;
 import com.safetynet.safetynetalerts.dto.FirestationData;
@@ -18,10 +17,13 @@ import com.safetynet.safetynetalerts.model.Person;
 @Service
 public class FirestationDataService {
     private static final Logger logger = LoggerFactory.getLogger(FirestationDataService.class);
-    @Autowired
     PersonService personService;
-    @Autowired
     Mapper mapper;
+
+    public FirestationDataService(PersonService personService, Mapper mapper) {
+        this.personService = personService;
+        this.mapper = mapper;
+    }
 
     public FirestationData getFirestationData(int stationNumber) throws IOException {
 
@@ -50,11 +52,15 @@ public class FirestationDataService {
         count.put("children", numbOfChildren);
         count.put("adults", numbOfAdults);
 
-        FirestationData firestationData = new FirestationData();
-        firestationData.setPersons(personsForStation);
-        firestationData.setCount(count);
-
-        return firestationData;
+        if (personsForStation.isEmpty()) {
+            logger.error("No persons found for this station number: " + stationNumber);
+            return null;
+        } else {
+            FirestationData firestationData = new FirestationData();
+            firestationData.setPersons(personsForStation);
+            firestationData.setCount(count);
+            return firestationData;
+        }
 
     }
 }

@@ -7,7 +7,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.safetynet.safetynetalerts.dto.PhoneAlertData;
 import com.safetynet.safetynetalerts.model.Person;
@@ -15,8 +14,11 @@ import com.safetynet.safetynetalerts.model.Person;
 @Service
 public class PhoneAlertDataService {
     private static final Logger logger = LoggerFactory.getLogger(PhoneAlertDataService.class);
-    @Autowired
     PersonService personService;
+
+    public PhoneAlertDataService(PersonService personService) {
+        this.personService = personService;
+    }
 
     public PhoneAlertData getPhoneAlertData(int firestationId) throws IOException {
         List<Person> persons = new ArrayList<>();
@@ -32,8 +34,12 @@ public class PhoneAlertDataService {
                 .collect(Collectors.toSet());
 
         PhoneAlertData phoneAlertData = new PhoneAlertData();
-        phoneAlertData.setPhones(phones);
-
-        return phoneAlertData;
+        if (phones.isEmpty()) {
+            logger.error("No phones related to station: " + firestationId);
+            return null;
+        } else {
+            phoneAlertData.setPhones(phones);
+            return phoneAlertData;
+        }
     }
 }

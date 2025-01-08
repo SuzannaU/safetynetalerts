@@ -1,6 +1,7 @@
 package com.safetynet.safetynetalerts;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
@@ -55,7 +56,6 @@ public class PersonServiceTest {
         persons = new ArrayList<>();
         persons.add(john);
         persons.add(jane);
-
 
         MedicalRecord medicalRecord1 = new MedicalRecord(
                 "john", "doe", "01/01/2000",
@@ -167,7 +167,7 @@ public class PersonServiceTest {
                 "john", "doe", "test_address",
                 "test_city", "test_zip", "test_phone", "test_email");
 
-        assertTrue(personService.createPerson(personToAdd) == null);
+        assertNull(personService.createPerson(personToAdd));
         verify(jsonReadingRepository).getPersons();
         verify(jsonWritingRepository, Mockito.times(0)).updatePersons(persons);
     }
@@ -202,7 +202,7 @@ public class PersonServiceTest {
                 "new", "person", "test_address",
                 "test_city", "test_zip", "test_phone", "test_email");
 
-        assertTrue(personService.updatePerson(newPerson) == null);
+        assertNull(personService.updatePerson(newPerson));
         verify(jsonReadingRepository).getPersons();
         verify(jsonWritingRepository, Mockito.times(0)).updatePersons(persons);
     }
@@ -257,7 +257,7 @@ public class PersonServiceTest {
         Person newPerson = new Person(
                 "new", "person", null, null, null, null, null);
 
-        assertTrue(personService.deletePerson(newPerson) == null);
+        assertNull(personService.deletePerson(newPerson));
         verify(jsonReadingRepository).getPersons();
         verify(jsonWritingRepository, Mockito.times(0)).updatePersons(persons);
     }

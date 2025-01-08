@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.safetynet.safetynetalerts.controller.Mapper;
 import com.safetynet.safetynetalerts.dto.*;
@@ -15,10 +14,14 @@ import com.safetynet.safetynetalerts.model.Person;
 @Service
 public class ChildAlertDataService {
     private static final Logger logger = LoggerFactory.getLogger(ChildAlertDataService.class);
-    @Autowired
+    
     PersonService personService;
-    @Autowired
     Mapper mapper;
+    
+    public ChildAlertDataService(PersonService personService, Mapper mapper) {
+        this.personService = personService;
+        this.mapper = mapper;
+    }
 
     public ChildAlertData getChildAlertData(String address) throws IOException {
         List<Person> persons = new ArrayList<>();

@@ -1,6 +1,7 @@
 package com.safetynet.safetynetalerts;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 import java.io.IOException;
@@ -87,8 +88,8 @@ public class FirestationServiceTest {
         Firestation firestationToAdd1 = new Firestation("test_address1", "1");
         Firestation firestationToAdd2 = new Firestation("test_address1", "100");
 
-        assertTrue(firestationService.createFirestation(firestationToAdd1) == null);
-        assertTrue(firestationService.createFirestation(firestationToAdd2) == null);
+        assertNull(firestationService.createFirestation(firestationToAdd1));
+        assertNull(firestationService.createFirestation(firestationToAdd2));
         verify(jsonReadingRepository, Mockito.times(2)).getFirestations();
         verify(jsonWritingRepository, Mockito.times(0)).updateFirestations(firestations);
     }
@@ -120,7 +121,7 @@ public class FirestationServiceTest {
         lenient().when(jsonWritingRepository.updateFirestations(firestations)).thenReturn(true);
         Firestation firestationToUpdate = new Firestation("new_address", "2");
 
-        assertTrue(firestationService.updateFirestation(firestationToUpdate) == null);
+        assertNull(firestationService.updateFirestation(firestationToUpdate));
         verify(jsonReadingRepository).getFirestations();
         verify(jsonWritingRepository, Mockito.times(0)).updateFirestations(firestations);
     }
@@ -132,7 +133,7 @@ public class FirestationServiceTest {
         lenient().when(jsonWritingRepository.updateFirestations(firestations)).thenReturn(true);
         Firestation firestationToUpdate = new Firestation("test_address1", "1");
 
-        assertTrue(firestationService.updateFirestation(firestationToUpdate) == null);
+        assertNull(firestationService.updateFirestation(firestationToUpdate));
         verify(jsonReadingRepository).getFirestations();
         verify(jsonWritingRepository, Mockito.times(0)).updateFirestations(firestations);
     }
@@ -163,7 +164,7 @@ public class FirestationServiceTest {
         lenient().when(jsonWritingRepository.updateFirestations(firestations)).thenReturn(true);
         Firestation firestationToDelete = new Firestation("test_address1", "100");
 
-        assertTrue(firestationService.deleteFirestation(firestationToDelete)==null);
+        assertNull(firestationService.deleteFirestation(firestationToDelete));
         verify(jsonReadingRepository).getFirestations();
         verify(jsonWritingRepository, Mockito.times(0)).updateFirestations(firestations);
     }

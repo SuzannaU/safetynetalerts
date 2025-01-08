@@ -7,19 +7,18 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.safetynet.safetynetalerts.controller.Mapper;
 import com.safetynet.safetynetalerts.dto.CommunityEmailData;
 import com.safetynet.safetynetalerts.model.Person;
 
 @Service
 public class CommunityEmailDataService {
     private static final Logger logger = LoggerFactory.getLogger(CommunityEmailDataService.class);
-    @Autowired
     PersonService personService;
-    @Autowired
-    Mapper mapper;
+
+    public CommunityEmailDataService(PersonService personService) {
+        this.personService = personService;
+    }
 
     public CommunityEmailData getCommunityEmailData(String city) throws IOException {
         List<Person> persons = new ArrayList<>();
@@ -36,7 +35,12 @@ public class CommunityEmailDataService {
                 .collect(Collectors.toSet());
 
         CommunityEmailData communityEmailData = new CommunityEmailData();
-        communityEmailData.setEmails(emails);
+        if (emails.isEmpty()) {
+            logger.error("No emails related to this city: " + city);
+            return null;
+        } else {
+            communityEmailData.setEmails(emails);
+        }
 
         return communityEmailData;
     }

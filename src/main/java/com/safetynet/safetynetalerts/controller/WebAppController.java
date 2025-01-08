@@ -62,7 +62,7 @@ public class WebAppController {
 
         FirestationData firestationData = firestationDataService.getFirestationData(stationNumber);
 
-        if (firestationData.getPersons().isEmpty()) {
+        if (firestationData == null) {
             logger.error("firestationData is empty");
             jsonWritingRepository.writeOutputFile(null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -100,7 +100,7 @@ public class WebAppController {
 
         PhoneAlertData phoneAlertData = phoneAlertDataService.getPhoneAlertData(stationNumber);
 
-        if (phoneAlertData.getPhones().isEmpty()) {
+        if (phoneAlertData == null) {
             logger.error("phoneAlertData is empty");
             jsonWritingRepository.writeOutputFile(null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -117,7 +117,7 @@ public class WebAppController {
 
         FireData fireData = fireDataService.getFireData(address);
 
-        if (fireData.getResidents().isEmpty()) {
+        if (fireData == null) {
             logger.error("fireData is empty");
             jsonWritingRepository.writeOutputFile(null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -135,7 +135,7 @@ public class WebAppController {
 
         FloodData floodData = floodDataService.getFloodData(listOfStationIds);
 
-        if (floodData.getStationsForFlood().isEmpty()) {
+        if (floodData == null) {
             logger.error("floodData is empty");
             jsonWritingRepository.writeOutputFile(null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -152,7 +152,7 @@ public class WebAppController {
 
         InfoData infoData = infoDataService.getInfoData(lastName);
 
-        if (infoData.getPersons().isEmpty()) {
+        if (infoData == null) {
             logger.error("infoData is empty");
             jsonWritingRepository.writeOutputFile(null);
             return new ResponseEntity<InfoData>(HttpStatus.NOT_FOUND);
@@ -169,7 +169,7 @@ public class WebAppController {
 
         CommunityEmailData communityEmailData = communityEmailDataService.getCommunityEmailData(city);
 
-        if (communityEmailData.getEmails().isEmpty()) {
+        if (communityEmailData == null) {
             logger.error("communityEmailData is empty");
             jsonWritingRepository.writeOutputFile(null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

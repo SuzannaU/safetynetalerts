@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.safetynet.safetynetalerts.dto.InfoData;
 import com.safetynet.safetynetalerts.dto.PersonForInfo;
@@ -16,10 +15,13 @@ import com.safetynet.safetynetalerts.controller.Mapper;
 @Service
 public class InfoDataService {
     private static final Logger logger = LoggerFactory.getLogger(InfoDataService.class);
-    @Autowired
     PersonService personService;
-    @Autowired
     Mapper mapper;
+
+    public InfoDataService(PersonService personService, Mapper mapper) {
+        this.personService = personService;
+        this.mapper = mapper;
+    }
 
     public InfoData getInfoData(String lastName) throws IOException {
         List<Person> persons = new ArrayList<>();
@@ -36,10 +38,14 @@ public class InfoDataService {
                 .collect(Collectors.toList());
 
         InfoData infoData = new InfoData();
-        infoData.setLastName(lastName);
-        infoData.setPersons(personsForInfo);
-
-        return infoData;
+        if (personsForInfo.isEmpty()) {
+            logger.error("No persons found with lastName: " + lastName);
+            return null;
+        } else {
+            infoData.setLastName(lastName);
+            infoData.setPersons(personsForInfo);
+            return infoData;
+        }
     }
 
 }
