@@ -1,4 +1,4 @@
-package com.safetynet.safetynetalerts;
+package com.safetynet.safetynetalerts.service;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -17,14 +17,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import com.safetynet.safetynetalerts.controller.Mapper;
+import com.safetynet.safetynetalerts.Mapper;
 import com.safetynet.safetynetalerts.dto.FloodData;
 import com.safetynet.safetynetalerts.dto.PersonForFlood;
 import com.safetynet.safetynetalerts.model.Firestation;
 import com.safetynet.safetynetalerts.model.Person;
-import com.safetynet.safetynetalerts.service.FirestationService;
-import com.safetynet.safetynetalerts.service.FloodDataService;
-import com.safetynet.safetynetalerts.service.PersonService;
 
 @ExtendWith(MockitoExtension.class)
 public class FloodDataServiceTest {

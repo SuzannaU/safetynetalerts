@@ -22,12 +22,6 @@ public class WebAppController {
     private static final Logger logger = LoggerFactory.getLogger(WebAppController.class);
 
     @Autowired
-    PersonService personService;
-    @Autowired
-    FirestationService firestationService;
-    @Autowired
-    MedicalRecordService medicalRecordService;
-    @Autowired
     FirestationDataService firestationDataService;
     @Autowired
     ChildAlertDataService childAlertDataService;
@@ -41,8 +35,6 @@ public class WebAppController {
     InfoDataService infoDataService;
     @Autowired
     CommunityEmailDataService communityEmailDataService;
-    @Autowired
-    Mapper mapper;
     @Autowired
     JsonWritingRepository jsonWritingRepository;
 

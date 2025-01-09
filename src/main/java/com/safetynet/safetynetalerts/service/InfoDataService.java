@@ -7,10 +7,10 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import com.safetynet.safetynetalerts.Mapper;
 import com.safetynet.safetynetalerts.dto.InfoData;
 import com.safetynet.safetynetalerts.dto.PersonForInfo;
 import com.safetynet.safetynetalerts.model.Person;
-import com.safetynet.safetynetalerts.controller.Mapper;
 
 @Service
 public class InfoDataService {

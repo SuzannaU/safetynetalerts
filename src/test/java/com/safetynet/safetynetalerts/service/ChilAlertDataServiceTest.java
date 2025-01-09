@@ -1,79 +1,87 @@
-package com.safetynet.safetynetalerts;
+package com.safetynet.safetynetalerts.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.verify;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import com.safetynet.safetynetalerts.dto.PhoneAlertData;
+import com.safetynet.safetynetalerts.Mapper;
+import com.safetynet.safetynetalerts.dto.AdultForChildAlert;
+import com.safetynet.safetynetalerts.dto.ChildAlertData;
+import com.safetynet.safetynetalerts.dto.ChildForChildAlert;
 import com.safetynet.safetynetalerts.model.Person;
-import com.safetynet.safetynetalerts.service.PersonService;
-import com.safetynet.safetynetalerts.service.PhoneAlertDataService;
 
 @ExtendWith(MockitoExtension.class)
-public class PhoneAlertDataServiceTest {
+public class ChilAlertDataServiceTest {
     @Mock
     private static PersonService personService;
-    PhoneAlertDataService phoneAlertDataService;
+    @Mock
+    private static Mapper mapper;
+    ChildAlertDataService childAlertDataService;
     List<Person> persons;
 
     @BeforeEach
     private void setUp() {
-        phoneAlertDataService = new PhoneAlertDataService(personService);
+        childAlertDataService = new ChildAlertDataService(personService, mapper);
         Person john = new Person(
                 "john", "doe", "test_address",
                 "test_city", "test_zip", "test_phone", "test_email");
-        Set<Integer> firestationsIds = Set.of(1, 2);
-        john.setFirestationIds(firestationsIds);
+        john.setCategory("Adult");
         Person jane = new Person(
                 "jane", "doe", "test_address",
                 "test_city", "test_zip", "test_phone", "test_email");
-        jane.setFirestationIds(firestationsIds);
+        jane.setCategory("Child");
         persons = new ArrayList<>();
         persons.add(john);
         persons.add(jane);
     }
 
     @Test
-    public void getPhoneAlertData_withCorrectParameters_returnsData() throws IOException {
+    public void getChildAlertData_withCorrectParameters_returnsData() throws IOException {
 
+        AdultForChildAlert adultForChildAlert = new AdultForChildAlert();
+        ChildForChildAlert childForChildAlert = new ChildForChildAlert();
         when(personService.getPersons()).thenReturn(persons);
+        when(mapper.toAdultForChildAlert(any(Person.class))).thenReturn(adultForChildAlert);
+        when(mapper.toChildForChildAlert(any(Person.class))).thenReturn(childForChildAlert);
 
-        PhoneAlertData result = phoneAlertDataService.getPhoneAlertData(1);
+        ChildAlertData result = childAlertDataService.getChildAlertData("test_address");
         assertNotNull(result);
-        assertEquals(1, result.getPhones().size());
+        assertEquals(1, result.getAdults().size());
+        assertEquals(1, result.getChildren().size());
         verify(personService).getPersons();
+        verify(mapper).toAdultForChildAlert(any(Person.class));
+        verify(mapper).toAdultForChildAlert(any(Person.class));
     }
 
     @Test
-    public void getPhoneAlertData_withUnknownStationId_returnsNull() throws IOException {
+    public void getChildAlertData_withUnknownAddress_returnsNull() throws IOException {
 
         when(personService.getPersons()).thenReturn(persons);
 
-        PhoneAlertData result = phoneAlertDataService.getPhoneAlertData(100);
+        ChildAlertData result = childAlertDataService.getChildAlertData("unknown_address");
 
         assertNull(result);
         verify(personService).getPersons();
     }
 
     @Test
-    public void getPhoneAlertData_withIOException_throwsException() throws IOException {
+    public void getChildAlertData_withIOException_throwsException() throws IOException {
 
         when(personService.getPersons()).thenThrow(new IOException());
         assertThrows(IOException.class,
-                () -> phoneAlertDataService.getPhoneAlertData(1));
+                () -> childAlertDataService.getChildAlertData("test_address"));
 
         verify(personService).getPersons();
     }
-
 }

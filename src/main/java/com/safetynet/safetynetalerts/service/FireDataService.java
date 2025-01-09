@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import com.safetynet.safetynetalerts.controller.Mapper;
+import com.safetynet.safetynetalerts.Mapper;
 import com.safetynet.safetynetalerts.dto.*;
 import com.safetynet.safetynetalerts.model.Person;
 

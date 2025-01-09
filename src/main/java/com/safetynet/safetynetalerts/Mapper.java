@@ -1,4 +1,4 @@
-package com.safetynet.safetynetalerts.controller;
+package com.safetynet.safetynetalerts;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,8 +15,6 @@ public class Mapper {
         personForStation.setFirstName(p.getFirstName());
         personForStation.setLastName(p.getLastName());
         personForStation.setAddress(p.getAddress());
-        personForStation.setCity(p.getCity());
-        personForStation.setZip(p.getZip());
         personForStation.setPhone(p.getPhone());
 
         logger.debug("Mapped to PersonForStation");

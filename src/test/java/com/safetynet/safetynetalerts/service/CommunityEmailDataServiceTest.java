@@ -1,4 +1,4 @@
-package com.safetynet.safetynetalerts;
+package com.safetynet.safetynetalerts.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -18,8 +18,6 @@ import com.safetynet.safetynetalerts.dto.CommunityEmailData;
 import com.safetynet.safetynetalerts.model.Firestation;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
 import com.safetynet.safetynetalerts.model.Person;
-import com.safetynet.safetynetalerts.service.CommunityEmailDataService;
-import com.safetynet.safetynetalerts.service.PersonService;
 
 @ExtendWith(MockitoExtension.class)
 public class CommunityEmailDataServiceTest {

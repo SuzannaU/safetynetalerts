@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.beans.factory.annotation.Autowired;
 import com.safetynet.safetynetalerts.model.Person;
 import com.safetynet.safetynetalerts.service.PersonService;
 import java.io.IOException;
@@ -18,9 +17,11 @@ import org.springframework.http.ResponseEntity;
 @RestController
 public class PersonDataController {
     private static final Logger logger = LoggerFactory.getLogger(PersonDataController.class);
-
-    @Autowired
     PersonService personService;
+
+    public PersonDataController(PersonService personService) {
+        this.personService = personService;
+    }
 
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException e) {
