@@ -13,8 +13,7 @@ import com.safetynet.safetynetalerts.model.Person;
 
 @Service
 public class ChildAlertDataService {
-    private static final Logger logger = LoggerFactory.getLogger(ChildAlertDataService.class);
-    
+    private static final Logger logger = LoggerFactory.getLogger(ChildAlertDataService.class);    
     PersonService personService;
     Mapper mapper;
     

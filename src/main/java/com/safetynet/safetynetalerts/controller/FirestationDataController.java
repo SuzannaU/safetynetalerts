@@ -3,7 +3,6 @@ package com.safetynet.safetynetalerts.controller;
 import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,9 +17,11 @@ import com.safetynet.safetynetalerts.service.FirestationService;
 @RestController
 public class FirestationDataController {
     private static final Logger logger = LoggerFactory.getLogger(FirestationDataController.class);
-
-    @Autowired
     FirestationService firestationService;
+
+    public FirestationDataController(FirestationService firestationService) {
+        this.firestationService = firestationService;
+    }
 
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException e) {

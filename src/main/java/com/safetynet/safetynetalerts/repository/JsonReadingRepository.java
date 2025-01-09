@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -16,7 +17,12 @@ import com.safetynet.safetynetalerts.model.Person;
 @Repository
 public class JsonReadingRepository {
     private static final Logger logger = LoggerFactory.getLogger(JsonReadingRepository.class);
-    private final String sourceFilePath = "src/main/resources/data.json";
+    @Value("${data.file.sourcepath}")
+    private String sourceFilePath;
+
+    public String getPath(){
+        return this.sourceFilePath;
+    }
 
     private JsonNode getNode(String nodeName) throws IOException {
         JsonNode node = null;
@@ -27,6 +33,9 @@ public class JsonReadingRepository {
             logger.debug("Data recoverd at path: " + sourceFilePath);
         } catch (IOException e) {
             logger.error("File not found at path: " + sourceFilePath);
+            throw e;
+        } catch (NullPointerException e) {
+            logger.error("Error with path: " + sourceFilePath);
             throw e;
         }
         return node;

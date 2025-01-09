@@ -12,31 +12,28 @@ import java.util.List;
 import java.util.Optional;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
 import com.safetynet.safetynetalerts.repository.JsonReadingRepository;
 import com.safetynet.safetynetalerts.repository.JsonWritingRepository;
 
-@ExtendWith(MockitoExtension.class)
+@SpringBootTest
 public class MedicalRecordServiceTest {
-
-    @Mock
+    @MockitoBean
     private static JsonReadingRepository jsonReadingRepository;
-    @Mock
+    @MockitoBean
     private static JsonWritingRepository jsonWritingRepository;
+    @Autowired
     MedicalRecordService medicalRecordService;
     List<MedicalRecord> medicalRecords;
 
     @BeforeEach
     private void setUp() {
-        medicalRecordService = new MedicalRecordService(
-                jsonReadingRepository, jsonWritingRepository);
-
         MedicalRecord medicalRecord1 = new MedicalRecord(
                 "john", "doe", "01/01/2000",
                 Arrays.asList("med1", "med2"), Arrays.asList("allergy1"));

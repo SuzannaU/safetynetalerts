@@ -11,18 +11,19 @@ import java.util.List;
 import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import com.safetynet.safetynetalerts.dto.CommunityEmailData;
 import com.safetynet.safetynetalerts.model.Firestation;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
 import com.safetynet.safetynetalerts.model.Person;
 
-@ExtendWith(MockitoExtension.class)
+@SpringBootTest
 public class CommunityEmailDataServiceTest {
-    @Mock
+    @MockitoBean
     private static PersonService personService;
+    @Autowired
     CommunityEmailDataService communityEmailDataService;
     List<Person> persons;
     List<MedicalRecord> medicalRecords;
@@ -30,7 +31,6 @@ public class CommunityEmailDataServiceTest {
 
     @BeforeEach
     private void setUp() {
-        communityEmailDataService = new CommunityEmailDataService(personService);
         Person john = new Person(
                 "john", "doe", "test_address",
                 "test_city", "test_zip", "test_phone", "test_email1");

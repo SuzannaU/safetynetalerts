@@ -12,22 +12,22 @@ import java.util.List;
 import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import com.safetynet.safetynetalerts.dto.PhoneAlertData;
 import com.safetynet.safetynetalerts.model.Person;
 
-@ExtendWith(MockitoExtension.class)
+@SpringBootTest
 public class PhoneAlertDataServiceTest {
-    @Mock
+    @MockitoBean
     private static PersonService personService;
+    @Autowired
     PhoneAlertDataService phoneAlertDataService;
     List<Person> persons;
 
     @BeforeEach
     private void setUp() {
-        phoneAlertDataService = new PhoneAlertDataService(personService);
         Person john = new Person(
                 "john", "doe", "test_address",
                 "test_city", "test_zip", "test_phone", "test_email");

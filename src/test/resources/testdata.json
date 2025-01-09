@@ -19,6 +19,4 @@
         { "firstName":"Shawna", "lastName":"Stelzer", "birthdate":"07/08/1980", "medications":[], "allergies":[] },
         { "firstName":"Kendrik", "lastName":"Stelzer", "birthdate":"03/06/2014", "medications":["noxidian:100mg", "pharmacol:2500mg"], "allergies":[] }
         ] 
-},
-
-{"firstName":"Tony", "lastName":"Cooper", "address":"112 Steppes Pl", "city":"Culver", "zip":"97451", "phone":"841-874-6874", "email":"tcoop@ymail.com"}
+}

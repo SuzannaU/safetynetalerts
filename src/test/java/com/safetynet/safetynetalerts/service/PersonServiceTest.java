@@ -12,29 +12,29 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import com.safetynet.safetynetalerts.model.Firestation;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
 import com.safetynet.safetynetalerts.model.Person;
 import com.safetynet.safetynetalerts.repository.JsonReadingRepository;
 import com.safetynet.safetynetalerts.repository.JsonWritingRepository;
 
-@ExtendWith(MockitoExtension.class)
+@SpringBootTest
 public class PersonServiceTest {
-
-    @Mock
+    @MockitoBean
     private static JsonReadingRepository jsonReadingRepository;
-    @Mock
+    @MockitoBean
     private static JsonWritingRepository jsonWritingRepository;
-    @Mock
+    @MockitoBean
     private static MedicalRecordService medicalRecordService;
-    @Mock
+    @MockitoBean
     private static FirestationService firestationService;
+    @Autowired
     PersonService personService;
     List<Person> persons;
     List<MedicalRecord> medicalRecords;
@@ -42,8 +42,6 @@ public class PersonServiceTest {
 
     @BeforeEach
     private void setUp() {
-        personService = new PersonService(jsonReadingRepository, jsonWritingRepository,
-                medicalRecordService, firestationService);
         Person john = new Person(
                 "john", "doe", "test_address",
                 "test_city", "test_zip", "test_phone", "test_email");

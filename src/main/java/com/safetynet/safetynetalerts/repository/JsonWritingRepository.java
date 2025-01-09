@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,8 +17,10 @@ import com.safetynet.safetynetalerts.model.Person;
 @Repository
 public class JsonWritingRepository {
     private static final Logger logger = LoggerFactory.getLogger(JsonWritingRepository.class);
-    private final String sourceFilePath = "src/main/resources/data.json";
-    private final String outputFilepath = "target/output.json";
+    @Value("${data.file.sourcepath}")
+    private String sourceFilePath;
+    @Value("${data.file.outputpath}")
+    private String outputFilePath;
 
     private Map<String, Object> getJsonData() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -76,8 +79,8 @@ public class JsonWritingRepository {
         ObjectMapper objMApper = new ObjectMapper();
         try {
             objMApper.writerWithDefaultPrettyPrinter()
-                    .writeValue(new File(outputFilepath), o);
-            logger.debug("Data written at: " + outputFilepath);
+                    .writeValue(new File(outputFilePath), o);
+            logger.debug("Data written at: " + outputFilePath);
         } catch (IOException e) {
             logger.error("Unable to write Json file");
             throw e;

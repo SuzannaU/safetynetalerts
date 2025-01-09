@@ -15,6 +15,7 @@ public class MedicalRecord {
     private String firstName;
     private String lastName;
     private String personId;
+    @JsonProperty("birthdate")
     private String rawBirthdate;
     private LocalDate localBirthdate;
     private int age;

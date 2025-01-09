@@ -14,27 +14,27 @@ import java.util.List;
 import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import com.safetynet.safetynetalerts.Mapper;
 import com.safetynet.safetynetalerts.dto.FireData;
 import com.safetynet.safetynetalerts.dto.PersonForFire;
 import com.safetynet.safetynetalerts.model.Person;
 
-@ExtendWith(MockitoExtension.class)
+@SpringBootTest
 public class FireDataServiceTest {
-    @Mock
+    @MockitoBean
     private static PersonService personService;
-    @Mock
+    @MockitoBean
     private static Mapper mapper;
+    @Autowired
     FireDataService fireDataService;
     List<Person> persons;
 
     @BeforeEach
     private void setUp() {
-        fireDataService = new FireDataService(personService, mapper);
         Person john = new Person(
                 "john", "doe", "test_address",
                 "test_city", "test_zip", "test_phone", "test_email");

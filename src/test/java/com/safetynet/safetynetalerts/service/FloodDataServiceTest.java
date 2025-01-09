@@ -13,31 +13,31 @@ import java.util.List;
 import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import com.safetynet.safetynetalerts.Mapper;
 import com.safetynet.safetynetalerts.dto.FloodData;
 import com.safetynet.safetynetalerts.dto.PersonForFlood;
 import com.safetynet.safetynetalerts.model.Firestation;
 import com.safetynet.safetynetalerts.model.Person;
 
-@ExtendWith(MockitoExtension.class)
+@SpringBootTest
 public class FloodDataServiceTest {
-    @Mock
+    @MockitoBean
     private static PersonService personService;
-    @Mock
+    @MockitoBean
     private static FirestationService firestationService;
-    @Mock
+    @MockitoBean
     private static Mapper mapper;
+    @Autowired
     FloodDataService floodDataService;
     List<Person> persons;
     Set<Firestation> firestations;
 
     @BeforeEach
     private void setUp() {
-        floodDataService = new FloodDataService(personService, firestationService, mapper);
         Person john = new Person(
                 "john", "doe", "test_address",
                 "test_city", "test_zip", "test_phone", "test_email");
