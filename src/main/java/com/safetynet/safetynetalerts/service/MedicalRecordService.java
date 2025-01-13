@@ -17,8 +17,8 @@ import com.safetynet.safetynetalerts.repository.JsonWritingRepository;
 @Service
 public class MedicalRecordService {
     private static final Logger logger = LoggerFactory.getLogger(MedicalRecordService.class);
-    JsonReadingRepository jsonReadingRepository;
-    JsonWritingRepository jsonWritingRepository;
+    private JsonReadingRepository jsonReadingRepository;
+    private JsonWritingRepository jsonWritingRepository;
 
     public MedicalRecordService(JsonReadingRepository jsonReadingRepository,
             JsonWritingRepository jsonWritingRepository) {
@@ -71,12 +71,12 @@ public class MedicalRecordService {
         }
 
         /*
-         * Checks if rawBirthdate is in format MM/dd/YYYY. If not, throws exception handled in
-         * Controller
+         * Checks if rawBirthdate is in format MM/dd/YYYY.
+         * 
+         * If not, throws DateTimeParseException handled in Controller
          */
-        String rawBirthdate = medicalRecord.getRawBirthdate();
-        if (rawBirthdate != null) {
-            LocalDate localBirthdate = getFormattedBirthdate(medicalRecord.getRawBirthdate());
+        if (!medicalRecord.getRawBirthdate().isEmpty()) {
+            getFormattedBirthdate(medicalRecord.getRawBirthdate());
         }
 
         medicalRecords.add(medicalRecord);
@@ -101,12 +101,12 @@ public class MedicalRecordService {
         }
 
         /*
-         * Checks if rawBirthdate is in format MM/dd/YYYY. If not, throws exception handled in
-         * Controller
+         * Checks if rawBirthdate is in format MM/dd/YYYY.
+         * 
+         * If not, throws DateTimeParseException handled in Controller
          */
-        String rawBirthdate = medicalRecord.getRawBirthdate();
-        if (rawBirthdate != null) {
-            LocalDate localBirthdate = getFormattedBirthdate(medicalRecord.getRawBirthdate());
+        if (!medicalRecord.getRawBirthdate().isEmpty()) {
+            getFormattedBirthdate(medicalRecord.getRawBirthdate());
         }
 
         MedicalRecord updatedMedicalRecord = new MedicalRecord(

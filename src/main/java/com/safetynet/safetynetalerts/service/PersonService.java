@@ -19,10 +19,10 @@ import com.safetynet.safetynetalerts.repository.JsonWritingRepository;
 @Service
 public class PersonService {
     private static final Logger logger = LoggerFactory.getLogger(PersonService.class);
-    JsonReadingRepository jsonReadingRepository;
-    JsonWritingRepository jsonWritingRepository;
-    MedicalRecordService medicalRecordService;
-    FirestationService firestationService;
+    private JsonReadingRepository jsonReadingRepository;
+    private JsonWritingRepository jsonWritingRepository;
+    private MedicalRecordService medicalRecordService;
+    private FirestationService firestationService;
 
     public PersonService(JsonReadingRepository jsonReadingRepository,
             JsonWritingRepository jsonWritingRepository, MedicalRecordService medicalRecordService,

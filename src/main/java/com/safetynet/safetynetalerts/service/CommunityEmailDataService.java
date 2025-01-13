@@ -14,7 +14,7 @@ import com.safetynet.safetynetalerts.model.Person;
 @Service
 public class CommunityEmailDataService {
     private static final Logger logger = LoggerFactory.getLogger(CommunityEmailDataService.class);
-    PersonService personService;
+    private PersonService personService;
 
     public CommunityEmailDataService(PersonService personService) {
         this.personService = personService;

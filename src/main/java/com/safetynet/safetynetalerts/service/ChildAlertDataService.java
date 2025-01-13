@@ -14,8 +14,8 @@ import com.safetynet.safetynetalerts.model.Person;
 @Service
 public class ChildAlertDataService {
     private static final Logger logger = LoggerFactory.getLogger(ChildAlertDataService.class);    
-    PersonService personService;
-    Mapper mapper;
+    private PersonService personService;
+    private Mapper mapper;
     
     public ChildAlertDataService(PersonService personService, Mapper mapper) {
         this.personService = personService;

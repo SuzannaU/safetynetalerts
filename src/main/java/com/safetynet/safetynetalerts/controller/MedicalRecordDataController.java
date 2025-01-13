@@ -15,31 +15,69 @@ import org.springframework.web.bind.annotation.RestController;
 import com.safetynet.safetynetalerts.model.MedicalRecord;
 import com.safetynet.safetynetalerts.service.MedicalRecordService;
 
+/**
+ * Controller for handling requests related to medical records. Provides endpoints to create,
+ * update, and delete medical records.
+ * 
+ * <p>
+ * This controller is responsible for managing the medical records data within the SafetyNet Alerts
+ * application. It interacts with the service layer to perform CRUD operations on medical records.
+ * </p>
+ * 
+ */
 @RestController
 public class MedicalRecordDataController {
     private static final Logger logger = LoggerFactory.getLogger(MedicalRecordDataController.class);
-    MedicalRecordService medicalRecordService;
+    private MedicalRecordService medicalRecordService;
 
     public MedicalRecordDataController(MedicalRecordService medicalRecordService) {
         this.medicalRecordService = medicalRecordService;
     }
 
+    /**
+     * Handles IllegalArgumentException.
+     * 
+     * @param e the exception to handle
+     * @return a response entity with BAD_REQUEST HTTP status code
+     */
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException e) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body("Missing data: firstName and lastName are mandatory");
     }
 
+    /**
+     * Handles IOException.
+     * 
+     * @param e the exception to handle
+     * @return a response entity with NOT_FOUND HTTP status code
+     */
     @ExceptionHandler(IOException.class)
     public ResponseEntity<String> handleIOException(IOException e) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error retrieving/writing data");
-    }    
-    
-    @ExceptionHandler(DateTimeParseException.class)
-    public ResponseEntity<String> handleDateTimeParseException(DateTimeParseException e) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid format for birthdate. Should be MM/dd/YYYY");
     }
 
+    /**
+     * Handles DateTimeParseException.
+     * 
+     * @param e the exception to handle
+     * @return a response entity with BAD_REQUEST HTTP status code
+     */
+    @ExceptionHandler(DateTimeParseException.class)
+    public ResponseEntity<String> handleDateTimeParseException(DateTimeParseException e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body("Invalid format for birthdate. Should be MM/dd/YYYY");
+    }
+
+    /**
+     * Creates new medical record.
+     * 
+     * @param medicalRecord to be added (mandatory fields: firstName, lastName)
+     * @return a response entity with the created medical record and either a CREATED HTTP status
+     *         code in case of success or BAD_REQUEST HTTP status code if record with same first and
+     *         last name already exists
+     * @throws IOException
+     */
     @PostMapping("/medicalRecord")
     public ResponseEntity<MedicalRecord> createMedicalRecord(
             @RequestBody MedicalRecord medicalRecord) throws IOException {
@@ -55,11 +93,20 @@ public class MedicalRecordDataController {
         }
     }
 
+    /**
+     * Updates an existing medical record.
+     * 
+     * @param medicalRecord the record to be updated (mandatory fields: firstName, lastName)
+     * @return a response entity with the updated record and either a ACCEPTED HTTP status code in
+     *         case of success or BAD_REQUEST HTTP status code if medical record doesn't exist
+     * @throws IOException
+     */
     @PutMapping("/medicalRecord")
     public ResponseEntity<MedicalRecord> updateMedicalRecord(
             @RequestBody MedicalRecord medicalRecord) throws IOException {
 
-        MedicalRecord updatedMedicalRecord = medicalRecordService.updateMedicalRecord(medicalRecord);
+        MedicalRecord updatedMedicalRecord =
+                medicalRecordService.updateMedicalRecord(medicalRecord);
 
         if (updatedMedicalRecord == null) {
             logger.error("updatedMedicalRecord is null");
@@ -70,11 +117,20 @@ public class MedicalRecordDataController {
         }
     }
 
+    /**
+     * Deletes a medical record.
+     * 
+     * @param medicalRecord record to be deleted (mandatory fields: firstName, lastName)
+     * @return a response entity with the deleted record and either ACCEPTED HTTP status code
+     *         in case of success or BAD_REQUEST HTTP status code if matching record doesn't exist
+     * @throws IOException
+     */
     @DeleteMapping("/medicalRecord")
     public ResponseEntity<MedicalRecord> deleteMedicalRecord(
             @RequestBody MedicalRecord medicalRecord) throws IOException {
 
-        MedicalRecord deletedMedicalRecord = medicalRecordService.deleteMedicalRecord(medicalRecord);
+        MedicalRecord deletedMedicalRecord =
+                medicalRecordService.deleteMedicalRecord(medicalRecord);
 
         if (deletedMedicalRecord == null) {
             logger.error("deletedMedicalRecord is null");
@@ -84,5 +140,4 @@ public class MedicalRecordDataController {
             return new ResponseEntity<>(deletedMedicalRecord, HttpStatus.ACCEPTED);
         }
     }
-
 }

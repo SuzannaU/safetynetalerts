@@ -17,9 +17,9 @@ import com.safetynet.safetynetalerts.model.*;
 @Service
 public class FloodDataService {
     private static final Logger logger = LoggerFactory.getLogger(FloodDataService.class);
-    PersonService personService;
-    FirestationService firestationService;
-    Mapper mapper;
+    private PersonService personService;
+    private FirestationService firestationService;
+    private Mapper mapper;
 
     public FloodDataService(PersonService personService, FirestationService firestationService,
             Mapper mapper) {

@@ -15,8 +15,8 @@ import com.safetynet.safetynetalerts.repository.*;
 @Service
 public class FirestationService {
     private static final Logger logger = LoggerFactory.getLogger(FirestationService.class);
-    JsonReadingRepository jsonReadingRepository;
-    JsonWritingRepository jsonWritingRepository;
+    private JsonReadingRepository jsonReadingRepository;
+    private JsonWritingRepository jsonWritingRepository;
 
     public FirestationService(JsonReadingRepository jsonReadingRepository,
             JsonWritingRepository jsonWritingRepository) {

@@ -14,7 +14,7 @@ import com.safetynet.safetynetalerts.model.Person;
 @Service
 public class PhoneAlertDataService {
     private static final Logger logger = LoggerFactory.getLogger(PhoneAlertDataService.class);
-    PersonService personService;
+    private PersonService personService;
 
     public PhoneAlertDataService(PersonService personService) {
         this.personService = personService;

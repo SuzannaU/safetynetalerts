@@ -22,21 +22,21 @@ public class WebAppController {
     private static final Logger logger = LoggerFactory.getLogger(WebAppController.class);
 
     @Autowired
-    FirestationDataService firestationDataService;
+    private FirestationDataService firestationDataService;
     @Autowired
-    ChildAlertDataService childAlertDataService;
+    private ChildAlertDataService childAlertDataService;
     @Autowired
-    PhoneAlertDataService phoneAlertDataService;
+    private PhoneAlertDataService phoneAlertDataService;
     @Autowired
-    FireDataService fireDataService;
+    private FireDataService fireDataService;
     @Autowired
-    FloodDataService floodDataService;
+    private FloodDataService floodDataService;
     @Autowired
-    InfoDataService infoDataService;
+    private InfoDataService infoDataService;
     @Autowired
-    CommunityEmailDataService communityEmailDataService;
+    private CommunityEmailDataService communityEmailDataService;
     @Autowired
-    JsonWritingRepository jsonWritingRepository;
+    private JsonWritingRepository jsonWritingRepository;
 
     @ExceptionHandler(IOException.class)
     public ResponseEntity<String> handleIOException(IOException e) {

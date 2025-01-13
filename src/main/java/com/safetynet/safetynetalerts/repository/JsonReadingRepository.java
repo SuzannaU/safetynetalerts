@@ -20,10 +20,6 @@ public class JsonReadingRepository {
     @Value("${data.file.sourcepath}")
     private String sourceFilePath;
 
-    public String getPath(){
-        return this.sourceFilePath;
-    }
-
     private JsonNode getNode(String nodeName) throws IOException {
         JsonNode node = null;
         ObjectMapper objectMapper = new ObjectMapper();
@@ -33,9 +29,6 @@ public class JsonReadingRepository {
             logger.debug("Data recoverd at path: " + sourceFilePath);
         } catch (IOException e) {
             logger.error("File not found at path: " + sourceFilePath);
-            throw e;
-        } catch (NullPointerException e) {
-            logger.error("Error with path: " + sourceFilePath);
             throw e;
         }
         return node;

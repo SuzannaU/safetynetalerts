@@ -15,8 +15,8 @@ import com.safetynet.safetynetalerts.model.Person;
 @Service
 public class InfoDataService {
     private static final Logger logger = LoggerFactory.getLogger(InfoDataService.class);
-    PersonService personService;
-    Mapper mapper;
+    private PersonService personService;
+    private Mapper mapper;
 
     public InfoDataService(PersonService personService, Mapper mapper) {
         this.personService = personService;

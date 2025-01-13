@@ -16,8 +16,8 @@ import com.safetynet.safetynetalerts.model.Person;
 @Service
 public class FireDataService {
     private static final Logger logger = LoggerFactory.getLogger(FireDataService.class);
-    PersonService personService;
-    Mapper mapper;
+    private PersonService personService;
+    private Mapper mapper;
 
     public FireDataService(PersonService personService, Mapper mapper) {
         this.personService = personService;
