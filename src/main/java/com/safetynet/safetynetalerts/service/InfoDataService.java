@@ -1,7 +1,6 @@
 package com.safetynet.safetynetalerts.service;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
@@ -24,7 +23,8 @@ public class InfoDataService {
     }
 
     public InfoData getInfoData(String lastName) throws IOException {
-        List<Person> persons = new ArrayList<>();
+
+        List<Person> persons;
         try {
             persons = personService.getPersons();
         } catch (IOException e) {
@@ -37,15 +37,14 @@ public class InfoDataService {
                 .map(p -> mapper.toPersonForInfo(p))
                 .collect(Collectors.toList());
 
-        InfoData infoData = new InfoData();
         if (personsForInfo.isEmpty()) {
-            logger.error("No persons found with lastName: " + lastName);
+            logger.error("No persons found with last name: " + lastName);
             return null;
-        } else {
-            infoData.setLastName(lastName);
-            infoData.setPersons(personsForInfo);
-            return infoData;
         }
-    }
 
+        InfoData infoData = new InfoData();
+        infoData.setLastName(lastName);
+        infoData.setPersons(personsForInfo);
+        return infoData;
+    }
 }

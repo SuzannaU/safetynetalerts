@@ -27,12 +27,12 @@ import com.safetynet.safetynetalerts.model.Person;
 @SpringBootTest
 public class FirestationDataServiceTest {
     @MockitoBean
-    private static PersonService personService;
+    private PersonService personService;
     @MockitoBean
-    private static Mapper mapper;
+    private Mapper mapper;
     @Autowired
-    FirestationDataService firestationDataService;
-    List<Person> persons;
+    private FirestationDataService firestationDataService;
+    private List<Person> persons;
 
     @BeforeEach
     private void setUp() {

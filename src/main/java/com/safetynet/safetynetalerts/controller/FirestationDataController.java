@@ -69,6 +69,7 @@ public class FirestationDataController {
     public ResponseEntity<Firestation> createFirestation(
             @RequestBody Firestation firestation) throws IOException {
 
+        logger.debug("POST request received for " + firestation.toString());
         Firestation newFirestation = firestationService.createFirestation(firestation);
 
         if (newFirestation == null) {
@@ -93,6 +94,7 @@ public class FirestationDataController {
     public ResponseEntity<Firestation> updateFirestation(
             @RequestBody Firestation firestation) throws IOException {
 
+        logger.debug("PUT request received for " + firestation.toString());
         Firestation updatedFirestation = firestationService.updateFirestation(firestation);
 
         if (updatedFirestation == null) {
@@ -116,6 +118,7 @@ public class FirestationDataController {
     public ResponseEntity<Firestation> deleteFirestation(
             @RequestBody Firestation firestation) throws IOException {
 
+        logger.debug("DELETE request received for " + firestation.toString());
         Firestation deletedFirestation = firestationService.deleteFirestation(firestation);
 
         if (deletedFirestation == null) {

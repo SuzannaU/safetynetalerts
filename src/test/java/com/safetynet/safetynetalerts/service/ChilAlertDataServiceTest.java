@@ -24,12 +24,13 @@ import com.safetynet.safetynetalerts.model.Person;
 @SpringBootTest
 public class ChilAlertDataServiceTest {
     @MockitoBean
-    private static PersonService personService;
+    private PersonService personService;
     @MockitoBean
-    private static Mapper mapper;
+    private Mapper mapper;
     @Autowired
-    ChildAlertDataService childAlertDataService;
-    List<Person> persons;
+    private ChildAlertDataService childAlertDataService;
+    private List<Person> persons;
+    private Person jane;
 
     @BeforeEach
     private void setUp() {
@@ -37,7 +38,7 @@ public class ChilAlertDataServiceTest {
                 "john", "doe", "test_address",
                 "test_city", "test_zip", "test_phone", "test_email");
         john.setCategory("Adult");
-        Person jane = new Person(
+        jane = new Person(
                 "jane", "doe", "test_address",
                 "test_city", "test_zip", "test_phone", "test_email");
         jane.setCategory("Child");
@@ -56,12 +57,25 @@ public class ChilAlertDataServiceTest {
         when(mapper.toChildForChildAlert(any(Person.class))).thenReturn(childForChildAlert);
 
         ChildAlertData result = childAlertDataService.getChildAlertData("test_address");
+        
         assertNotNull(result);
         assertEquals(1, result.getAdults().size());
         assertEquals(1, result.getChildren().size());
         verify(personService).getPersons();
         verify(mapper).toAdultForChildAlert(any(Person.class));
         verify(mapper).toAdultForChildAlert(any(Person.class));
+    }
+
+    @Test
+    public void getChildAlertData_withNoChildren_returnsData() throws IOException {
+
+        jane.setCategory("Adult");
+        when(personService.getPersons()).thenReturn(persons);
+
+        ChildAlertData result = childAlertDataService.getChildAlertData("test_address");
+
+        assertNotNull(result);
+        verify(personService).getPersons();
     }
 
     @Test

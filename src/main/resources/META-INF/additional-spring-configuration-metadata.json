@@ -2,11 +2,11 @@
   {
     "name": "data.file.sourcepath",
     "type": "java.lang.String",
-    "description": "A description for 'source.file.path'"
+    "description": "path to find source file"
   },
   {
     "name": "data.file.outputpath",
     "type": "java.lang.String",
-    "description": "A description for 'output.file.path'"
+    "description": "path to write output file"
   }
 ]}

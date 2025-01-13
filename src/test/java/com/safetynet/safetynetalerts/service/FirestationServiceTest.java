@@ -24,12 +24,12 @@ import com.safetynet.safetynetalerts.repository.JsonWritingRepository;
 public class FirestationServiceTest {
 
     @MockitoBean
-    private static JsonReadingRepository jsonReadingRepository;
+    private JsonReadingRepository jsonReadingRepository;
     @MockitoBean
-    private static JsonWritingRepository jsonWritingRepository;
+    private JsonWritingRepository jsonWritingRepository;
     @Autowired
-    FirestationService firestationService;
-    List<Firestation> firestations;
+    private FirestationService firestationService;
+    private List<Firestation> firestations;
 
     @BeforeEach
     private void setUp() {

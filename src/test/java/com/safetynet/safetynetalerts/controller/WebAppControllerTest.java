@@ -15,7 +15,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
-import com.safetynet.safetynetalerts.Mapper;
+import com.safetynet.safetynetalerts.dto.AdultForChildAlert;
 import com.safetynet.safetynetalerts.dto.ChildAlertData;
 import com.safetynet.safetynetalerts.dto.ChildForChildAlert;
 import com.safetynet.safetynetalerts.dto.CommunityEmailData;
@@ -25,63 +25,34 @@ import com.safetynet.safetynetalerts.dto.FloodData;
 import com.safetynet.safetynetalerts.dto.InfoData;
 import com.safetynet.safetynetalerts.dto.PhoneAlertData;
 import com.safetynet.safetynetalerts.repository.JsonWritingRepository;
-import com.safetynet.safetynetalerts.service.ChildAlertDataService;
-import com.safetynet.safetynetalerts.service.CommunityEmailDataService;
-import com.safetynet.safetynetalerts.service.FireDataService;
-import com.safetynet.safetynetalerts.service.FirestationDataService;
-import com.safetynet.safetynetalerts.service.FirestationService;
-import com.safetynet.safetynetalerts.service.FloodDataService;
-import com.safetynet.safetynetalerts.service.InfoDataService;
-import com.safetynet.safetynetalerts.service.MedicalRecordService;
-import com.safetynet.safetynetalerts.service.PersonService;
-import com.safetynet.safetynetalerts.service.PhoneAlertDataService;
+import com.safetynet.safetynetalerts.service.WebAppService;
 
 @WebMvcTest(controllers = WebAppController.class)
 public class WebAppControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @MockitoBean
-    PersonService personService;
+    private WebAppService webAppService;
     @MockitoBean
-    FirestationService firestationService;
-    @MockitoBean
-    MedicalRecordService medicalRecordService;
-    @MockitoBean
-    FirestationDataService firestationDataService;
-    @MockitoBean
-    ChildAlertDataService childAlertDataService;
-    @MockitoBean
-    PhoneAlertDataService phoneAlertDataService;
-    @MockitoBean
-    FireDataService fireDataService;
-    @MockitoBean
-    FloodDataService floodDataService;
-    @MockitoBean
-    InfoDataService infoDataService;
-    @MockitoBean
-    CommunityEmailDataService communityEmailDataService;
-    @MockitoBean
-    Mapper mapper;
-    @MockitoBean
-    JsonWritingRepository jsonWritingRepository;
+    private JsonWritingRepository jsonWritingRepository;
 
 
     @Test
     public void anyMethod_withIOException_returnsNotFound() throws Exception {
 
-        when(firestationDataService.getFirestationData(anyInt()))
+        when(webAppService.getFirestationData(anyInt()))
                 .thenThrow(IOException.class);
-        when(childAlertDataService.getChildAlertData(any(String.class)))
+        when(webAppService.getChildAlertData(any(String.class)))
                 .thenThrow(IOException.class);
-        when(phoneAlertDataService.getPhoneAlertData(anyInt()))
+        when(webAppService.getPhoneAlertData(anyInt()))
                 .thenThrow(IOException.class);
-        when(fireDataService.getFireData(any(String.class)))
+        when(webAppService.getFireData(any(String.class)))
                 .thenThrow(IOException.class);
-        when(floodDataService.getFloodData(anyList()))
+        when(webAppService.getFloodData(anyList()))
                 .thenThrow(IOException.class);
-        when(infoDataService.getInfoData(any(String.class)))
+        when(webAppService.getInfoData(any(String.class)))
                 .thenThrow(IOException.class);
-        when(communityEmailDataService.getCommunityEmailData(any(String.class)))
+        when(webAppService.getCommunityEmailData(any(String.class)))
                 .thenThrow(IOException.class);
 
 
@@ -107,31 +78,31 @@ public class WebAppControllerTest {
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
 
-        verify(firestationDataService).getFirestationData(anyInt());
-        verify(childAlertDataService).getChildAlertData(any(String.class));
-        verify(phoneAlertDataService).getPhoneAlertData(anyInt());
-        verify(fireDataService).getFireData(any(String.class));
-        verify(floodDataService).getFloodData(anyList());
-        verify(infoDataService).getInfoData(any(String.class));
-        verify(communityEmailDataService).getCommunityEmailData(any(String.class));
+        verify(webAppService).getFirestationData(anyInt());
+        verify(webAppService).getChildAlertData(any(String.class));
+        verify(webAppService).getPhoneAlertData(anyInt());
+        verify(webAppService).getFireData(any(String.class));
+        verify(webAppService).getFloodData(anyList());
+        verify(webAppService).getInfoData(any(String.class));
+        verify(webAppService).getCommunityEmailData(any(String.class));
     }
 
     @Test
     public void anyMethod_withNullPointerException_returnsBadRequest() throws Exception {
 
-        when(firestationDataService.getFirestationData(anyInt()))
+        when(webAppService.getFirestationData(anyInt()))
                 .thenThrow(NullPointerException.class);
-        when(childAlertDataService.getChildAlertData(any(String.class)))
+        when(webAppService.getChildAlertData(any(String.class)))
                 .thenThrow(NullPointerException.class);
-        when(phoneAlertDataService.getPhoneAlertData(anyInt()))
+        when(webAppService.getPhoneAlertData(anyInt()))
                 .thenThrow(NullPointerException.class);
-        when(fireDataService.getFireData(any(String.class)))
+        when(webAppService.getFireData(any(String.class)))
                 .thenThrow(NullPointerException.class);
-        when(floodDataService.getFloodData(anyList()))
+        when(webAppService.getFloodData(anyList()))
                 .thenThrow(NullPointerException.class);
-        when(infoDataService.getInfoData(any(String.class)))
+        when(webAppService.getInfoData(any(String.class)))
                 .thenThrow(NullPointerException.class);
-        when(communityEmailDataService.getCommunityEmailData(any(String.class)))
+        when(webAppService.getCommunityEmailData(any(String.class)))
                 .thenThrow(NullPointerException.class);
 
 
@@ -157,39 +128,38 @@ public class WebAppControllerTest {
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest());
 
-        verify(firestationDataService).getFirestationData(anyInt());
-        verify(childAlertDataService).getChildAlertData(any(String.class));
-        verify(phoneAlertDataService).getPhoneAlertData(anyInt());
-        verify(fireDataService).getFireData(any(String.class));
-        verify(floodDataService).getFloodData(anyList());
-        verify(infoDataService).getInfoData(any(String.class));
-        verify(communityEmailDataService).getCommunityEmailData(any(String.class));
+        verify(webAppService).getFirestationData(anyInt());
+        verify(webAppService).getChildAlertData(any(String.class));
+        verify(webAppService).getPhoneAlertData(anyInt());
+        verify(webAppService).getFireData(any(String.class));
+        verify(webAppService).getFloodData(anyList());
+        verify(webAppService).getInfoData(any(String.class));
+        verify(webAppService).getCommunityEmailData(any(String.class));
     }
 
     @Test
     public void getFirestationData_withCorrectRequest_returnsIsOk() throws Exception {
 
-        when(firestationDataService.getFirestationData(anyInt())).thenReturn(new FirestationData());
+        when(webAppService.getFirestationData(anyInt())).thenReturn(new FirestationData());
 
         mockMvc.perform(get("/firestation").param("stationNumber", "1")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
 
-        verify(firestationDataService).getFirestationData(anyInt());
+        verify(webAppService).getFirestationData(anyInt());
         verify(jsonWritingRepository).writeOutputFile(any(FirestationData.class));
     }
 
     @Test
     public void getFirestationData_withWrongRequest_returnsNotFound() throws Exception {
 
-        when(firestationDataService.getFirestationData(anyInt())).thenReturn(null);
+        when(webAppService.getFirestationData(anyInt())).thenReturn(null);
 
         mockMvc.perform(get("/firestation").param("stationNumber", "1")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
 
-        verify(firestationDataService).getFirestationData(anyInt());
-        verify(jsonWritingRepository).writeOutputFile(null);
+        verify(webAppService).getFirestationData(anyInt());
     }
 
     @Test
@@ -197,161 +167,156 @@ public class WebAppControllerTest {
         ChildAlertData childAlertData = new ChildAlertData();
         childAlertData.setChildren(
                 Arrays.asList(new ChildForChildAlert(), new ChildForChildAlert()));
-        when(childAlertDataService.getChildAlertData(any(String.class)))
+        when(webAppService.getChildAlertData(any(String.class)))
                 .thenReturn(childAlertData);
 
         mockMvc.perform(get("/childAlert").param("address", "address")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
 
-        verify(childAlertDataService).getChildAlertData(any(String.class));
+        verify(webAppService).getChildAlertData(any(String.class));
         verify(jsonWritingRepository).writeOutputFile(any(ChildAlertData.class));
     }
 
     @Test
-    public void getChildAlertData_withNoChildren_returnsBadRequest() throws Exception {
+    public void getChildAlertData_withNoChildren_returnsNotFound() throws Exception {
         ChildAlertData childAlertData = new ChildAlertData();
         childAlertData.setChildren(Arrays.asList());
-        when(childAlertDataService.getChildAlertData(any(String.class)))
+        childAlertData.setAdults(Arrays.asList(new AdultForChildAlert()));
+        when(webAppService.getChildAlertData(any(String.class)))
                 .thenReturn(childAlertData);
-
-        mockMvc.perform(get("/childAlert").param("address", "address")
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isBadRequest());
-
-        verify(childAlertDataService).getChildAlertData(any(String.class));
-        verify(jsonWritingRepository).writeOutputFile(null);
-    }
-
-    @Test
-    public void getChildAlertData_withWrongRequest_returnsNotFound() throws Exception {
-
-        when(childAlertDataService.getChildAlertData(any(String.class))).thenReturn(null);
 
         mockMvc.perform(get("/childAlert").param("address", "address")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
 
-        verify(childAlertDataService).getChildAlertData(any(String.class));
-        verify(jsonWritingRepository).writeOutputFile(null);
+        verify(webAppService).getChildAlertData(any(String.class));
+    }
+
+    @Test
+    public void getChildAlertData_withWrongRequest_returnsNotFound() throws Exception {
+
+        when(webAppService.getChildAlertData(any(String.class))).thenReturn(null);
+
+        mockMvc.perform(get("/childAlert").param("address", "address")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound());
+
+        verify(webAppService).getChildAlertData(any(String.class));
     }
 
     @Test
     public void getPhoneAlertData_withCorrectRequest_returnsIsOk() throws Exception {
 
-        when(phoneAlertDataService.getPhoneAlertData(anyInt())).thenReturn(new PhoneAlertData());
+        when(webAppService.getPhoneAlertData(anyInt())).thenReturn(new PhoneAlertData());
 
         mockMvc.perform(get("/phoneAlert").param("firestation", "1")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
 
-        verify(phoneAlertDataService).getPhoneAlertData(anyInt());
+        verify(webAppService).getPhoneAlertData(anyInt());
         verify(jsonWritingRepository).writeOutputFile(any(PhoneAlertData.class));
     }
 
     @Test
     public void getPhoneAlertData_withWrongRequest_returnsNotFound() throws Exception {
 
-        when(phoneAlertDataService.getPhoneAlertData(anyInt())).thenReturn(null);
+        when(webAppService.getPhoneAlertData(anyInt())).thenReturn(null);
 
         mockMvc.perform(get("/phoneAlert").param("firestation", "1")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
 
-        verify(phoneAlertDataService).getPhoneAlertData(anyInt());
-        verify(jsonWritingRepository).writeOutputFile(null);
+        verify(webAppService).getPhoneAlertData(anyInt());
     }
 
     @Test
     public void getFireData_withCorrectRequest_returnsIsOk() throws Exception {
 
-        when(fireDataService.getFireData(any(String.class))).thenReturn(new FireData());
+        when(webAppService.getFireData(any(String.class))).thenReturn(new FireData());
 
         mockMvc.perform(get("/fire").param("address", "address")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
 
-        verify(fireDataService).getFireData(any(String.class));
+        verify(webAppService).getFireData(any(String.class));
         verify(jsonWritingRepository).writeOutputFile(any(FireData.class));
     }
 
     @Test
     public void getFireData_withWrongRequest_returnsNotFound() throws Exception {
 
-        when(fireDataService.getFireData(any(String.class))).thenReturn(null);
+        when(webAppService.getFireData(any(String.class))).thenReturn(null);
 
         mockMvc.perform(get("/fire").param("address", "address")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
 
-        verify(fireDataService).getFireData(any(String.class));
-        verify(jsonWritingRepository).writeOutputFile(null);
+        verify(webAppService).getFireData(any(String.class));
     }
 
     @Test
     public void getFloodData_withCorrectRequest_returnsIsOk() throws Exception {
 
-        when(floodDataService.getFloodData(anyList())).thenReturn(new FloodData());
+        when(webAppService.getFloodData(anyList())).thenReturn(new FloodData());
 
         mockMvc.perform(get("/flood/stations").param("stations", "1")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
 
-        verify(floodDataService).getFloodData(anyList());
+        verify(webAppService).getFloodData(anyList());
         verify(jsonWritingRepository).writeOutputFile(any(FloodData.class));
     }
 
     @Test
     public void getFloodData_withWrongRequest_returnsNotFound() throws Exception {
 
-        when(floodDataService.getFloodData(anyList())).thenReturn(null);
+        when(webAppService.getFloodData(anyList())).thenReturn(null);
 
         mockMvc.perform(get("/flood/stations").param("stations", "1")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
 
-        verify(floodDataService).getFloodData(anyList());
-        verify(jsonWritingRepository).writeOutputFile(null);
+        verify(webAppService).getFloodData(anyList());
     }
 
     @Test
     public void getInfoData_withCorrectRequest_returnsIsOk() throws Exception {
 
-        when(infoDataService.getInfoData(any(String.class))).thenReturn(new InfoData());
+        when(webAppService.getInfoData(any(String.class))).thenReturn(new InfoData());
 
         mockMvc.perform(get("/personInfolastName={lastName}", "doe")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
 
-        verify(infoDataService).getInfoData(any(String.class));
+        verify(webAppService).getInfoData(any(String.class));
         verify(jsonWritingRepository).writeOutputFile(any(InfoData.class));
     }
 
     @Test
     public void getInfoData_withWrongRequest_returnsNotFound() throws Exception {
 
-        when(infoDataService.getInfoData(any(String.class))).thenReturn(null);
+        when(webAppService.getInfoData(any(String.class))).thenReturn(null);
 
         mockMvc.perform(get("/personInfolastName={lastName}", "doe")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
 
-        verify(infoDataService).getInfoData(any(String.class));
-        verify(jsonWritingRepository).writeOutputFile(null);
+        verify(webAppService).getInfoData(any(String.class));
 
     }
 
     @Test
     public void getCommunityEmailData_withCorrectRequest_returnsIsOk() throws Exception {
 
-        when(communityEmailDataService.getCommunityEmailData(any(String.class)))
+        when(webAppService.getCommunityEmailData(any(String.class)))
                 .thenReturn(new CommunityEmailData());
 
         mockMvc.perform(get("/communityEmail").param("city", "city")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
 
-        verify(communityEmailDataService).getCommunityEmailData(any(String.class));
+        verify(webAppService).getCommunityEmailData(any(String.class));
         verify(jsonWritingRepository).writeOutputFile(any(CommunityEmailData.class));
 
     }
@@ -359,13 +324,12 @@ public class WebAppControllerTest {
     @Test
     public void getCommunityEmailData_withWrongRequest_returnsNotFound() throws Exception {
 
-        when(communityEmailDataService.getCommunityEmailData(any(String.class))).thenReturn(null);
+        when(webAppService.getCommunityEmailData(any(String.class))).thenReturn(null);
 
         mockMvc.perform(get("/communityEmail").param("city", "city")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
 
-        verify(communityEmailDataService).getCommunityEmailData(any(String.class));
-        verify(jsonWritingRepository).writeOutputFile(null);
+        verify(webAppService).getCommunityEmailData(any(String.class));
     }
 }

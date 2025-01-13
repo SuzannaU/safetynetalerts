@@ -24,12 +24,12 @@ import com.safetynet.safetynetalerts.model.Person;
 @SpringBootTest
 public class InfoDataServiceTest {
     @MockitoBean
-    private static PersonService personService;
+    private PersonService personService;
     @MockitoBean
-    private static Mapper mapper;
+    private Mapper mapper;
     @Autowired
-    InfoDataService infoDataService;
-    List<Person> persons;
+    private InfoDataService infoDataService;
+    private List<Person> persons;
 
     @BeforeEach
     private void setUp() {

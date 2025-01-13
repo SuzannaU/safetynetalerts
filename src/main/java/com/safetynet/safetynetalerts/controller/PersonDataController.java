@@ -66,10 +66,9 @@ public class PersonDataController {
      * @throws IOException
      */
     @PostMapping("/person")
-    public ResponseEntity<Person> createPerson(
-            @RequestBody Person person)
-            throws IOException, IllegalArgumentException {
+    public ResponseEntity<Person> createPerson(@RequestBody Person person) throws IOException {
 
+        logger.debug("POST request received for " + person.toString());
         Person newPerson = personService.createPerson(person);
 
         if (newPerson == null) {
@@ -90,10 +89,9 @@ public class PersonDataController {
      * @throws IOException
      */
     @PutMapping("/person")
-    public ResponseEntity<Person> updatePerson(
-            @RequestBody Person person)
-            throws IOException {
+    public ResponseEntity<Person> updatePerson(@RequestBody Person person) throws IOException {
 
+        logger.debug("PUT request received for " + person.toString());
         Person updatedPerson = personService.updatePerson(person);
 
         if (updatedPerson == null) {
@@ -114,10 +112,9 @@ public class PersonDataController {
      * @throws IOException
      */
     @DeleteMapping("/person")
-    public ResponseEntity<Person> deletePerson(
-            @RequestBody Person person)
-            throws IOException {
+    public ResponseEntity<Person> deletePerson(@RequestBody Person person) throws IOException {
 
+        logger.debug("DELETE request received for " + person.toString());
         Person deletedPerson = personService.deletePerson(person);
 
         if (deletedPerson == null) {

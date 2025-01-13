@@ -26,15 +26,15 @@ import com.safetynet.safetynetalerts.model.Person;
 @SpringBootTest
 public class FloodDataServiceTest {
     @MockitoBean
-    private static PersonService personService;
+    private PersonService personService;
     @MockitoBean
-    private static FirestationService firestationService;
+    private FirestationService firestationService;
     @MockitoBean
-    private static Mapper mapper;
+    private Mapper mapper;
     @Autowired
-    FloodDataService floodDataService;
-    List<Person> persons;
-    Set<Firestation> firestations;
+    private FloodDataService floodDataService;
+    private List<Person> persons;
+    private Set<Firestation> firestations;
 
     @BeforeEach
     private void setUp() {

@@ -38,14 +38,13 @@ public class JsonReadingRepository {
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode personsNode = getNode("persons");
 
-        List<Person> persons = null;
-        persons = objectMapper.convertValue(
+        List<Person> persons = objectMapper.convertValue(
                 personsNode, new TypeReference<List<Person>>() {});
 
-        if (persons != null)
-            logger.debug("persons retrieved");
-        else
+        if (persons == null || persons.isEmpty())
             logger.error("Issue retrieving persons");
+        else
+            logger.debug("persons retrieved");
 
         return persons;
     }
@@ -55,14 +54,13 @@ public class JsonReadingRepository {
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode firestationsNode = getNode("firestations");
 
-        List<Firestation> firestations = null;
-        firestations = objectMapper.convertValue(
+        List<Firestation> firestations = objectMapper.convertValue(
                 firestationsNode, new TypeReference<List<Firestation>>() {});
 
-        if (firestations != null)
-            logger.debug("firestations retrieved");
-        else
+        if (firestations == null || firestations.isEmpty())
             logger.error("Issue retrieving firestations");
+        else
+            logger.debug("firestations retrieved");
 
         return firestations;
     }
@@ -71,14 +69,13 @@ public class JsonReadingRepository {
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode medicalRecordsNode = getNode("medicalrecords");
 
-        List<MedicalRecord> medicalRecords = null;
-        medicalRecords = objectMapper.convertValue(
+        List<MedicalRecord> medicalRecords = objectMapper.convertValue(
                 medicalRecordsNode, new TypeReference<List<MedicalRecord>>() {});
 
-        if (medicalRecords != null)
-            logger.debug("medicalRecords retrieved");
-        else
+        if (medicalRecords == null || medicalRecords.isEmpty())
             logger.error("Issue retrieving medicalRecords");
+        else
+            logger.debug("medicalRecords retrieved");
 
         return medicalRecords;
     }

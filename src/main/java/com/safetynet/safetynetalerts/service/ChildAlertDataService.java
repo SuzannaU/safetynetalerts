@@ -1,7 +1,6 @@
 package com.safetynet.safetynetalerts.service;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
@@ -13,17 +12,18 @@ import com.safetynet.safetynetalerts.model.Person;
 
 @Service
 public class ChildAlertDataService {
-    private static final Logger logger = LoggerFactory.getLogger(ChildAlertDataService.class);    
+    private static final Logger logger = LoggerFactory.getLogger(ChildAlertDataService.class);
     private PersonService personService;
     private Mapper mapper;
-    
+
     public ChildAlertDataService(PersonService personService, Mapper mapper) {
         this.personService = personService;
         this.mapper = mapper;
     }
 
     public ChildAlertData getChildAlertData(String address) throws IOException {
-        List<Person> persons = new ArrayList<>();
+
+        List<Person> persons;
         try {
             persons = personService.getPersons();
         } catch (IOException e) {
@@ -43,14 +43,13 @@ public class ChildAlertDataService {
                 .map(p -> mapper.toAdultForChildAlert(p))
                 .collect(Collectors.toList());
 
-        ChildAlertData childAlertData = new ChildAlertData();
         if (childrenForChildAlert.isEmpty() && adultsForChildAlert.isEmpty()) {
             return null;
-        } else {
-            childAlertData.setChildren(childrenForChildAlert);
-            childAlertData.setAdults(adultsForChildAlert);
-            return childAlertData;
         }
-    }
 
+        ChildAlertData childAlertData = new ChildAlertData();
+        childAlertData.setChildren(childrenForChildAlert);
+        childAlertData.setAdults(adultsForChildAlert);
+        return childAlertData;
+    }
 }

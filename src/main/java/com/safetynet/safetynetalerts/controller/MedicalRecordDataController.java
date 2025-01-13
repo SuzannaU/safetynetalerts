@@ -82,6 +82,7 @@ public class MedicalRecordDataController {
     public ResponseEntity<MedicalRecord> createMedicalRecord(
             @RequestBody MedicalRecord medicalRecord) throws IOException {
 
+        logger.debug("POST request received for " + medicalRecord.toString());
         MedicalRecord newMedicalRecord = medicalRecordService.createMedicalRecord(medicalRecord);
 
         if (newMedicalRecord == null) {
@@ -105,6 +106,7 @@ public class MedicalRecordDataController {
     public ResponseEntity<MedicalRecord> updateMedicalRecord(
             @RequestBody MedicalRecord medicalRecord) throws IOException {
 
+        logger.debug("PUT request received for " + medicalRecord.toString());
         MedicalRecord updatedMedicalRecord =
                 medicalRecordService.updateMedicalRecord(medicalRecord);
 
@@ -121,14 +123,15 @@ public class MedicalRecordDataController {
      * Deletes a medical record.
      * 
      * @param medicalRecord record to be deleted (mandatory fields: firstName, lastName)
-     * @return a response entity with the deleted record and either ACCEPTED HTTP status code
-     *         in case of success or BAD_REQUEST HTTP status code if matching record doesn't exist
+     * @return a response entity with the deleted record and either ACCEPTED HTTP status code in
+     *         case of success or BAD_REQUEST HTTP status code if matching record doesn't exist
      * @throws IOException
      */
     @DeleteMapping("/medicalRecord")
     public ResponseEntity<MedicalRecord> deleteMedicalRecord(
             @RequestBody MedicalRecord medicalRecord) throws IOException {
 
+        logger.debug("DELDETE request received for " + medicalRecord.toString());
         MedicalRecord deletedMedicalRecord =
                 medicalRecordService.deleteMedicalRecord(medicalRecord);
 

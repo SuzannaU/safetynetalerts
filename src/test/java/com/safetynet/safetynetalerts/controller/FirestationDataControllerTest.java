@@ -137,7 +137,7 @@ public class FirestationDataControllerTest {
     }
 
     @Test
-    public void deleteFirestation_withCorrectRequest_returnsIsCreated() throws Exception {
+    public void deleteFirestation_withCorrectRequest_returnsIsAccepted() throws Exception {
 
         when(firestationService.deleteFirestation(any(Firestation.class))).thenReturn(firestation);
 

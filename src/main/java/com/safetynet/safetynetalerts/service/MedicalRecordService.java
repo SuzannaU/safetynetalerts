@@ -32,20 +32,14 @@ public class MedicalRecordService {
         for (MedicalRecord medicalRecord : medicalRecords) {
             medicalRecord.setMedications(medicalRecord.getMedications());
             medicalRecord.setAllergies(medicalRecord.getAllergies());
-            medicalRecord.setLocalBirthdate(getFormattedBirthdate(medicalRecord.getRawBirthdate()));
+            medicalRecord.setLocalBirthdate(getLocalBirthdate(medicalRecord.getRawBirthdate()));
             medicalRecord.setAge(getAge(medicalRecord.getRawBirthdate()));
         }
 
         return medicalRecords;
     }
 
-    private int getAge(String birthdate) {
-        LocalDate formattedBirthdate = getFormattedBirthdate(birthdate);
-        Period period = Period.between(formattedBirthdate, LocalDate.now());
-        return period.getYears();
-    }
-
-    private LocalDate getFormattedBirthdate(String birthdate) {
+    private LocalDate getLocalBirthdate(String birthdate) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         try {
             return LocalDate.parse(birthdate, formatter);
@@ -53,6 +47,12 @@ public class MedicalRecordService {
             logger.error("Invalid format for birthdate");
             throw e;
         }
+    }
+
+    private int getAge(String birthdate) {
+        LocalDate localBirthdate = getLocalBirthdate(birthdate);
+        Period period = Period.between(localBirthdate, LocalDate.now());
+        return period.getYears();
     }
 
     public MedicalRecord createMedicalRecord(
@@ -76,7 +76,7 @@ public class MedicalRecordService {
          * If not, throws DateTimeParseException handled in Controller
          */
         if (!medicalRecord.getRawBirthdate().isEmpty()) {
-            getFormattedBirthdate(medicalRecord.getRawBirthdate());
+            getLocalBirthdate(medicalRecord.getRawBirthdate());
         }
 
         medicalRecords.add(medicalRecord);
@@ -105,8 +105,8 @@ public class MedicalRecordService {
          * 
          * If not, throws DateTimeParseException handled in Controller
          */
-        if (!medicalRecord.getRawBirthdate().isEmpty()) {
-            getFormattedBirthdate(medicalRecord.getRawBirthdate());
+        if (medicalRecord.getRawBirthdate() != null && !medicalRecord.getRawBirthdate().isEmpty()) {
+            getLocalBirthdate(medicalRecord.getRawBirthdate());
         }
 
         MedicalRecord updatedMedicalRecord = new MedicalRecord(

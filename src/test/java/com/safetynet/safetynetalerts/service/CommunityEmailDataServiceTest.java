@@ -8,26 +8,21 @@ import static org.mockito.Mockito.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import com.safetynet.safetynetalerts.dto.CommunityEmailData;
-import com.safetynet.safetynetalerts.model.Firestation;
-import com.safetynet.safetynetalerts.model.MedicalRecord;
 import com.safetynet.safetynetalerts.model.Person;
 
 @SpringBootTest
 public class CommunityEmailDataServiceTest {
     @MockitoBean
-    private static PersonService personService;
+    private PersonService personService;
     @Autowired
-    CommunityEmailDataService communityEmailDataService;
-    List<Person> persons;
-    List<MedicalRecord> medicalRecords;
-    Set<Firestation> firestations;
+    private CommunityEmailDataService communityEmailDataService;
+    private List<Person> persons;
 
     @BeforeEach
     private void setUp() {

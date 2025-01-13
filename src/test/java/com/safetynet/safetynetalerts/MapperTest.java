@@ -17,8 +17,8 @@ import com.safetynet.safetynetalerts.model.Person;
 @SpringBootTest
 public class MapperTest {
     @Autowired
-    Mapper mapper;
-    Person person;
+    private Mapper mapper;
+    private Person person;
 
     @BeforeEach
     private void setUp() {

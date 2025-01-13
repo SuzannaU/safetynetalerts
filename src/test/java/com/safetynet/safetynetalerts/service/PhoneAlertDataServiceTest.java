@@ -21,10 +21,10 @@ import com.safetynet.safetynetalerts.model.Person;
 @SpringBootTest
 public class PhoneAlertDataServiceTest {
     @MockitoBean
-    private static PersonService personService;
+    private PersonService personService;
     @Autowired
-    PhoneAlertDataService phoneAlertDataService;
-    List<Person> persons;
+    private PhoneAlertDataService phoneAlertDataService;
+    private List<Person> persons;
 
     @BeforeEach
     private void setUp() {
@@ -73,5 +73,4 @@ public class PhoneAlertDataServiceTest {
 
         verify(personService).getPersons();
     }
-
 }

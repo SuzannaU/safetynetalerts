@@ -172,7 +172,7 @@ public class MedicalRecordDataControllerTest {
     }
 
     @Test
-    public void deleteMedicalRecord_withCorrectRequest_returnsIsCreated() throws Exception {
+    public void deleteMedicalRecord_withCorrectRequest_returnsIsAccepted() throws Exception {
 
         when(medicalRecordService.deleteMedicalRecord(any(MedicalRecord.class)))
                 .thenReturn(medicalRecord);

@@ -1,7 +1,6 @@
 package com.safetynet.safetynetalerts.service;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -25,7 +24,7 @@ public class FireDataService {
     }
 
     public FireData getFireData(String address) throws IOException {
-        List<Person> persons = new ArrayList<>();
+        List<Person> persons;
         try {
             persons = personService.getPersons();
         } catch (IOException e) {
@@ -43,15 +42,13 @@ public class FireDataService {
                 .map(p -> mapper.toPersonForFire(p))
                 .collect(Collectors.toList());
 
-        FireData fireData = new FireData();
-        if (firestationIds.isEmpty() || personsForFire.isEmpty() ) {
+        if (firestationIds.isEmpty() || personsForFire.isEmpty()) {
             logger.error("No firestationIds or persons for this address: " + address);
             return null;
-        } else {
-            fireData.setFirestationIds(firestationIds.get());
-            fireData.setResidents(personsForFire);
         }
-
+        FireData fireData = new FireData();
+        fireData.setFirestationIds(firestationIds.get());
+        fireData.setResidents(personsForFire);
         return fireData;
     }
 }

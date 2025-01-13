@@ -25,12 +25,12 @@ import com.safetynet.safetynetalerts.repository.JsonWritingRepository;
 @SpringBootTest
 public class MedicalRecordServiceTest {
     @MockitoBean
-    private static JsonReadingRepository jsonReadingRepository;
+    private JsonReadingRepository jsonReadingRepository;
     @MockitoBean
-    private static JsonWritingRepository jsonWritingRepository;
+    private JsonWritingRepository jsonWritingRepository;
     @Autowired
-    MedicalRecordService medicalRecordService;
-    List<MedicalRecord> medicalRecords;
+    private MedicalRecordService medicalRecordService;
+    private List<MedicalRecord> medicalRecords;
 
     @BeforeEach
     private void setUp() {

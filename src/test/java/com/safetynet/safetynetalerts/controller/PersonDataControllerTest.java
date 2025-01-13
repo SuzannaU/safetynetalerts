@@ -115,7 +115,7 @@ public class PersonDataControllerTest {
     }
 
     @Test
-    public void updatePerson_withCorrectRequest_returnsIsCreated() throws Exception {
+    public void updatePerson_withCorrectRequest_returnsIsAccepted() throws Exception {
 
         when(personService.updatePerson(any(Person.class))).thenReturn(person);
 
@@ -141,7 +141,7 @@ public class PersonDataControllerTest {
     }
 
     @Test
-    public void deletePerson_withCorrectRequest_returnsIsCreated() throws Exception {
+    public void deletePerson_withCorrectRequest_returnsIsAccepted() throws Exception {
 
         when(personService.deletePerson(any(Person.class))).thenReturn(person);
 

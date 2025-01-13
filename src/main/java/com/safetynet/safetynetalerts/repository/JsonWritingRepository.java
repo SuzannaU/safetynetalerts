@@ -85,6 +85,5 @@ public class JsonWritingRepository {
             logger.error("Unable to write Json file");
             throw e;
         }
-
     }
 }

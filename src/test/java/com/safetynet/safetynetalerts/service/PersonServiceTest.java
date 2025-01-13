@@ -27,18 +27,18 @@ import com.safetynet.safetynetalerts.repository.JsonWritingRepository;
 @SpringBootTest
 public class PersonServiceTest {
     @MockitoBean
-    private static JsonReadingRepository jsonReadingRepository;
+    private JsonReadingRepository jsonReadingRepository;
     @MockitoBean
-    private static JsonWritingRepository jsonWritingRepository;
+    private JsonWritingRepository jsonWritingRepository;
     @MockitoBean
-    private static MedicalRecordService medicalRecordService;
+    private MedicalRecordService medicalRecordService;
     @MockitoBean
-    private static FirestationService firestationService;
+    private FirestationService firestationService;
     @Autowired
-    PersonService personService;
-    List<Person> persons;
-    List<MedicalRecord> medicalRecords;
-    Set<Firestation> firestations;
+    private PersonService personService;
+    private List<Person> persons;
+    private List<MedicalRecord> medicalRecords;
+    private Set<Firestation> firestations;
 
     @BeforeEach
     private void setUp() {

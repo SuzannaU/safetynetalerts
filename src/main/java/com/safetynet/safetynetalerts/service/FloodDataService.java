@@ -1,7 +1,6 @@
 package com.safetynet.safetynetalerts.service;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -29,8 +28,9 @@ public class FloodDataService {
     }
 
     public FloodData getFloodData(List<Integer> listOfStationIds) throws IOException {
-        Set<Firestation> firestations = new HashSet<>();
-        List<Person> persons = new ArrayList<>();
+
+        Set<Firestation> firestations;
+        List<Person> persons;
         try {
             firestations = firestationService.getFirestations();
             persons = personService.getPersons();
@@ -62,10 +62,10 @@ public class FloodDataService {
                 }
             }
 
-            FirestationForFlood firestationForFlood = new FirestationForFlood();
             if (addressesForFlood.isEmpty()) {
                 logger.error("Unable to retrieve addresses from firestationId: " + id);
             } else {
+                FirestationForFlood firestationForFlood = new FirestationForFlood();
                 firestationForFlood.setFirestationId(id);
                 firestationForFlood.setAddressesForFlood(addressesForFlood);
 
@@ -73,13 +73,13 @@ public class FloodDataService {
             }
         }
 
-        FloodData floodData = new FloodData();
         if (firestationsForFlood.isEmpty()) {
             logger.error("No firestations retrieved for ids: " + listOfStationIds.toString());
             return null;
-        } else {
-            floodData.setStationsForFlood(firestationsForFlood);
-            return floodData;
         }
+
+        FloodData floodData = new FloodData();
+        floodData.setStationsForFlood(firestationsForFlood);
+        return floodData;
     }
 }

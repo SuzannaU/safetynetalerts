@@ -15,7 +15,14 @@ import com.safetynet.safetynetalerts.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
+/**
+ * Controller for handling requests that need specific data as response
+ * 
+ * <p>
+ * This controller is responsible for handling only GET requests by returning the required data.
+ * </p>
+ * 
+ */
 @RestController
 public class WebAppController {
     private static final Logger logger = LoggerFactory.getLogger(WebAppController.class);
@@ -28,25 +35,48 @@ public class WebAppController {
         this.jsonWritingRepository = jsonWritingRepository;
     }
 
+    /**
+     * Handles IOException.
+     * 
+     * @param e the exception to handle
+     * @return a response entity with NOT_FOUND HTTP status code
+     */
     @ExceptionHandler(IOException.class)
     public ResponseEntity<String> handleIOException(IOException e) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error retrieving/writing data");
     }
-    
+
+    /**
+     * Handles NullPointerException.
+     * 
+     * @param e the exception to handle
+     * @return a response entity with BAD_REQUEST HTTP status code
+     */
     @ExceptionHandler(NullPointerException.class)
     public ResponseEntity<String> handleNullPointerException(NullPointerException e) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error due to missing age or birthdate");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body("Error due to missing age or birthdate");
     }
 
+    /**
+     * Retrieves firestation data based on the station number. It returns the list of residents
+     * served by this station, with their name, address, and phone number. It also gives a count of
+     * adults and children.
+     *
+     * @param stationNumber the station number to retrieve data for
+     * @return a response entity with the firestation data and OK HTTP status code, or NOT_FOUND
+     *         HTTP status code if no firestation matches the number
+     * @throws IOException if an I/O error occurs
+     */
     @GetMapping("/firestation")
-    public ResponseEntity<FirestationData> getFirestationData(
+    public ResponseEntity<Object> getFirestationData(
             @RequestParam("stationNumber") final int stationNumber) throws IOException {
 
+        logger.debug("GET request for firestation received for station number: " + stationNumber);
         FirestationData firestationData = webAppService.getFirestationData(stationNumber);
 
         if (firestationData == null) {
             logger.error("firestationData is empty");
-            jsonWritingRepository.writeOutputFile(null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             logger.info("firestationData sent");
@@ -55,20 +85,28 @@ public class WebAppController {
         }
     }
 
+    /**
+     * Retrieves child alert data based on the address. It returns a list of children living at this
+     * address, with their name and age, and a list of other persons living at that address.
+     *
+     * @param address the address to retrieve data for
+     * @return a response entity with the child alert data and OK HTTP status code, or NOT_FOUND
+     *         HTTP status code if the address is not found in the source data.
+     * @throws IOException if an I/O error occurs
+     */
     @GetMapping("/childAlert")
-    public ResponseEntity<ChildAlertData> getChildAlertData(
+    public ResponseEntity<Object> getChildAlertData(
             @RequestParam("address") final String address) throws IOException {
 
+        logger.debug("GET request for child alert received for address: " + address);
         ChildAlertData childAlertData = webAppService.getChildAlertData(address);
 
         if (childAlertData == null) {
             logger.error("childAlertData is empty");
-            jsonWritingRepository.writeOutputFile(null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else if (childAlertData.getChildren().isEmpty()) {
             logger.error("No children live at this address");
-            jsonWritingRepository.writeOutputFile(null);
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             logger.info("childAlertData sent");
             jsonWritingRepository.writeOutputFile(childAlertData);
@@ -76,15 +114,24 @@ public class WebAppController {
         }
     }
 
+    /**
+     * Retrieves phone alert data based on a station number. It returns a list of all the phone
+     * numbers of the people served by the firestation.
+     *
+     * @param stationNumber the station number to retrieve data for
+     * @return a response entity with the phone alert data and OK HTTP status code, or NOT_FOUND
+     *         HTTP status code if no firestation matches the number.
+     * @throws IOException if an I/O error occurs
+     */
     @GetMapping("/phoneAlert")
-    public ResponseEntity<PhoneAlertData> getPhoneAlertData(
+    public ResponseEntity<Object> getPhoneAlertData(
             @RequestParam("firestation") final int stationNumber) throws IOException {
 
+        logger.debug("GET request for phone alert received for station number: " + stationNumber);
         PhoneAlertData phoneAlertData = webAppService.getPhoneAlertData(stationNumber);
 
         if (phoneAlertData == null) {
             logger.error("phoneAlertData is empty");
-            jsonWritingRepository.writeOutputFile(null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             logger.info("phoneAlertData sent");
@@ -93,15 +140,24 @@ public class WebAppController {
         }
     }
 
+    /**
+     * Retrieves fire data based on the address. It returns a list of persons living at this
+     * address, with their name, phone number, age, and medical records.
+     *
+     * @param address the address to retrieve data for
+     * @return a response entity with the fire data and OK HTTP status code, or NOT_FOUND HTTP
+     *         status code if the address is not found in the source data.
+     * @throws IOException if an I/O error occurs
+     */
     @GetMapping("/fire")
-    public ResponseEntity<FireData> getFireData(
+    public ResponseEntity<Object> getFireData(
             @RequestParam("address") final String address) throws IOException {
 
+        logger.debug("GET request for fire alert received for address: " + address);
         FireData fireData = webAppService.getFireData(address);
 
         if (fireData == null) {
             logger.error("fireData is empty");
-            jsonWritingRepository.writeOutputFile(null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             logger.info("fireData sent");
@@ -110,16 +166,27 @@ public class WebAppController {
         }
     }
 
+    /**
+     * Retrieves flood station data based on a list of station numbers. For each of the station
+     * numbers, it returns the addresses it serves and a list of persons living at each address,
+     * with their name, phone number, age, and medical records.
+     *
+     * @param listOfStationIds the station numbers to retrieve data for
+     * @return a response entity with the stations data and OK HTTP status code, or NOT_FOUND HTTP
+     *         status code if no firestation matches any of the numbers.
+     * @throws IOException if an I/O error occurs
+     */
     @GetMapping("/flood/stations")
-    public ResponseEntity<FloodData> getFloodData(
+    public ResponseEntity<Object> getFloodData(
             @RequestParam("stations") final List<Integer> listOfStationIds)
             throws IOException {
 
+        logger.debug(
+                "GET request for flood alert received for station numbers: " + listOfStationIds);
         FloodData floodData = webAppService.getFloodData(listOfStationIds);
 
         if (floodData == null) {
             logger.error("floodData is empty");
-            jsonWritingRepository.writeOutputFile(null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             logger.info("floodData sent");
@@ -128,32 +195,50 @@ public class WebAppController {
         }
     }
 
+    /**
+     * Retrieves persons info data based on the last name. It returns a list of persons sharing that
+     * last name, with their first name, address, age, email, and medical records.
+     *
+     * @param lastName the last name to retrieve data for
+     * @return a response entity with the info data and OK HTTP status code, or NOT_FOUND HTTP
+     *         status code if the last name is not found in the source data.
+     * @throws IOException if an I/O error occurs
+     */
     @GetMapping("/personInfolastName={lastName}")
-    public ResponseEntity<InfoData> getInfoData(@PathVariable("lastName") final String lastName)
+    public ResponseEntity<Object> getInfoData(@PathVariable("lastName") final String lastName)
             throws IOException {
 
+        logger.debug("GET request for info received for last name: " + lastName);
         InfoData infoData = webAppService.getInfoData(lastName);
 
         if (infoData == null) {
             logger.error("infoData is empty");
-            jsonWritingRepository.writeOutputFile(null);
-            return new ResponseEntity<InfoData>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             logger.info("infoData sent");
             jsonWritingRepository.writeOutputFile(infoData);
-            return new ResponseEntity<InfoData>(infoData, HttpStatus.OK);
+            return new ResponseEntity<>(infoData, HttpStatus.OK);
         }
     }
 
+    /**
+     * Retrieves community email data based on a city name. It returns a list of the emails of the
+     * peole of that city.
+     *
+     * @param city the name of the city to retrieve data for
+     * @return a response entity with the community email data and OK HTTP status code, or NOT_FOUND
+     *         HTTP status code if the city is not in the source data.
+     * @throws IOException if an I/O error occurs
+     */
     @GetMapping("/communityEmail")
-    public ResponseEntity<CommunityEmailData> getCommunityEmailData(
+    public ResponseEntity<Object> getCommunityEmailData(
             @RequestParam("city") final String city) throws IOException {
 
+        logger.debug("GET request for email data received for city: " + city);
         CommunityEmailData communityEmailData = webAppService.getCommunityEmailData(city);
 
         if (communityEmailData == null) {
             logger.error("communityEmailData is empty");
-            jsonWritingRepository.writeOutputFile(null);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             logger.info("communityEmailData sent");

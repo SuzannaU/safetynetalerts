@@ -1,7 +1,6 @@
 package com.safetynet.safetynetalerts.service;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,14 +25,14 @@ public class FirestationDataService {
     }
 
     public FirestationData getFirestationData(int stationNumber) throws IOException {
-
-        List<Person> persons = new ArrayList<>();
+        List<Person> persons;
         try {
             persons = personService.getPersons();
         } catch (IOException e) {
             logger.error("Unable to retrieve data");
             throw e;
         }
+
         List<PersonForStation> personsForStation = persons.stream()
                 .filter(p -> p.getFirestationIds().contains(stationNumber))
                 .map(p -> mapper.toPersonForStation(p))
@@ -55,12 +54,11 @@ public class FirestationDataService {
         if (personsForStation.isEmpty()) {
             logger.error("No persons found for this station number: " + stationNumber);
             return null;
-        } else {
-            FirestationData firestationData = new FirestationData();
-            firestationData.setPersons(personsForStation);
-            firestationData.setCount(count);
-            return firestationData;
         }
-
+        
+        FirestationData firestationData = new FirestationData();
+        firestationData.setPersons(personsForStation);
+        firestationData.setCount(count);
+        return firestationData;
     }
 }

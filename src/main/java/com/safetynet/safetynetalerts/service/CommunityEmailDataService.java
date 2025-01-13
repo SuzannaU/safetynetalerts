@@ -1,7 +1,6 @@
 package com.safetynet.safetynetalerts.service;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -21,7 +20,7 @@ public class CommunityEmailDataService {
     }
 
     public CommunityEmailData getCommunityEmailData(String city) throws IOException {
-        List<Person> persons = new ArrayList<>();
+        List<Person> persons;
         try {
             persons = personService.getPersons();
         } catch (IOException e) {
@@ -34,14 +33,13 @@ public class CommunityEmailDataService {
                 .map(p -> p.getEmail())
                 .collect(Collectors.toSet());
 
-        CommunityEmailData communityEmailData = new CommunityEmailData();
         if (emails.isEmpty()) {
             logger.error("No emails related to this city: " + city);
             return null;
-        } else {
-            communityEmailData.setEmails(emails);
         }
 
+        CommunityEmailData communityEmailData = new CommunityEmailData();
+        communityEmailData.setEmails(emails);
         return communityEmailData;
     }
 }
