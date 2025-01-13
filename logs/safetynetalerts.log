@@ -789,3 +789,573 @@
 2025-01-13 11:58:15 [http-nio-8080-exec-3] DEBUG annotation.HttpEntityMethodProcessor: writeWithMessageConverters --- Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2025-01-13 11:58:15 [http-nio-8080-exec-3] DEBUG annotation.HttpEntityMethodProcessor: traceDebug           --- Writing [com.safetynet.safetynetalerts.model.MedicalRecord@3ddf007]
 2025-01-13 11:58:15 [http-nio-8080-exec-3] DEBUG            servlet.DispatcherServlet: logResult            --- Completed 400 BAD_REQUEST
+2025-01-13 12:44:33 [main] INFO  netalerts.SafetynetalertsApplication: logStarting          --- Starting SafetynetalertsApplication using Java 17.0.8 with PID 8916 (C:\Users\eliza\Programmation\Projet5\safetynetalerts\target\classes started by eliza in C:\Users\eliza\Programmation\Projet5\safetynetalerts)
+2025-01-13 12:44:33 [main] DEBUG netalerts.SafetynetalertsApplication: logStarting          --- Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-01-13 12:44:33 [main] INFO  netalerts.SafetynetalertsApplication: logStartupProfileInfo --- No active profile set, falling back to 1 default profile: "default"
+2025-01-13 12:44:34 [main] INFO                tomcat.TomcatWebServer: initialize           --- Tomcat initialized with port 8080 (http)
+2025-01-13 12:44:34 [main] INFO              http11.Http11NioProtocol: log                  --- Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-13 12:44:34 [main] INFO                  core.StandardService: log                  --- Starting service [Tomcat]
+2025-01-13 12:44:34 [main] INFO                   core.StandardEngine: log                  --- Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-13 12:44:34 [main] INFO                       [localhost].[/]: log                  --- Initializing Spring embedded WebApplicationContext
+2025-01-13 12:44:34 [main] INFO  t.ServletWebServerApplicationContext: prepareWebApplicationContext --- Root WebApplicationContext: initialization completed in 1473 ms
+2025-01-13 12:44:34 [main] DEBUG otation.RequestMappingHandlerMapping: handlerMethodsInitialized --- 18 mappings in 'requestMappingHandlerMapping'
+2025-01-13 12:44:35 [main] DEBUG      handler.SimpleUrlHandlerMapping: logMappings          --- Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-01-13 12:44:35 [main] DEBUG otation.RequestMappingHandlerAdapter: initControllerAdviceCache --- ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-01-13 12:44:35 [main] DEBUG on.ExceptionHandlerExceptionResolver: initExceptionHandlerAdviceCache --- ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-01-13 12:44:35 [main] INFO              http11.Http11NioProtocol: log                  --- Starting ProtocolHandler ["http-nio-8080"]
+2025-01-13 12:44:35 [main] INFO                tomcat.TomcatWebServer: start                --- Tomcat started on port 8080 (http) with context path '/'
+2025-01-13 12:44:35 [main] INFO  netalerts.SafetynetalertsApplication: logStarted           --- Started SafetynetalertsApplication in 3.797 seconds (process running for 4.467)
+2025-01-13 12:44:40 [http-nio-8080-exec-2] INFO                       [localhost].[/]: log                  --- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-13 12:44:40 [http-nio-8080-exec-2] INFO             servlet.DispatcherServlet: initServletBean      --- Initializing Servlet 'dispatcherServlet'
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG            servlet.DispatcherServlet: initMultipartResolver --- Detected StandardServletMultipartResolver
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG            servlet.DispatcherServlet: initLocaleResolver   --- Detected AcceptHeaderLocaleResolver
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG            servlet.DispatcherServlet: initThemeResolver    --- Detected FixedThemeResolver
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG            servlet.DispatcherServlet: initRequestToViewNameTranslator --- Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2fc7a38b
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG            servlet.DispatcherServlet: initFlashMapManager  --- Detected org.springframework.web.servlet.support.SessionFlashMapManager@562c5122
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG            servlet.DispatcherServlet: initServletBean      --- enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-01-13 12:44:40 [http-nio-8080-exec-2] INFO             servlet.DispatcherServlet: initServletBean      --- Completed initialization in 6 ms
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG            servlet.DispatcherServlet: traceDebug           --- GET "/childAlert?address=1509%20Culver%20St", parameters={masked}
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG otation.RequestMappingHandlerMapping: getHandler           --- Mapped to com.safetynet.safetynetalerts.controller.WebAppController#getChildAlertData(String)
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG     repository.JsonReadingRepository: getPersons           --- persons retrieved
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG     repository.JsonReadingRepository: getMedicalRecords    --- medicalRecords retrieved
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG     repository.JsonReadingRepository: getFirestations      --- firestations retrieved
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG               safetynetalerts.Mapper: toChildForChildAlert --- Mapped to ChildForChildAlert
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG               safetynetalerts.Mapper: toChildForChildAlert --- Mapped to ChildForChildAlert
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG               safetynetalerts.Mapper: toAdultForChildAlert --- Mapped to AdultForChildAlert
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG               safetynetalerts.Mapper: toAdultForChildAlert --- Mapped to AdultForChildAlert
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG               safetynetalerts.Mapper: toAdultForChildAlert --- Mapped to AdultForChildAlert
+2025-01-13 12:44:40 [http-nio-8080-exec-2] INFO           controller.WebAppController: getChildAlertData    --- childAlertData sent
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG     repository.JsonWritingRepository: writeOutputFile      --- Data written at: target/output.json
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG annotation.HttpEntityMethodProcessor: writeWithMessageConverters --- Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG annotation.HttpEntityMethodProcessor: traceDebug           --- Writing [com.safetynet.safetynetalerts.dto.ChildAlertData@32a4356d]
+2025-01-13 12:44:40 [http-nio-8080-exec-2] DEBUG            servlet.DispatcherServlet: logResult            --- Completed 200 OK
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG            servlet.DispatcherServlet: traceDebug           --- GET "/firestation?stationNumber=1", parameters={masked}
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG otation.RequestMappingHandlerMapping: getHandler           --- Mapped to com.safetynet.safetynetalerts.controller.WebAppController#getFirestationData(int)
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG     repository.JsonReadingRepository: getPersons           --- persons retrieved
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG     repository.JsonReadingRepository: getMedicalRecords    --- medicalRecords retrieved
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG     repository.JsonReadingRepository: getFirestations      --- firestations retrieved
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG               safetynetalerts.Mapper: toPersonForStation   --- Mapped to PersonForStation
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG               safetynetalerts.Mapper: toPersonForStation   --- Mapped to PersonForStation
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG               safetynetalerts.Mapper: toPersonForStation   --- Mapped to PersonForStation
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG               safetynetalerts.Mapper: toPersonForStation   --- Mapped to PersonForStation
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG               safetynetalerts.Mapper: toPersonForStation   --- Mapped to PersonForStation
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG               safetynetalerts.Mapper: toPersonForStation   --- Mapped to PersonForStation
+2025-01-13 12:44:45 [http-nio-8080-exec-3] INFO           controller.WebAppController: getFirestationData   --- firestationData sent
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG     repository.JsonWritingRepository: writeOutputFile      --- Data written at: target/output.json
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG annotation.HttpEntityMethodProcessor: writeWithMessageConverters --- Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG annotation.HttpEntityMethodProcessor: traceDebug           --- Writing [com.safetynet.safetynetalerts.dto.FirestationData@7337f40c]
+2025-01-13 12:44:45 [http-nio-8080-exec-3] DEBUG            servlet.DispatcherServlet: logResult            --- Completed 200 OK
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG            servlet.DispatcherServlet: traceDebug           --- GET "/phoneAlert?firestation=4", parameters={masked}
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG otation.RequestMappingHandlerMapping: getHandler           --- Mapped to com.safetynet.safetynetalerts.controller.WebAppController#getPhoneAlertData(int)
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG     repository.JsonReadingRepository: getPersons           --- persons retrieved
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG     repository.JsonReadingRepository: getMedicalRecords    --- medicalRecords retrieved
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG     repository.JsonReadingRepository: getFirestations      --- firestations retrieved
+2025-01-13 12:44:50 [http-nio-8080-exec-4] INFO           controller.WebAppController: getPhoneAlertData    --- phoneAlertData sent
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG     repository.JsonWritingRepository: writeOutputFile      --- Data written at: target/output.json
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG annotation.HttpEntityMethodProcessor: writeWithMessageConverters --- Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG annotation.HttpEntityMethodProcessor: traceDebug           --- Writing [com.safetynet.safetynetalerts.dto.PhoneAlertData@60618ca4]
+2025-01-13 12:44:50 [http-nio-8080-exec-4] DEBUG            servlet.DispatcherServlet: logResult            --- Completed 200 OK
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG            servlet.DispatcherServlet: traceDebug           --- GET "/fire?address=112%20Steppes%20Pl", parameters={masked}
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG otation.RequestMappingHandlerMapping: getHandler           --- Mapped to com.safetynet.safetynetalerts.controller.WebAppController#getFireData(String)
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG     repository.JsonReadingRepository: getPersons           --- persons retrieved
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG     repository.JsonReadingRepository: getMedicalRecords    --- medicalRecords retrieved
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG     repository.JsonReadingRepository: getFirestations      --- firestations retrieved
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG               safetynetalerts.Mapper: toPersonForFire      --- Mapped to PersonForFire
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG               safetynetalerts.Mapper: toPersonForFire      --- Mapped to PersonForFire
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG               safetynetalerts.Mapper: toPersonForFire      --- Mapped to PersonForFire
+2025-01-13 12:44:55 [http-nio-8080-exec-5] INFO           controller.WebAppController: getFireData          --- fireData sent
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG     repository.JsonWritingRepository: writeOutputFile      --- Data written at: target/output.json
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG annotation.HttpEntityMethodProcessor: writeWithMessageConverters --- Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG annotation.HttpEntityMethodProcessor: traceDebug           --- Writing [com.safetynet.safetynetalerts.dto.FireData@58c657f4]
+2025-01-13 12:44:55 [http-nio-8080-exec-5] DEBUG            servlet.DispatcherServlet: logResult            --- Completed 200 OK
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG            servlet.DispatcherServlet: traceDebug           --- GET "/flood/stations?stations=1,4", parameters={masked}
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG otation.RequestMappingHandlerMapping: getHandler           --- Mapped to com.safetynet.safetynetalerts.controller.WebAppController#getFloodData(List)
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG     repository.JsonReadingRepository: getFirestations      --- firestations retrieved
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG     repository.JsonReadingRepository: getPersons           --- persons retrieved
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG     repository.JsonReadingRepository: getMedicalRecords    --- medicalRecords retrieved
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG     repository.JsonReadingRepository: getFirestations      --- firestations retrieved
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG               safetynetalerts.Mapper: toPersonForFlood     --- Mapped to PersonForFlodd
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG               safetynetalerts.Mapper: toPersonForFlood     --- Mapped to PersonForFlodd
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG               safetynetalerts.Mapper: toPersonForFlood     --- Mapped to PersonForFlodd
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG               safetynetalerts.Mapper: toPersonForFlood     --- Mapped to PersonForFlodd
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG               safetynetalerts.Mapper: toPersonForFlood     --- Mapped to PersonForFlodd
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG               safetynetalerts.Mapper: toPersonForFlood     --- Mapped to PersonForFlodd
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG               safetynetalerts.Mapper: toPersonForFlood     --- Mapped to PersonForFlodd
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG               safetynetalerts.Mapper: toPersonForFlood     --- Mapped to PersonForFlodd
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG               safetynetalerts.Mapper: toPersonForFlood     --- Mapped to PersonForFlodd
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG               safetynetalerts.Mapper: toPersonForFlood     --- Mapped to PersonForFlodd
+2025-01-13 12:45:01 [http-nio-8080-exec-6] INFO           controller.WebAppController: getFloodData         --- floodData sent
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG     repository.JsonWritingRepository: writeOutputFile      --- Data written at: target/output.json
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG annotation.HttpEntityMethodProcessor: writeWithMessageConverters --- Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG annotation.HttpEntityMethodProcessor: traceDebug           --- Writing [com.safetynet.safetynetalerts.dto.FloodData@2ee2e39]
+2025-01-13 12:45:01 [http-nio-8080-exec-6] DEBUG            servlet.DispatcherServlet: logResult            --- Completed 200 OK
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG            servlet.DispatcherServlet: traceDebug           --- GET "/personInfolastName=Cooper", parameters={}
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG otation.RequestMappingHandlerMapping: getHandler           --- Mapped to com.safetynet.safetynetalerts.controller.WebAppController#getInfoData(String)
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG     repository.JsonReadingRepository: getPersons           --- persons retrieved
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG     repository.JsonReadingRepository: getMedicalRecords    --- medicalRecords retrieved
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG     repository.JsonReadingRepository: getFirestations      --- firestations retrieved
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG               safetynetalerts.Mapper: toPersonForInfo      --- Mapped to PersonForInfo
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG               safetynetalerts.Mapper: toPersonForInfo      --- Mapped to PersonForInfo
+2025-01-13 12:45:06 [http-nio-8080-exec-7] INFO           controller.WebAppController: getInfoData          --- infoData sent
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG     repository.JsonWritingRepository: writeOutputFile      --- Data written at: target/output.json
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG annotation.HttpEntityMethodProcessor: writeWithMessageConverters --- Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG annotation.HttpEntityMethodProcessor: traceDebug           --- Writing [com.safetynet.safetynetalerts.dto.InfoData@15d67bfe]
+2025-01-13 12:45:06 [http-nio-8080-exec-7] DEBUG            servlet.DispatcherServlet: logResult            --- Completed 200 OK
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG            servlet.DispatcherServlet: traceDebug           --- GET "/communityEmail?city=Culver", parameters={masked}
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG otation.RequestMappingHandlerMapping: getHandler           --- Mapped to com.safetynet.safetynetalerts.controller.WebAppController#getCommunityEmailData(String)
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                         model.Person: <init>               --- Person created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG     repository.JsonReadingRepository: getPersons           --- persons retrieved
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                  model.MedicalRecord: <init>               --- MedicalRecord created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG     repository.JsonReadingRepository: getMedicalRecords    --- medicalRecords retrieved
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG     repository.JsonReadingRepository: getNode              --- Data recoverd at path: src/main/resources/data.json
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG                    model.Firestation: <init>               --- Firestation created
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG     repository.JsonReadingRepository: getFirestations      --- firestations retrieved
+2025-01-13 12:45:20 [http-nio-8080-exec-8] INFO           controller.WebAppController: getCommunityEmailData --- communityEmailData sent
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG     repository.JsonWritingRepository: writeOutputFile      --- Data written at: target/output.json
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG annotation.HttpEntityMethodProcessor: writeWithMessageConverters --- Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG annotation.HttpEntityMethodProcessor: traceDebug           --- Writing [com.safetynet.safetynetalerts.dto.CommunityEmailData@6d4881b1]
+2025-01-13 12:45:20 [http-nio-8080-exec-8] DEBUG            servlet.DispatcherServlet: logResult            --- Completed 200 OK

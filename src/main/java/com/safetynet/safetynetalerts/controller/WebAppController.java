@@ -2,7 +2,6 @@ package com.safetynet.safetynetalerts.controller;
 
 import java.io.IOException;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -20,23 +19,14 @@ import org.slf4j.LoggerFactory;
 @RestController
 public class WebAppController {
     private static final Logger logger = LoggerFactory.getLogger(WebAppController.class);
-
-    @Autowired
-    private FirestationDataService firestationDataService;
-    @Autowired
-    private ChildAlertDataService childAlertDataService;
-    @Autowired
-    private PhoneAlertDataService phoneAlertDataService;
-    @Autowired
-    private FireDataService fireDataService;
-    @Autowired
-    private FloodDataService floodDataService;
-    @Autowired
-    private InfoDataService infoDataService;
-    @Autowired
-    private CommunityEmailDataService communityEmailDataService;
-    @Autowired
+    private WebAppService webAppService;
     private JsonWritingRepository jsonWritingRepository;
+
+    public WebAppController(WebAppService webAppService,
+            JsonWritingRepository jsonWritingRepository) {
+        this.webAppService = webAppService;
+        this.jsonWritingRepository = jsonWritingRepository;
+    }
 
     @ExceptionHandler(IOException.class)
     public ResponseEntity<String> handleIOException(IOException e) {
@@ -52,7 +42,7 @@ public class WebAppController {
     public ResponseEntity<FirestationData> getFirestationData(
             @RequestParam("stationNumber") final int stationNumber) throws IOException {
 
-        FirestationData firestationData = firestationDataService.getFirestationData(stationNumber);
+        FirestationData firestationData = webAppService.getFirestationData(stationNumber);
 
         if (firestationData == null) {
             logger.error("firestationData is empty");
@@ -69,7 +59,7 @@ public class WebAppController {
     public ResponseEntity<ChildAlertData> getChildAlertData(
             @RequestParam("address") final String address) throws IOException {
 
-        ChildAlertData childAlertData = childAlertDataService.getChildAlertData(address);
+        ChildAlertData childAlertData = webAppService.getChildAlertData(address);
 
         if (childAlertData == null) {
             logger.error("childAlertData is empty");
@@ -90,7 +80,7 @@ public class WebAppController {
     public ResponseEntity<PhoneAlertData> getPhoneAlertData(
             @RequestParam("firestation") final int stationNumber) throws IOException {
 
-        PhoneAlertData phoneAlertData = phoneAlertDataService.getPhoneAlertData(stationNumber);
+        PhoneAlertData phoneAlertData = webAppService.getPhoneAlertData(stationNumber);
 
         if (phoneAlertData == null) {
             logger.error("phoneAlertData is empty");
@@ -107,7 +97,7 @@ public class WebAppController {
     public ResponseEntity<FireData> getFireData(
             @RequestParam("address") final String address) throws IOException {
 
-        FireData fireData = fireDataService.getFireData(address);
+        FireData fireData = webAppService.getFireData(address);
 
         if (fireData == null) {
             logger.error("fireData is empty");
@@ -125,7 +115,7 @@ public class WebAppController {
             @RequestParam("stations") final List<Integer> listOfStationIds)
             throws IOException {
 
-        FloodData floodData = floodDataService.getFloodData(listOfStationIds);
+        FloodData floodData = webAppService.getFloodData(listOfStationIds);
 
         if (floodData == null) {
             logger.error("floodData is empty");
@@ -142,7 +132,7 @@ public class WebAppController {
     public ResponseEntity<InfoData> getInfoData(@PathVariable("lastName") final String lastName)
             throws IOException {
 
-        InfoData infoData = infoDataService.getInfoData(lastName);
+        InfoData infoData = webAppService.getInfoData(lastName);
 
         if (infoData == null) {
             logger.error("infoData is empty");
@@ -159,7 +149,7 @@ public class WebAppController {
     public ResponseEntity<CommunityEmailData> getCommunityEmailData(
             @RequestParam("city") final String city) throws IOException {
 
-        CommunityEmailData communityEmailData = communityEmailDataService.getCommunityEmailData(city);
+        CommunityEmailData communityEmailData = webAppService.getCommunityEmailData(city);
 
         if (communityEmailData == null) {
             logger.error("communityEmailData is empty");
