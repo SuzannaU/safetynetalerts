@@ -151,13 +151,13 @@ public class WebAppControllerTest {
     }
 
     @Test
-    public void getFirestationData_withWrongRequest_returnsNotFound() throws Exception {
+    public void getFirestationData_withNoData_returnsNoContent() throws Exception {
 
         when(webAppService.getFirestationData(anyInt())).thenReturn(null);
 
         mockMvc.perform(get("/firestation").param("stationNumber", "1")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound());
+                .andExpect(status().isNoContent());
 
         verify(webAppService).getFirestationData(anyInt());
     }
@@ -188,19 +188,19 @@ public class WebAppControllerTest {
 
         mockMvc.perform(get("/childAlert").param("address", "address")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound());
+                .andExpect(status().isNoContent());
 
         verify(webAppService).getChildAlertData(any(String.class));
     }
 
     @Test
-    public void getChildAlertData_withWrongRequest_returnsNotFound() throws Exception {
+    public void getChildAlertData_withNoData_returnsNoContent() throws Exception {
 
         when(webAppService.getChildAlertData(any(String.class))).thenReturn(null);
 
         mockMvc.perform(get("/childAlert").param("address", "address")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound());
+                .andExpect(status().isNoContent());
 
         verify(webAppService).getChildAlertData(any(String.class));
     }
@@ -219,13 +219,13 @@ public class WebAppControllerTest {
     }
 
     @Test
-    public void getPhoneAlertData_withWrongRequest_returnsNotFound() throws Exception {
+    public void getPhoneAlertData_withNoData_returnsNoContent() throws Exception {
 
         when(webAppService.getPhoneAlertData(anyInt())).thenReturn(null);
 
         mockMvc.perform(get("/phoneAlert").param("firestation", "1")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound());
+                .andExpect(status().isNoContent());
 
         verify(webAppService).getPhoneAlertData(anyInt());
     }
@@ -244,13 +244,13 @@ public class WebAppControllerTest {
     }
 
     @Test
-    public void getFireData_withWrongRequest_returnsNotFound() throws Exception {
+    public void getFireData_withNoData_returnsNoContent() throws Exception {
 
         when(webAppService.getFireData(any(String.class))).thenReturn(null);
 
         mockMvc.perform(get("/fire").param("address", "address")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound());
+                .andExpect(status().isNoContent());
 
         verify(webAppService).getFireData(any(String.class));
     }
@@ -269,13 +269,13 @@ public class WebAppControllerTest {
     }
 
     @Test
-    public void getFloodData_withWrongRequest_returnsNotFound() throws Exception {
+    public void getFloodData_withNoData_returnsNoContent() throws Exception {
 
         when(webAppService.getFloodData(anyList())).thenReturn(null);
 
         mockMvc.perform(get("/flood/stations").param("stations", "1")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound());
+                .andExpect(status().isNoContent());
 
         verify(webAppService).getFloodData(anyList());
     }
@@ -294,13 +294,13 @@ public class WebAppControllerTest {
     }
 
     @Test
-    public void getInfoData_withWrongRequest_returnsNotFound() throws Exception {
+    public void getInfoData_withNoData_returnsNoContent() throws Exception {
 
         when(webAppService.getInfoData(any(String.class))).thenReturn(null);
 
         mockMvc.perform(get("/personInfolastName={lastName}", "doe")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound());
+                .andExpect(status().isNoContent());
 
         verify(webAppService).getInfoData(any(String.class));
 
@@ -322,13 +322,13 @@ public class WebAppControllerTest {
     }
 
     @Test
-    public void getCommunityEmailData_withWrongRequest_returnsNotFound() throws Exception {
+    public void getCommunityEmailData_withNoData_returnsNoContent() throws Exception {
 
         when(webAppService.getCommunityEmailData(any(String.class))).thenReturn(null);
 
         mockMvc.perform(get("/communityEmail").param("city", "city")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound());
+                .andExpect(status().isNoContent());
 
         verify(webAppService).getCommunityEmailData(any(String.class));
     }

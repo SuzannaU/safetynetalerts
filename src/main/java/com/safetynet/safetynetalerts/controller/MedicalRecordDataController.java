@@ -87,7 +87,7 @@ public class MedicalRecordDataController {
 
         if (newMedicalRecord == null) {
             logger.error("newMedicalRecord is null");
-            return new ResponseEntity<>(medicalRecord, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(medicalRecord, HttpStatus.NO_CONTENT);
         } else {
             logger.info("newMedicalRecord sent");
             return new ResponseEntity<>(newMedicalRecord, HttpStatus.CREATED);
@@ -112,10 +112,10 @@ public class MedicalRecordDataController {
 
         if (updatedMedicalRecord == null) {
             logger.error("updatedMedicalRecord is null");
-            return new ResponseEntity<>(medicalRecord, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(medicalRecord, HttpStatus.NO_CONTENT);
         } else {
             logger.info("updatedMedicalRecord sent");
-            return new ResponseEntity<>(updatedMedicalRecord, HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(updatedMedicalRecord, HttpStatus.OK);
         }
     }
 
@@ -137,10 +137,10 @@ public class MedicalRecordDataController {
 
         if (deletedMedicalRecord == null) {
             logger.error("deletedMedicalRecord is null");
-            return new ResponseEntity<>(medicalRecord, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(medicalRecord, HttpStatus.NO_CONTENT);
         } else {
             logger.info("deletedMedicalRecord sent");
-            return new ResponseEntity<>(deletedMedicalRecord, HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(deletedMedicalRecord, HttpStatus.OK);
         }
     }
 }

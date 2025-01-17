@@ -74,7 +74,7 @@ public class FirestationDataController {
 
         if (newFirestation == null) {
             logger.error("newFirestation is null");
-            return new ResponseEntity<>(firestation, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(firestation, HttpStatus.NO_CONTENT);
         } else {
             logger.info("newFirestation sent");
             return new ResponseEntity<>(newFirestation, HttpStatus.CREATED);
@@ -99,10 +99,10 @@ public class FirestationDataController {
 
         if (updatedFirestation == null) {
             logger.error("updatedFirestation is null");
-            return new ResponseEntity<>(firestation, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(firestation, HttpStatus.NO_CONTENT);
         } else {
             logger.info("updatedFirestation sent");
-            return new ResponseEntity<>(updatedFirestation, HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(updatedFirestation, HttpStatus.OK);
         }
     }
 
@@ -123,10 +123,10 @@ public class FirestationDataController {
 
         if (deletedFirestation == null) {
             logger.error("deletedFirestation is null");
-            return new ResponseEntity<>(firestation, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(firestation, HttpStatus.NO_CONTENT);
         } else {
             logger.info("deletedFirestation sent");
-            return new ResponseEntity<>(deletedFirestation, HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(deletedFirestation, HttpStatus.OK);
         }
     }
 }

@@ -102,66 +102,66 @@ public class PersonDataControllerTest {
     }
 
     @Test
-    public void createPerson_withWrongRequest_returnsBadRequest() throws Exception {
+    public void createPerson_withNoData_returnsNoContent() throws Exception {
 
         when(personService.createPerson(any(Person.class))).thenReturn(null);
 
         mockMvc.perform(post("/person")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(person)))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isNoContent());
 
         verify(personService).createPerson(any(Person.class));
     }
 
     @Test
-    public void updatePerson_withCorrectRequest_returnsIsAccepted() throws Exception {
+    public void updatePerson_withCorrectRequest_returnsIsOk() throws Exception {
 
         when(personService.updatePerson(any(Person.class))).thenReturn(person);
 
         mockMvc.perform(put("/person")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(person)))
-                .andExpect(status().isAccepted());
+                .andExpect(status().isOk());
 
         verify(personService).updatePerson(any(Person.class));
     }
 
     @Test
-    public void updatePerson_withWrongRequest_returnsBadRequest() throws Exception {
+    public void updatePerson_withNoData_returnsNoContent() throws Exception {
 
         when(personService.updatePerson(any(Person.class))).thenReturn(null);
 
         mockMvc.perform(put("/person")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(person)))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isNoContent());
 
         verify(personService).updatePerson(any(Person.class));
     }
 
     @Test
-    public void deletePerson_withCorrectRequest_returnsIsAccepted() throws Exception {
+    public void deletePerson_withCorrectRequest_returnsIsOk() throws Exception {
 
         when(personService.deletePerson(any(Person.class))).thenReturn(person);
 
         mockMvc.perform(delete("/person")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(person)))
-                .andExpect(status().isAccepted());
+                .andExpect(status().isOk());
 
         verify(personService).deletePerson(any(Person.class));
     }
 
     @Test
-    public void deletePerson_withWrongRequest_returnsBadRequest() throws Exception {
+    public void deletePerson_withNoData_returnsNoContent() throws Exception {
 
         when(personService.deletePerson(any(Person.class))).thenReturn(null);
 
         mockMvc.perform(delete("/person")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(person)))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isNoContent());
 
         verify(personService).deletePerson(any(Person.class));
     }

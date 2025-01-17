@@ -132,20 +132,20 @@ public class MedicalRecordDataControllerTest {
     }
 
     @Test
-    public void createMedicalRecord_withWrongRequest_returnsBadRequest() throws Exception {
+    public void createMedicalRecord_withNoData_returnsNoContent() throws Exception {
 
         when(medicalRecordService.createMedicalRecord(any(MedicalRecord.class))).thenReturn(null);
 
         mockMvc.perform(post("/medicalRecord")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(medicalRecord)))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isNoContent());
 
         verify(medicalRecordService).createMedicalRecord(any(MedicalRecord.class));
     }
 
     @Test
-    public void updateMedicalRecord_withCorrectRequest_returnsIsCreated() throws Exception {
+    public void updateMedicalRecord_withCorrectRequest_returnsIsOk() throws Exception {
 
         when(medicalRecordService.updateMedicalRecord(any(MedicalRecord.class)))
                 .thenReturn(medicalRecord);
@@ -153,26 +153,26 @@ public class MedicalRecordDataControllerTest {
         mockMvc.perform(put("/medicalRecord")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(medicalRecord)))
-                .andExpect(status().isAccepted());
+                .andExpect(status().isOk());
 
         verify(medicalRecordService).updateMedicalRecord(any(MedicalRecord.class));
     }
 
     @Test
-    public void updateMedicalRecord_withWrongRequest_returnsBadRequest() throws Exception {
+    public void updateMedicalRecord_withNoData_returnsNoContent() throws Exception {
 
         when(medicalRecordService.updateMedicalRecord(any(MedicalRecord.class))).thenReturn(null);
 
         mockMvc.perform(put("/medicalRecord")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(medicalRecord)))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isNoContent());
 
         verify(medicalRecordService).updateMedicalRecord(any(MedicalRecord.class));
     }
 
     @Test
-    public void deleteMedicalRecord_withCorrectRequest_returnsIsAccepted() throws Exception {
+    public void deleteMedicalRecord_withCorrectRequest_returnsIsOk() throws Exception {
 
         when(medicalRecordService.deleteMedicalRecord(any(MedicalRecord.class)))
                 .thenReturn(medicalRecord);
@@ -180,20 +180,20 @@ public class MedicalRecordDataControllerTest {
         mockMvc.perform(delete("/medicalRecord")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(medicalRecord)))
-                .andExpect(status().isAccepted());
+                .andExpect(status().isOk());
 
         verify(medicalRecordService).deleteMedicalRecord(any(MedicalRecord.class));
     }
 
     @Test
-    public void deleteMedicalRecord_withWrongRequest_returnsBadRequest() throws Exception {
+    public void deleteMedicalRecord_withNoData_returnsNoContent() throws Exception {
 
         when(medicalRecordService.deleteMedicalRecord(any(MedicalRecord.class))).thenReturn(null);
 
         mockMvc.perform(delete("/medicalRecord")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(medicalRecord)))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isNoContent());
 
         verify(medicalRecordService).deleteMedicalRecord(any(MedicalRecord.class));
     }

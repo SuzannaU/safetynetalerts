@@ -1,4 +1,4 @@
-package com.safetynet.safetynetalerts;
+package com.safetynet.safetynetalerts.mapper;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

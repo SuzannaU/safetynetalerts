@@ -77,7 +77,7 @@ public class WebAppController {
 
         if (firestationData == null) {
             logger.error("firestationData is empty");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
             logger.info("firestationData sent");
             jsonWritingRepository.writeOutputFile(firestationData);
@@ -103,10 +103,10 @@ public class WebAppController {
 
         if (childAlertData == null) {
             logger.error("childAlertData is empty");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else if (childAlertData.getChildren().isEmpty()) {
             logger.error("No children live at this address");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
             logger.info("childAlertData sent");
             jsonWritingRepository.writeOutputFile(childAlertData);
@@ -132,7 +132,7 @@ public class WebAppController {
 
         if (phoneAlertData == null) {
             logger.error("phoneAlertData is empty");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
             logger.info("phoneAlertData sent");
             jsonWritingRepository.writeOutputFile(phoneAlertData);
@@ -158,7 +158,7 @@ public class WebAppController {
 
         if (fireData == null) {
             logger.error("fireData is empty");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
             logger.info("fireData sent");
             jsonWritingRepository.writeOutputFile(fireData);
@@ -187,7 +187,7 @@ public class WebAppController {
 
         if (floodData == null) {
             logger.error("floodData is empty");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
             logger.info("floodData sent");
             jsonWritingRepository.writeOutputFile(floodData);
@@ -213,7 +213,7 @@ public class WebAppController {
 
         if (infoData == null) {
             logger.error("infoData is empty");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
             logger.info("infoData sent");
             jsonWritingRepository.writeOutputFile(infoData);
@@ -239,7 +239,7 @@ public class WebAppController {
 
         if (communityEmailData == null) {
             logger.error("communityEmailData is empty");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
             logger.info("communityEmailData sent");
             jsonWritingRepository.writeOutputFile(communityEmailData);

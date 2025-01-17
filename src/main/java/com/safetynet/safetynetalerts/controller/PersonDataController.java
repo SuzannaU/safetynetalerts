@@ -73,7 +73,7 @@ public class PersonDataController {
 
         if (newPerson == null) {
             logger.error("newPerson is null");
-            return new ResponseEntity<>(person, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(person, HttpStatus.NO_CONTENT);
         } else {
             logger.info("newPerson sent");
             return new ResponseEntity<>(newPerson, HttpStatus.CREATED);
@@ -96,10 +96,10 @@ public class PersonDataController {
 
         if (updatedPerson == null) {
             logger.error("updatedPerson is null");
-            return new ResponseEntity<>(person, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(person, HttpStatus.NO_CONTENT);
         } else {
             logger.info("updatedPerson sent");
-            return new ResponseEntity<>(updatedPerson, HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(updatedPerson, HttpStatus.OK);
         }
     }
 
@@ -119,10 +119,10 @@ public class PersonDataController {
 
         if (deletedPerson == null) {
             logger.error("deletedPerson is null");
-            return new ResponseEntity<>(person, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(person, HttpStatus.NO_CONTENT);
         } else {
             logger.info("deletedPerson sent");
-            return new ResponseEntity<>(deletedPerson, HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(deletedPerson, HttpStatus.OK);
         }
     }
 }

@@ -17,9 +17,9 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
-import com.safetynet.safetynetalerts.Mapper;
 import com.safetynet.safetynetalerts.dto.FloodData;
 import com.safetynet.safetynetalerts.dto.PersonForFlood;
+import com.safetynet.safetynetalerts.mapper.Mapper;
 import com.safetynet.safetynetalerts.model.Firestation;
 import com.safetynet.safetynetalerts.model.Person;
 

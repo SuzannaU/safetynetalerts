@@ -101,62 +101,62 @@ public class FirestationDataControllerTest {
     }
 
     @Test
-    public void createFirestation_withWrongRequest_returnsBadRequest() throws Exception {
+    public void createFirestation_withNoData_returnsNoContent() throws Exception {
 
         when(firestationService.createFirestation(any(Firestation.class))).thenReturn(null);
 
         mockMvc.perform(post("/firestation")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(firestation)))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isNoContent());
         verify(firestationService).createFirestation(any(Firestation.class));
     }
 
     @Test
-    public void updateFirestation_withCorrectRequest_returnsIsCreated() throws Exception {
+    public void updateFirestation_withCorrectRequest_returnsIsOk() throws Exception {
 
         when(firestationService.updateFirestation(any(Firestation.class))).thenReturn(firestation);
 
         mockMvc.perform(put("/firestation")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(firestation)))
-                .andExpect(status().isAccepted());
+                .andExpect(status().isOk());
         verify(firestationService).updateFirestation(any(Firestation.class));
     }
 
     @Test
-    public void updateFirestation_withWrongRequest_returnsBadRequest() throws Exception {
+    public void updateFirestation_withNoData_returnsNoContent() throws Exception {
 
         when(firestationService.updateFirestation(any(Firestation.class))).thenReturn(null);
 
         mockMvc.perform(put("/firestation")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(firestation)))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isNoContent());
         verify(firestationService).updateFirestation(any(Firestation.class));
     }
 
     @Test
-    public void deleteFirestation_withCorrectRequest_returnsIsAccepted() throws Exception {
+    public void deleteFirestation_withCorrectRequest_returnsIsOk() throws Exception {
 
         when(firestationService.deleteFirestation(any(Firestation.class))).thenReturn(firestation);
 
         mockMvc.perform(delete("/firestation")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(firestation)))
-                .andExpect(status().isAccepted());
+                .andExpect(status().isOk());
         verify(firestationService).deleteFirestation(any(Firestation.class));
     }
 
     @Test
-    public void deleteFirestation_withWrongRequest_returnsBadRequest() throws Exception {
+    public void deleteFirestation_withNoData_returnsNoContent() throws Exception {
 
         when(firestationService.deleteFirestation(any(Firestation.class))).thenReturn(null);
 
         mockMvc.perform(delete("/firestation")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(firestation)))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isNoContent());
         verify(firestationService).deleteFirestation(any(Firestation.class));
     }
 }

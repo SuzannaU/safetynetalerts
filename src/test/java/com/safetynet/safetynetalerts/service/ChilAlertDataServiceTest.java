@@ -15,10 +15,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
-import com.safetynet.safetynetalerts.Mapper;
 import com.safetynet.safetynetalerts.dto.AdultForChildAlert;
 import com.safetynet.safetynetalerts.dto.ChildAlertData;
 import com.safetynet.safetynetalerts.dto.ChildForChildAlert;
+import com.safetynet.safetynetalerts.mapper.Mapper;
 import com.safetynet.safetynetalerts.model.Person;
 
 @SpringBootTest

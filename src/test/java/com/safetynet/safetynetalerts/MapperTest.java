@@ -12,6 +12,7 @@ import com.safetynet.safetynetalerts.dto.PersonForFire;
 import com.safetynet.safetynetalerts.dto.PersonForFlood;
 import com.safetynet.safetynetalerts.dto.PersonForInfo;
 import com.safetynet.safetynetalerts.dto.PersonForStation;
+import com.safetynet.safetynetalerts.mapper.Mapper;
 import com.safetynet.safetynetalerts.model.Person;
 
 @SpringBootTest
